@@ -10,6 +10,6 @@ func _ready():
 func _process(delta):
 	pass
 
-
+#executes on click of the button
 func _on_pressed():
 	pass
