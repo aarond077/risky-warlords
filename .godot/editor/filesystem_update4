@@ -1,8 +1,10 @@
-res://src/Skirmish/skirmish.tscn
-res://src/Skirmish/skirmish.gd
+res://src/UI/scenario_menu.tscn
 res://src/Logic/scene_manager.tscn
-res://src/Logic/scene_manager.gd
+res://src/Scenario/scenario.tscn
 res://src/Logic/save_load_manager.tscn
 res://src/Logic/save_load_manager.gd
-res://src/Skirmish/szenario.tscn
-res://src/Scenario/scenario.tscn
+res://src/Logic/signal_bus.gd
+res://src/Logic/scenario_data_manager.gd
+res://src/Logic/scenario_data_manager.tscn
+res://src/UI/start_game_button.gd
+res://src/Logic/scene_manager.gd

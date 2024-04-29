@@ -2,6 +2,7 @@ extends Node
 
 # A collection of scenes in the game. Scenes are added through the Inspector panel
 @export var scenes : Dictionary = {}
+
 # Alias of the currently selected scene
 var current_scene_name : String = ""
 	

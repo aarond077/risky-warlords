@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://51cs25dovtpq"]
+
+[ext_resource type="Script" path="res://src/Logic/scenario_data_manager.gd" id="1_ili0q"]
+
+[node name="ScenarioDataManager" type="Node2D"]
+script = ExtResource("1_ili0q")
+maps = Array[String](["Schattensee"])
+nations = Array[String](["Menschen", "Zwerge", "Elben", "Orks"])

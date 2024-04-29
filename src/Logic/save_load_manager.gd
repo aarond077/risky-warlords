@@ -1,6 +1,4 @@
 extends Node
-
-#class_name SaveLoadModule
  
 var file : FileAccess     # File object opened by the FileAccess library
 var file_path : String     # File path to the requested file
