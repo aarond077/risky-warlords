@@ -1,2 +1,8 @@
 res://src/Skirmish/skirmish.tscn
 res://src/Skirmish/skirmish.gd
+res://src/Logic/scene_manager.tscn
+res://src/Logic/scene_manager.gd
+res://src/Logic/save_load_manager.tscn
+res://src/Logic/save_load_manager.gd
+res://src/Skirmish/szenario.tscn
+res://src/Scenario/scenario.tscn

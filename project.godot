@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="RiskyWarlords"
+run/main_scene="res://src/Scenario/scenario.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SaveLoadManager="*res://src/Logic/save_load_manager.tscn"
+SceneManager="*res://src/Logic/scene_manager.tscn"
 
 [input]
 

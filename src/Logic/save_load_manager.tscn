@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://berl305xoqful"]
+
+[ext_resource type="Script" path="res://src/Logic/save_load_manager.gd" id="1_ke713"]
+
+[node name="save_load_manager" type="Node2D"]
+script = ExtResource("1_ke713")
