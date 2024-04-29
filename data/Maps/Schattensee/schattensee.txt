@@ -1,0 +1,15 @@
+{
+	"#8a6f30" : "Senezien",
+	"#99e550" : "Nord Kardanio",
+	"#37946e" : "Sued Kardanio",
+	"#ac3232" : "Filitro",
+	"#d95763" : "Salazien",
+	"#d77bba" : "Seestadt", 
+	"#8f974a" : "Hohe Steppe",
+	"#76428a" : "Kueste von Burk",
+	"#d9a066" : "Steppe von Burk",
+	"#663931" : "Schwarze Klippen",
+	"#df7126" : "Schwarze Berge",
+	"#8f563b" : "Trabnok",
+	"#6abe30" : "Sumpf der Ahnen"
+}

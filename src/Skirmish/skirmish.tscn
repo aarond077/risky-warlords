@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpnjolegxqiu4"]
+
+[ext_resource type="Script" path="res://src/Skirmish/game_manager.gd" id="1_d5rxi"]
+[ext_resource type="Script" path="res://src/Skirmish/skirmish.gd" id="1_p33b0"]
+[ext_resource type="Texture2D" uid="uid://lk67e8h43735" path="res://art/Maps/Schattensee/schattensee.png" id="2_1e3lo"]
+[ext_resource type="Script" path="res://src/Skirmish/zooming_camera.gd" id="4_prjt6"]
+[ext_resource type="Texture2D" uid="uid://dlkney4tf5fes" path="res://art/Background/background_blue.png" id="5_i5d58"]
+
+[node name="GameManager" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_d5rxi")
+
+[node name="Skirmish" type="Node2D" parent="." node_paths=PackedStringArray("mapImage")]
+process_mode = 1
+script = ExtResource("1_p33b0")
+mapImage = NodePath("MapSprite")
+
+[node name="MapSprite" type="Sprite2D" parent="Skirmish"]
+texture = ExtResource("2_1e3lo")
+centered = false
+
+[node name="Regions" type="Node2D" parent="Skirmish"]
+
+[node name="Camera" type="Camera2D" parent="Skirmish"]
+offset = Vector2(60, 170)
+limit_left = -512
+limit_top = -256
+limit_right = 512
+limit_bottom = 256
+script = ExtResource("4_prjt6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Skirmish"]
+layer = 0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Skirmish/CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Skirmish/CanvasLayer/ParallaxBackground"]
+
+[node name="BackgroundSprite" type="Sprite2D" parent="Skirmish/CanvasLayer/ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("5_i5d58")
