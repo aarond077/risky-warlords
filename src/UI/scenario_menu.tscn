@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/UI/map_options.gd" id="1_bocwq"]
 [ext_resource type="Script" path="res://src/UI/start_game_button.gd" id="1_eug7t"]
 
-[node name="scenario_menu" type="Node2D"]
+[node name="ScenarioMenu" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
