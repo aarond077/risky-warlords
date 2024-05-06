@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://437sko08ilnu"]
+[gd_scene load_steps=3 format=3 uid="uid://bb6dutfabx04c"]
 
 [ext_resource type="Script" path="res://src/UI/map_options.gd" id="1_bocwq"]
 [ext_resource type="Script" path="res://src/UI/start_game_button.gd" id="1_eug7t"]
