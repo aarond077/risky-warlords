@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://437sko08ilnu"]
 
-[ext_resource type="Script" path="res://src/UI/map_options.gd" id="1_bocwq"]
-[ext_resource type="Script" path="res://src/UI/start_game_button.gd" id="1_eug7t"]
+[ext_resource type="Script" path="res://src/UI/ScenarioMenu/map_options.gd" id="1_32nae"]
+[ext_resource type="Script" path="res://src/UI/ScenarioMenu/start_game_button.gd" id="2_o7y08"]
 
 [node name="scenario_menu" type="Node2D"]
 
@@ -34,7 +34,7 @@ popup/item_2/text = "Test"
 popup/item_2/id = 2
 popup/item_3/text = "Test2"
 popup/item_3/id = 3
-script = ExtResource("1_bocwq")
+script = ExtResource("1_32nae")
 
 [node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -43,7 +43,7 @@ text = "Map text"
 [node name="StartGameButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 text = "Spiel starten"
-script = ExtResource("1_eug7t")
+script = ExtResource("2_o7y08")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 4

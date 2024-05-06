@@ -1,12 +1,8 @@
+res://src/UI/scenario_menu.tscn
+res://src/UI/ScenarioMenu/scenario_menu.tscn
+res://src/UI/MainMenu/main_menu.tscn
 res://src/Scenario/scenario.tscn
-res://src/UI/start_game_button.gd
 res://src/Logic/scene_manager.tscn
 res://src/Logic/save_load_manager.tscn
-res://src/UI/scenario_menu.tscn
 res://src/Logic/scenario_data_manager.tscn
-res://src/Scenario/scenario.gd
-res://src/Logic/scenario_data_manager.gd
-res://src/UI/map_options.gd
-res://data/Maps/Bucht/Bucht.txt
-res://data/Maps/Schattensee/Schattensee.txt
-res://data/Maps/BuchtSmall/BuchtSmall.txt
+res://src/UI/MainMenu/local_game_button.gd
