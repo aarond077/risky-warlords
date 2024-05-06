@@ -1,26 +1,40 @@
 extends Node2D
 
-@export var mapImage : Sprite2D
 
-@onready var mapName : String = "Schattensee"
+@onready var map_name : String #= "BuchtVonDessus"
+@onready var map_regions_data_name : String #= "bucht_von_dessus.txt"
+@onready var map_image : Sprite2D = $MapSprite
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#for child in get_children():
 	#	print(child.name)
-	load_regions()
+	await load_data()
+	call_deferred("load_regions")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+func load_data():
+	self.map_name = ScenarioDataManager.scenario_map_name
+	self.map_regions_data_name = ScenarioDataManager.scenario_map_name
+	map_image.texture = ResourceLoader.load("res://art/Maps/" + map_name + "/" + map_name + ".png" )
+	#map_image.texture = ResourceLoader.load("res://art/Maps/Bucht/Bucht.png")
+	#map_image.texture = ResourceLoader.load("res://art/Maps/Schattensee/Schattensee.png")
+	#map_image.texture = ResourceLoader.load("res://art/Maps/Test/Test.png")
+	
 
 #Loads the regions of the map using the distinct colors of the map.
 #Also assigns polygons according to the regions shape 
 func load_regions():
-	var image = mapImage.get_texture().get_image()
+	var image = map_image.get_texture().get_image()
 	var pixel_color_dict = get_pixel_color_dict(image)
-	var regions_dict = import_file("res://data/Maps/Schattensee/schattensee.txt")
+	var regions_dict = import_file("res://data/Maps/" + map_name + "/" + map_name + ".txt")
+	#var regions_dict = import_file("res://data/Maps/Bucht/Bucht.txt")
+	#var regions_dict = import_file("res://data/Maps/Schattensee/Schattensee.txt")
+	#var regions_dict = import_file("res://data/Maps/Test/Test.txt")
 	
 	for region_color in regions_dict:
 		var region = load("res://src/Region/region_area.tscn").instantiate()

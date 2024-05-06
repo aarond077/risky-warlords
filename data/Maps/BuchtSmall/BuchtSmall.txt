@@ -1,0 +1,49 @@
+{
+"#6b1a59" : "Unheilsklippen",
+"#300343" : "Hafen von Aleksud",
+"#8f563b" : "Oedland von Sosla",
+"#8a6f30" : "Bucht von Sosla",
+"#d95763" : "Huegelgraeber von Sosla",
+"#ac3232" : "Nebelkueste",
+"#8f974a" : "Dornenwald",
+"#5d0b12" : "Tal von Sosla",
+"#d9a066" : "Plateau der Schnittberge",
+"#76428a" : "Westliche Schnittberge",
+"#d77bba" : "Oestliche Schnittberge",
+"#99e550" : "Fuerstentum Sosla",
+"#df7126" : "Vergessenes Brachland",
+"#6abe30" : "Bucht von Runhirn",
+"#1f4a1f" : "Runhirn",
+
+"#741212" : "Wald der Schnittberge",
+"#38cc92" : "Sumpf von Runhirn",
+"#36736b" : "Fjord von Dessus",
+"#663931" : "Anfurten von Dessus",
+"#b9b330" : "Tal von Dessus",
+"#61437d" : "Graue Klippen",
+"#6f6c2d" : "Kueste von Dessus",
+"#adb959" : "Klippen der Hoffnung",
+"#584040" : "Noerdlicher Gruenwald",
+"#45384a" : "Suedlicher Gruenwald",
+
+"#c31fbc" : "Sephesia",
+"#daa01c" : "Huegel von Sephesia",
+"#d1da16" : "Steppe von Sephesia",
+"#9e8dbe" : "Noerdlicher Tiefwald",
+"#16da5a" : "Bucht von Sephesia",
+"#be326f" : "Brachland des Filtris",
+"#a0a772" : "Tal des Filtris",
+"#586115" : "Berge des Filtris",
+"#6abe30" : "Grazfurt",
+"#b58e34" : "Fuerstentum Wendor",
+
+"#c6acd1" : "Kueste von Grazfurt",
+"#d6e370" : "Oedland von Grazfurt",
+"#8b0085" : "Sumpf des Filtris",
+"#8b778a" : "Verfluchte Huegelgraeber",
+"#8b6945" : "Oedland von Banon",
+"#583a18" : "Schlachtfeld von Banon"
+
+
+
+}

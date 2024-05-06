@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lk67e8h43735"
-path="res://.godot/imported/schattensee.png-713a6586a5cc9291d79d05c61ad5a0ea.ctex"
+path="res://.godot/imported/Schattensee.png-6a682463109ad9cdbac25ee18c90f419.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Maps/Schattensee/schattensee.png"
-dest_files=["res://.godot/imported/schattensee.png-713a6586a5cc9291d79d05c61ad5a0ea.ctex"]
+source_file="res://art/Maps/Schattensee/Schattensee.png"
+dest_files=["res://.godot/imported/Schattensee.png-6a682463109ad9cdbac25ee18c90f419.ctex"]
 
 [params]
 

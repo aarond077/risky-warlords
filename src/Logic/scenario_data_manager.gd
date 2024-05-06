@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var scenario_map_name : String
+@export var scenario_map_region_data_name : String
 @export var scenario_players : int
 @export var maps : Array[String]
 @export var nations : Array[String]

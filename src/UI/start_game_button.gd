@@ -12,4 +12,4 @@ func _process(delta):
 
 #executes on click of the button
 func _on_pressed():
-	pass
+	SceneManager.switch_scene("Scenario")
