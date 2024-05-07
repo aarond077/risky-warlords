@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv6rt151tlltq"]
+[gd_scene load_steps=3 format=3 uid="uid://cv6rt151tlltq"]
 
 [ext_resource type="Script" path="res://src/UI/MainMenu/local_game_button.gd" id="1_4j5sf"]
+[ext_resource type="Script" path="res://src/UI/MainMenu/exit_game_button.gd" id="2_lp8j1"]
 
 [node name="MainMenu" type="Node2D"]
 
@@ -25,5 +26,7 @@ text = "Spiel laden"
 [node name="ExitGameButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 text = "Spiel beenden"
+script = ExtResource("2_lp8j1")
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/LocalGameButton" to="CanvasLayer/VBoxContainer/LocalGameButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ExitGameButton" to="CanvasLayer/VBoxContainer/ExitGameButton" method="_on_pressed"]

@@ -1,7 +1,7 @@
+res://src/UI/MainMenu/exit_game_button.gd
+res://src/UI/MainMenu/main_menu.tscn
 res://src/Scenario/scenario.tscn
 res://src/Logic/scene_manager.tscn
 res://src/Logic/save_load_manager.tscn
+res://src/UI/ScenarioMenu/scenario_menu.tscn
 res://src/Logic/scenario_data_manager.tscn
-res://src/UI/MainMenu/main_menu.tscn
-res://src/UI/scenario_menu.tscn
-res://src/UI/map_options.gd
