@@ -1,7 +1,8 @@
 res://src/Scenario/scenario.tscn
 res://src/Logic/scene_manager.tscn
 res://src/Logic/save_load_manager.tscn
+res://src/UI/scenario_menu.tscn
 res://src/Logic/scenario_data_manager.tscn
 res://src/UI/MainMenu/main_menu.tscn
-res://src/UI/scenario_menu.tscn
-res://src/UI/map_options.gd
+res://src/Logic/finite_state_machine.gd
+res://src/Logic/state.gd

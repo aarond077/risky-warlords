@@ -13,7 +13,7 @@
 "#99e550" : "Fuerstentum Sosla",
 "#df7126" : "Vergessenes Brachland",
 "#6abe30" : "Bucht von Runhirn",
-"#1f4a1f" : "Runhirn",
+"#1f4a1f" : "Runhirn", 
 
 "#741212" : "Wald der Schnittberge",
 "#38cc92" : "Sumpf von Runhirn",
@@ -25,6 +25,7 @@
 "#adb959" : "Klippen der Hoffnung",
 "#584040" : "Noerdlicher Gruenwald",
 "#45384a" : "Suedlicher Gruenwald",
+"#b92063" : "Brachland von Sephesia",
 
 "#c31fbc" : "Sephesia",
 "#daa01c" : "Huegel von Sephesia",
@@ -32,9 +33,10 @@
 "#9e8dbe" : "Noerdlicher Tiefwald",
 "#16da5a" : "Bucht von Sephesia",
 "#be326f" : "Brachland des Filtris",
+"#497440" : "Sandbank des Filtris",
 "#a0a772" : "Tal des Filtris",
 "#586115" : "Berge des Filtris",
-"#6abe30" : "Grazfurt",
+"#6eec18" : "Grazfurt",
 "#b58e34" : "Fuerstentum Wendor",
 
 "#c6acd1" : "Kueste von Grazfurt",
