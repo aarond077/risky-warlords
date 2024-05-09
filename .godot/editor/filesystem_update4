@@ -7,3 +7,5 @@ res://src/UI/scenario_menu.tscn
 res://src/Logic/scenario_data_manager.tscn
 res://src/UI/MainMenu/main_menu.tscn
 res://src/Player/player.gd
+res://src/Region/region_node.gd
+res://src/Region/region_graph.gd
