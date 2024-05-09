@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1xk2lv80lqnp"]
+[gd_scene load_steps=9 format=3 uid="uid://d1xk2lv80lqnp"]
 
 [ext_resource type="Script" path="res://src/Scenario/game_manager.gd" id="1_3288w"]
 [ext_resource type="Script" path="res://src/Scenario/scenario.gd" id="2_dxbxk"]
 [ext_resource type="Script" path="res://src/Scenario/zooming_camera.gd" id="4_j537l"]
 [ext_resource type="Texture2D" uid="uid://dlkney4tf5fes" path="res://art/Background/background_blue.png" id="5_dpw3n"]
+[ext_resource type="Script" path="res://src/Logic/finite_state_machine.gd" id="5_v5awv"]
+[ext_resource type="Script" path="res://src/Scenario/load_map.gd" id="6_e01md"]
+[ext_resource type="Script" path="res://src/Scenario/start_round.gd" id="7_npxgh"]
+[ext_resource type="Script" path="res://src/Logic/state.gd" id="7_x2l3a"]
 
 [node name="GameManager" type="Node2D"]
 process_mode = 3
@@ -13,7 +17,7 @@ script = ExtResource("1_3288w")
 process_mode = 1
 script = ExtResource("2_dxbxk")
 
-[node name="MapSprite" type="Sprite2D" parent="Scenario"]
+[node name="MapImage" type="Sprite2D" parent="Scenario"]
 centered = false
 
 [node name="Regions" type="Node2D" parent="Scenario"]
@@ -21,9 +25,9 @@ centered = false
 [node name="Camera" type="Camera2D" parent="Scenario"]
 offset = Vector2(60, 170)
 limit_left = -512
-limit_top = -256
+limit_top = -400
 limit_right = 512
-limit_bottom = 256
+limit_bottom = 400
 script = ExtResource("4_j537l")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scenario"]
@@ -35,3 +39,23 @@ layer = 0
 
 [node name="BackgroundSprite" type="Sprite2D" parent="Scenario/CanvasLayer/ParallaxBackground/ParallaxLayer"]
 texture = ExtResource("5_dpw3n")
+
+[node name="FiniteStateMachine" type="Node" parent="Scenario"]
+script = ExtResource("5_v5awv")
+
+[node name="LoadMap" type="Node" parent="Scenario/FiniteStateMachine" node_paths=PackedStringArray("map_image")]
+script = ExtResource("6_e01md")
+map_image = NodePath("../../MapImage")
+
+[node name="StartRound" type="Node" parent="Scenario/FiniteStateMachine"]
+script = ExtResource("7_npxgh")
+
+[node name="ActionPoints" type="Node" parent="Scenario/FiniteStateMachine"]
+script = ExtResource("7_x2l3a")
+
+[node name="Battle" type="Node" parent="Scenario/FiniteStateMachine"]
+script = ExtResource("7_x2l3a")
+
+[node name="Label" type="Label" parent="Scenario/FiniteStateMachine"]
+offset_right = 40.0
+offset_bottom = 23.0

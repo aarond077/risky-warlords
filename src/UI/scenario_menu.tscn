@@ -25,7 +25,7 @@ text = "Karte"
 
 [node name="MapOptions" type="OptionButton" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-item_count = 4
+item_count = 5
 popup/item_0/text = "Schattensee"
 popup/item_0/id = 0
 popup/item_1/text = "BuchtSmall"
@@ -34,6 +34,8 @@ popup/item_2/text = "Test"
 popup/item_2/id = 2
 popup/item_3/text = "Test2"
 popup/item_3/id = 3
+popup/item_4/text = "Aleksud"
+popup/item_4/id = 4
 script = ExtResource("1_bocwq")
 
 [node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer"]

@@ -30,6 +30,8 @@ func _ready():
 	current_state = get_child(0) as State
 	previous_state = current_state
 	current_state.call_deferred("enter")
+	
+	#debug.text = current_state.name
 	pass
 
 func change_state(state):
@@ -39,8 +41,7 @@ func change_state(state):
 	
 	previous_state = current_state
 	current_state = new_state
-	if debug != null:
-		debug.text = state
+	print(state)
 
 	
 func transition_previous_state():

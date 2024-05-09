@@ -1,15 +1,11 @@
-res://src/UI/MainMenu/exit_game_button.gd
-res://src/UI/MainMenu/main_menu.tscn
 res://src/Scenario/scenario.tscn
+res://src/Scenario/load_map.gd
+res://src/Scenario/scenario.gd
 res://src/Logic/scene_manager.tscn
 res://src/Logic/save_load_manager.tscn
-<<<<<<< HEAD
 res://src/UI/scenario_menu.tscn
 res://src/Logic/scenario_data_manager.tscn
 res://src/UI/MainMenu/main_menu.tscn
 res://src/Logic/finite_state_machine.gd
-res://src/Logic/state.gd
-=======
-res://src/UI/ScenarioMenu/scenario_menu.tscn
-res://src/Logic/scenario_data_manager.tscn
->>>>>>> e98604e9bbcc41b357bafb85e38c59494746aa3b
+res://src/Scenario/start_round.gd
+res://data/Maps/Aleksud/Aleksud.txt

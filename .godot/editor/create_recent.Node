@@ -1,10 +1,10 @@
+Label
 State
 FiniteStateMachine
 Button
 VBoxContainer
 CanvasLayer
 OptionButton
-Label
 HBoxContainer
 ColorPickerButton
 Panel

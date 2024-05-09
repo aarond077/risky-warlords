@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lk67e8h43735"
-path="res://.godot/imported/Schattensee.png-6a682463109ad9cdbac25ee18c90f419.ctex"
+uid="uid://b7e4hf4g4nu4i"
+path="res://.godot/imported/Aleksud.png-2649bc700feed9b4106e57f5ff59fd3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Maps/Schattensee/Schattensee.png"
-dest_files=["res://.godot/imported/Schattensee.png-6a682463109ad9cdbac25ee18c90f419.ctex"]
+source_file="res://art/Maps/Aleksud/Aleksud.png"
+dest_files=["res://.godot/imported/Aleksud.png-2649bc700feed9b4106e57f5ff59fd3d.ctex"]
 
 [params]
 
