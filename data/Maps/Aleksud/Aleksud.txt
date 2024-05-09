@@ -36,9 +36,10 @@
 "#6aa76a" : "Tundra der Erzgipfel",
 "#8e940f" : "Suedliche Erzgipfel",
 "#e314da" : "Kueste von Brann",
-"#995d52" : "Brandung am Brann",
+"#995d52" : "Brandung von Brann",
 "#462553" : "Brann - steinerne Stadt",
 "#50ac50" : "Klippen von Brann",
+"#82714b" : "Brachland der Erzgipfel",
 "#9b1bcc" : "Edelwaelder",
 "#902a79" : "Tundra von Dern",
 "#462807" : "Dern - Stadt des Frostes"
