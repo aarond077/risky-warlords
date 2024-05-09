@@ -20,7 +20,8 @@ func _process(delta):
 	
 func state_process(delta):
 	call_deferred("emit_signal", "interrupt_state", "StartRound")
-	
+
+#loads the texture from file using the map name data
 func load_data():
 	self.map_name = ScenarioDataManager.scenario_map_name
 	self.map_regions_data_name = ScenarioDataManager.scenario_map_name

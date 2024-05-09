@@ -14,10 +14,10 @@ class_name FiniteStateMachine
 var states : Array[State]
 
 
-
+#makes sure the initial state is set and also connects child states with the state interrupt signal
 func _ready():
 	for child in get_children():
-		if(child is State):
+		if(child is State): #internal check if child is a state node
 			states.append(child)
 
 			# Set the states up with what they need to function
@@ -27,32 +27,36 @@ func _ready():
 		else:
 			push_warning("Child " + child.name + " is not a State for FiniteStateMachine")
 #
-	current_state = get_child(0) as State
-	previous_state = current_state
-	current_state.call_deferred("enter")
+	current_state = get_child(0) as State #set the first state of the state machines child nodes as the inital state
+	previous_state = current_state #sets the previous state as the initial state
+	current_state.call_deferred("enter") #calls enter function of the initial state
 	
 	#debug.text = current_state.name
 	pass
 
 func change_state(state):
-	new_state = find_child(state) as State #string search
-	current_state.exit()
-	new_state.enter()
+	new_state = find_child(state) as State #string search of the new state
+	current_state.exit() #exits out of the current state
+	new_state.enter() #enters the next state
 	
-	previous_state = current_state
-	current_state = new_state
+	previous_state = current_state #sets the previous state as the state that is exited
+	current_state = new_state #sets the current state as the state that is entered
 	print(state)
 
-	
+#returns back to previous state
 func transition_previous_state():
 	change_state(previous_state)
 
 func return_current_state():
 	return current_state
 
+#parses the delta value to the states individual process 
+#function to encapsulate the process function via state distinction
 func _process(delta):
 	current_state.state_process(delta)
 
+#parses the event value (User Input) to the states individual process 
+#function to encapsulate the process function via state distinction
 func _input(event):
 	current_state.state_input(event)
 

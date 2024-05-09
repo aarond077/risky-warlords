@@ -9,3 +9,4 @@ res://src/UI/MainMenu/main_menu.tscn
 res://src/Logic/finite_state_machine.gd
 res://src/Scenario/start_round.gd
 res://data/Maps/Aleksud/Aleksud.txt
+res://src/Scenario/game_manager.gd
