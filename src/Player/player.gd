@@ -2,8 +2,8 @@ extends Node
 
 class_name Player
 
-@onready var regions : Array[Region]
-@onready var capital : Region
+@onready var regions : RegionGraph
+@onready var capital : String
 @onready var army : Dictionary
 @onready var army_points : int 
 @onready var action_points : int

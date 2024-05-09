@@ -1,5 +1,7 @@
 extends Node
 
+class_name RegionGraph
+
 @onready var root : RegionNode
 
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +19,12 @@ func add_region_node(new_node : RegionNode, neighbour_node : String):
 	pass
 	
 func remove_region_node(region_name : String):
+	pass
+
+func generate_region_graph_from_file(filename : String):
+	pass
+
+func generate_region_graph_from_capital(capital : String):
 	pass
 
 func is_empty():
