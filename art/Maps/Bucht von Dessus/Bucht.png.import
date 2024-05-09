@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwkr2knrrcky2"
-path="res://.godot/imported/Bucht.png-8c6409676c2219cd16d4e73f0ee390a2.ctex"
+path="res://.godot/imported/Bucht.png-c044160692ed0e818c66b7e32ad9e9a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Maps/Bucht/Bucht.png"
-dest_files=["res://.godot/imported/Bucht.png-8c6409676c2219cd16d4e73f0ee390a2.ctex"]
+source_file="res://art/Maps/Bucht von Dessus/Bucht.png"
+dest_files=["res://.godot/imported/Bucht.png-c044160692ed0e818c66b7e32ad9e9a0.ctex"]
 
 [params]
 
