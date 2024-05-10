@@ -3,7 +3,9 @@ extends Node
 class_name Player
 
 @onready var regions : RegionGraph
+@onready var player_name : String
 @onready var capital : String
+@onready var nation : String
 @onready var army : Dictionary
 @onready var army_points : int 
 @onready var action_points : int

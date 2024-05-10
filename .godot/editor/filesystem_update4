@@ -1,11 +1,8 @@
+res://src/UI/scenario_menu.tscn
+res://src/Player/player.gd
+res://src/Logic/scenario_data_manager.gd
 res://src/Scenario/scenario.tscn
-res://src/Scenario/player.gd
-res://src/Region/region.gd
 res://src/Logic/scene_manager.tscn
 res://src/Logic/save_load_manager.tscn
-res://src/UI/scenario_menu.tscn
 res://src/Logic/scenario_data_manager.tscn
 res://src/UI/MainMenu/main_menu.tscn
-res://src/Player/player.gd
-res://src/Region/region_node.gd
-res://src/Region/region_graph.gd
