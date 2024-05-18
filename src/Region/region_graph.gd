@@ -26,6 +26,9 @@ func generate_region_graph_from_file(filename : String):
 
 func generate_region_graph_from_capital(capital : String):
 	pass
+	
+func find_shortest_route(start_node : RegionNode, end_node : RegionNode):
+	pass
 
 func is_empty():
 	pass

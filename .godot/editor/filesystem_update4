@@ -9,3 +9,4 @@ res://src/UI/MainMenu/main_menu.tscn
 res://src/Scenario/map_terrain.gd
 res://src/Scenario/zooming_camera.gd
 res://src/Region/region_area.gd
+res://src/Region/region_graph.gd
