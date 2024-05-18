@@ -1,3 +1,5 @@
+TileMap
+Sprite2D
 Label
 State
 FiniteStateMachine

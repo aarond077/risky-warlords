@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs0l4w7454deb"
-path="res://.godot/imported/Aleksud - Land der Qual.png-f7f4248d783b0aabf27211c2f3a29581.ctex"
+uid="uid://bjsqesu6f1k2u"
+path="res://.godot/imported/AleksudTerrain.png-8f4762adf36b340510aec66cb9814e11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Maps/Aleksud/Aleksud - Land der Qual.png"
-dest_files=["res://.godot/imported/Aleksud - Land der Qual.png-f7f4248d783b0aabf27211c2f3a29581.ctex"]
+source_file="res://art/Maps/Aleksud/AleksudTerrain.png"
+dest_files=["res://.godot/imported/AleksudTerrain.png-8f4762adf36b340510aec66cb9814e11.ctex"]
 
 [params]
 

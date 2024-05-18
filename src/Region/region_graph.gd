@@ -29,6 +29,9 @@ func generate_region_graph_from_capital(capital : String):
 
 func is_empty():
 	pass
+	
+	
+
 
 func size():
 	pass

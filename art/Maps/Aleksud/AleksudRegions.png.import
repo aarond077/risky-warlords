@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwkr2knrrcky2"
-path="res://.godot/imported/Bucht.png-c044160692ed0e818c66b7e32ad9e9a0.ctex"
+uid="uid://duhnwbhr5k35w"
+path="res://.godot/imported/AleksudRegions.png-ce0af0992a28213c57c7a3d59fabf8bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Maps/Bucht von Dessus/Bucht.png"
-dest_files=["res://.godot/imported/Bucht.png-c044160692ed0e818c66b7e32ad9e9a0.ctex"]
+source_file="res://art/Maps/Aleksud/AleksudRegions.png"
+dest_files=["res://.godot/imported/AleksudRegions.png-ce0af0992a28213c57c7a3d59fabf8bf.ctex"]
 
 [params]
 

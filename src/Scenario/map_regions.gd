@@ -1,30 +1,17 @@
-extends State
+extends Sprite2D
 
-@export var map_image : Sprite2D
 
 @onready var map_name : String #= "BuchtVonDessus"
 @onready var map_regions_data_name : String #= "bucht_von_dessus.txt"
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	#for child in get_children():
-	#	print(child.name)
-	pass
+	await load_data()
+	call_deferred("load_regions")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
-	
-func state_process(delta):
-	call_deferred("emit_signal", "interrupt_state", "StartRound")
-
-#loads the texture from file using the map name data
 func load_data():
 	self.map_name = ScenarioDataManager.scenario_map_name
 	self.map_regions_data_name = ScenarioDataManager.scenario_map_name
-	map_image.texture = ResourceLoader.load("res://art/Maps/" + map_name + "/" + map_name + ".png" )
+	self.texture = ResourceLoader.load("res://art/Maps/" + map_name + "/" + map_name + "Regions.png" )
 	#map_image.texture = ResourceLoader.load("res://art/Maps/Bucht/Bucht.png")
 	#map_image.texture = ResourceLoader.load("res://art/Maps/Schattensee/Schattensee.png")
 	#map_image.texture = ResourceLoader.load("res://art/Maps/Test/Test.png")
@@ -33,7 +20,7 @@ func load_data():
 #Loads the regions of the map using the distinct colors of the map.
 #Also assigns polygons according to the regions shape 
 func load_regions():
-	var image = map_image.get_texture().get_image()
+	var image = self.get_texture().get_image()
 	var pixel_color_dict = get_pixel_color_dict(image)
 	var regions_dict = import_file("res://data/Maps/" + map_name + "/" + map_name + ".txt")
 	#var regions_dict = import_file("res://data/Maps/Bucht/Bucht.txt")
@@ -44,7 +31,7 @@ func load_regions():
 		var region = load("res://src/Region/region_area.tscn").instantiate()
 		region.region_name = regions_dict[region_color]
 		region.set_name(region_color)
-		owner.find_child("Scenario").get_node("Regions").add_child(region)
+		get_parent().get_node("Regions").add_child(region)
 		
 		var polygons = get_polygons(image, region_color, pixel_color_dict)
 
@@ -57,6 +44,8 @@ func load_regions():
 
 			region.add_child(region_collision)
 			region.add_child(region_polygon)
+	
+	queue_free()
 
 #Generates polygons using a loop iterating through all the pixels to determine the colors for mapping into polygon
 func get_polygons(image, region_color, pixel_color_dict):

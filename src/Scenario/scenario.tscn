@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1xk2lv80lqnp"]
+[gd_scene load_steps=12 format=3 uid="uid://d1xk2lv80lqnp"]
 
 [ext_resource type="Script" path="res://src/Scenario/game_manager.gd" id="1_3288w"]
 [ext_resource type="Script" path="res://src/Scenario/scenario.gd" id="2_dxbxk"]
+[ext_resource type="Script" path="res://src/Scenario/map_terrain.gd" id="3_hkubf"]
+[ext_resource type="Script" path="res://src/Scenario/map_regions.gd" id="4_cx5v6"]
 [ext_resource type="Script" path="res://src/Scenario/zooming_camera.gd" id="4_j537l"]
 [ext_resource type="Texture2D" uid="uid://dlkney4tf5fes" path="res://art/Background/background_blue.png" id="5_dpw3n"]
+[ext_resource type="TileSet" uid="uid://nl4xmhsyw2f6" path="res://src/Scenario/scenario.tres" id="5_mdv1s"]
 [ext_resource type="Script" path="res://src/Logic/finite_state_machine.gd" id="5_v5awv"]
 [ext_resource type="Script" path="res://src/Scenario/load_map.gd" id="6_e01md"]
 [ext_resource type="Script" path="res://src/Scenario/start_round.gd" id="7_npxgh"]
@@ -17,17 +20,30 @@ script = ExtResource("1_3288w")
 process_mode = 1
 script = ExtResource("2_dxbxk")
 
-[node name="MapImage" type="Sprite2D" parent="Scenario"]
+[node name="MapRegions" type="Sprite2D" parent="Scenario"]
+z_index = -1
 centered = false
+script = ExtResource("4_cx5v6")
+
+[node name="MapTerrain" type="Sprite2D" parent="Scenario"]
+z_index = 1
+centered = false
+script = ExtResource("3_hkubf")
+
+[node name="TileMap" type="TileMap" parent="Scenario"]
+z_index = 1
+tile_set = ExtResource("5_mdv1s")
+format = 2
 
 [node name="Regions" type="Node2D" parent="Scenario"]
+z_index = 1
 
 [node name="Camera" type="Camera2D" parent="Scenario"]
 offset = Vector2(60, 170)
-limit_left = -512
-limit_top = -400
-limit_right = 512
-limit_bottom = 400
+limit_left = 40
+limit_top = -40
+limit_right = 800
+limit_bottom = 600
 script = ExtResource("4_j537l")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scenario"]
@@ -38,6 +54,7 @@ layer = 0
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Scenario/CanvasLayer/ParallaxBackground"]
 
 [node name="BackgroundSprite" type="Sprite2D" parent="Scenario/CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2(449, 604)
 texture = ExtResource("5_dpw3n")
 
 [node name="FiniteStateMachine" type="Node" parent="Scenario"]
@@ -45,7 +62,7 @@ script = ExtResource("5_v5awv")
 
 [node name="LoadMap" type="Node" parent="Scenario/FiniteStateMachine" node_paths=PackedStringArray("map_image")]
 script = ExtResource("6_e01md")
-map_image = NodePath("../../MapImage")
+map_image = NodePath("../../MapRegions")
 
 [node name="StartRound" type="Node" parent="Scenario/FiniteStateMachine"]
 script = ExtResource("7_npxgh")
