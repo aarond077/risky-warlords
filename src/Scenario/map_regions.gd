@@ -11,7 +11,8 @@ func _ready():
 func load_data():
 	self.map_name = ScenarioDataManager.scenario_map_name
 	self.map_regions_data_name = ScenarioDataManager.scenario_map_name
-	self.texture = ResourceLoader.load("res://art/Maps/" + map_name + "/" + map_name + "Regions.png" )
+	self.texture = ResourceLoader.load(
+		"res://assets/Maps/" + map_name + "/" + map_name + "Regions.png" )
 	#map_image.texture = ResourceLoader.load("res://art/Maps/Bucht/Bucht.png")
 	#map_image.texture = ResourceLoader.load("res://art/Maps/Schattensee/Schattensee.png")
 	#map_image.texture = ResourceLoader.load("res://art/Maps/Test/Test.png")

@@ -14,8 +14,8 @@ func _process(delta):
 func _on_child_entered_tree(node):
 	if node is Polygon2D: #node.is_class("Polygon2D"):
 		#node.color = Color(0, 1, 0, 1) #1, 1, 1, 0.5
-		node.color = Color(1, 1, 1, 0.5)
-		#node.color = Color(0, 0, 0, 1)
+		node.color = Color(0, 0, 0, 0)
+		#node.color = Color(0.1, 1, 0, 0)
 		pass
 		
 
@@ -24,7 +24,8 @@ func _on_mouse_entered():
 	print(region_name)
 	for node in get_children():
 		if node.is_class("Polygon2D"):
-			node.modulate = Color(1, 1, 1, 0.5)
+			node.color = Color(1, 1, 1, 0.5)
+			#node.modulate = Color(1, 1, 1, 0.5)
 
 
 func _on_input_event(viewport, event, shape_idx):
@@ -37,4 +38,4 @@ func _on_mouse_exited():
 	#print(region_name)
 	for node in get_children():
 		if node.is_class("Polygon2D"):
-			node.modulate = Color(1, 1, 1, 1)
+			node.color = Color(0, 0, 0, 0)

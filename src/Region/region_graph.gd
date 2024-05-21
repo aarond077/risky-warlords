@@ -32,9 +32,6 @@ func find_shortest_route(start_node : RegionNode, end_node : RegionNode):
 
 func is_empty():
 	pass
-	
-	
-
 
 func size():
 	pass
