@@ -6,3 +6,4 @@ res://src/UI/scenario_menu.tscn
 res://src/Logic/scenario_data_manager.tscn
 res://src/UI/MainMenu/main_menu.tscn
 res://src/Scenario/map_terrain.gd
+res://src/Scenario/zooming_camera.gd

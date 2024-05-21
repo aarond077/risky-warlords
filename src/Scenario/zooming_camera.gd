@@ -4,11 +4,13 @@ class_name ZoomingCamera
 
 func zoom_in():
 	var current_zoom = self.zoom
-	self.set_zoom(current_zoom * 1.05)
+	if(current_zoom.x <= 10 and current_zoom.y <= 10):
+		self.set_zoom(current_zoom * 1.05)
 
 func zoom_out():
 	var current_zoom = self.zoom
-	self.set_zoom(current_zoom * 0.95)
+	if(current_zoom.x >= 1.0 and current_zoom.y >= 1.0):
+		self.set_zoom(current_zoom * 0.95)
 
 func move_offset(event):
 	var rel_x = event.relative.x
