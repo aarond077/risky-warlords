@@ -2,16 +2,19 @@ extends Camera2D
 
 class_name ZoomingCamera
 
+#function for handeling zooming in
 func zoom_in():
-	var current_zoom = self.zoom
+	var current_zoom = self.zoom 
 	if(current_zoom.x <= 10 and current_zoom.y <= 10):
-		self.set_zoom(current_zoom * 1.05)
+		self.set_zoom(current_zoom * 1.05) 
 
+#function for handeling zooming out
 func zoom_out():
 	var current_zoom = self.zoom
 	if(current_zoom.x >= 1.0 and current_zoom.y >= 1.0):
 		self.set_zoom(current_zoom * 0.95)
 
+#function for handeling mouse movement to move the camera
 func move_offset(event):
 	var rel_x = event.relative.x
 	var rel_y = event.relative.y
@@ -24,6 +27,8 @@ func move_offset(event):
 		and cam_pos.x <= limit_right and cam_pos.y <= limit_bottom):
 		self.set_offset(cam_pos)
 
+#function for handeling user input such as moving the mouse or zooming (pressing left
+# or right mouse and then mousewheel)
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and event.button_mask > 0:
 		self.move_offset(event)
