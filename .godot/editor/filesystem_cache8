@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1716229817
+::res://::1716386138
 icon.svg::CompressedTexture2D::5951928258371859898::1714400715::1714400772::1::::<><>::
 README.md::TextFile::-1::1714400715::0::1::::<><>::
 ::res://addons/::1716135678
@@ -51,13 +51,13 @@ SymmetryRotateCounterClockwise.svg::CompressedTexture2D::925101722161386425::171
 ::res://assets/Background/::1716135295
 background_blue.png::CompressedTexture2D::7952780878950712078::1714400715::1716135295::1::::<><>::
 ::res://assets/Maps/::1715280370
-::res://assets/Maps/Aleksud/::1716298129
+::res://assets/Maps/Aleksud/::1716386138
 Aleksud - Land der Qual.png::CompressedTexture2D::6088570877972257789::1715274909::1716135295::1::::<><>::
 Aleksud.png::CompressedTexture2D::6620641285250692155::1715273054::1716135295::1::::<><>::
 AleksudRegions.png::CompressedTexture2D::8578318240640140818::1716297770::1716297916::1::::<><>::
 AleksudSeeverbindungen.png::CompressedTexture2D::3670884308052205722::1716282956::1716283176::1::::<><>::
 AleksudTerrain.png::CompressedTexture2D::3056258668800956626::1716298424::1716298443::1::::<><>::
-::res://assets/Maps/Bucht von Dessus/::1716283176
+::res://assets/Maps/Bucht von Dessus/::1716378237
 Bucht von Dessus.png::CompressedTexture2D::1355235546720784477::1715280360::1716135295::1::::<><>::
 Bucht von DessusRegions1.png::CompressedTexture2D::741373744111098645::1716119296::1716135295::1::::<><>::
 Bucht von DessusRegions.png::CompressedTexture2D::2288458369698865760::1716034245::1716135295::1::::<><>::
@@ -72,11 +72,31 @@ Schattensee.png::CompressedTexture2D::794660691169557542::1714400715::1716135295
 Test.png::CompressedTexture2D::1762454052501232730::1714990042::1716135295::1::::<><>::
 ::res://assets/Maps/Test2/::1716135295
 Test2.png::CompressedTexture2D::3289211874211931547::1714993026::1716135295::1::::<><>::
-::res://assets/Terrain/::1716285141
+::res://assets/Terrain/::1716383733
+bright_desert.png::CompressedTexture2D::8535230571051671116::1716379588::1716383733::1::::<><>::
+bright_forrest.png::CompressedTexture2D::782905496612356438::1716313544::1716376281::1::::<><>::
+bright_mountain.png::CompressedTexture2D::9090531856371091350::1716313450::1716376281::1::::<><>::
+bright_tundra.png::CompressedTexture2D::580058593428317910::1716320872::1716376281::1::::<><>::
+bright_wasteland.png::CompressedTexture2D::531130282525498179::1716318473::1716376281::1::::<><>::
+cursed_desert.png::CompressedTexture2D::7340223562957637550::1716381079::1716383733::1::::<><>::
+cursed_forrest.png::CompressedTexture2D::8431873083899130582::1716325059::1716376281::1::::<><>::
+cursed_mountains.png::CompressedTexture2D::6415016557832549109::1716317181::1716376281::1::::<><>::
+cursed_mountains_2.png::CompressedTexture2D::6282558277544945124::1716326783::1716376281::1::::<><>::
+cursed_tundra.png::CompressedTexture2D::2757797026338897701::1716325368::1716376281::1::::<><>::
+cursed_wasteland.png::CompressedTexture2D::8829259633857353665::1716325649::1716376281::1::::<><>::
+dark_canyon.png::CompressedTexture2D::104005394301584143::1716326431::1716376281::1::::<><>::
+dark_desert.png::CompressedTexture2D::1093445632271800834::1716378496::1716383733::1::::<><>::
+dark_forrest.png::CompressedTexture2D::8078585510506179175::1716314416::1716376281::1::::<><>::
+dark_mountains.png::CompressedTexture2D::6527802380705311973::1716318810::1716376281::1::::<><>::
+dark_wasteland.png::CompressedTexture2D::4281368690840201460::1716322048::1716376281::1::::<><>::
+magma_mountain.png::CompressedTexture2D::3788142127282870709::1716322873::1716376281::1::::<><>::
+magma_wasteland.png::CompressedTexture2D::2904643041654381414::1716322858::1716376281::1::::<><>::
+snowy_mountains.png::CompressedTexture2D::2388881501776643703::1716327346::1716376281::1::::<><>::
 Terrain.png::CompressedTexture2D::948752751512807014::1716285139::1716285141::1::::<><>::
 ::res://data/::1714400715
-::res://data/Maps/::1715280393
-::res://data/Maps/Aleksud/::1716044641
+::res://data/Maps/::1716387108
+AleksudIndexes.txt::TextFile::-1::1716387108::0::1::::<><>::
+::res://data/Maps/Aleksud/::1716386480
 Aleksud.txt::TextFile::-1::1716044641::0::1::::<><>::
 ::res://data/Maps/Bucht/::1714992401
 ::res://data/Maps/Bucht von Dessus/::1715280404
@@ -88,41 +108,41 @@ test.txt::TextFile::-1::1714990274::0::1::::<><>::
 ::res://data/Maps/Test2/::1714993224
 test2.txt::TextFile::-1::1714993306::0::1::::<><>::
 ::res://src/::1715280666
-::res://src/Logic/::1716298131
+::res://src/Logic/::1716383737
 finite_state_machine.gd::GDScript::-1::1715272059::0::1::::FiniteStateMachine<>Node<>::
 save_load_manager.gd::GDScript::-1::1714407439::0::1::::<>Node<>::
-save_load_manager.tscn::PackedScene::2702989729706259847::1716298130::0::1::::<><>::res://src/Logic/save_load_manager.gd
+save_load_manager.tscn::PackedScene::2702989729706259847::1716383737::0::1::::<><>::res://src/Logic/save_load_manager.gd
 scenario_data_manager.gd::GDScript::-1::1715352166::0::1::::<>Node2D<>::
-scenario_data_manager.tscn::PackedScene::2159494173652795970::1716298130::0::1::::<><>::res://src/Logic/scenario_data_manager.gd
+scenario_data_manager.tscn::PackedScene::2159494173652795970::1716383737::0::1::::<><>::res://src/Logic/scenario_data_manager.gd
 scene_manager.gd::GDScript::-1::1714411194::0::1::::<>Node<>::
-scene_manager.tscn::PackedScene::7821257596677628422::1716298130::0::1::::<><>::res://src/Logic/scene_manager.gd
+scene_manager.tscn::PackedScene::7821257596677628422::1716383737::0::1::::<><>::res://src/Logic/scene_manager.gd
 signal_bus.gd::GDScript::-1::1715774045::0::1::::<>Node<>::
 state.gd::GDScript::-1::1715171688::0::1::::State<>Node<>::
 ::res://src/Player/::1715351788
 player.gd::GDScript::-1::1715351788::0::1::::Player<>Node<>::
-::res://src/Region/::1716213938
-region_area.gd::GDScript::-1::1716213938::0::1::::<>Area2D<>::
+::res://src/Region/::1716386461
+region_area.gd::GDScript::-1::1716386461::0::1::::<>Area2D<>::
 region_area.tscn::PackedScene::1708604566345309900::1714400715::0::1::::<><>::res://src/Region/region_area.gd
 region_graph.gd::GDScript::-1::1716044641::0::1::::RegionGraph<>Node<>::
 region_node.gd::GDScript::-1::1716039018::0::1::::RegionNode<>Node<>::
-::res://src/Scenario/::1716298130
+::res://src/Scenario/::1716386461
 game_manager.gd::GDScript::-1::1715272059::0::1::::GameManager<>Node2D<>::
 load_map.gd::GDScript::-1::1715951696::0::1::::<>State<>::
-map_regions.gd::GDScript::-1::1716206882::0::1::::<>Sprite2D<>::
+map_regions.gd::GDScript::-1::1716386460::0::1::::<>Sprite2D<>::
 map_terrain.gd::GDScript::-1::1716297985::0::1::::<>Sprite2D<>::
 scenario.gd::GDScript::-1::1715260674::0::1::::<>Node2D<>::
-scenario.tres::TileSet::936965630583757029::1716286411::0::1::::<><>::uid://nrt2387lj76q::::res://assets/Terrain/Terrain.png
-scenario.tscn::PackedScene::9032308672105589841::1716298130::0::1::::<><>::res://src/Scenario/game_manager.gd<>res://src/Scenario/scenario.gd<>res://src/Scenario/map_terrain.gd<>res://src/Scenario/map_regions.gd<>res://src/Scenario/zooming_camera.gd<>uid://nl4xmhsyw2f6::::res://src/Scenario/scenario.tres<>res://src/Logic/finite_state_machine.gd<>res://src/Scenario/load_map.gd<>res://src/Scenario/start_round.gd<>uid://dlkney4tf5fes::::res://assets/Background/background_blue.png<>res://src/Logic/state.gd
+scenario.tres::TileSet::936965630583757029::1716376355::0::1::::<><>::uid://nrt2387lj76q::::res://assets/Terrain/Terrain.png
+scenario.tscn::PackedScene::9032308672105589841::1716386460::0::1::::<><>::res://src/Scenario/game_manager.gd<>res://src/Scenario/scenario.gd<>res://src/Scenario/map_terrain.gd<>res://src/Scenario/map_regions.gd<>res://src/Scenario/zooming_camera.gd<>uid://nl4xmhsyw2f6::::res://src/Scenario/scenario.tres<>res://src/Logic/finite_state_machine.gd<>res://src/Scenario/load_map.gd<>res://src/Scenario/start_round.gd<>uid://dlkney4tf5fes::::res://assets/Background/background_blue.png<>res://src/Logic/state.gd
 start_round.gd::GDScript::-1::1715785790::0::1::::<>State<>::
-zooming_camera.gd::GDScript::-1::1716033946::0::1::::ZoomingCamera<>Camera2D<>::
-::res://src/UI/::1716298130
+zooming_camera.gd::GDScript::-1::1716299975::0::1::::ZoomingCamera<>Camera2D<>::
+::res://src/UI/::1716383737
 map_options.gd::GDScript::-1::1715001927::0::1::::<>OptionButton<>::
-scenario_menu.tscn::PackedScene::2520824110233328840::1716298130::0::1::::<><>::res://src/UI/map_options.gd<>res://src/UI/start_game_button.gd
+scenario_menu.tscn::PackedScene::2520824110233328840::1716383737::0::1::::<><>::res://src/UI/map_options.gd<>res://src/UI/start_game_button.gd
 start_game_button.gd::GDScript::-1::1715774045::0::1::::<>Button<>::
-::res://src/UI/MainMenu/::1716298131
+::res://src/UI/MainMenu/::1716383737
 exit_game_button.gd::GDScript::-1::1715174967::0::1::::<>Button<>::
 local_game_button.gd::GDScript::-1::1715001436::0::1::::<>Button<>::
-main_menu.tscn::PackedScene::6311870326280351498::1716298131::0::1::::<><>::res://src/UI/MainMenu/local_game_button.gd<>res://src/UI/MainMenu/exit_game_button.gd
+main_menu.tscn::PackedScene::6311870326280351498::1716383737::0::1::::<><>::res://src/UI/MainMenu/local_game_button.gd<>res://src/UI/MainMenu/exit_game_button.gd
 ::res://src/UI/ScenarioMenu/::1715001436
 map_options.gd::GDScript::-1::1715001436::0::1::::<>OptionButton<>::
 scenario_menu.tscn::PackedScene::2095254678716503402::1715001436::0::1::::<><>::res://src/UI/ScenarioMenu/map_options.gd<>res://src/UI/ScenarioMenu/start_game_button.gd

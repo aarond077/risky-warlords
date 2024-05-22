@@ -5,5 +5,8 @@ res://src/Logic/save_load_manager.tscn
 res://src/UI/scenario_menu.tscn
 res://src/Logic/scenario_data_manager.tscn
 res://src/UI/MainMenu/main_menu.tscn
+res://data/Maps/Aleksud/AleksudIndexes.txt
+res://src/Scenario/map_regions.gd
+res://src/Region/region_area.gd
+res://data/Maps/Bucht von Dessus/Bucht von DessusIndexes.txt
 res://src/Scenario/map_terrain.gd
-res://src/Scenario/zooming_camera.gd

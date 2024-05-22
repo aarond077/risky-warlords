@@ -23,7 +23,12 @@ func load_data():
 func load_regions():
 	var image = self.get_texture().get_image()
 	var pixel_color_dict = get_pixel_color_dict(image)
-	var regions_dict = import_file("res://data/Maps/" + map_name + "/" + map_name + ".txt")
+	var regions_dict = import_file(
+		"res://data/Maps/" + map_name + "/" + map_name + ".txt")
+	var regions_dict_indexes = import_file(
+		"res://data/Maps/" + map_name + "/" + map_name + "Indexes.txt")
+	
+	
 	#var regions_dict = import_file("res://data/Maps/Bucht/Bucht.txt")
 	#var regions_dict = import_file("res://data/Maps/Schattensee/Schattensee.txt")
 	#var regions_dict = import_file("res://data/Maps/Test/Test.txt")
@@ -32,6 +37,7 @@ func load_regions():
 		var region = load("res://src/Region/region_area.tscn").instantiate()
 		region.region_name = regions_dict[region_color]
 		region.set_name(region_color)
+		region.region_index = regions_dict_indexes[region.region_name]
 		get_parent().get_node("Regions").add_child(region)
 		
 		var polygons = get_polygons(image, region_color, pixel_color_dict)
@@ -70,6 +76,9 @@ func get_pixel_color_dict(image):
 			pixel_color_dict[pixel_color].append(Vector2(x, y))
 	
 	return pixel_color_dict
+	
+	
+	
 
 #access file function
 func import_file(filepath : String):

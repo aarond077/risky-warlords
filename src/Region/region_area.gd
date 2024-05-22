@@ -1,6 +1,7 @@
 extends Area2D
 
 var region_name : String = ""
+var region_index : int
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -30,7 +31,7 @@ func _on_mouse_entered():
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
-		print(str(region_name) + "Clicked")
+		print(str(region_name) + " Clicked. Index: " + str(self.region_index) )
 		#get_child(1).color = Color(0,0, 0, 1)
 
 

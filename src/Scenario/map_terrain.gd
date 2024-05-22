@@ -33,13 +33,23 @@ func load_terrain():
 	
 	#print(pixel_color_dict["#99e550"])	
 	#print(pixel_color_dict["#639bff"])
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#99e550"], 0)
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#6434be"], 1)
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#639bff"], 3)
+	if map_name == "Aleksud":
+		BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#99e550"], 0)
+		BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#6434be"], 1)
+		BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#639bff"], 3)
 	
-	BetterTerrain.update_terrain_cells(tile_map, 0,  pixel_color_dict["#99e550"])
-	BetterTerrain.update_terrain_cells(tile_map, 0,  pixel_color_dict["#639bff"])
-	BetterTerrain.update_terrain_cells(tile_map, 0,  pixel_color_dict["#6434be"])
+		BetterTerrain.update_terrain_cells(tile_map, 0,  pixel_color_dict["#99e550"])
+		BetterTerrain.update_terrain_cells(tile_map, 0,  pixel_color_dict["#639bff"])
+		BetterTerrain.update_terrain_cells(tile_map, 0,  pixel_color_dict["#6434be"])
+	elif map_name == "Bucht von Dessus":
+		BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#99e550"], 0)
+		#BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#6434be"], 1)
+		BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#639bff"], 3)
+	
+		BetterTerrain.update_terrain_cells(tile_map, 0,  pixel_color_dict["#99e550"])
+		BetterTerrain.update_terrain_cells(tile_map, 0,  pixel_color_dict["#639bff"])
+		#BetterTerrain.update_terrain_cells(tile_map, 0,  pixel_color_dict["#6434be"])
+		
 	#get_parent().get_node("TileMap").set_cells_terrain_connect(0, pixel_color_dict["#99e550"], 0, 0, false) #grass
 	#get_parent().get_node("TileMap").set_cells_terrain_connect(0, pixel_color_dict["#639bff"], 0, 2, false) #sea
 	
