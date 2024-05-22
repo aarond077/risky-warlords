@@ -10,3 +10,4 @@ res://src/Scenario/map_regions.gd
 res://src/Region/region_area.gd
 res://data/Maps/Bucht von Dessus/Bucht von DessusIndexes.txt
 res://src/Scenario/map_terrain.gd
+res://src/Scenario/zooming_camera.gd

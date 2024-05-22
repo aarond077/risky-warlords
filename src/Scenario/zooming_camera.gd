@@ -2,16 +2,19 @@ extends Camera2D
 
 class_name ZoomingCamera
 
+const MAX_ZOOM : float = 6.0
+const MIN_ZOOM : float = 2.0
+
 #function for handeling zooming in
 func zoom_in():
 	var current_zoom = self.zoom 
-	if(current_zoom.x <= 10 and current_zoom.y <= 10):
+	if(current_zoom.x <= MAX_ZOOM and MAX_ZOOM <= 6):
 		self.set_zoom(current_zoom * 1.05) 
 
 #function for handeling zooming out
 func zoom_out():
 	var current_zoom = self.zoom
-	if(current_zoom.x >= 1.0 and current_zoom.y >= 1.0):
+	if(current_zoom.x >= MIN_ZOOM and current_zoom.y >= MIN_ZOOM):
 		self.set_zoom(current_zoom * 0.95)
 
 #function for handeling mouse movement to move the camera
