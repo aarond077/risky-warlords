@@ -1,5 +1,6 @@
-extends Button
+extends Node2D
 
+class_name ScenarioOverlay
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,7 +10,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-#executes on click of the button
-func _on_pressed():
-	SceneManager.switch_scene("Scenario")

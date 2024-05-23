@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://437sko08ilnu"]
+[gd_scene load_steps=3 format=3 uid="uid://bb6dutfabx04c"]
 
-[ext_resource type="Script" path="res://src/UI/ScenarioMenu/map_options.gd" id="1_32nae"]
-[ext_resource type="Script" path="res://src/UI/ScenarioMenu/start_game_button.gd" id="2_o7y08"]
+[ext_resource type="Script" path="res://src/UI/ScenarioMenu/map_options.gd" id="1_6h64y"]
+[ext_resource type="Script" path="res://src/UI/ScenarioMenu/start_game_button.gd" id="2_15tci"]
 
 [node name="ScenarioMenu" type="Node2D"]
 
@@ -25,16 +25,14 @@ text = "Karte"
 
 [node name="MapOptions" type="OptionButton" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-item_count = 4
+item_count = 3
 popup/item_0/text = "Schattensee"
 popup/item_0/id = 0
-popup/item_1/text = "BuchtSmall"
+popup/item_1/text = "Bucht von Dessus"
 popup/item_1/id = 1
-popup/item_2/text = "Test"
-popup/item_2/id = 2
-popup/item_3/text = "Test2"
-popup/item_3/id = 3
-script = ExtResource("1_32nae")
+popup/item_2/text = "Aleksud"
+popup/item_2/id = 4
+script = ExtResource("1_6h64y")
 
 [node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -43,7 +41,7 @@ text = "Map text"
 [node name="StartGameButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 text = "Spiel starten"
-script = ExtResource("2_o7y08")
+script = ExtResource("2_15tci")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 4

@@ -32,7 +32,7 @@ func _on_mouse_entered():
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 		print(str(region_name) + " Clicked. Index: " + str(self.region_index) )
-		#get_child(1).color = Color(0,0, 0, 1)
+		SignalBus.call_deferred("emit_signal", "region_clicked", self.region_name)
 
 
 func _on_mouse_exited():

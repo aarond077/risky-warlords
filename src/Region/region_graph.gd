@@ -3,6 +3,7 @@ extends Node
 class_name RegionGraph
 
 @onready var root : RegionNode
+@onready var region_array : Array[RegionNode] #will get deleted after region graph is finished
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

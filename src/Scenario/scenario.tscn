@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1xk2lv80lqnp"]
+[gd_scene load_steps=13 format=3 uid="uid://d1xk2lv80lqnp"]
 
 [ext_resource type="Script" path="res://src/Scenario/game_manager.gd" id="1_3288w"]
 [ext_resource type="Script" path="res://src/Scenario/scenario.gd" id="2_dxbxk"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://src/Scenario/start_round.gd" id="7_npxgh"]
 [ext_resource type="Texture2D" uid="uid://dlkney4tf5fes" path="res://assets/Background/background_blue.png" id="7_oyy4g"]
 [ext_resource type="Script" path="res://src/Logic/state.gd" id="7_x2l3a"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/scenario_overlay.gd" id="12_tdvrh"]
 
 [node name="GameManager" type="Node2D"]
 process_mode = 3
@@ -54,6 +55,7 @@ layer = 0
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Scenario/CanvasLayer"]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Scenario/CanvasLayer/ParallaxBackground"]
+visible = false
 
 [node name="BackgroundSprite" type="Sprite2D" parent="Scenario/CanvasLayer/ParallaxBackground/ParallaxLayer"]
 position = Vector2(449, 604)
@@ -78,3 +80,6 @@ script = ExtResource("7_x2l3a")
 [node name="Label" type="Label" parent="Scenario/FiniteStateMachine"]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="ScenarioOverlay" type="Node2D" parent="."]
+script = ExtResource("12_tdvrh")

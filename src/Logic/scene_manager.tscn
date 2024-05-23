@@ -7,5 +7,5 @@ script = ExtResource("1_42nfi")
 scenes = {
 "MainMenu": &"res://src/UI/MainMenu/main_menu.tscn",
 "Scenario": &"res://src/Scenario/scenario.tscn",
-"ScenarioMenu": &"res://src/UI/scenario_menu.tscn"
+"ScenarioMenu": &"res://src/UI/ScenarioMenu/scenario_menu.tscn"
 }

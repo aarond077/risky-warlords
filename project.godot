@@ -21,6 +21,7 @@ SaveLoadManager="*res://src/Logic/save_load_manager.tscn"
 SceneManager="*res://src/Logic/scene_manager.tscn"
 ScenarioDataManager="*res://src/Logic/scenario_data_manager.gd"
 BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
+SignalBus="*res://src/Logic/signal_bus.gd"
 
 [editor_plugins]
 
