@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1xk2lv80lqnp"]
+[gd_scene load_steps=14 format=3 uid="uid://d1xk2lv80lqnp"]
 
 [ext_resource type="Script" path="res://src/Scenario/game_manager.gd" id="1_3288w"]
 [ext_resource type="Script" path="res://src/Scenario/scenario.gd" id="2_dxbxk"]
+[ext_resource type="Texture2D" uid="uid://wpj1dva5gtb7" path="res://assets/Buildings/Fortress.png" id="3_0hn5p"]
 [ext_resource type="Script" path="res://src/Scenario/map_terrain.gd" id="3_hkubf"]
 [ext_resource type="Script" path="res://src/Scenario/map_regions.gd" id="4_cx5v6"]
 [ext_resource type="Script" path="res://src/Scenario/zooming_camera.gd" id="4_j537l"]
@@ -9,8 +10,8 @@
 [ext_resource type="Script" path="res://src/Logic/finite_state_machine.gd" id="5_v5awv"]
 [ext_resource type="Script" path="res://src/Scenario/load_map.gd" id="6_e01md"]
 [ext_resource type="Script" path="res://src/Scenario/start_round.gd" id="7_npxgh"]
-[ext_resource type="Texture2D" uid="uid://dlkney4tf5fes" path="res://assets/Background/background_blue.png" id="7_oyy4g"]
 [ext_resource type="Script" path="res://src/Logic/state.gd" id="7_x2l3a"]
+[ext_resource type="Texture2D" uid="uid://6iqsya71utgr" path="res://assets/Background/background_wood.png" id="12_7xjhs"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/scenario_overlay.gd" id="12_tdvrh"]
 
 [node name="GameManager" type="Node2D"]
@@ -20,46 +21,6 @@ script = ExtResource("1_3288w")
 [node name="Scenario" type="Node2D" parent="."]
 process_mode = 1
 script = ExtResource("2_dxbxk")
-
-[node name="MapRegions" type="Sprite2D" parent="Scenario"]
-z_index = -1
-centered = false
-script = ExtResource("4_cx5v6")
-
-[node name="MapTerrain" type="Sprite2D" parent="Scenario"]
-z_index = 1
-centered = false
-script = ExtResource("3_hkubf")
-
-[node name="TileMap" type="TileMap" parent="Scenario"]
-z_index = 1
-texture_filter = 1
-tile_set = ExtResource("5_mdv1s")
-format = 2
-
-[node name="Regions" type="Node2D" parent="Scenario"]
-z_index = 1
-
-[node name="Camera" type="Camera2D" parent="Scenario"]
-offset = Vector2(60, 170)
-zoom = Vector2(3, 3)
-limit_left = -30
-limit_top = -30
-limit_right = 600
-limit_bottom = 700
-script = ExtResource("4_j537l")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Scenario"]
-layer = 0
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Scenario/CanvasLayer"]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Scenario/CanvasLayer/ParallaxBackground"]
-visible = false
-
-[node name="BackgroundSprite" type="Sprite2D" parent="Scenario/CanvasLayer/ParallaxBackground/ParallaxLayer"]
-position = Vector2(449, 604)
-texture = ExtResource("7_oyy4g")
 
 [node name="FiniteStateMachine" type="Node" parent="Scenario"]
 script = ExtResource("5_v5awv")
@@ -81,5 +42,64 @@ script = ExtResource("7_x2l3a")
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="ScenarioOverlay" type="Node2D" parent="."]
+[node name="TestSprite" type="Sprite2D" parent="Scenario"]
+visible = false
+z_index = 2
+texture_filter = 1
+position = Vector2(239, 703)
+texture = ExtResource("3_0hn5p")
+
+[node name="MapRegions" type="Sprite2D" parent="Scenario"]
+z_index = -1
+centered = false
+script = ExtResource("4_cx5v6")
+
+[node name="MapTerrain" type="Sprite2D" parent="Scenario"]
+z_index = 1
+centered = false
+script = ExtResource("3_hkubf")
+
+[node name="TileMap" type="TileMap" parent="Scenario"]
+z_index = 1
+texture_filter = 1
+tile_set = ExtResource("5_mdv1s")
+format = 2
+
+[node name="Buildings" type="Node2D" parent="Scenario"]
+
+[node name="Regions" type="Node2D" parent="Scenario"]
+z_index = 1
+
+[node name="Camera" type="Camera2D" parent="Scenario"]
+offset = Vector2(60, 170)
+zoom = Vector2(3, 3)
+limit_left = -30
+limit_top = -30
+limit_right = 600
+limit_bottom = 700
+script = ExtResource("4_j537l")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Scenario"]
+layer = 0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Scenario/CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Scenario/CanvasLayer/ParallaxBackground"]
+
+[node name="BackgroundSprite" type="Sprite2D" parent="Scenario/CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2(449, 604)
+texture = ExtResource("12_7xjhs")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
+follow_viewport_enabled = true
+
+[node name="ScenarioOverlay" type="Control" parent="CanvasLayer2"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("12_tdvrh")

@@ -1,14 +1,14 @@
+CanvasLayer
 ScenarioOverlay
+Sprite2D
+Node2D
 Label
 HBoxContainer
 VBoxContainer
 Control
 Button
-CanvasLayer
 TileMap
-Sprite2D
 State
 FiniteStateMachine
 OptionButton
 ColorPickerButton
-Panel

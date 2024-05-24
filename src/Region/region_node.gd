@@ -14,6 +14,7 @@ class_name RegionNode
 @onready var defense_factor : int
 @onready var travel_cost : int
 @onready var curse : int 
+@onready var building_coordinates : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

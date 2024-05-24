@@ -3,7 +3,7 @@ extends Camera2D
 class_name ZoomingCamera
 
 const MAX_ZOOM : float = 6.0
-const MIN_ZOOM : float = 2.0
+const MIN_ZOOM : float = 1.8
 
 #function for handeling zooming in
 func zoom_in():

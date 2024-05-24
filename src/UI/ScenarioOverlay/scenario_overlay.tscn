@@ -3,21 +3,17 @@
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/region_view.gd" id="1_b6r40"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/scenario_overlay.gd" id="1_obp3o"]
 
-[node name="ScenarioOverlay" type="Node2D"]
+[node name="ScenarioOverlay" type="Control"]
 process_mode = 1
-script = ExtResource("1_obp3o")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 8.0
 offset_top = 15.0
 offset_right = 1156.0
 offset_bottom = 661.0
+script = ExtResource("1_obp3o")
 
-[node name="ActionPointsView" type="VBoxContainer" parent="CanvasLayer/Control"]
+[node name="ActionPointsView" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -27,11 +23,11 @@ offset_right = 207.0
 offset_bottom = 248.0
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/ActionPointsView"]
+[node name="Button" type="Button" parent="ActionPointsView"]
 layout_mode = 2
 text = "Aktionspunkte"
 
-[node name="RegionView" type="VBoxContainer" parent="CanvasLayer/Control"]
+[node name="RegionView" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -45,17 +41,17 @@ grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("1_b6r40")
 
-[node name="RegionName" type="Label" parent="CanvasLayer/Control/RegionView"]
+[node name="RegionName" type="Label" parent="RegionView"]
 layout_mode = 2
 text = "region name"
 
-[node name="RegionDescribtion" type="Label" parent="CanvasLayer/Control/RegionView"]
+[node name="RegionDescribtion" type="Label" parent="RegionView"]
 layout_mode = 2
 
-[node name="RegionResource" type="Label" parent="CanvasLayer/Control/RegionView"]
+[node name="RegionResource" type="Label" parent="RegionView"]
 layout_mode = 2
 
-[node name="PlayerStatsView" type="HBoxContainer" parent="CanvasLayer/Control"]
+[node name="PlayerStatsView" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -65,31 +61,31 @@ offset_right = -9.0
 offset_bottom = 77.0
 grow_horizontal = 2
 
-[node name="Army" type="Label" parent="CanvasLayer/Control/PlayerStatsView"]
+[node name="Army" type="Label" parent="PlayerStatsView"]
 layout_mode = 2
 text = "Army: "
 
-[node name="ActionPoints" type="Label" parent="CanvasLayer/Control/PlayerStatsView"]
+[node name="ActionPoints" type="Label" parent="PlayerStatsView"]
 layout_mode = 2
 text = "AP:"
 
-[node name="Wood" type="Label" parent="CanvasLayer/Control/PlayerStatsView"]
+[node name="Wood" type="Label" parent="PlayerStatsView"]
 layout_mode = 2
 text = "Wood:"
 
-[node name="Stone" type="Label" parent="CanvasLayer/Control/PlayerStatsView"]
+[node name="Stone" type="Label" parent="PlayerStatsView"]
 layout_mode = 2
 text = "Stone:"
 
-[node name="Iron" type="Label" parent="CanvasLayer/Control/PlayerStatsView"]
+[node name="Iron" type="Label" parent="PlayerStatsView"]
 layout_mode = 2
 text = "Iron:"
 
-[node name="Food" type="Label" parent="CanvasLayer/Control/PlayerStatsView"]
+[node name="Food" type="Label" parent="PlayerStatsView"]
 layout_mode = 2
 text = "Food:"
 
-[node name="PlayerView" type="HBoxContainer" parent="CanvasLayer/Control"]
+[node name="PlayerView" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -103,7 +99,7 @@ offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="PlayerName" type="Label" parent="CanvasLayer/Control/PlayerView"]
+[node name="PlayerName" type="Label" parent="PlayerView"]
 layout_mode = 2
 text = "Player Name
 "
