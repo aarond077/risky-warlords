@@ -43,7 +43,6 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="TestSprite" type="Sprite2D" parent="Scenario"]
-visible = false
 z_index = 2
 texture_filter = 1
 position = Vector2(239, 703)
@@ -91,11 +90,12 @@ position = Vector2(449, 604)
 texture = ExtResource("12_7xjhs")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 3
 visible = false
 follow_viewport_enabled = true
 
 [node name="ScenarioOverlay" type="Control" parent="CanvasLayer2"]
-visible = false
+z_index = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -5,6 +5,8 @@ extends Node2D
 @export var scenario_region_graph : RegionGraph
 @export var maps : Array[String]
 
+@onready var active_region : RegionNode
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

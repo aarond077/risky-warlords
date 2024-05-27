@@ -25,13 +25,11 @@ text = "Karte"
 
 [node name="MapOptions" type="OptionButton" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-item_count = 3
-popup/item_0/text = "Schattensee"
-popup/item_0/id = 0
-popup/item_1/text = "Bucht von Dessus"
-popup/item_1/id = 1
-popup/item_2/text = "Aleksud"
-popup/item_2/id = 4
+item_count = 2
+popup/item_0/text = "Bucht von Dessus"
+popup/item_0/id = 1
+popup/item_1/text = "Aleksud"
+popup/item_1/id = 4
 script = ExtResource("1_6h64y")
 
 [node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer"]
