@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1716827839
+::res://::1716891193
 icon.svg::CompressedTexture2D::5951928258371859898::1714400715::1714400772::1::::<><>::
 README.md::TextFile::-1::1714400715::0::1::::<><>::
 ::res://addons/::1716135678
@@ -120,23 +120,25 @@ terrain_mask.png::CompressedTexture2D::4637017693921976046::1716399988::17164009
 test.png::CompressedTexture2D::7518057836283226112::1716404519::1716404593::1::::<><>::
 ::res://data/::1714400715
 ::res://data/Maps/::1716564119
-::res://data/Maps/Aleksud/::1716562338
+::res://data/Maps/Aleksud/::1716892294
 Aleksud.txt::TextFile::-1::1716044641::0::1::::<><>::
-AleksudBuildingSlots.txt::TextFile::-1::1716562338::0::1::::<><>::
+AleksudBuildingSlots.txt::TextFile::-1::1716891160::0::1::::<><>::
 AleksudIndexes.txt::TextFile::-1::1716387840::0::1::::<><>::
+Bucht von DessusResources.txt::TextFile::-1::1716892294::0::1::::<><>::
 ::res://data/Maps/Bucht von Dessus/::1716504407
 Bucht von Dessus.txt::TextFile::-1::1715002998::0::1::::<><>::
 Bucht von DessusBuildingSlots.txt::TextFile::-1::1716504459::0::1::::<><>::
 Bucht von DessusIndexes.txt::TextFile::-1::1716387840::0::1::::<><>::
 ::res://src/::1715280666
-::res://src/Logic/::1716827802
+::res://src/Logic/::1716891160
 finite_state_machine.gd::GDScript::-1::1715272059::0::1::::FiniteStateMachine<>Node<>::
+data_file_manager.gd::GDScript::-1::1716891160::0::1::::DataFileMangager<>Node<>::
 save_load_manager.gd::GDScript::-1::1714407439::0::1::::<>Node<>::
-save_load_manager.tscn::PackedScene::2702989729706259847::1716827802::0::1::::<><>::res://src/Logic/save_load_manager.gd
+save_load_manager.tscn::PackedScene::2702989729706259847::1716841687::0::1::::<><>::res://src/Logic/save_load_manager.gd
 scenario_data_manager.gd::GDScript::-1::1716581950::0::1::::<>Node2D<>::
-scenario_data_manager.tscn::PackedScene::2159494173652795970::1716827802::0::1::::<><>::res://src/Logic/scenario_data_manager.gd
+scenario_data_manager.tscn::PackedScene::2159494173652795970::1716841687::0::1::::<><>::res://src/Logic/scenario_data_manager.gd
 scene_manager.gd::GDScript::-1::1714411194::0::1::::<>Node<>::
-scene_manager.tscn::PackedScene::7821257596677628422::1716827802::0::1::::<><>::res://src/Logic/scene_manager.gd
+scene_manager.tscn::PackedScene::7821257596677628422::1716841686::0::1::::<><>::res://src/Logic/scene_manager.gd
 signal_bus.gd::GDScript::-1::1716478886::0::1::::<>Node<>::
 state.gd::GDScript::-1::1715171688::0::1::::State<>Node<>::
 ::res://src/Player/::1715351788
@@ -146,26 +148,26 @@ region_area.gd::GDScript::-1::1716478886::0::1::::<>Area2D<>::
 region_area.tscn::PackedScene::1708604566345309900::1714400715::0::1::::<><>::res://src/Region/region_area.gd
 region_graph.gd::GDScript::-1::1716474410::0::1::::RegionGraph<>Node<>::
 region_node.gd::GDScript::-1::1716563254::0::1::::RegionNode<>Node<>::
-::res://src/Scenario/::1716827802
+::res://src/Scenario/::1716891160
 game_manager.gd::GDScript::-1::1715272059::0::1::::GameManager<>Node2D<>::
 load_map.gd::GDScript::-1::1715951696::0::1::::<>State<>::
 map_regions.gd::GDScript::-1::1716387237::0::1::::<>Sprite2D<>::
-map_terrain.gd::GDScript::-1::1716419435::0::1::::<>Sprite2D<>::
+map_terrain.gd::GDScript::-1::1716840873::0::1::::<>Sprite2D<>::
 scenario.gd::GDScript::-1::1715260674::0::1::::<>Node2D<>::
-scenario.tres::TileSet::936965630583757029::1716826043::0::1::::<><>::uid://dkfl3a0gfsh6c::::res://assets/Terrain/TerrainSpritesheet2.png
-scenario.tscn::PackedScene::9032308672105589841::1716827802::0::1::::<><>::res://src/Scenario/game_manager.gd<>res://src/Scenario/scenario.gd<>uid://wpj1dva5gtb7::::res://assets/Buildings/Fortress.png<>res://src/Scenario/map_terrain.gd<>res://src/Scenario/map_regions.gd<>res://src/Scenario/zooming_camera.gd<>uid://nl4xmhsyw2f6::::res://src/Scenario/scenario.tres<>res://src/Logic/finite_state_machine.gd<>res://src/Scenario/load_map.gd<>res://src/Scenario/start_round.gd<>res://src/Logic/state.gd<>uid://6iqsya71utgr::::res://assets/Background/background_wood.png<>res://src/UI/ScenarioOverlay/scenario_overlay.gd
+scenario.tres::TileSet::936965630583757029::1716891160::0::1::::<><>::uid://dkfl3a0gfsh6c::::res://assets/Terrain/TerrainSpritesheet2.png
+scenario.tscn::PackedScene::9032308672105589841::1716891160::0::1::::<><>::res://src/Scenario/game_manager.gd<>res://src/Scenario/scenario.gd<>uid://wpj1dva5gtb7::::res://assets/Buildings/Fortress.png<>res://src/Scenario/map_terrain.gd<>res://src/Scenario/map_regions.gd<>res://src/Scenario/zooming_camera.gd<>uid://nl4xmhsyw2f6::::res://src/Scenario/scenario.tres<>res://src/Logic/finite_state_machine.gd<>res://src/Scenario/load_map.gd<>res://src/Scenario/start_round.gd<>res://src/Logic/state.gd<>uid://6iqsya71utgr::::res://assets/Background/background_wood.png<>res://src/UI/ScenarioOverlay/scenario_overlay.gd
 start_round.gd::GDScript::-1::1715785790::0::1::::<>State<>::
 zooming_camera.gd::GDScript::-1::1716563555::0::1::::ZoomingCamera<>Camera2D<>::
 ::res://src/UI/::1716474692
-::res://src/UI/MainMenu/::1716827802
+::res://src/UI/MainMenu/::1716841687
 exit_game_button.gd::GDScript::-1::1715174967::0::1::::<>Button<>::
 local_game_button.gd::GDScript::-1::1715001436::0::1::::<>Button<>::
-main_menu.tscn::PackedScene::6311870326280351498::1716827802::0::1::::<><>::res://src/UI/MainMenu/local_game_button.gd<>res://src/UI/MainMenu/exit_game_button.gd
-::res://src/UI/ScenarioMenu/::1716827802
+main_menu.tscn::PackedScene::6311870326280351498::1716841687::0::1::::<><>::res://src/UI/MainMenu/local_game_button.gd<>res://src/UI/MainMenu/exit_game_button.gd
+::res://src/UI/ScenarioMenu/::1716841687
 map_options.gd::GDScript::-1::1715001927::0::1::::<>OptionButton<>::
-scenario_menu.tscn::PackedScene::2520824110233328840::1716827802::0::1::::<><>::res://src/UI/ScenarioMenu/map_options.gd<>res://src/UI/ScenarioMenu/start_game_button.gd
+scenario_menu.tscn::PackedScene::2520824110233328840::1716841687::0::1::::<><>::res://src/UI/ScenarioMenu/map_options.gd<>res://src/UI/ScenarioMenu/start_game_button.gd
 start_game_button.gd::GDScript::-1::1715774045::0::1::::<>Button<>::
-::res://src/UI/ScenarioOverlay/::1716827802
+::res://src/UI/ScenarioOverlay/::1716841687
 region_view.gd::GDScript::-1::1716478886::0::1::::<>VBoxContainer<>::
 scenario_overlay.gd::GDScript::-1::1716557210::0::1::::ScenarioOverlay<>Control<>::
-scenario_overlay.tscn::PackedScene::5794527222993021935::1716827802::0::1::::<><>::res://src/UI/ScenarioOverlay/region_view.gd<>res://src/UI/ScenarioOverlay/scenario_overlay.gd
+scenario_overlay.tscn::PackedScene::5794527222993021935::1716841687::0::1::::<><>::res://src/UI/ScenarioOverlay/region_view.gd<>res://src/UI/ScenarioOverlay/scenario_overlay.gd

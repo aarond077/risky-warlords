@@ -49,15 +49,15 @@ func get_pixel_color_dict(image):
 	return pixel_color_dict
 	
 func draw_bucht_von_dessus_terrain():
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#99e550"], 2) #bright forrest
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#d9a066"], 5) #bright wasteland
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#995d52"], 3) #bright mountains
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#1f4a1f"], 13) #dark forrest
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#b58e34"], 14) #dark wasteland
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#6434be"], 8) #cursed mountains
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#7d598b"], 6) #cursed forrest
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#99e550"], 3) #bright forrest
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#d9a066"], 6) #bright wasteland
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#995d52"], 4) #bright mountains
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#1f4a1f"], 14) #dark forrest
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#b58e34"], 15) #dark wasteland
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#6434be"], 9) #cursed mountains
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#7d598b"], 7) #cursed forrest
 			
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#639bff"], 20) #sea
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#639bff"], 21) #sea
 		
 	BetterTerrain.update_terrain_cells(tile_map, 0,  pixel_color_dict["#99e550"]) #bright forrest
 	BetterTerrain.update_terrain_cells(tile_map, 0,  pixel_color_dict["#d9a066"]) #bright wasteland
@@ -68,22 +68,22 @@ func draw_bucht_von_dessus_terrain():
 	BetterTerrain.update_terrain_cells(tile_map, 0,  pixel_color_dict["#7d598b"]) #cursed forrest	
 	
 func draw_aleksud_terrain():
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#99e550"], 2) #bright forrest
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#d9a066"], 5) #bright wasteland
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#995d52"], 3) #bright mountains
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#1f4a1f"], 13) #dark forrest
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#b58e34"], 14) #dark wasteland
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#6434be"], 8) #cursed mountains
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#7d598b"], 6) #cursed forrest
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#d1da16"], 4) #bright tundra
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#462553"], 16) #snowy mountains
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#5d0b12"], 18) #magma wasteland
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#d95763"], 15) #magma mountain
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#c31fbc"], 10) #cursed wasteland
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#6f6c2d"], 11) #dark canyon
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#6b1a59"], 19) #dark mountains
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#99e550"], 3) #bright forrest
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#d9a066"], 6) #bright wasteland
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#995d52"], 4) #bright mountains
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#1f4a1f"], 14) #dark forrest
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#b58e34"], 15) #dark wasteland
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#6434be"], 9) #cursed mountains
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#7d598b"], 7) #cursed forrest
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#d1da16"], 5) #bright tundra
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#462553"], 17) #snowy mountains
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#5d0b12"], 19) #magma wasteland
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#d95763"], 16) #magma mountain
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#c31fbc"], 11) #cursed wasteland
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#6f6c2d"], 12) #dark canyon
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#6b1a59"], 20) #dark mountains
 		
-	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#639bff"], 20) #sea
+	BetterTerrain.set_cells(tile_map, 0, pixel_color_dict["#639bff"], 21) #sea
 		
 	BetterTerrain.update_terrain_cells(tile_map, 0,  pixel_color_dict["#99e550"]) #bright forrest
 	BetterTerrain.update_terrain_cells(tile_map, 0,  pixel_color_dict["#d9a066"]) #bright wasteland
