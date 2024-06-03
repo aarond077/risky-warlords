@@ -1,14 +1,14 @@
+Label
+BoxContainer
+Camera2D
 TileMap
 CanvasLayer
 ScenarioOverlay
 Sprite2D
 Node2D
-Label
 HBoxContainer
 VBoxContainer
 Control
 Button
 State
 FiniteStateMachine
-OptionButton
-ColorPickerButton
