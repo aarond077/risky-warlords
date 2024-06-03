@@ -33,4 +33,5 @@ func update_region_resource():
 	
 func get_region_node(region_name : String):
 	pass
+		
 
