@@ -1,18 +1,202 @@
-[gd_scene load_steps=8 format=3 uid="uid://bb6dutfabx04c"]
+[gd_scene load_steps=6 format=3 uid="uid://bb6dutfabx04c"]
 
 [ext_resource type="Script" path="res://src/UI/ScenarioMenu/map_options.gd" id="1_6h64y"]
 [ext_resource type="Script" path="res://src/UI/ScenarioMenu/start_game_button.gd" id="2_15tci"]
-[ext_resource type="Script" path="res://src/UI/ScenarioMenu/OptionButton.gd" id="3_c73sj"]
-[ext_resource type="Script" path="res://src/UI/ScenarioMenu/HBoxContainer2.gd" id="4_78dvo"]
-[ext_resource type="Script" path="res://src/UI/ScenarioMenu/HBoxContainer3.gd" id="5_hyt7n"]
-[ext_resource type="Script" path="res://src/UI/ScenarioMenu/HBoxContainer4.gd" id="6_e4xy5"]
-[ext_resource type="Script" path="res://src/UI/ScenarioMenu/HBoxContainer5.gd" id="7_5m3sr"]
+[ext_resource type="Texture2D" uid="uid://6uaupn38hmrn" path="res://assets/Background/CastleBackground.png" id="4_4hqtj"]
+[ext_resource type="Script" path="res://src/UI/ScenarioMenu/player_selection.gd" id="4_d7abw"]
+
+[sub_resource type="GDScript" id="GDScript_awqoc"]
+script/source = "extends OptionButton
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass 
+	# Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="ScenarioMenu" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -323.0
+offset_right = 856.0
+offset_bottom = 323.0
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer2"]
+layout_mode = 2
+
+[node name="AnzahlSpieler" type="Label" parent="CanvasLayer/Control/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "Anzahl Spieler:"
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/Control/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+button_pressed = true
+item_count = 3
+popup/item_0/text = "2 Spieler"
+popup/item_0/id = 0
+popup/item_1/text = "3 Spieler"
+popup/item_1/id = 1
+popup/item_2/text = "4 Spieler"
+popup/item_2/id = 2
+script = SubResource("GDScript_awqoc")
+
+[node name="PlayerSelection1" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer2"]
+layout_mode = 2
+script = ExtResource("4_d7abw")
+player_index = 1
+
+[node name="PlayerLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection1"]
+layout_mode = 2
+text = "Spieler 1"
+
+[node name="NationLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection1"]
+layout_mode = 2
+text = "Volk:"
+
+[node name="NationOptions" type="OptionButton" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection1"]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Menschen"
+popup/item_0/id = 0
+popup/item_1/text = "Zwerge"
+popup/item_1/id = 1
+popup/item_2/text = "Elben"
+popup/item_2/id = 2
+popup/item_3/text = "Orks"
+popup/item_3/id = 3
+
+[node name="ColorLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection1"]
+layout_mode = 2
+text = "Farbe:
+"
+
+[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection1"]
+layout_mode = 2
+
+[node name="PlayerSelection2" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer2"]
+layout_mode = 2
+script = ExtResource("4_d7abw")
+player_index = 2
+
+[node name="PlayerLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection2"]
+layout_mode = 2
+text = "Spieler 2"
+
+[node name="NationLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection2"]
+layout_mode = 2
+text = "Volk:"
+
+[node name="NationOptions" type="OptionButton" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection2"]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Menschen"
+popup/item_0/id = 0
+popup/item_1/text = "Zwerge"
+popup/item_1/id = 1
+popup/item_2/text = "Elben"
+popup/item_2/id = 2
+popup/item_3/text = "Orks"
+popup/item_3/id = 3
+
+[node name="ColorLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection2"]
+layout_mode = 2
+text = "Farbe:
+"
+
+[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection2"]
+layout_mode = 2
+
+[node name="PlayerSelection3" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer2"]
+layout_mode = 2
+script = ExtResource("4_d7abw")
+counter = 1
+player_index = 3
+
+[node name="PlayerLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection3"]
+layout_mode = 2
+text = "Spieler 3"
+
+[node name="NationLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection3"]
+layout_mode = 2
+text = "Volk:"
+
+[node name="NationOptions" type="OptionButton" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection3"]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Menschen"
+popup/item_0/id = 0
+popup/item_1/text = "Zwerge"
+popup/item_1/id = 1
+popup/item_2/text = "Elben"
+popup/item_2/id = 2
+popup/item_3/text = "Orks"
+popup/item_3/id = 3
+
+[node name="ColorLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection3"]
+layout_mode = 2
+text = "Farbe:
+"
+
+[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection3"]
+layout_mode = 2
+
+[node name="PlayerSelection4" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer2"]
+visible = false
+layout_mode = 2
+script = ExtResource("4_d7abw")
+counter = 2
+player_index = 4
+
+[node name="PlayerLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection4"]
+layout_mode = 2
+text = "Spieler 4"
+
+[node name="NationLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection4"]
+layout_mode = 2
+text = "Volk:"
+
+[node name="NationOptions" type="OptionButton" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection4"]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Menschen"
+popup/item_0/id = 0
+popup/item_1/text = "Zwerge"
+popup/item_1/id = 1
+popup/item_2/text = "Elben"
+popup/item_2/id = 2
+popup/item_3/text = "Orks"
+popup/item_3/id = 3
+
+[node name="ColorLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection4"]
+layout_mode = 2
+text = "Farbe:
+"
+
+[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/Control/VBoxContainer2/PlayerSelection4"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -24,11 +208,11 @@ offset_bottom = 321.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
 text = "Karte"
 
-[node name="MapOptions" type="OptionButton" parent="CanvasLayer/VBoxContainer"]
+[node name="MapOptions" type="OptionButton" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
 item_count = 2
 popup/item_0/text = "Bucht von Dessus"
@@ -37,175 +221,28 @@ popup/item_1/text = "Aleksud"
 popup/item_1/id = 4
 script = ExtResource("1_6h64y")
 
-[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label2" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
 text = "Map text"
 
-[node name="StartGameButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="StartGameButton" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
 text = "Spiel starten"
 script = ExtResource("2_15tci")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer"]
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -323.0
-offset_right = 856.0
-offset_bottom = 323.0
-grow_vertical = 2
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer2"]
-layout_mode = 2
+[node name="Background" type="Sprite2D" parent="CanvasLayer2"]
+texture_filter = 1
+position = Vector2(963, 528)
+scale = Vector2(3.90869, 2.39795)
+texture = ExtResource("4_4hqtj")
 
-[node name="AnzahlSpieler" type="Label" parent="CanvasLayer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-text = "Anzahl Spieler:"
-
-[node name="OptionButton" type="OptionButton" parent="CanvasLayer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-button_pressed = true
-item_count = 3
-popup/item_0/text = "2 Spieler"
-popup/item_0/id = 0
-popup/item_1/text = "3 Spieler"
-popup/item_1/id = 1
-popup/item_2/text = "4 Spieler"
-popup/item_2/id = 2
-script = ExtResource("3_c73sj")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer2"]
-layout_mode = 2
-script = ExtResource("4_78dvo")
-
-[node name="PlayerLabel" type="Label" parent="CanvasLayer/VBoxContainer2/HBoxContainer2"]
-layout_mode = 2
-text = "Spieler 1"
-
-[node name="NationLabel" type="Label" parent="CanvasLayer/VBoxContainer2/HBoxContainer2"]
-layout_mode = 2
-text = "Volk:"
-
-[node name="NationOptions" type="OptionButton" parent="CanvasLayer/VBoxContainer2/HBoxContainer2"]
-layout_mode = 2
-item_count = 4
-popup/item_0/text = "Menschen"
-popup/item_0/id = 0
-popup/item_1/text = "Zwerge"
-popup/item_1/id = 1
-popup/item_2/text = "Elben"
-popup/item_2/id = 2
-popup/item_3/text = "Orks"
-popup/item_3/id = 3
-
-[node name="ColorLabel" type="Label" parent="CanvasLayer/VBoxContainer2/HBoxContainer2"]
-layout_mode = 2
-text = "Farbe:
-"
-
-[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/VBoxContainer2/HBoxContainer2"]
-layout_mode = 2
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/VBoxContainer2"]
-layout_mode = 2
-script = ExtResource("5_hyt7n")
-
-[node name="PlayerLabel" type="Label" parent="CanvasLayer/VBoxContainer2/HBoxContainer3"]
-layout_mode = 2
-text = "Spieler 1"
-
-[node name="NationLabel" type="Label" parent="CanvasLayer/VBoxContainer2/HBoxContainer3"]
-layout_mode = 2
-text = "Volk:"
-
-[node name="NationOptions" type="OptionButton" parent="CanvasLayer/VBoxContainer2/HBoxContainer3"]
-layout_mode = 2
-item_count = 4
-popup/item_0/text = "Menschen"
-popup/item_0/id = 0
-popup/item_1/text = "Zwerge"
-popup/item_1/id = 1
-popup/item_2/text = "Elben"
-popup/item_2/id = 2
-popup/item_3/text = "Orks"
-popup/item_3/id = 3
-
-[node name="ColorLabel" type="Label" parent="CanvasLayer/VBoxContainer2/HBoxContainer3"]
-layout_mode = 2
-text = "Farbe:
-"
-
-[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/VBoxContainer2/HBoxContainer3"]
-layout_mode = 2
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/VBoxContainer2"]
-layout_mode = 2
-script = ExtResource("6_e4xy5")
-
-[node name="PlayerLabel" type="Label" parent="CanvasLayer/VBoxContainer2/HBoxContainer4"]
-layout_mode = 2
-text = "Spieler 1"
-
-[node name="NationLabel" type="Label" parent="CanvasLayer/VBoxContainer2/HBoxContainer4"]
-layout_mode = 2
-text = "Volk:"
-
-[node name="NationOptions" type="OptionButton" parent="CanvasLayer/VBoxContainer2/HBoxContainer4"]
-layout_mode = 2
-item_count = 4
-popup/item_0/text = "Menschen"
-popup/item_0/id = 0
-popup/item_1/text = "Zwerge"
-popup/item_1/id = 1
-popup/item_2/text = "Elben"
-popup/item_2/id = 2
-popup/item_3/text = "Orks"
-popup/item_3/id = 3
-
-[node name="ColorLabel" type="Label" parent="CanvasLayer/VBoxContainer2/HBoxContainer4"]
-layout_mode = 2
-text = "Farbe:
-"
-
-[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/VBoxContainer2/HBoxContainer4"]
-layout_mode = 2
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/VBoxContainer2"]
-visible = false
-layout_mode = 2
-script = ExtResource("7_5m3sr")
-
-[node name="PlayerLabel" type="Label" parent="CanvasLayer/VBoxContainer2/HBoxContainer5"]
-layout_mode = 2
-text = "Spieler 1"
-
-[node name="NationLabel" type="Label" parent="CanvasLayer/VBoxContainer2/HBoxContainer5"]
-layout_mode = 2
-text = "Volk:"
-
-[node name="NationOptions" type="OptionButton" parent="CanvasLayer/VBoxContainer2/HBoxContainer5"]
-layout_mode = 2
-item_count = 4
-popup/item_0/text = "Menschen"
-popup/item_0/id = 0
-popup/item_1/text = "Zwerge"
-popup/item_1/id = 1
-popup/item_2/text = "Elben"
-popup/item_2/id = 2
-popup/item_3/text = "Orks"
-popup/item_3/id = 3
-
-[node name="ColorLabel" type="Label" parent="CanvasLayer/VBoxContainer2/HBoxContainer5"]
-layout_mode = 2
-text = "Farbe:
-"
-
-[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/VBoxContainer2/HBoxContainer5"]
-layout_mode = 2
-
-[connection signal="item_selected" from="CanvasLayer/VBoxContainer/MapOptions" to="CanvasLayer/VBoxContainer/MapOptions" method="_on_item_selected"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/StartGameButton" to="CanvasLayer/VBoxContainer/StartGameButton" method="_on_pressed"]
-[connection signal="item_selected" from="CanvasLayer/VBoxContainer2/HBoxContainer/OptionButton" to="CanvasLayer/VBoxContainer2/HBoxContainer2" method="_on_option_button_item_selected"]
-[connection signal="item_selected" from="CanvasLayer/VBoxContainer2/HBoxContainer/OptionButton" to="CanvasLayer/VBoxContainer2/HBoxContainer3" method="_on_option_button_item_selected"]
-[connection signal="item_selected" from="CanvasLayer/VBoxContainer2/HBoxContainer/OptionButton" to="CanvasLayer/VBoxContainer2/HBoxContainer4" method="_on_option_button_item_selected"]
-[connection signal="item_selected" from="CanvasLayer/VBoxContainer2/HBoxContainer/OptionButton" to="CanvasLayer/VBoxContainer2/HBoxContainer5" method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/Control/VBoxContainer2/HBoxContainer/OptionButton" to="CanvasLayer/Control/VBoxContainer2/PlayerSelection1" method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/Control/VBoxContainer2/HBoxContainer/OptionButton" to="CanvasLayer/Control/VBoxContainer2/PlayerSelection2" method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/Control/VBoxContainer2/HBoxContainer/OptionButton" to="CanvasLayer/Control/VBoxContainer2/PlayerSelection3" method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/Control/VBoxContainer2/HBoxContainer/OptionButton" to="CanvasLayer/Control/VBoxContainer2/PlayerSelection4" method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/Control/VBoxContainer2/PlayerSelection4/NationOptions" to="CanvasLayer/Control/VBoxContainer2/PlayerSelection1" method="_on_nation_options_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/Control/VBoxContainer/MapOptions" to="CanvasLayer/Control/VBoxContainer/MapOptions" method="_on_item_selected"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/StartGameButton" to="CanvasLayer/Control/VBoxContainer/StartGameButton" method="_on_pressed"]

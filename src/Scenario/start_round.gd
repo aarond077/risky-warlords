@@ -12,3 +12,9 @@ func _process(delta):
 	
 func state_process(delta):
 	pass
+	
+func enter():
+	super.enter()
+	if(ScenarioDataManager.active_player == null):
+		ScenarioDataManager.set_start_scenario_active_player()
+	print(ScenarioDataManager.active_player.player_index)

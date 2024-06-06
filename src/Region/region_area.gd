@@ -22,7 +22,7 @@ func _on_child_entered_tree(node):
 
 
 func _on_mouse_entered():
-	print(region_name)
+	#print(region_name)
 	for node in get_children():
 		if node.is_class("Polygon2D"):
 			node.color = Color(1, 1, 1, 0.5)

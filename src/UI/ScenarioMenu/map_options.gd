@@ -12,5 +12,4 @@ func _process(delta):
 
 
 func _on_item_selected(index):
-	print(self.text)
 	ScenarioDataManager.scenario_map_name = self.text

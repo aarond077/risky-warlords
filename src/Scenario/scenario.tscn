@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d1xk2lv80lqnp"]
+[gd_scene load_steps=28 format=3 uid="uid://d1xk2lv80lqnp"]
 
 [ext_resource type="Script" path="res://src/Scenario/game_manager.gd" id="1_3288w"]
 [ext_resource type="Script" path="res://src/Scenario/scenario.gd" id="2_dxbxk"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://btssvilv8sp70" path="res://src/UI/ScenarioOverlayNew/Sonstiges/food.jpg" id="18_suoxv"]
 [ext_resource type="Texture2D" uid="uid://bc60ql6gst4sg" path="res://src/UI/ScenarioOverlayNew/Sonstiges/weapon03longsword.png" id="20_qgfvj"]
 [ext_resource type="Texture2D" uid="uid://b1iqbbo6q0qp4" path="res://src/UI/ScenarioOverlayNew/Sonstiges/weapon06bow.png" id="22_0f5iu"]
+[ext_resource type="Script" path="res://src/Scenario/panel_container_info.gd" id="22_657ph"]
 [ext_resource type="Texture2D" uid="uid://cn6rd5q8grbu0" path="res://src/UI/ScenarioOverlayNew/Sonstiges/armour05platemail.png" id="23_tledy"]
 [ext_resource type="Theme" uid="uid://wnalh3p5w45g" path="res://src/UI/ScenarioOverlayNew/Sonstiges/timer_theme.tres" id="24_piu74"]
 [ext_resource type="Theme" uid="uid://dqug3skhyxlkp" path="res://src/UI/ScenarioOverlayNew/Sonstiges/gebiet_theme.tres" id="25_qooc4"]
@@ -103,7 +104,6 @@ z_index = 3
 layer = -1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Scenario/CanvasLayer"]
-visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Scenario/CanvasLayer/ParallaxBackground"]
 
@@ -147,7 +147,7 @@ script = ExtResource("14_bi3fb")
 metadata/_edit_group_ = true
 
 [node name="Timer" type="Timer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTimer"]
-wait_time = 59.0
+wait_time = 59.5
 one_shot = true
 autostart = true
 
@@ -345,35 +345,36 @@ offset_right = 137.0
 offset_bottom = 138.0
 grow_horizontal = 2
 theme = ExtResource("14_agmyj")
+script = ExtResource("22_657ph")
 metadata/_edit_group_ = true
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerInfo"]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="MarginSpielerInfo" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerInfo/GridContainer"]
+[node name="MarginPlayerInfo" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerInfo/GridContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 30
 
-[node name="SpielerinfoLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerInfo/GridContainer/MarginSpielerInfo"]
+[node name="PlayerInfoLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerInfo/GridContainer/MarginPlayerInfo"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Spieler X"
 horizontal_alignment = 1
 
-[node name="MarginZug" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerInfo/GridContainer"]
+[node name="MarginMove" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerInfo/GridContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 30
 
-[node name="ZugLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerInfo/GridContainer/MarginZug"]
+[node name="MoveLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerInfo/GridContainer/MarginMove"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Ist am Zug"
 horizontal_alignment = 1
 
-[node name="PanelContainerRessources" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
+[node name="PanelContainerResources" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -385,76 +386,76 @@ size_flags_horizontal = 0
 theme = ExtResource("14_agmyj")
 metadata/_edit_group_ = true
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRessources"]
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources"]
 layout_mode = 2
 columns = 8
 
-[node name="StoneIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerRessources/GridContainer"]
+[node name="StoneIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
 layout_mode = 2
 texture = ExtResource("15_le026")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="MarginStone" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRessources/GridContainer"]
+[node name="MarginStone" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 30
 
-[node name="StoneLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRessources/GridContainer/MarginStone"]
+[node name="StoneLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer/MarginStone"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "100"
 horizontal_alignment = 1
 
-[node name="WoodIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerRessources/GridContainer"]
+[node name="WoodIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
 layout_mode = 2
 texture = ExtResource("16_eaano")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="MarginWood" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRessources/GridContainer"]
+[node name="MarginWood" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 30
 
-[node name="WoodLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRessources/GridContainer/MarginWood"]
+[node name="WoodLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer/MarginWood"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "100"
 horizontal_alignment = 1
 
-[node name="MetalIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerRessources/GridContainer"]
+[node name="MetalIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
 layout_mode = 2
 texture = ExtResource("17_rqe8m")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="MarginMetal" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRessources/GridContainer"]
+[node name="MarginMetal" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 30
 
-[node name="MetalLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRessources/GridContainer/MarginMetal"]
+[node name="MetalLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer/MarginMetal"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "100"
 horizontal_alignment = 1
 
-[node name="FoodIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerRessources/GridContainer"]
+[node name="FoodIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
 layout_mode = 2
 texture = ExtResource("18_suoxv")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="MarginFood" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRessources/GridContainer"]
+[node name="MarginFood" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 30
 
-[node name="FoodLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRessources/GridContainer/MarginFood"]
+[node name="FoodLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer/MarginFood"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "100"
 horizontal_alignment = 1
 
-[connection signal="timeout" from="CanvasLayer/ScenarioOverlay/PanelContainerTimer/Timer" to="CanvasLayer/ScenarioOverlay" method="_on_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/ScenarioOverlay/PanelContainerTimer/Timer" to="Scenario" method="_on_timer_timeout"]
