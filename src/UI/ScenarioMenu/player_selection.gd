@@ -8,6 +8,8 @@ extends HBoxContainer
 func _ready():
 	if counter > 0:
 		visible = false # Replace with function body.
+	else:
+		ScenarioDataManager.add_player(player_index)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
