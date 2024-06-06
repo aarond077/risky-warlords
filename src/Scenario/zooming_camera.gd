@@ -10,12 +10,14 @@ func zoom_in():
 	var current_zoom = self.zoom 
 	if(current_zoom.x <= MAX_ZOOM and MAX_ZOOM <= 6):
 		self.set_zoom(current_zoom * 1.05) 
+		self.set_scale(Vector2((1/zoom.x), (1/zoom.y)))
 
 #function for handeling zooming out
 func zoom_out():
 	var current_zoom = self.zoom
 	if(current_zoom.x >= MIN_ZOOM and current_zoom.y >= MIN_ZOOM):
 		self.set_zoom(current_zoom * 0.95)
+		self.set_scale(Vector2((1/zoom.x), (1/zoom.y)))
 
 #function for handeling mouse movement to move the camera
 func move_offset(event):

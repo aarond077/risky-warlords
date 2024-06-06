@@ -1,0 +1,229 @@
+[gd_scene load_steps=11 format=3 uid="uid://d4f5mm3jwg21v"]
+
+[ext_resource type="Texture2D" uid="uid://6ye0575tptoe" path="res://src/UI/ScenarioOverlayNew/Sonstiges/karte.jpg" id="1_xbu4k"]
+[ext_resource type="Theme" uid="uid://dkyvmh7wb1ijq" path="res://src/UI/ScenarioOverlayNew/Sonstiges/new_theme.tres" id="2_6u1hv"]
+[ext_resource type="Texture2D" uid="uid://btssvilv8sp70" path="res://src/UI/ScenarioOverlayNew/Sonstiges/food.jpg" id="2_fachx"]
+[ext_resource type="Texture2D" uid="uid://bpefnmbs5s25u" path="res://src/UI/ScenarioOverlayNew/Sonstiges/metal.jpg" id="3_prqe4"]
+[ext_resource type="Texture2D" uid="uid://38ccf3vgryl6" path="res://src/UI/ScenarioOverlayNew/Sonstiges/stone.jpg" id="4_xe5bl"]
+[ext_resource type="Texture2D" uid="uid://chw2nbcqgmwms" path="res://src/UI/ScenarioOverlayNew/Sonstiges/wood.jpg" id="5_dwrhu"]
+[ext_resource type="Texture2D" uid="uid://bc60ql6gst4sg" path="res://src/UI/ScenarioOverlayNew/Sonstiges/weapon03longsword.png" id="7_vsox6"]
+[ext_resource type="Texture2D" uid="uid://b1iqbbo6q0qp4" path="res://src/UI/ScenarioOverlayNew/Sonstiges/weapon06bow.png" id="8_0o2r2"]
+[ext_resource type="Texture2D" uid="uid://cn6rd5q8grbu0" path="res://src/UI/ScenarioOverlayNew/Sonstiges/armour05platemail.png" id="9_ectow"]
+[ext_resource type="Theme" uid="uid://wnalh3p5w45g" path="res://src/UI/ScenarioOverlayNew/Sonstiges/timer_theme.tres" id="10_15m0n"]
+
+[node name="Node2D" type="Node"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xbu4k")
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="PanelContainerRessources" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.246
+anchor_top = -0.454
+anchor_right = 0.246
+anchor_bottom = -0.454
+offset_left = -136.32
+offset_top = -61.68
+offset_right = 487.68
+offset_bottom = 41.32
+size_flags_horizontal = 0
+theme = ExtResource("2_6u1hv")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/PanelContainerRessources"]
+layout_mode = 2
+columns = 8
+
+[node name="StoneIcon" type="TextureRect" parent="CanvasLayer/PanelContainerRessources/GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_xe5bl")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginStone" type="MarginContainer" parent="CanvasLayer/PanelContainerRessources/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="StoneLabel" type="Label" parent="CanvasLayer/PanelContainerRessources/GridContainer/MarginStone"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+
+[node name="WoodIcon" type="TextureRect" parent="CanvasLayer/PanelContainerRessources/GridContainer"]
+layout_mode = 2
+texture = ExtResource("5_dwrhu")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginWood" type="MarginContainer" parent="CanvasLayer/PanelContainerRessources/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="WoodLabel" type="Label" parent="CanvasLayer/PanelContainerRessources/GridContainer/MarginWood"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+
+[node name="MetalIcon" type="TextureRect" parent="CanvasLayer/PanelContainerRessources/GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_prqe4")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginMetal" type="MarginContainer" parent="CanvasLayer/PanelContainerRessources/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="MetalLabel" type="Label" parent="CanvasLayer/PanelContainerRessources/GridContainer/MarginMetal"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+
+[node name="FoodIcon" type="TextureRect" parent="CanvasLayer/PanelContainerRessources/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_fachx")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginFood" type="MarginContainer" parent="CanvasLayer/PanelContainerRessources/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="FoodLabel" type="Label" parent="CanvasLayer/PanelContainerRessources/GridContainer/MarginFood"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+
+[node name="PanelContainerTroops" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.246
+anchor_top = -0.454
+anchor_right = 0.246
+anchor_bottom = -0.454
+offset_left = -1192.32
+offset_top = -61.68
+offset_right = -705.32
+offset_bottom = 41.32
+size_flags_horizontal = 0
+theme = ExtResource("2_6u1hv")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/PanelContainerTroops"]
+layout_mode = 2
+size_flags_horizontal = 0
+columns = 6
+
+[node name="SwordIcon" type="TextureRect" parent="CanvasLayer/PanelContainerTroops/GridContainer"]
+layout_mode = 2
+texture = ExtResource("7_vsox6")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginSword" type="MarginContainer" parent="CanvasLayer/PanelContainerTroops/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="SwordLabel" type="Label" parent="CanvasLayer/PanelContainerTroops/GridContainer/MarginSword"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+
+[node name="BowIcon" type="TextureRect" parent="CanvasLayer/PanelContainerTroops/GridContainer"]
+layout_mode = 2
+texture = ExtResource("8_0o2r2")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginBow" type="MarginContainer" parent="CanvasLayer/PanelContainerTroops/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="BowLabel" type="Label" parent="CanvasLayer/PanelContainerTroops/GridContainer/MarginBow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+
+[node name="ArmorIcon" type="TextureRect" parent="CanvasLayer/PanelContainerTroops/GridContainer"]
+layout_mode = 2
+texture = ExtResource("9_ectow")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginArmor" type="MarginContainer" parent="CanvasLayer/PanelContainerTroops/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="ArmorLabel" type="Label" parent="CanvasLayer/PanelContainerTroops/GridContainer/MarginArmor"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+
+[node name="PanelContainerInfo" type="PanelContainer" parent="CanvasLayer"]
+offset_left = -136.0
+offset_top = -552.0
+offset_right = 138.0
+offset_bottom = -414.0
+theme = ExtResource("2_6u1hv")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/PanelContainerInfo"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="MarginSpielerInfo" type="MarginContainer" parent="CanvasLayer/PanelContainerInfo/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="SpielerinfoLabel" type="Label" parent="CanvasLayer/PanelContainerInfo/GridContainer/MarginSpielerInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Spieler X"
+horizontal_alignment = 1
+
+[node name="MarginZug" type="MarginContainer" parent="CanvasLayer/PanelContainerInfo/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="ZugLabel" type="Label" parent="CanvasLayer/PanelContainerInfo/GridContainer/MarginZug"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Ist am Zug"
+horizontal_alignment = 1
+
+[node name="PanelContainerTimer" type="PanelContainer" parent="CanvasLayer"]
+offset_left = -83.0
+offset_top = -442.0
+offset_right = 89.0
+offset_bottom = -375.0
+theme = ExtResource("10_15m0n")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/PanelContainerTimer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="SpielerinfoLabel" type="Label" parent="CanvasLayer/PanelContainerTimer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "1:00"
+horizontal_alignment = 1
+vertical_alignment = 1

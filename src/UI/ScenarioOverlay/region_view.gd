@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-@onready var region_name_label = $RegionName
+@onready var sword_label = $RegionName
 @onready var region_describtion_label = $RegionDescribtion
 @onready var region_resource_label = $RegionResource
 
@@ -23,7 +23,7 @@ func update_region(region_name : String) -> void:
 	update_region_resource()
 	
 func update_region_name(region_name : String):
-	region_name_label.text = region_name
+	sword_label.text = region_name
 
 func update_region_describtion():
 	pass
