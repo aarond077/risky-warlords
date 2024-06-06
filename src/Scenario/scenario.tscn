@@ -112,22 +112,18 @@ position = Vector2(449, 604)
 texture = ExtResource("12_7xjhs")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-follow_viewport_scale = 0.3
 
 [node name="ScenarioOverlay" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchor_left = -0.095
-anchor_top = -0.139
-anchor_right = 1.081
-anchor_bottom = 1.127
-offset_left = -0.55999
-offset_top = 0.0720062
-offset_right = -0.312134
-offset_bottom = -0.296082
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 3.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(-400, -200)
+pivot_offset = Vector2(-800, -700)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_filter = 1
@@ -145,7 +141,6 @@ offset_left = -77.5001
 offset_top = -83.65
 offset_right = 78.5
 offset_bottom = -46.65
-grow_horizontal = 2
 theme = ExtResource("24_piu74")
 script = ExtResource("14_bi3fb")
 metadata/_edit_group_ = true
@@ -168,11 +163,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PanelContainerTroops" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
-layout_mode = 0
-offset_left = -3.0
-offset_top = 24.0
-offset_right = 462.0
-offset_bottom = 121.0
+layout_mode = 1
+offset_right = 465.0
+offset_bottom = 97.0
 size_flags_horizontal = 0
 theme = ExtResource("14_agmyj")
 metadata/_edit_group_ = true
