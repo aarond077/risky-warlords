@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://src/UI/ScenarioMenu/scenario_menu_ui.gd" id="1_fc2si"]
 [ext_resource type="Script" path="res://src/UI/ScenarioMenu/start_game_button.gd" id="2_15tci"]
 [ext_resource type="Script" path="res://src/UI/ScenarioMenu/nation_options.gd" id="2_kxa63"]
-[ext_resource type="Texture2D" uid="uid://6uaupn38hmrn" path="res://assets/Background/CastleBackground.png" id="4_4hqtj"]
+[ext_resource type="Texture2D" path="res://assets/Background/CastleBackground.png" id="4_4hqtj"]
 [ext_resource type="Script" path="res://src/UI/ScenarioMenu/player_selection.gd" id="4_d7abw"]
 
 [node name="ScenarioMenu" type="Node2D"]
