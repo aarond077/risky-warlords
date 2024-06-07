@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://dkyvmh7wb1ijq"]
 
-[ext_resource type="FontFile" uid="uid://cqtlnoqxokx35" path="res://src/UI/ScenarioOverlayNew/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf" id="1_23g25"]
-[ext_resource type="Texture2D" uid="uid://bxr5a4h45c0dv" path="res://src/UI/ScenarioOverlayNew/Sonstiges/small frame.png" id="2_pumih"]
+[ext_resource type="FontFile" uid="uid://cqtlnoqxokx35" path="res://assets/UI/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf" id="1_23g25"]
+[ext_resource type="Texture2D" uid="uid://bxr5a4h45c0dv" path="res://assets/UI/Sonstiges/small frame.png" id="2_pumih"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uxhyw"]
 texture = ExtResource("2_pumih")

@@ -23,3 +23,4 @@ res://src/Scenario/panel_container_info.gd
 res://src/Logic/signal_bus.gd
 res://src/UI/ScenarioMenu/scenario_menu_ui.gd
 res://src/UI/ScenarioMenu/nation_options.gd
+res://assets/UI/Sonstiges/new_theme.tres
