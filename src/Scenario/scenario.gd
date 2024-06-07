@@ -8,6 +8,7 @@ func _ready():
 
 
 func _on_timer_timeout():
+	print(ScenarioDataManager.active_player.nation)
 	ScenarioDataManager.set_next_active_player()
 	player_timer.start()
 	

@@ -15,6 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
 
 func _on_option_button_item_selected(index):
 	if index>=counter:
@@ -27,5 +28,3 @@ func _on_option_button_item_selected(index):
 		ScenarioDataManager.remove_player(player_index)
 
 
-func _on_nation_options_item_selected(index):
-	pass #ScenarioDataManager.add_player
