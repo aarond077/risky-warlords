@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://4215gjb2trrl"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dqug3skhyxlkp"]
 
 [ext_resource type="FontFile" uid="uid://cqtlnoqxokx35" path="res://src/UI/ScenarioOverlayNew/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf" id="1_bjwpe"]
 [ext_resource type="Texture2D" uid="uid://d1ppo0af6266q" path="res://src/UI/ScenarioOverlayNew/Sonstiges/gebiet frame.png" id="2_2nc1s"]
