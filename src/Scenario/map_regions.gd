@@ -23,9 +23,9 @@ func load_data():
 func load_regions():
 	var image = self.get_texture().get_image()
 	var pixel_color_dict = get_pixel_color_dict(image)
-	var regions_dict = import_file(
+	var regions_dict = DataFileMangager.import_file(
 		"res://data/Maps/" + map_name + "/" + map_name + ".txt")
-	var regions_dict_indexes = import_file(
+	var regions_dict_indexes = DataFileMangager.import_file(
 		"res://data/Maps/" + map_name + "/" + map_name + "Indexes.txt")
 	
 	
@@ -81,10 +81,3 @@ func get_pixel_color_dict(image):
 	
 
 #access file function
-func import_file(filepath : String):
-	var file = FileAccess.open(filepath, FileAccess.READ)
-	if file != null:
-		return JSON.parse_string(file.get_as_text().replace("_", " "))
-	else:
-		print("Failed to open file:" + filepath)
-		return null	

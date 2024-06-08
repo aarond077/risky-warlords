@@ -15,3 +15,8 @@ res://src/Logic/signal_bus.gd
 res://src/Logic/scenario_data_manager.gd
 res://src/Scenario/panel_container_region.gd
 res://src/UI/ScenarioOverlay/panel_container_region.gd
+res://src/Scenario/scenario.gd
+res://src/Logic/data_file_manager.gd
+res://src/Scenario/map_regions.gd
+res://src/UI/ScenarioMenu/start_game_button.gd
+res://src/UI/ScenarioOverlay/panel_container_timer.gd
