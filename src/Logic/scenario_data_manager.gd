@@ -6,6 +6,7 @@ extends Node2D
 @export var maps : Array[String]
 
 @onready var active_region : RegionNode
+@onready var active_region_color : String
 @onready var active_player : Player
 
 

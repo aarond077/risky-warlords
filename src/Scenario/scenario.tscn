@@ -25,7 +25,7 @@
 [ext_resource type="Theme" uid="uid://c34vkn1inryw0" path="res://src/UI/ScenarioOverlayNew/Sonstiges/timer_theme.tres" id="24_piu74"]
 [ext_resource type="Theme" uid="uid://4215gjb2trrl" path="res://src/UI/ScenarioOverlayNew/Sonstiges/gebiet_theme.tres" id="25_qooc4"]
 [ext_resource type="FontFile" uid="uid://cqtlnoqxokx35" path="res://src/UI/ScenarioOverlayNew/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf" id="26_5ckp3"]
-[ext_resource type="Script" path="res://src/Scenario/GebietsnameInputLabel.gd" id="27_ehgdi"]
+[ext_resource type="Script" path="res://src/Scenario/gebitetsname.gd" id="27_ehgdi"]
 
 [sub_resource type="GDScript" id="GDScript_56to2"]
 script/source = "extends Label
