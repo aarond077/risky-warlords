@@ -10,6 +10,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-	
+
+#removes outline (self)
 func on_remove_region_outlines(region_name : String):
 	self.queue_free()

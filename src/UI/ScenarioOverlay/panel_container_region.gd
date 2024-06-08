@@ -1,8 +1,9 @@
-extends VBoxContainer
+extends PanelContainer
 
-@onready var sword_label = $RegionName
-@onready var region_describtion_label = $RegionDescribtion
-@onready var region_resource_label = $RegionResource
+@onready var region_label =$VBoxContainer/GridContainer/MarginRegionNameInput/RegionNameInputLabel
+@onready var region_resource_label = $VBoxContainer/GridContainer/MarginRegionResourcesInput/GebietsressourcenInputLabel
+@onready var region_army_label = $VBoxContainer/GridContainer/MarginRegionArmyInput/ArmyInputLabel
+@onready var region_building_label = $VBoxContainer/GridContainer/MarginRegionBuildingInput/BuildingInputLabel
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,7 +24,7 @@ func update_region(region_name : String) -> void:
 	update_region_resource()
 	
 func update_region_name(region_name : String):
-	sword_label.text = region_name
+	region_label.text = region_name
 
 func update_region_describtion():
 	pass

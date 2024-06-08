@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d1xk2lv80lqnp"]
+[gd_scene load_steps=29 format=3 uid="uid://d1xk2lv80lqnp"]
 
 [ext_resource type="Script" path="res://src/Scenario/game_manager.gd" id="1_3288w"]
 [ext_resource type="Script" path="res://src/Scenario/scenario.gd" id="2_dxbxk"]
@@ -13,14 +13,15 @@
 [ext_resource type="Texture2D" uid="uid://6iqsya71utgr" path="res://assets/Background/background_wood.png" id="12_7xjhs"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/scenario_overlay.gd" id="12_tdvrh"]
 [ext_resource type="Theme" uid="uid://g0popv6nep8g" path="res://src/UI/ScenarioOverlayNew/Sonstiges/new_theme.tres" id="14_agmyj"]
-[ext_resource type="Script" path="res://src/Scenario/panel_container_timer.gd" id="14_bi3fb"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_timer.gd" id="14_bi3fb"]
 [ext_resource type="Texture2D" uid="uid://38ccf3vgryl6" path="res://src/UI/ScenarioOverlayNew/Sonstiges/stone.jpg" id="15_le026"]
 [ext_resource type="Texture2D" uid="uid://chw2nbcqgmwms" path="res://src/UI/ScenarioOverlayNew/Sonstiges/wood.jpg" id="16_eaano"]
 [ext_resource type="Texture2D" uid="uid://bpefnmbs5s25u" path="res://src/UI/ScenarioOverlayNew/Sonstiges/metal.jpg" id="17_rqe8m"]
 [ext_resource type="Texture2D" uid="uid://btssvilv8sp70" path="res://src/UI/ScenarioOverlayNew/Sonstiges/food.jpg" id="18_suoxv"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_region.gd" id="20_0gkwc"]
 [ext_resource type="Texture2D" uid="uid://bc60ql6gst4sg" path="res://src/UI/ScenarioOverlayNew/Sonstiges/weapon03longsword.png" id="20_qgfvj"]
 [ext_resource type="Texture2D" uid="uid://b1iqbbo6q0qp4" path="res://src/UI/ScenarioOverlayNew/Sonstiges/weapon06bow.png" id="22_0f5iu"]
-[ext_resource type="Script" path="res://src/Scenario/panel_container_info.gd" id="22_657ph"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_info.gd" id="22_657ph"]
 [ext_resource type="Texture2D" uid="uid://cn6rd5q8grbu0" path="res://src/UI/ScenarioOverlayNew/Sonstiges/armour05platemail.png" id="23_tledy"]
 [ext_resource type="Theme" uid="uid://c34vkn1inryw0" path="res://src/UI/ScenarioOverlayNew/Sonstiges/timer_theme.tres" id="24_piu74"]
 [ext_resource type="Theme" uid="uid://4215gjb2trrl" path="res://src/UI/ScenarioOverlayNew/Sonstiges/gebiet_theme.tres" id="25_qooc4"]
@@ -244,6 +245,7 @@ grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme = ExtResource("25_qooc4")
+script = ExtResource("20_0gkwc")
 metadata/_edit_group_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion"]
@@ -259,80 +261,80 @@ text = "Gebietsinfo"
 layout_mode = 2
 columns = 2
 
-[node name="MarginGebietsname" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
+[node name="MarginRegion" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/margin_right = 30
 
-[node name="GebietsnameLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginGebietsname"]
+[node name="RegionNameLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegion"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Name:"
 
-[node name="MarginGebietsnameInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
+[node name="MarginRegionNameInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 10
 
-[node name="GebietsnameInputLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginGebietsnameInput"]
+[node name="RegionNameInputLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionNameInput"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "NameInput"
 script = ExtResource("27_ehgdi")
 
-[node name="MarginGebietsressourcen" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
+[node name="MarginRegionResources" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
 layout_mode = 2
 
-[node name="GebietsressourcenLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginGebietsressourcen"]
+[node name="RegionResourcesLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionResources"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Ressourcen:"
 horizontal_alignment = 1
 
-[node name="MarginGebietsressourcenInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
+[node name="MarginRegionResourcesInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 10
 
-[node name="GebietsressourcenInputLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginGebietsressourcenInput"]
+[node name="GebietsressourcenInputLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionResourcesInput"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "RessourcenInput"
 
-[node name="MarginGebietstruppen" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
+[node name="MarginRegionArmy" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
 layout_mode = 2
 
-[node name="GebietstruppenLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginGebietstruppen"]
+[node name="RegionArmyLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionArmy"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Truppen:"
 
-[node name="MarginGebietstruppenInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
+[node name="MarginRegionArmyInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 10
 
-[node name="GebietstruppenInputLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginGebietstruppenInput"]
+[node name="ArmyInputLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionArmyInput"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "TruppenInput"
 
-[node name="MarginGebietsgebaeude" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
+[node name="MarginRegionBuilding" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 5
 
-[node name="GebietsgebaeudeLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginGebietsgebaeude"]
+[node name="BuildingLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionBuilding"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Gebäude:"
 
-[node name="MarginGebietsgebaeudeInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
+[node name="MarginRegionBuildingInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
-[node name="GebietsgebaeudeInputLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginGebietsgebaeudeInput"]
+[node name="BuildingInputLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionBuildingInput"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "GebäudeInput"

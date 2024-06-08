@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1717846835
+::res://::1717860102
 icon.svg::CompressedTexture2D::5951928258371859898::1714400715::1714400772::1::::<><>::
 README.md::TextFile::-1::1714400715::0::1::::<><>::
 ::res://addons/::1716135678
@@ -138,53 +138,56 @@ Bucht von DessusBuildingSlots.txt::TextFile::-1::1716504459::0::1::::<><>::
 Bucht von DessusIndexes.txt::TextFile::-1::1716387840::0::1::::<><>::
 Bucht von DessusResources.txt::TextFile::-1::1716892294::0::1::::<><>::
 ::res://src/::1715280666
-::res://src/Logic/::1717785022
+::res://src/Logic/::1717859783
 data_file_manager.gd::GDScript::-1::1717785022::0::1::::DataFileMangager<>Node<>::
 finite_state_machine.gd::GDScript::-1::1715272059::0::1::::FiniteStateMachine<>Node<>::
 save_load_manager.gd::GDScript::-1::1714407439::0::1::::<>Node<>::
-save_load_manager.tscn::PackedScene::2702989729706259847::1717784188::0::1::::<><>::res://src/Logic/save_load_manager.gd
-scenario_data_manager.gd::GDScript::-1::1717785022::0::1::::<>Node2D<>::
-scenario_data_manager.tscn::PackedScene::2159494173652795970::1717784188::0::1::::<><>::res://src/Logic/scenario_data_manager.gd
+save_load_manager.tscn::PackedScene::2702989729706259847::1717859782::0::1::::<><>::res://src/Logic/save_load_manager.gd
+scenario_data_manager.gd::GDScript::-1::1717857900::0::1::::<>Node2D<>::
+scenario_data_manager.tscn::PackedScene::2159494173652795970::1717859783::0::1::::<><>::res://src/Logic/scenario_data_manager.gd
 scene_manager.gd::GDScript::-1::1714411194::0::1::::<>Node<>::
-scene_manager.tscn::PackedScene::7821257596677628422::1717784187::0::1::::<><>::res://src/Logic/scene_manager.gd
-signal_bus.gd::GDScript::-1::1717785022::0::1::::<>Node<>::
+scene_manager.tscn::PackedScene::7821257596677628422::1717859782::0::1::::<><>::res://src/Logic/scene_manager.gd
+signal_bus.gd::GDScript::-1::1717858312::0::1::::<>Node<>::
 state.gd::GDScript::-1::1715171688::0::1::::State<>Node<>::
 ::res://src/Player/::1717785022
 player.gd::GDScript::-1::1717785022::0::1::::Player<>Node<>::
-::res://src/Region/::1717785022
-region_area.gd::GDScript::-1::1717785022::0::1::::<>Area2D<>::
+::res://src/Region/::1717859782
+region_area.gd::GDScript::-1::1717859782::0::1::::<>Area2D<>::
 region_area.tscn::PackedScene::1708604566345309900::1714400715::0::1::::<><>::res://src/Region/region_area.gd
 region_graph.gd::GDScript::-1::1716474410::0::1::::RegionGraph<>Node<>::
 region_node.gd::GDScript::-1::1716563254::0::1::::RegionNode<>Node<>::
-::res://src/Scenario/::1717785022
+region_outline.gd::GDScript::-1::1717859673::0::1::::RegionOutline<>Line2D<>::
+::res://src/Scenario/::1717860102
 game_manager.gd::GDScript::-1::1717785022::0::1::::GameManager<>Control<>::
+gebitetsname.gd::GDScript::-1::1717846898::0::1::::<>Node<>::
 load_map.gd::GDScript::-1::1715951696::0::1::::<>State<>::
 map_regions.gd::GDScript::-1::1717785022::0::1::::<>Sprite2D<>::
 map_terrain.gd::GDScript::-1::1716840873::0::1::::<>Sprite2D<>::
-panel_container_info.gd::GDScript::-1::1717785022::0::1::::<>PanelContainer<>::
-panel_container_timer.gd::GDScript::-1::1717785022::0::1::::<>PanelContainer<>::
 scenario.gd::GDScript::-1::1717785022::0::1::::<>Node2D<>::
-scenario.tres::TileSet::936965630583757029::1717694387::0::1::::<><>::uid://dkfl3a0gfsh6c::::res://assets/Terrain/TerrainSpritesheet2.png
-scenario.tscn::PackedScene::9032308672105589841::1717785022::0::1::::<><>::res://src/Scenario/game_manager.gd<>res://src/Scenario/scenario.gd<>res://src/Scenario/map_terrain.gd<>res://src/Scenario/map_regions.gd<>res://src/Scenario/zooming_camera.gd<>uid://nl4xmhsyw2f6::::res://src/Scenario/scenario.tres<>res://src/Logic/finite_state_machine.gd<>res://src/Scenario/load_map.gd<>res://src/Scenario/start_round.gd<>res://src/Logic/state.gd<>uid://6iqsya71utgr::::res://assets/Background/background_wood.png<>res://src/UI/ScenarioOverlay/scenario_overlay.gd<>uid://g0popv6nep8g::::res://src/UI/ScenarioOverlayNew/Sonstiges/new_theme.tres<>res://src/Scenario/panel_container_timer.gd<>uid://38ccf3vgryl6::::res://src/UI/ScenarioOverlayNew/Sonstiges/stone.jpg<>uid://chw2nbcqgmwms::::res://src/UI/ScenarioOverlayNew/Sonstiges/wood.jpg<>uid://bpefnmbs5s25u::::res://src/UI/ScenarioOverlayNew/Sonstiges/metal.jpg<>uid://btssvilv8sp70::::res://src/UI/ScenarioOverlayNew/Sonstiges/food.jpg<>uid://bc60ql6gst4sg::::res://src/UI/ScenarioOverlayNew/Sonstiges/weapon03longsword.png<>uid://b1iqbbo6q0qp4::::res://src/UI/ScenarioOverlayNew/Sonstiges/weapon06bow.png<>res://src/Scenario/panel_container_info.gd<>uid://cn6rd5q8grbu0::::res://src/UI/ScenarioOverlayNew/Sonstiges/armour05platemail.png<>uid://c34vkn1inryw0::::res://src/UI/ScenarioOverlayNew/Sonstiges/timer_theme.tres<>uid://4215gjb2trrl::::res://src/UI/ScenarioOverlayNew/Sonstiges/gebiet_theme.tres<>uid://cqtlnoqxokx35::::res://src/UI/ScenarioOverlayNew/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf<>res://src/Scenario/GebietsnameInputLabel.gd
+scenario.tres::TileSet::936965630583757029::1717860110::0::1::::<><>::uid://dkfl3a0gfsh6c::::res://assets/Terrain/TerrainSpritesheet2.png
+scenario.tscn::PackedScene::9032308672105589841::1717860110::0::1::::<><>::res://src/Scenario/game_manager.gd<>res://src/Scenario/scenario.gd<>res://src/Scenario/map_terrain.gd<>res://src/Scenario/map_regions.gd<>res://src/Scenario/zooming_camera.gd<>uid://nl4xmhsyw2f6::::res://src/Scenario/scenario.tres<>res://src/Logic/finite_state_machine.gd<>res://src/Scenario/load_map.gd<>res://src/Scenario/start_round.gd<>res://src/Logic/state.gd<>uid://6iqsya71utgr::::res://assets/Background/background_wood.png<>res://src/UI/ScenarioOverlay/scenario_overlay.gd<>uid://g0popv6nep8g::::res://src/UI/ScenarioOverlayNew/Sonstiges/new_theme.tres<>res://src/UI/panel_container_timer.gd<>uid://38ccf3vgryl6::::res://src/UI/ScenarioOverlayNew/Sonstiges/stone.jpg<>uid://chw2nbcqgmwms::::res://src/UI/ScenarioOverlayNew/Sonstiges/wood.jpg<>uid://bpefnmbs5s25u::::res://src/UI/ScenarioOverlayNew/Sonstiges/metal.jpg<>uid://btssvilv8sp70::::res://src/UI/ScenarioOverlayNew/Sonstiges/food.jpg<>uid://bc60ql6gst4sg::::res://src/UI/ScenarioOverlayNew/Sonstiges/weapon03longsword.png<>uid://b1iqbbo6q0qp4::::res://src/UI/ScenarioOverlayNew/Sonstiges/weapon06bow.png<>res://src/UI/ScenarioOverlay/panel_container_info.gd<>uid://cn6rd5q8grbu0::::res://src/UI/ScenarioOverlayNew/Sonstiges/armour05platemail.png<>uid://c34vkn1inryw0::::res://src/UI/ScenarioOverlayNew/Sonstiges/timer_theme.tres<>uid://4215gjb2trrl::::res://src/UI/ScenarioOverlayNew/Sonstiges/gebiet_theme.tres<>uid://cqtlnoqxokx35::::res://src/UI/ScenarioOverlayNew/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf<>res://src/Scenario/gebitetsname.gd
 start_round.gd::GDScript::-1::1717785022::0::1::::<>State<>::
 ui.tscn::PackedScene::9206904018635705381::1717783933::0::1::::<><>::uid://6ye0575tptoe::::res://src/UI/ScenarioOverlayNew/Sonstiges/karte.jpg<>uid://dkyvmh7wb1ijq::::res://src/UI/ScenarioOverlayNew/Sonstiges/new_theme.tres<>uid://btssvilv8sp70::::res://src/UI/ScenarioOverlayNew/Sonstiges/food.jpg<>uid://bpefnmbs5s25u::::res://src/UI/ScenarioOverlayNew/Sonstiges/metal.jpg<>uid://38ccf3vgryl6::::res://src/UI/ScenarioOverlayNew/Sonstiges/stone.jpg<>uid://chw2nbcqgmwms::::res://src/UI/ScenarioOverlayNew/Sonstiges/wood.jpg<>uid://bc60ql6gst4sg::::res://src/UI/ScenarioOverlayNew/Sonstiges/weapon03longsword.png<>uid://b1iqbbo6q0qp4::::res://src/UI/ScenarioOverlayNew/Sonstiges/weapon06bow.png<>uid://cn6rd5q8grbu0::::res://src/UI/ScenarioOverlayNew/Sonstiges/armour05platemail.png<>uid://wnalh3p5w45g::::res://src/UI/ScenarioOverlayNew/Sonstiges/timer_theme.tres
 zooming_camera.gd::GDScript::-1::1717785022::0::1::::ZoomingCamera<>Camera2D<>::
-::res://src/UI/::1717783933
-::res://src/UI/MainMenu/::1717784188
+::res://src/UI/::1717860102
+panel_container_region.gd::GDScript::-1::1717860030::0::1::::<>PanelContainer<>::
+panel_container_timer.gd::GDScript::-1::1717785022::0::1::::<>PanelContainer<>::
+::res://src/UI/MainMenu/::1717859783
 exit_game_button.gd::GDScript::-1::1715174967::0::1::::<>Button<>::
 local_game_button.gd::GDScript::-1::1715001436::0::1::::<>Button<>::
-main_menu.tscn::PackedScene::6311870326280351498::1717784188::0::1::::<><>::res://src/UI/MainMenu/local_game_button.gd<>res://src/UI/MainMenu/exit_game_button.gd
-::res://src/UI/ScenarioMenu/::1717785022
+main_menu.tscn::PackedScene::6311870326280351498::1717859783::0::1::::<><>::res://src/UI/MainMenu/local_game_button.gd<>res://src/UI/MainMenu/exit_game_button.gd
+::res://src/UI/ScenarioMenu/::1717859783
 map_options.gd::GDScript::-1::1717785022::0::1::::<>OptionButton<>::
 nation_options.gd::GDScript::-1::1717785022::0::1::::<>OptionButton<>::
 player_selection.gd::GDScript::-1::1717785022::0::1::::<>HBoxContainer<>::
-scenario_menu.tscn::PackedScene::2520824110233328840::1717785022::0::1::::<><>::res://src/UI/ScenarioMenu/map_options.gd<>res://src/UI/ScenarioMenu/scenario_menu_ui.gd<>res://src/UI/ScenarioMenu/start_game_button.gd<>res://src/UI/ScenarioMenu/nation_options.gd<>res://assets/Background/CastleBackground.png<>res://src/UI/ScenarioMenu/player_selection.gd
+scenario_menu.tscn::PackedScene::2520824110233328840::1717859783::0::1::::<><>::res://src/UI/ScenarioMenu/map_options.gd<>res://src/UI/ScenarioMenu/scenario_menu_ui.gd<>res://src/UI/ScenarioMenu/start_game_button.gd<>res://src/UI/ScenarioMenu/nation_options.gd<>uid://6uaupn38hmrn::::res://assets/Background/CastleBackground.png<>res://src/UI/ScenarioMenu/player_selection.gd
 scenario_menu_ui.gd::GDScript::-1::1717785022::0::1::::<>Control<>::
 start_game_button.gd::GDScript::-1::1715774045::0::1::::<>Button<>::
-::res://src/UI/ScenarioOverlay/::1717785022
-region_view.gd::GDScript::-1::1717785022::0::1::::<>VBoxContainer<>::
+::res://src/UI/ScenarioOverlay/::1717860102
+panel_container_info.gd::GDScript::-1::1717785022::0::1::::<>PanelContainer<>::
+panel_container_region.gd::GDScript::-1::1717785022::0::1::::<>VBoxContainer<>::
 scenario_overlay.gd::GDScript::-1::1717785022::0::1::::ScenarioOverlay<>Control<>::
-scenario_overlay.tscn::PackedScene::5794527222993021935::1717784188::0::1::::<><>::res://src/UI/ScenarioOverlay/region_view.gd<>res://src/UI/ScenarioOverlay/scenario_overlay.gd
+scenario_overlay.tscn::PackedScene::5794527222993021935::1717860030::0::1::::<><>::res://src/UI/ScenarioOverlay/panel_container_region.gd<>res://src/UI/ScenarioOverlay/scenario_overlay.gd
 ::res://src/UI/ScenarioOverlayNew/::1717785021
 ui.tscn::PackedScene::9206904018635705381::1717783933::0::1::::<><>::uid://dkyvmh7wb1ijq::::res://src/UI/ScenarioOverlayNew/Sonstiges/new_theme.tres<>uid://btssvilv8sp70::::res://src/UI/ScenarioOverlayNew/Sonstiges/food.jpg<>uid://bpefnmbs5s25u::::res://src/UI/ScenarioOverlayNew/Sonstiges/metal.jpg<>uid://38ccf3vgryl6::::res://src/UI/ScenarioOverlayNew/Sonstiges/stone.jpg<>uid://chw2nbcqgmwms::::res://src/UI/ScenarioOverlayNew/Sonstiges/wood.jpg<>uid://dirr43rsy77vq::::res://src/UI/ScenarioOverlayNew/Sonstiges/top_theme.tres<>uid://bc60ql6gst4sg::::res://src/UI/ScenarioOverlayNew/Sonstiges/weapon03longsword.png<>uid://b1iqbbo6q0qp4::::res://src/UI/ScenarioOverlayNew/Sonstiges/weapon06bow.png<>uid://cn6rd5q8grbu0::::res://src/UI/ScenarioOverlayNew/Sonstiges/armour05platemail.png<>uid://wnalh3p5w45g::::res://src/UI/ScenarioOverlayNew/Sonstiges/timer_theme.tres<>uid://dqug3skhyxlkp::::res://src/UI/ScenarioOverlayNew/Sonstiges/gebiet_theme.tres<>uid://cqtlnoqxokx35::::res://src/UI/ScenarioOverlayNew/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf
 ::res://src/UI/ScenarioOverlayNew/Armor/::1717783933
@@ -205,23 +208,23 @@ resources_neutral_bg_outlined.png::CompressedTexture2D::1998923604673097442::171
 resources_outlined.png::CompressedTexture2D::3479345422208040973::1717783933::1717783933::1::::<><>::
 resources_red_bg.png::CompressedTexture2D::4268011559738795885::1717783933::1717783933::1::::<><>::
 wood.png::CompressedTexture2D::5223950967605111934::1717783933::1717783933::1::::<><>::
-::res://src/UI/ScenarioOverlayNew/Sonstiges/::1717785022
+::res://src/UI/ScenarioOverlayNew/Sonstiges/::1717860102
 armour05platemail.png::CompressedTexture2D::5750331193240652749::1717783933::1717783933::1::::<><>::
 big frame.png::CompressedTexture2D::1700455620100769780::1717783933::1717783933::1::::<><>::
 big frame_new.png::CompressedTexture2D::495074723846270424::1717783933::1717783933::1::::<><>::
 food.jpg::CompressedTexture2D::3758298358109210133::1717783933::1717783933::1::::<><>::
 frame.png::CompressedTexture2D::1552385070966085076::1717783933::1717783933::1::::<><>::
 gebiet frame.png::CompressedTexture2D::9016074721338662546::1717783933::1717783933::1::::<><>::
-gebiet_theme.tres::Theme::2092847209617252153::1717785022::0::1::::<><>::uid://cqtlnoqxokx35::::res://src/UI/ScenarioOverlayNew/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf<>uid://d1ppo0af6266q::::res://src/UI/ScenarioOverlayNew/Sonstiges/gebiet frame.png
+gebiet_theme.tres::Theme::2092847209617252153::1717860110::0::1::::<><>::uid://cqtlnoqxokx35::::res://src/UI/ScenarioOverlayNew/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf<>uid://d1ppo0af6266q::::res://src/UI/ScenarioOverlayNew/Sonstiges/gebiet frame.png
 icon.svg::CompressedTexture2D::1933008765853809966::1717783933::1717783933::1::::<><>::
 karte.jpg::CompressedTexture2D::2225688358218437524::1717783933::1717783933::1::::<><>::
 metal.jpg::CompressedTexture2D::3447838282248095468::1717783933::1717783933::1::::<><>::
-new_theme.tres::Theme::473679083403045300::1717785022::0::1::::<><>::uid://cqtlnoqxokx35::::res://src/UI/ScenarioOverlayNew/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf<>uid://bxr5a4h45c0dv::::res://src/UI/ScenarioOverlayNew/Sonstiges/small frame.png
+new_theme.tres::Theme::473679083403045300::1717860110::0::1::::<><>::uid://cqtlnoqxokx35::::res://src/UI/ScenarioOverlayNew/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf<>uid://bxr5a4h45c0dv::::res://src/UI/ScenarioOverlayNew/Sonstiges/small frame.png
 small frame.png::CompressedTexture2D::4037681554318466095::1717783933::1717783933::1::::<><>::
 stone.jpg::CompressedTexture2D::2033537400156354685::1717783933::1717783933::1::::<><>::
 test.tres::MeshLibrary::931643150419662497::1717783933::0::1::::<><>::
 timer frame.png::CompressedTexture2D::98029029347273751::1717783933::1717783933::1::::<><>::
-timer_theme.tres::Theme::6799289582256006205::1717785022::0::1::::<><>::uid://cqtlnoqxokx35::::res://src/UI/ScenarioOverlayNew/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf<>uid://bnqr2rc7bnvr::::res://src/UI/ScenarioOverlayNew/Sonstiges/timer frame.png
+timer_theme.tres::Theme::6799289582256006205::1717860110::0::1::::<><>::uid://cqtlnoqxokx35::::res://src/UI/ScenarioOverlayNew/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf<>uid://bnqr2rc7bnvr::::res://src/UI/ScenarioOverlayNew/Sonstiges/timer frame.png
 top_theme.tres::Theme::7756952696669534554::1717783933::0::1::::<><>::uid://cqtlnoqxokx35::::res://src/UI/ScenarioOverlayNew/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf<>uid://hb22qqgrbmy7::::res://src/UI/ScenarioOverlayNew/Sonstiges/big frame_new.png
 weapon03longsword.png::CompressedTexture2D::2592341204809894806::1717783933::1717783933::1::::<><>::
 weapon06bow.png::CompressedTexture2D::4228818973574082691::1717783933::1717783933::1::::<><>::

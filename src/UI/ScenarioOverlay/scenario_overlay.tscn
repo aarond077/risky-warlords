@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cos6atngucb2f"]
 
-[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/region_view.gd" id="1_b6r40"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_region.gd" id="1_b6r40"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/scenario_overlay.gd" id="1_obp3o"]
 
 [node name="ScenarioOverlay" type="Control"]

@@ -59,7 +59,7 @@ func _on_input_event(viewport, event, shape_idx):
 		SignalBus.call_deferred("emit_signal", "region_clicked", self.region_name)
 		SignalBus.call_deferred("emit_signal", "remove_region_outlines", self.region_name)
 		
-		draw_region_outlines()
+		call_deferred("draw_region_outlines")
 
 
 func _on_mouse_exited():

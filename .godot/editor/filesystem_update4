@@ -13,3 +13,5 @@ res://src/Region/region_area.gd
 res://src/Region/region_outline.gd
 res://src/Logic/signal_bus.gd
 res://src/Logic/scenario_data_manager.gd
+res://src/Scenario/panel_container_region.gd
+res://src/UI/ScenarioOverlay/panel_container_region.gd
