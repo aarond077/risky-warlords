@@ -3,6 +3,9 @@ extends Node2D
 @onready var player_timer : Timer = $"../CanvasLayer/ScenarioOverlay/PanelContainerTimer/PlayerTimer"
 @onready var buildings : Node = $Buildings
 func _ready():
+	ScenarioDataManager.set_scenario_players_capitals(
+		ScenarioDataManager.capitals
+	)
 	draw_capitals_fortress()
 		
 

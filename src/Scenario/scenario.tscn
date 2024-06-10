@@ -88,7 +88,7 @@ script = ExtResource("14_bi3fb")
 metadata/_edit_group_ = true
 
 [node name="PlayerTimer" type="Timer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTimer"]
-wait_time = 30.0
+wait_time = 59.5
 one_shot = true
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTimer"]

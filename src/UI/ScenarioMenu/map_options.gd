@@ -19,4 +19,4 @@ func _on_item_selected(index):
 	ScenarioDataManager.building_coordinates = DataFileManager.import_file("res://data/Maps/" + self.text
 		+ "/" + self.text + "BuildingSlots.txt")
 	ScenarioDataManager.scenario_map_name = self.text
-	ScenarioDataManager.set_scenario_players_capitals(maps_capitals[self.text])
+	ScenarioDataManager.capitals = maps_capitals[self.text]

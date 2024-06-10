@@ -8,8 +8,9 @@ extends Node2D
 @onready var active_region : RegionNode
 @onready var active_region_color : String
 @onready var active_player : Player
-@onready var capitals : Array[String]
 @onready var building_coordinates : Dictionary
+
+@onready var capitals 
 
 
 # Called when the node enters the scene tree for the first time.
