@@ -4,6 +4,7 @@ extends Sprite2D
 @onready var map_name : String #= "BuchtVonDessus"
 @onready var map_regions_data_name : String #= "bucht_von_dessus.txt"
 
+
 func _ready():
 	await load_data()
 	call_deferred("load_regions")
@@ -23,9 +24,9 @@ func load_data():
 func load_regions():
 	var image = self.get_texture().get_image()
 	var pixel_color_dict = get_pixel_color_dict(image)
-	var regions_dict = DataFileMangager.import_file(
+	var regions_dict = DataFileManager.import_file(
 		"res://data/Maps/" + map_name + "/" + map_name + ".txt")
-	var regions_dict_indexes = DataFileMangager.import_file(
+	var regions_dict_indexes = DataFileManager.import_file(
 		"res://data/Maps/" + map_name + "/" + map_name + "Indexes.txt")
 	
 	

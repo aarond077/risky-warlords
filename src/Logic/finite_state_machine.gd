@@ -9,6 +9,18 @@ class_name FiniteStateMachine
 @onready var current_state : State
 @onready var previous_state : State
 
+@onready var panel_container_timer = $"../../CanvasLayer/ScenarioOverlay/PanelContainerTimer"
+@onready var panel_container_army = $"../../CanvasLayer/ScenarioOverlay/PanelContainerArmy"
+@onready var panel_container_region = $"../../CanvasLayer/ScenarioOverlay/PanelContainerRegion"
+@onready var panel_container_info = $"../../CanvasLayer/ScenarioOverlay/PanelContainerInfo"
+@onready var panel_container_resources = $"../../CanvasLayer/ScenarioOverlay/PanelContainerResources"
+@onready var panel_container_political_view = $"../../CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView"
+@onready var panel_container_actions = $"../../CanvasLayer/ScenarioOverlay/PanelContainerActions"
+
+@onready var panel_container_select_army = $"../../CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy"
+
+
+
 @export var debug : Label
 
 var states : Array[State]

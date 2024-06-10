@@ -8,11 +8,15 @@ extends Node2D
 @onready var active_region : RegionNode
 @onready var active_region_color : String
 @onready var active_player : Player
+@onready var capitals : Array[String]
+@onready var building_coordinates : Dictionary
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
+	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,9 +30,21 @@ func store_start_scenario__properties(scenario_map_name : String,
 	self.scenario_players = scenario_players
 	self.scenario_region_graph = scenario_region_graph
 	
+# sets the capitals according to the map capitals
+func set_scenario_players_capitals(capitals) -> void:
+	var rand_capital_index : int
+	for player in self.scenario_players:
+		rand_capital_index = randi_range(0, capitals.size()-1)
+		while(player.capital == capitals[rand_capital_index]):
+			rand_capital_index = randi_range(0, capitals.size()-1)
+		player.capital = capitals[rand_capital_index]
+		capitals.remove_at(rand_capital_index)
+	
 func set_start_scenario_active_player():
 	self.active_player = scenario_players[0]
 	SignalBus.call_deferred("emit_signal", "next_active_player")
+	
+	
 	
 	
 

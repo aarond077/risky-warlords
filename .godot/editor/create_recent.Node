@@ -1,3 +1,7 @@
+Button
+GridContainer
+MarginContainer
+PanelContainer
 Sprite2D
 ParallaxBackground
 Control
@@ -9,6 +13,3 @@ BoxContainer
 Camera2D
 TileMap
 ScenarioOverlay
-Node2D
-HBoxContainer
-VBoxContainer

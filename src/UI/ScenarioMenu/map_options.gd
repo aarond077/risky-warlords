@@ -1,9 +1,12 @@
 extends OptionButton
 
-
+@onready var maps_capitals : Dictionary 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
+	
+
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -12,4 +15,8 @@ func _process(delta):
 
 
 func _on_item_selected(index):
+	maps_capitals = DataFileManager.import_file("res://data/Maps/capitals.txt")
+	ScenarioDataManager.building_coordinates = DataFileManager.import_file("res://data/Maps/" + self.text
+		+ "/" + self.text + "BuildingSlots.txt")
 	ScenarioDataManager.scenario_map_name = self.text
+	ScenarioDataManager.set_scenario_players_capitals(maps_capitals[self.text])

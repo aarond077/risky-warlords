@@ -1,6 +1,6 @@
 extends Node
 
-class_name DataFileMangager
+class_name DataFileManager
 
 static func import_file(filepath : String):
 	var file = FileAccess.open(filepath, FileAccess.READ)
