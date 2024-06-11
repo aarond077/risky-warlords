@@ -56,7 +56,7 @@ func exit():
 	
 func is_active_player_last_player()-> bool:
 	return ScenarioDataManager.active_player.player_index == ScenarioDataManager.scenario_players.size()
-
+	
 
 func _on_confirm_button_pressed():
 	if (is_active_player_last_player()):

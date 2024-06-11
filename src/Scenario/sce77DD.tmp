@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://d1xk2lv80lqnp"]
+[gd_scene load_steps=34 format=3 uid="uid://d1xk2lv80lqnp"]
 
 [ext_resource type="Script" path="res://src/Scenario/game_manager.gd" id="1_3288w"]
 [ext_resource type="Script" path="res://src/Scenario/scenario.gd" id="2_dxbxk"]
@@ -21,13 +21,12 @@
 [ext_resource type="Texture2D" uid="uid://btssvilv8sp70" path="res://src/UI/ScenarioOverlayNew/Sonstiges/food.jpg" id="18_suoxv"]
 [ext_resource type="Script" path="res://src/Scenario/panel_container_select_army.gd" id="19_dy4cy"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlayOld/panel_container_region.gd" id="20_0gkwc"]
-[ext_resource type="Script" path="res://src/Scenario/panel_container_actions.gd" id="20_avbta"]
 [ext_resource type="Texture2D" uid="uid://bc60ql6gst4sg" path="res://src/UI/ScenarioOverlayNew/Sonstiges/weapon03longsword.png" id="20_qgfvj"]
-[ext_resource type="Theme" uid="uid://cik0xnfjxuhw0" path="res://src/UI/OverlayNew/Sonstiges/gebiet_theme.tres" id="20_r7nw4"]
 [ext_resource type="Texture2D" uid="uid://b1iqbbo6q0qp4" path="res://src/UI/ScenarioOverlayNew/Sonstiges/weapon06bow.png" id="22_0f5iu"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlayOld/panel_container_info.gd" id="22_657ph"]
 [ext_resource type="Texture2D" uid="uid://cn6rd5q8grbu0" path="res://src/UI/ScenarioOverlayNew/Sonstiges/armour05platemail.png" id="23_tledy"]
 [ext_resource type="Theme" uid="uid://c34vkn1inryw0" path="res://src/UI/ScenarioOverlayNew/Sonstiges/timer_theme.tres" id="24_piu74"]
+[ext_resource type="Theme" uid="uid://4215gjb2trrl" path="res://src/UI/ScenarioOverlayNew/Sonstiges/gebiet_theme.tres" id="25_qooc4"]
 [ext_resource type="FontFile" uid="uid://cqtlnoqxokx35" path="res://src/UI/ScenarioOverlayNew/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf" id="26_5ckp3"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlayOld/panel_container_political_view.gd" id="27_3b8te"]
 [ext_resource type="Theme" uid="uid://cyf5kaih5j285" path="res://src/UI/OverlayNew/Sonstiges/truppen_theme.tres" id="28_08v7j"]
@@ -171,6 +170,113 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "100"
 horizontal_alignment = 1
+
+[node name="PanelContainerRegion" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -584.0
+offset_top = -310.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("25_qooc4")
+script = ExtResource("20_0gkwc")
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("26_5ckp3")
+theme_override_font_sizes/font_size = 35
+text = "Gebietsinfo"
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="MarginRegion" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_right = 30
+
+[node name="RegionNameLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegion"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Name:"
+
+[node name="MarginRegionNameInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 10
+
+[node name="RegionNameInputLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionNameInput"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "NameInput"
+
+[node name="MarginRegionResources" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="RegionResourcesLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionResources"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Ressourcen:"
+horizontal_alignment = 1
+
+[node name="MarginRegionResourcesInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 10
+
+[node name="GebietsressourcenInputLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionResourcesInput"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "RessourcenInput"
+
+[node name="MarginRegionArmy" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="RegionArmyLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionArmy"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Truppen:"
+
+[node name="MarginRegionArmyInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 10
+
+[node name="ArmyInputLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionArmyInput"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "TruppenInput"
+
+[node name="MarginRegionBuilding" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="BuildingLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionBuilding"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Gebäude:"
+
+[node name="MarginRegionBuildingInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="BuildingInputLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionBuildingInput"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "GebäudeInput"
 
 [node name="PanelContainerInfo" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
 layout_mode = 1
@@ -580,7 +686,6 @@ offset_bottom = 225.0
 grow_vertical = 2
 size_flags_horizontal = 0
 theme = ExtResource("30_d0aj2")
-script = ExtResource("20_avbta")
 metadata/_edit_group_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions"]
@@ -660,7 +765,7 @@ popup/item_3/text = "Heiligtum"
 popup/item_3/id = 3
 popup/item_4/text = "Sägewerk (Holz)"
 popup/item_4/id = 4
-popup/item_5/text = "Mine (Eisen)"
+popup/item_5/text = "Mine (Metall)"
 popup/item_5/id = 5
 popup/item_6/text = "Steinbruch (Stein)"
 popup/item_6/id = 6
@@ -699,119 +804,6 @@ layout_mode = 2
 theme = ExtResource("29_y21ux")
 text = "Truppen bewegen"
 alignment = 0
-
-[node name="PanelContainerRegion" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.009
-anchor_top = 1.006
-anchor_right = 1.009
-anchor_bottom = 1.006
-offset_left = -754.28
-offset_top = -326.48
-offset_right = 0.720093
-offset_bottom = -0.480103
-grow_horizontal = 0
-grow_vertical = 0
-size_flags_horizontal = 0
-theme = ExtResource("20_r7nw4")
-script = ExtResource("20_0gkwc")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion"]
-layout_mode = 2
-
-[node name="Title" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("26_5ckp3")
-theme_override_font_sizes/font_size = 36
-text = "Gebietsinfo"
-
-[node name="Spacer" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-columns = 2
-
-[node name="MarginRegionName" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_constants/margin_right = 30
-
-[node name="RegionName" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionName"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Name:"
-
-[node name="MarginRegionNameInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 10
-
-[node name="RegionNameInputLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionNameInput"]
-custom_minimum_size = Vector2(420, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Schlachtfelder vor Kon Azor"
-
-[node name="MarginRegionResource" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
-layout_mode = 2
-
-[node name="RegionResources" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionResource"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Ressourcen:"
-horizontal_alignment = 1
-
-[node name="MarginRegionResourceInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 10
-
-[node name="RegionResourceInputLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionResourceInput"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "RessourcenInput"
-
-[node name="MarginRegionArmy" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
-layout_mode = 2
-
-[node name="RegionArmyLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionArmy"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Truppen:"
-
-[node name="MarginRegionArmyInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 10
-
-[node name="RegionArmyInputLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionArmyInput"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "TruppenInput"
-
-[node name="MarginRegionBuilding" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 5
-
-[node name="RegionBuildingLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionBuilding"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Gebäude:"
-
-[node name="MarginRegionBuildingInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 5
-
-[node name="RegionBuildingInputLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionBuildingInput"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "GebäudeInput"
 
 [node name="Scenario" type="Node2D" parent="."]
 process_mode = 1

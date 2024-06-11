@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://d4f5mm3jwg21v"]
 
 [ext_resource type="Texture2D" uid="uid://6ye0575tptoe" path="res://src/UI/ScenarioOverlayNew/Sonstiges/karte.jpg" id="1_xbu4k"]
-[ext_resource type="Theme" uid="uid://dkyvmh7wb1ijq" path="res://src/UI/ScenarioOverlayNew/Sonstiges/new_theme.tres" id="2_6u1hv"]
+[ext_resource type="Theme" uid="uid://g0popv6nep8g" path="res://src/UI/ScenarioOverlayNew/Sonstiges/new_theme.tres" id="2_6u1hv"]
 [ext_resource type="Texture2D" uid="uid://btssvilv8sp70" path="res://src/UI/ScenarioOverlayNew/Sonstiges/food.jpg" id="2_fachx"]
 [ext_resource type="Texture2D" uid="uid://bpefnmbs5s25u" path="res://src/UI/ScenarioOverlayNew/Sonstiges/metal.jpg" id="3_prqe4"]
 [ext_resource type="Texture2D" uid="uid://38ccf3vgryl6" path="res://src/UI/ScenarioOverlayNew/Sonstiges/stone.jpg" id="4_xe5bl"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bc60ql6gst4sg" path="res://src/UI/ScenarioOverlayNew/Sonstiges/weapon03longsword.png" id="7_vsox6"]
 [ext_resource type="Texture2D" uid="uid://b1iqbbo6q0qp4" path="res://src/UI/ScenarioOverlayNew/Sonstiges/weapon06bow.png" id="8_0o2r2"]
 [ext_resource type="Texture2D" uid="uid://cn6rd5q8grbu0" path="res://src/UI/ScenarioOverlayNew/Sonstiges/armour05platemail.png" id="9_ectow"]
-[ext_resource type="Theme" uid="uid://wnalh3p5w45g" path="res://src/UI/ScenarioOverlayNew/Sonstiges/timer_theme.tres" id="10_15m0n"]
+[ext_resource type="Theme" uid="uid://c34vkn1inryw0" path="res://src/UI/ScenarioOverlayNew/Sonstiges/timer_theme.tres" id="10_15m0n"]
 
 [node name="Node2D" type="Node"]
 

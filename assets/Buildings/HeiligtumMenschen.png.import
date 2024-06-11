@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b65ai7m1m5spb"
-path="res://.godot/imported/HeiligtumVonDessus.png-20dfb8544e19b32176672b25cbd4e837.ctex"
+path="res://.godot/imported/HeiligtumMenschen.png-f36b8755645f722ada7fb3a06067054d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Buildings/HeiligtumVonDessus.png"
-dest_files=["res://.godot/imported/HeiligtumVonDessus.png-20dfb8544e19b32176672b25cbd4e837.ctex"]
+source_file="res://assets/Buildings/HeiligtumMenschen.png"
+dest_files=["res://.godot/imported/HeiligtumMenschen.png-f36b8755645f722ada7fb3a06067054d.ctex"]
 
 [params]
 

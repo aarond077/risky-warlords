@@ -7,20 +7,26 @@ class_name Player
 @onready var player_index : int
 @onready var capital : String
 @onready var nation : String
-@onready var army : Dictionary = {"Sword" : 0, "Bow" : 0, "Heavy" : 0}
 @onready var army_points : int 
 @onready var action_points : int
-@onready var resources : Dictionary = {"Wood" : 0, "Stone" : 0, "Metal" : 0, "Food" : 0}
+
+var resources : Dictionary = {"Wood" : 0, "Stone" : 0, "Metal" : 0, "Food" : 0}
+var army : Dictionary = {"Warrior" : 0, "Archer" : 0, "Tank" : 0}
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass#self.army = {"Warrior" : 0, "Archer" : 0, "Tank" : 0}
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func update_player_resources():
+	for region in self.region_graph.region_array: #check every reagion in the players region graph
+		self.resources["Food"] += 5 #add 5 food per region
+		var region_resource : String = region.resources[0] # get resource of the region
+		if region_resource != "Null": # check if resource is not null
+			var amount : int = int(region.resources[1]) #get amount of the resource in region
+			self.resources[region_resource] += amount #add amount to resource of the player
+
 	
 func set_player_index(player_index : int):
 	self.player_index = player_index

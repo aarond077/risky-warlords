@@ -10,14 +10,19 @@ extends Node2D
 @onready var active_player : Player
 @onready var building_coordinates : Dictionary
 
-@onready var capitals 
+@onready var capitals : Array
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	self.scenario_region_graph = RegionGraph.new()
 	
 	
+func find_active_region_in_array(region_name : String):
+	for region in self.scenario_region_graph.region_array:
+		if region_name == region.region_name:
+			self.active_region = region
+	return self.active_region
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,6 +35,8 @@ func store_start_scenario__properties(scenario_map_name : String,
 	self.scenario_map_name = scenario_map_name
 	self.scenario_players = scenario_players
 	self.scenario_region_graph = scenario_region_graph
+
+
 	
 # sets the capitals according to the map capitals
 func set_scenario_players_capitals(capitals) -> void:
@@ -71,6 +78,7 @@ func add_player(player_index : int):
 	new_player.set_player_index(player_index)
 	
 	scenario_players.append(new_player)
+	
 
 
 func remove_player(player_index : int):

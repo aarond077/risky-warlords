@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5cvqkypl4eoa"
-path="res://.godot/imported/HeiligtumVonEphra.png-3e55b4f51634ab700b985b6f642210ea.ctex"
+uid="uid://bk2jl34887oy7"
+path="res://.godot/imported/HeiligtumZwerge.png-5478da5c2f490de4de62e3ded8273540.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Buildings/HeiligtumVonEphra.png"
-dest_files=["res://.godot/imported/HeiligtumVonEphra.png-3e55b4f51634ab700b985b6f642210ea.ctex"]
+source_file="res://assets/Buildings/HeiligtumZwerge.png"
+dest_files=["res://.godot/imported/HeiligtumZwerge.png-5478da5c2f490de4de62e3ded8273540.ctex"]
 
 [params]
 

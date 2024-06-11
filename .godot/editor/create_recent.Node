@@ -1,3 +1,4 @@
+Node2D
 Button
 GridContainer
 MarginContainer
@@ -12,4 +13,3 @@ Label
 BoxContainer
 Camera2D
 TileMap
-ScenarioOverlay

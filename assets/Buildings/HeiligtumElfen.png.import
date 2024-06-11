@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk2jl34887oy7"
-path="res://.godot/imported/HeiligtumVonBrann.png-05c86b17e60141039658ba5802247b04.ctex"
+uid="uid://5cvqkypl4eoa"
+path="res://.godot/imported/HeiligtumElfen.png-87a952afce6302b66953224c0099165b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Buildings/HeiligtumVonBrann.png"
-dest_files=["res://.godot/imported/HeiligtumVonBrann.png-05c86b17e60141039658ba5802247b04.ctex"]
+source_file="res://assets/Buildings/HeiligtumElfen.png"
+dest_files=["res://.godot/imported/HeiligtumElfen.png-87a952afce6302b66953224c0099165b.ctex"]
 
 [params]
 

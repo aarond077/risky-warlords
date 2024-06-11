@@ -6,7 +6,7 @@ class_name RegionNode
 @onready var resource : String
 @onready var area : String
 @onready var building_slots : Array[String]
-@onready var buildings : Array[String]
+@onready var building : String
 @onready var region_army : Dictionary
 @onready var neighbours : Array[RegionNode]
 @onready var holder : String

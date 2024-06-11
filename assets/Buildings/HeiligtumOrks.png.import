@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://o45753d2vi68"
-path="res://.godot/imported/HeiligtumVonAzor.png-02e38c23f9f4e28dffbb056b60129640.ctex"
+path="res://.godot/imported/HeiligtumOrks.png-b873a515ecf620f04401beef0c62da24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Buildings/HeiligtumVonAzor.png"
-dest_files=["res://.godot/imported/HeiligtumVonAzor.png-02e38c23f9f4e28dffbb056b60129640.ctex"]
+source_file="res://assets/Buildings/HeiligtumOrks.png"
+dest_files=["res://.godot/imported/HeiligtumOrks.png-b873a515ecf620f04401beef0c62da24.ctex"]
 
 [params]
 
