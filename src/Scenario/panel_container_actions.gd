@@ -3,7 +3,6 @@ extends PanelContainer
 
 
 @onready var create_building_menu_button = $VBoxContainer/MarginContainer2/GridContainer/GebaeudeErrichten
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	create_building_menu_button.get_popup().id_pressed.connect(_on_item_menu_pressed)
@@ -20,3 +19,20 @@ func _on_item_menu_pressed(id: int):
 	SignalBus.call_deferred("emit_signal", "create_building", building_name)
 	
 	
+
+
+func _on_gebaeude_abreissen_pressed():
+	pass # Replace with function body.
+
+
+func _on_building_remove_button_pressed():
+	var active_player : Player = ScenarioDataManager.active_player
+	var active_region : RegionNode = ScenarioDataManager.active_region
+	
+	if ( true):#active_player.player_index == active_region.region_owner_index):
+		SignalBus.call_deferred(
+			"emit_signal", 
+			"remove_sprite", 
+			active_region.building,
+			active_region.region_name
+			)

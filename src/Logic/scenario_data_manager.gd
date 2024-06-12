@@ -17,6 +17,16 @@ extends Node2D
 func _ready():
 	self.scenario_region_graph = RegionGraph.new()
 	
+func update_player_resources():
+	for player in self.scenario_players:
+		player.update_player_resources()
+
+
+func find_region_in_array(region_name : String) -> RegionNode:
+	for region in scenario_region_graph.region_array:
+		if region.region_name == region_name:
+			return region
+	return null
 	
 func find_active_region_in_array(region_name : String):
 	for region in self.scenario_region_graph.region_array:
@@ -35,22 +45,34 @@ func store_start_scenario__properties(scenario_map_name : String,
 	self.scenario_map_name = scenario_map_name
 	self.scenario_players = scenario_players
 	self.scenario_region_graph = scenario_region_graph
-
+	
+func add_region_owner(region_name : String, player_index : int):
+	for region in self.scenario_region_graph.region_array:
+		if region.region_name == region_name:
+			region.region_owner_index = player_index
+	
 
 	
 # sets the capitals according to the map capitals
 func set_scenario_players_capitals(capitals) -> void:
 	var rand_capital_index : int
 	for player in self.scenario_players:
+		player.regions = RegionGraph.new()
+
 		rand_capital_index = randi_range(0, capitals.size()-1)
 		while(player.capital == capitals[rand_capital_index]):
 			rand_capital_index = randi_range(0, capitals.size()-1)
 		player.capital = capitals[rand_capital_index]
+		player.add_region_to_array(player.capital)
+		
+		add_region_owner(player.capital, player.player_index)
+		
 		capitals.remove_at(rand_capital_index)
 	
 func set_start_scenario_active_player():
 	self.active_player = scenario_players[0]
 	SignalBus.call_deferred("emit_signal", "next_active_player")
+	
 	
 	
 	

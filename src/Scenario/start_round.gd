@@ -45,10 +45,14 @@ func enter():
 	call_deferred("hide_action_point_state_ui")
 	call_deferred("show_start_round_state_ui")
 	
+	ScenarioDataManager.update_player_resources()
 	
-	if(ScenarioDataManager.active_player == null):
-		ScenarioDataManager.set_start_scenario_active_player()
-	print(ScenarioDataManager.active_player.player_index)
+	SignalBus.call_deferred(
+		"emit_signal",
+		 "update_player_resources_label",
+		 ScenarioDataManager.active_player)
+	
+	
 
 func exit():
 	super.exit()

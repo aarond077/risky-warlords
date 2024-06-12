@@ -12,4 +12,5 @@ func _ready():
 
 func on_remove_sprite(sprite_name : String, region_name : String):
 	if(sprite_name == self.sprite_name and region_name == self.region_name):
+		print("yuhu")
 		self.queue_free()

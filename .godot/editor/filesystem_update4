@@ -18,3 +18,13 @@ res://src/UI/ScenarioOverlayNew/ui.tscn
 res://src/UI/ScenarioOverlayOld/scenario_overlay.tscn
 res://src/UI/OverlayNew/ui.tscn
 res://src/Scenario/ui.tscn
+res://src/Scenario/panel_container_actions.gd
+res://src/Region/region_node.gd
+res://src/Player/player.gd
+res://src/Logic/scenario_data_manager.gd
+res://src/Scenario/scenario.gd
+res://src/Building/removable_sprite.gd
+res://src/Scenario/panel_container_resources.gd
+res://src/Scenario/start_round.gd
+res://src/Logic/signal_bus.gd
+res://src/Scenario/load_map.gd

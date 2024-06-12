@@ -4,7 +4,6 @@ class_name RegionNode
 
 @onready var region_name : String
 @onready var resource : String
-@onready var area : String
 @onready var building_slots : Array[String]
 @onready var building : String
 @onready var region_army : Dictionary
@@ -15,6 +14,7 @@ class_name RegionNode
 @onready var travel_cost : int
 @onready var curse : int 
 @onready var building_coordinates : Vector2
+@onready var region_owner_index : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

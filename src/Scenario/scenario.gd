@@ -6,15 +6,10 @@ extends Node2D
 
 func _ready():
 	SignalBus.call_deferred("connect", "create_building", on_create_building)
-	ScenarioDataManager.set_scenario_players_capitals(
-		ScenarioDataManager.capitals
-	)
-	ScenarioDataManager.scenario_region_graph.load_regions_to_array()
-	ScenarioDataManager.scenario_region_graph.load_resources_to_array()
-	draw_capitals_fortress()
+	SignalBus.call_deferred("connect", "draw_capitals_fortress", on_draw_capitals_fortress)
 		
 
-func draw_capitals_fortress():
+func on_draw_capitals_fortress():
 	for player in ScenarioDataManager.scenario_players:
 		var position = Vector2(
 				ScenarioDataManager.building_coordinates[player.capital][0],
