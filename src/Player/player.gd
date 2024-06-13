@@ -10,6 +10,7 @@ class_name Player
 @onready var army_points : int 
 @onready var action_points : int
 
+
 var resources : Dictionary = {"Wood" : 0, "Stone" : 0, "Iron" : 0, "Food" : 0}
 var army : Dictionary = {"Warrior" : 0, "Archer" : 0, "Tank" : 0}
 
@@ -28,9 +29,15 @@ func add_region_to_array(region_name : String):
 	new_region.resource_factor = graph_region.resource_factor
 	
 	self.regions.region_array.append(new_region)
-	
 
-func update_player_resources():
+
+func update_army(warriors : int, archers : int, tanks : int):
+	self.army["Warriors"] += warriors
+	self.army["Archers"] += archers
+	self.army["Tanks"] += tanks
+
+
+func update_resources():
 	for region in self.regions.region_array: #check every reagion in the players region graph
 		self.resources["Food"] += 5 #add 5 food per region
 		var region_resource : String = region.resource # get resource of the region
@@ -62,17 +69,4 @@ func set_iron(iron : int):
 func set_food(food : int):
 	self.resources["Food"] = food
 
-func set_army(sword_army : int, bow_army : int, heavy_army : int ):
-	self.set_sword_army(sword_army)
-	self.set_bow_army(bow_army)
-	self.set_heavy_army(heavy_army)
-
-func set_sword_army(sword_army : int):
-	self.army["Sword"] = sword_army
-
-func set_bow_army(bow_army : int):
-	self.army["Bow"] = bow_army
-	
-func set_heavy_army(heavy_army : int):
-	self.army["Heavy"] = heavy_army
 	

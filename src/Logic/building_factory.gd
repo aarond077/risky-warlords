@@ -11,18 +11,27 @@ static func create_building(building_name : String, nation: String, position : V
 		return create_tower(nation, position, region_name)
 	elif building_name == "Forschungsgebäude":
 		return create_research_center(nation, position, region_name)
-	elif building_name == "Sägewerk (Holz)":
-		return create_lumberjack_hut(position, region_name)
-	elif building_name == "Mine (Eisen)":
-		return create_mine(position, region_name)
-	elif building_name == "Steinbruch (Stein)":
-		return create_quarry(position, region_name)
+	elif building_name == "Ressourcengebäude":
+		return create_resource_building(position, region_name)
 	else:
 		print("ERROR: BUILDING NAME NOT FOUND")
 		return null
 	
 		
-
+static func create_resource_building(position, region_name):
+	var active_region : RegionNode = ScenarioDataManager.active_region
+	if active_region.resource == "Wood":
+		return create_lumberjack_hut(position, region_name)
+	elif active_region.resource == "Stone":
+		return create_quarry(position, region_name)
+	elif active_region.resource == "Iron":
+		return create_mine(position, region_name)
+	elif active_region.resource == "Null":
+		return null
+	else:
+		print("ERROR: RESOURCE NOT FOUND")
+	return null;
+		
 	
 static func create_fortress(nation: String, position : Vector2, region_name : String) -> RemovableSprite:
 	var fortress : RemovableSprite = RemovableSprite.new()
@@ -78,7 +87,7 @@ static func create_mine(position : Vector2, region_name : String) -> RemovableSp
 static func create_lumberjack_hut(position : Vector2, region_name : String) -> RemovableSprite:
 	var lumberjack_hut : RemovableSprite = RemovableSprite.new()
 	lumberjack_hut.position = position
-	lumberjack_hut.sprite_name = "LumberjackHut"
+	lumberjack_hut.sprite_name = "Holzfällerhütte"
 	lumberjack_hut.region_name = region_name
 	lumberjack_hut.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	lumberjack_hut.texture = ResourceLoader.load(
@@ -88,7 +97,7 @@ static func create_lumberjack_hut(position : Vector2, region_name : String) -> R
 static func create_quarry(position : Vector2, region_name : String) -> RemovableSprite:
 	var quarry : RemovableSprite = RemovableSprite.new()
 	quarry.position = position
-	quarry.sprite_name = "Quarry"
+	quarry.sprite_name = "Steinbruch"
 	quarry.region_name = region_name
 	quarry.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	quarry.texture = ResourceLoader.load(

@@ -21,7 +21,6 @@ func hide_start_round_state_ui():
 	get_parent().panel_container_select_army.visible = false
 
 func show_action_point_state_ui():
-	get_parent().panel_container_timer.visible = true
 	get_parent().panel_container_army.visible = true
 	get_parent().panel_container_region.visible = true
 	get_parent().panel_container_info.visible = true

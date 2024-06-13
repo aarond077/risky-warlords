@@ -1,8 +1,9 @@
-[gd_scene load_steps=36 format=3 uid="uid://d1xk2lv80lqnp"]
+[gd_scene load_steps=35 format=3 uid="uid://d1xk2lv80lqnp"]
 
 [ext_resource type="Script" path="res://src/Scenario/game_manager.gd" id="1_3288w"]
 [ext_resource type="Script" path="res://src/Scenario/scenario.gd" id="2_dxbxk"]
 [ext_resource type="Script" path="res://src/Scenario/map_terrain.gd" id="3_hkubf"]
+[ext_resource type="Theme" uid="uid://b8er4gml1d1nu" path="res://src/UI/ScenarioOverlay/Sonstiges/new_theme.tres" id="3_rcj7a"]
 [ext_resource type="Script" path="res://src/Scenario/map_regions.gd" id="4_cx5v6"]
 [ext_resource type="Script" path="res://src/Scenario/zooming_camera.gd" id="4_j537l"]
 [ext_resource type="TileSet" uid="uid://nl4xmhsyw2f6" path="res://src/Scenario/scenario.tres" id="5_mdv1s"]
@@ -11,42 +12,28 @@
 [ext_resource type="Script" path="res://src/Scenario/load_map.gd" id="6_e01md"]
 [ext_resource type="Script" path="res://src/Scenario/start_round.gd" id="7_npxgh"]
 [ext_resource type="Script" path="res://src/Logic/state.gd" id="7_x2l3a"]
-[ext_resource type="Script" path="res://src/Scenario/panel_container_resources.gd" id="10_ncx5o"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_resources.gd" id="10_ncx5o"]
 [ext_resource type="Texture2D" uid="uid://6iqsya71utgr" path="res://assets/Background/background_wood.png" id="12_7xjhs"]
-[ext_resource type="Script" path="res://src/UI/ScenarioOverlayOld/scenario_overlay.gd" id="12_tdvrh"]
-[ext_resource type="Theme" uid="uid://g0popv6nep8g" path="res://src/UI/ScenarioOverlayNew/Sonstiges/new_theme.tres" id="14_agmyj"]
-[ext_resource type="Script" path="res://src/UI/ScenarioOverlayOld/panel_container_timer.gd" id="14_bi3fb"]
-[ext_resource type="Texture2D" uid="uid://38ccf3vgryl6" path="res://src/UI/ScenarioOverlayNew/Sonstiges/stone.jpg" id="15_le026"]
-[ext_resource type="Texture2D" uid="uid://chw2nbcqgmwms" path="res://src/UI/ScenarioOverlayNew/Sonstiges/wood.jpg" id="16_eaano"]
-[ext_resource type="Texture2D" uid="uid://bpefnmbs5s25u" path="res://src/UI/ScenarioOverlayNew/Sonstiges/metal.jpg" id="17_rqe8m"]
-[ext_resource type="Texture2D" uid="uid://btssvilv8sp70" path="res://src/UI/ScenarioOverlayNew/Sonstiges/food.jpg" id="18_suoxv"]
-[ext_resource type="Script" path="res://src/Scenario/panel_container_select_army.gd" id="19_dy4cy"]
-[ext_resource type="Script" path="res://src/UI/ScenarioOverlayOld/panel_container_region.gd" id="20_0gkwc"]
-[ext_resource type="Script" path="res://src/Scenario/panel_container_actions.gd" id="20_avbta"]
-[ext_resource type="Texture2D" uid="uid://bc60ql6gst4sg" path="res://src/UI/ScenarioOverlayNew/Sonstiges/weapon03longsword.png" id="20_qgfvj"]
-[ext_resource type="Theme" uid="uid://cik0xnfjxuhw0" path="res://src/UI/OverlayNew/Sonstiges/gebiet_theme.tres" id="20_r7nw4"]
-[ext_resource type="Texture2D" uid="uid://b1iqbbo6q0qp4" path="res://src/UI/ScenarioOverlayNew/Sonstiges/weapon06bow.png" id="22_0f5iu"]
-[ext_resource type="Script" path="res://src/UI/ScenarioOverlayOld/panel_container_info.gd" id="22_657ph"]
-[ext_resource type="Texture2D" uid="uid://cn6rd5q8grbu0" path="res://src/UI/ScenarioOverlayNew/Sonstiges/armour05platemail.png" id="23_tledy"]
-[ext_resource type="Theme" uid="uid://c34vkn1inryw0" path="res://src/UI/ScenarioOverlayNew/Sonstiges/timer_theme.tres" id="24_piu74"]
-[ext_resource type="FontFile" uid="uid://cqtlnoqxokx35" path="res://src/UI/ScenarioOverlayNew/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf" id="26_5ckp3"]
-[ext_resource type="Script" path="res://src/UI/ScenarioOverlayOld/panel_container_political_view.gd" id="27_3b8te"]
-[ext_resource type="Theme" uid="uid://cyf5kaih5j285" path="res://src/UI/OverlayNew/Sonstiges/truppen_theme.tres" id="28_08v7j"]
-[ext_resource type="Theme" uid="uid://5jco2phc6pxl" path="res://src/UI/OverlayNew/Sonstiges/font_theme.tres" id="29_y21ux"]
-[ext_resource type="Theme" uid="uid://b6r6mw4uxy32s" path="res://src/UI/OverlayNew/Sonstiges/aktionen_theme.tres" id="30_d0aj2"]
-
-[sub_resource type="GDScript" id="GDScript_56to2"]
-script/source = "extends Label
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/scenario_overlay.gd" id="12_tdvrh"]
+[ext_resource type="Texture2D" uid="uid://38ccf3vgryl6" path="res://src/UI/ScenarioOverlayOld/Sonstiges/stone.jpg" id="15_le026"]
+[ext_resource type="Texture2D" uid="uid://chw2nbcqgmwms" path="res://src/UI/ScenarioOverlayOld/Sonstiges/wood.jpg" id="16_eaano"]
+[ext_resource type="Texture2D" uid="uid://bpefnmbs5s25u" path="res://src/UI/ScenarioOverlayOld/Sonstiges/metal.jpg" id="17_rqe8m"]
+[ext_resource type="Theme" uid="uid://ck72kpur1q2po" path="res://src/UI/ScenarioOverlay/Sonstiges/top_theme.tres" id="18_87xab"]
+[ext_resource type="Texture2D" uid="uid://btssvilv8sp70" path="res://src/UI/ScenarioOverlayOld/Sonstiges/food.jpg" id="18_suoxv"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_select_army.gd" id="19_dy4cy"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_region.gd" id="20_0gkwc"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_army.gd" id="20_afwyi"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_actions.gd" id="20_avbta"]
+[ext_resource type="Texture2D" uid="uid://bc60ql6gst4sg" path="res://src/UI/ScenarioOverlayOld/Sonstiges/weapon03longsword.png" id="20_qgfvj"]
+[ext_resource type="Theme" uid="uid://cik0xnfjxuhw0" path="res://src/UI/ScenarioOverlay/Sonstiges/gebiet_theme.tres" id="20_r7nw4"]
+[ext_resource type="Texture2D" uid="uid://b1iqbbo6q0qp4" path="res://src/UI/ScenarioOverlayOld/Sonstiges/weapon06bow.png" id="22_0f5iu"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_info.gd" id="22_657ph"]
+[ext_resource type="Texture2D" uid="uid://cn6rd5q8grbu0" path="res://src/UI/ScenarioOverlayOld/Sonstiges/armour05platemail.png" id="23_tledy"]
+[ext_resource type="FontFile" uid="uid://cqtlnoqxokx35" path="res://src/UI/ScenarioOverlay/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf" id="26_5ckp3"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_political_view.gd" id="27_3b8te"]
+[ext_resource type="Theme" uid="uid://cyf5kaih5j285" path="res://src/UI/ScenarioOverlay/Sonstiges/truppen_theme.tres" id="28_08v7j"]
+[ext_resource type="Theme" uid="uid://5jco2phc6pxl" path="res://src/UI/ScenarioOverlay/Sonstiges/font_theme.tres" id="29_y21ux"]
+[ext_resource type="Theme" uid="uid://b6r6mw4uxy32s" path="res://src/UI/ScenarioOverlay/Sonstiges/aktionen_theme.tres" id="30_d0aj2"]
 
 [node name="GameManager" type="Control"]
 process_mode = 3
@@ -75,114 +62,19 @@ mouse_filter = 1
 script = ExtResource("12_tdvrh")
 metadata/_edit_group_ = true
 
-[node name="PanelContainerTimer" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
+[node name="PanelContainerInfo" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.118
+anchor_top = -0.011
 anchor_right = 0.5
-anchor_bottom = 0.188
-offset_left = -78.0
-offset_top = 30.0
-offset_right = 78.0
-offset_bottom = 37.0
-grow_horizontal = 2
-theme = ExtResource("24_piu74")
-script = ExtResource("14_bi3fb")
-metadata/_edit_group_ = true
-
-[node name="PlayerTimer" type="Timer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTimer"]
-wait_time = 59.5
-one_shot = true
-
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTimer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("14_agmyj")
-
-[node name="PlayerTimerLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerTimer/GridContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "1:00"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PanelContainerArmy" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
-layout_mode = 1
-offset_right = 465.0
-offset_bottom = 97.0
-size_flags_horizontal = 0
-theme = ExtResource("14_agmyj")
-metadata/_edit_group_ = true
-
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy"]
-layout_mode = 2
-size_flags_horizontal = 0
-columns = 6
-
-[node name="SwordIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer"]
-layout_mode = 2
-texture = ExtResource("20_qgfvj")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="MarginSword" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 30
-
-[node name="SwordLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer/MarginSword"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "100"
-horizontal_alignment = 1
-script = SubResource("GDScript_56to2")
-
-[node name="BowIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer"]
-layout_mode = 2
-texture = ExtResource("22_0f5iu")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="MarginBow" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 30
-
-[node name="BowLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer/MarginBow"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "100"
-horizontal_alignment = 1
-
-[node name="ArmorIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer"]
-layout_mode = 2
-texture = ExtResource("23_tledy")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="MarginArmor" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 30
-
-[node name="ArmorLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer/MarginArmor"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "100"
-horizontal_alignment = 1
-
-[node name="PanelContainerInfo" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
+anchor_bottom = -0.011
 offset_left = -137.0
+offset_top = -0.119999
 offset_right = 137.0
-offset_bottom = 138.0
+offset_bottom = 178.88
 grow_horizontal = 2
-theme = ExtResource("14_agmyj")
+theme = ExtResource("3_rcj7a")
 script = ExtResource("22_657ph")
 metadata/_edit_group_ = true
 
@@ -192,6 +84,7 @@ size_flags_horizontal = 0
 
 [node name="MarginPlayerInfo" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerInfo/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 6
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 30
 
@@ -200,9 +93,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Spieler X"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginMove" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerInfo/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 6
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 30
 
@@ -211,91 +106,18 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Ist am Zug"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="PanelContainerResources" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -593.0
-offset_bottom = 97.0
-grow_horizontal = 0
-size_flags_horizontal = 0
-theme = ExtResource("14_agmyj")
-script = ExtResource("10_ncx5o")
-metadata/_edit_group_ = true
-
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources"]
-layout_mode = 2
-columns = 8
-
-[node name="StoneIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
-layout_mode = 2
-texture = ExtResource("15_le026")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="MarginStone" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 30
-
-[node name="StoneLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer/MarginStone"]
+[node name="PlayerTimerLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerInfo/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "100"
+text = "1:00"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="WoodIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
-layout_mode = 2
-texture = ExtResource("16_eaano")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="MarginWood" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 30
-
-[node name="WoodLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer/MarginWood"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "100"
-horizontal_alignment = 1
-
-[node name="IronIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
-layout_mode = 2
-texture = ExtResource("17_rqe8m")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="MarginIron" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 30
-
-[node name="IronlLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer/MarginIron"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "100"
-horizontal_alignment = 1
-
-[node name="FoodIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
-layout_mode = 2
-texture = ExtResource("18_suoxv")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="MarginFood" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 30
-
-[node name="FoodLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer/MarginFood"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "100"
-horizontal_alignment = 1
+[node name="PlayerTimer" type="Timer" parent="CanvasLayer/ScenarioOverlay/PanelContainerInfo"]
+wait_time = 59.5
+one_shot = true
 
 [node name="PanelContainerPoliticalView" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
 visible = false
@@ -651,7 +473,7 @@ layout_mode = 2
 theme = ExtResource("29_y21ux")
 text = "Gebäude errichten"
 alignment = 0
-item_count = 7
+item_count = 5
 popup/item_0/text = "Forschungsgebäude"
 popup/item_0/id = 0
 popup/item_1/text = "Wachturm"
@@ -660,12 +482,8 @@ popup/item_2/text = "Marktplatz"
 popup/item_2/id = 2
 popup/item_3/text = "Heiligtum"
 popup/item_3/id = 3
-popup/item_4/text = "Sägewerk (Holz)"
+popup/item_4/text = "Ressourcengebäude"
 popup/item_4/id = 4
-popup/item_5/text = "Mine (Eisen)"
-popup/item_5/id = 5
-popup/item_6/text = "Steinbruch (Stein)"
-popup/item_6/id = 6
 
 [node name="BuildingRemoveButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
@@ -815,6 +633,178 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "GebäudeInput"
 
+[node name="PanelContainerResources" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.009
+anchor_top = -0.007
+anchor_right = 1.009
+anchor_bottom = -0.007
+offset_left = -598.28
+offset_top = -0.44
+offset_right = -0.280151
+offset_bottom = 106.56
+grow_horizontal = 0
+theme = ExtResource("18_87xab")
+script = ExtResource("10_ncx5o")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources"]
+layout_mode = 2
+columns = 8
+
+[node name="MarginStoneIcon" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 0
+
+[node name="StoneIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer/MarginStoneIcon"]
+layout_mode = 2
+texture = ExtResource("15_le026")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginStone" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="StoneLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer/MarginStone"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 32
+text = "1000"
+horizontal_alignment = 1
+
+[node name="WoodIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
+layout_mode = 2
+texture = ExtResource("16_eaano")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginWood" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="WoodLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer/MarginWood"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+
+[node name="IronIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
+layout_mode = 2
+texture = ExtResource("17_rqe8m")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginIron" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="IronLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer/MarginIron"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+
+[node name="FoodIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
+layout_mode = 2
+texture = ExtResource("18_suoxv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginFood" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="FoodLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerResources/GridContainer/MarginFood"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "1000 "
+horizontal_alignment = 1
+
+[node name="PanelContainerArmy" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
+layout_mode = 1
+offset_right = 566.0
+offset_bottom = 107.0
+size_flags_horizontal = 0
+theme = ExtResource("18_87xab")
+script = ExtResource("20_afwyi")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy"]
+layout_mode = 2
+size_flags_horizontal = 0
+columns = 6
+
+[node name="MarginSwordIcon" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 5
+
+[node name="SwordIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer/MarginSwordIcon"]
+layout_mode = 2
+texture = ExtResource("20_qgfvj")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginWarriors" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 30
+
+[node name="WarriorsLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer/MarginWarriors"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "10000"
+horizontal_alignment = 1
+
+[node name="BowIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer"]
+layout_mode = 2
+texture = ExtResource("22_0f5iu")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginBow" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="BowCount" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer/MarginBow"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "10"
+horizontal_alignment = 1
+
+[node name="ArmorIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer"]
+layout_mode = 2
+texture = ExtResource("23_tledy")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginArmor" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="ArmorCount" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerArmy/GridContainer/MarginArmor"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+
 [node name="Scenario" type="Node2D" parent="."]
 process_mode = 1
 script = ExtResource("2_dxbxk")
@@ -882,7 +872,7 @@ layer = -1
 position = Vector2(449, 604)
 texture = ExtResource("12_7xjhs")
 
-[connection signal="timeout" from="CanvasLayer/ScenarioOverlay/PanelContainerTimer/PlayerTimer" to="Scenario" method="_on_player_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/ScenarioOverlay/PanelContainerInfo/PlayerTimer" to="Scenario" method="_on_player_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView/GridContainerPoliticalView/MarginContainerPoliticalView/PoliticalViewButton" to="CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView" method="_on_political_view_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/WarriorDecreaseButton" to="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy" method="_on_warrior_decrease_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/WarriorIncreaseButton" to="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy" method="_on_warrior_increase_button_pressed"]

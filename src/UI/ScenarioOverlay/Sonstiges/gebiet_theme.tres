@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cik0xnfjxuhw0"]
+
+[ext_resource type="FontFile" uid="uid://cqtlnoqxokx35" path="res://src/UI/ScenarioOverlay/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf" id="1_bjwpe"]
+[ext_resource type="Texture2D" uid="uid://d1ppo0af6266q" path="res://src/UI/ScenarioOverlayOld/Sonstiges/gebiet frame.png" id="2_2nc1s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uxhyw"]
+texture = ExtResource("2_2nc1s")
+texture_margin_left = 70.0
+texture_margin_top = 50.0
+texture_margin_right = 70.0
+texture_margin_bottom = 50.0
+
+[resource]
+Label/fonts/font = ExtResource("1_bjwpe")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_uxhyw")

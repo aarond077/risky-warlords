@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var player_timer : Timer = $"../CanvasLayer/ScenarioOverlay/PanelContainerTimer/PlayerTimer"
+@onready var player_timer : Timer = $"../CanvasLayer/ScenarioOverlay/PanelContainerInfo/PlayerTimer"
 @onready var buildings : Node = $Buildings
 @onready var players : Node = $Players
 
@@ -22,15 +22,6 @@ func on_draw_capitals_fortress():
 
 
 func _on_player_timer_timeout():
-	#draw_capitals_fortress()
-	#for region in ScenarioDataManager.building_coordinates:
-	#	print(region)
-	#	print(typeof(region))
-	#	for player in ScenarioDataManager.scenario_players:
-	#		if(player.capital == region):
-	#			print("make sensi")
-	
-	print(ScenarioDataManager.active_player.capital)
 	ScenarioDataManager.set_next_active_player()
 	player_timer.start()
 
@@ -48,6 +39,8 @@ func on_create_building(building_name):
 		building_position,
 		active_region.region_name
 	)
-	active_region.building = new_building.sprite_name
-	buildings.add_child(new_building)
+	
+	if new_building != null:
+		active_region.building = new_building.sprite_name
+		buildings.add_child(new_building)
 	

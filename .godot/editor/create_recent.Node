@@ -1,3 +1,4 @@
+Timer
 Node2D
 Button
 GridContainer
@@ -7,9 +8,7 @@ Sprite2D
 ParallaxBackground
 Control
 CanvasLayer
-Timer
 Container
 Label
 BoxContainer
 Camera2D
-TileMap

@@ -26,24 +26,3 @@ func load_regions_to_array():
 
 func get_region_node(region_name : String):
 	pass
-	
-func add_region_node(new_node : RegionNode, neighbour_node : String):
-	pass
-	
-func remove_region_node(region_name : String):
-	pass
-
-func generate_region_graph_from_file(filename : String):
-	pass
-
-func generate_region_graph_from_capital(capital : String, map_graph : RegionGraph):
-	pass
-	
-func find_shortest_route(start_node : RegionNode, end_node : RegionNode):
-	pass
-
-func is_empty():
-	pass
-
-func size():
-	pass

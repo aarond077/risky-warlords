@@ -1,0 +1,795 @@
+[gd_scene load_steps=23 format=3 uid="uid://cos6atngucb2f"]
+
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_region.gd" id="1_b6r40"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/scenario_overlay.gd" id="1_obp3o"]
+[ext_resource type="Theme" uid="uid://b8er4gml1d1nu" path="res://src/UI/ScenarioOverlay/Sonstiges/new_theme.tres" id="2_hdnmy"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_info.gd" id="3_hrbq5"]
+[ext_resource type="Texture2D" uid="uid://bc60ql6gst4sg" path="res://src/UI/ScenarioOverlayOld/Sonstiges/weapon03longsword.png" id="5_y4p24"]
+[ext_resource type="Texture2D" uid="uid://b1iqbbo6q0qp4" path="res://src/UI/ScenarioOverlayOld/Sonstiges/weapon06bow.png" id="6_68jd5"]
+[ext_resource type="Texture2D" uid="uid://cn6rd5q8grbu0" path="res://src/UI/ScenarioOverlayOld/Sonstiges/armour05platemail.png" id="7_xgrs5"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_resources.gd" id="8_jpo65"]
+[ext_resource type="Texture2D" uid="uid://38ccf3vgryl6" path="res://src/UI/ScenarioOverlayOld/Sonstiges/stone.jpg" id="9_0o4ln"]
+[ext_resource type="Texture2D" uid="uid://chw2nbcqgmwms" path="res://src/UI/ScenarioOverlayOld/Sonstiges/wood.jpg" id="10_8oxkc"]
+[ext_resource type="Texture2D" uid="uid://bpefnmbs5s25u" path="res://src/UI/ScenarioOverlayOld/Sonstiges/metal.jpg" id="11_7nxfg"]
+[ext_resource type="Texture2D" uid="uid://btssvilv8sp70" path="res://src/UI/ScenarioOverlayOld/Sonstiges/food.jpg" id="12_hqajt"]
+[ext_resource type="Theme" uid="uid://ck72kpur1q2po" path="res://src/UI/ScenarioOverlay/Sonstiges/top_theme.tres" id="13_i520h"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_political_view.gd" id="13_jxsf2"]
+[ext_resource type="Theme" uid="uid://cyf5kaih5j285" path="res://src/UI/ScenarioOverlay/Sonstiges/truppen_theme.tres" id="14_nwvwj"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_select_army.gd" id="15_cl1im"]
+[ext_resource type="FontFile" uid="uid://cqtlnoqxokx35" path="res://src/UI/ScenarioOverlay/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf" id="16_26vs3"]
+[ext_resource type="Theme" uid="uid://5jco2phc6pxl" path="res://src/UI/ScenarioOverlay/Sonstiges/font_theme.tres" id="17_l1ghk"]
+[ext_resource type="Theme" uid="uid://b6r6mw4uxy32s" path="res://src/UI/ScenarioOverlay/Sonstiges/aktionen_theme.tres" id="18_qkovn"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_army.gd" id="19_64a6f"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_actions.gd" id="19_67hok"]
+[ext_resource type="Theme" uid="uid://cik0xnfjxuhw0" path="res://src/UI/ScenarioOverlay/Sonstiges/gebiet_theme.tres" id="20_810kd"]
+
+[node name="ScenarioOverlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-800, -700)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 1
+script = ExtResource("1_obp3o")
+metadata/_edit_group_ = true
+
+[node name="PanelContainerInfo" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.011
+anchor_right = 0.5
+anchor_bottom = -0.011
+offset_left = -137.0
+offset_top = -0.119999
+offset_right = 137.0
+offset_bottom = 178.88
+grow_horizontal = 2
+theme = ExtResource("2_hdnmy")
+script = ExtResource("3_hrbq5")
+metadata/_edit_group_ = true
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainerInfo"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="MarginPlayerInfo" type="MarginContainer" parent="PanelContainerInfo/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="PlayerInfoLabel" type="Label" parent="PanelContainerInfo/GridContainer/MarginPlayerInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Spieler X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginMove" type="MarginContainer" parent="PanelContainerInfo/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="MoveLabel" type="Label" parent="PanelContainerInfo/GridContainer/MarginMove"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Ist am Zug"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerTimerLabel" type="Label" parent="PanelContainerInfo/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "1:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerTimer" type="Timer" parent="PanelContainerInfo"]
+wait_time = 59.5
+one_shot = true
+
+[node name="PanelContainerPoliticalView" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_jxsf2")
+
+[node name="GridContainerPoliticalView" type="GridContainer" parent="PanelContainerPoliticalView"]
+layout_mode = 2
+
+[node name="MarginContainerPoliticalView" type="MarginContainer" parent="PanelContainerPoliticalView/GridContainerPoliticalView"]
+layout_mode = 2
+
+[node name="PoliticalViewButton" type="Button" parent="PanelContainerPoliticalView/GridContainerPoliticalView/MarginContainerPoliticalView"]
+layout_mode = 2
+
+[node name="PanelContainerSelectArmy" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -486.5
+offset_top = -308.0
+offset_right = 486.5
+offset_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme = ExtResource("14_nwvwj")
+script = ExtResource("15_cl1im")
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainerSelectArmy"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="PanelContainerSelectArmy/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_26vs3")
+theme_override_font_sizes/font_size = 40
+text = "Bilde deine Truppen aus!"
+
+[node name="Spacer" type="Control" parent="PanelContainerSelectArmy/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainerSelectArmy/VBoxContainer"]
+layout_mode = 2
+
+[node name="FoodInfo" type="Label" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("16_26vs3")
+theme_override_font_sizes/font_size = 35
+text = "verfügbare Nahrung:"
+
+[node name="Spacer4" type="Control" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="FoodInput" type="Label" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme_override_fonts/font = ExtResource("16_26vs3")
+theme_override_font_sizes/font_size = 40
+text = "10"
+
+[node name="Spacer2" type="Control" parent="PanelContainerSelectArmy/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainerSelectArmy/VBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="Spacer3" type="Control" parent="PanelContainerSelectArmy/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="MarginKrieger" type="MarginContainer" parent="PanelContainerSelectArmy/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 30
+
+[node name="Krieger" type="Label" parent="PanelContainerSelectArmy/VBoxContainer/GridContainer/MarginKrieger"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Krieger"
+horizontal_alignment = 1
+
+[node name="MarginBogenschuetze" type="MarginContainer" parent="PanelContainerSelectArmy/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 10
+
+[node name="Bogenschuetze" type="Label" parent="PanelContainerSelectArmy/VBoxContainer/GridContainer/MarginBogenschuetze"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Bogenschütze"
+horizontal_alignment = 1
+
+[node name="MarginTank" type="MarginContainer" parent="PanelContainerSelectArmy/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Tank" type="Label" parent="PanelContainerSelectArmy/VBoxContainer/GridContainer/MarginTank"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Tank"
+horizontal_alignment = 1
+
+[node name="MarginKostenInfo" type="MarginContainer" parent="PanelContainerSelectArmy/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="KostenInfo" type="Label" parent="PanelContainerSelectArmy/VBoxContainer/GridContainer/MarginKostenInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Kosten"
+horizontal_alignment = 1
+
+[node name="MarginKriegerKosten" type="MarginContainer" parent="PanelContainerSelectArmy/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 30
+
+[node name="KriegerKosten" type="Label" parent="PanelContainerSelectArmy/VBoxContainer/GridContainer/MarginKriegerKosten"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "1"
+horizontal_alignment = 1
+
+[node name="MarginBogenschuetzeKosten" type="MarginContainer" parent="PanelContainerSelectArmy/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 10
+
+[node name="BogenschuetzeKosten" type="Label" parent="PanelContainerSelectArmy/VBoxContainer/GridContainer/MarginBogenschuetzeKosten"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "3"
+horizontal_alignment = 1
+
+[node name="MarginTankKosten" type="MarginContainer" parent="PanelContainerSelectArmy/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TankKosten" type="Label" parent="PanelContainerSelectArmy/VBoxContainer/GridContainer/MarginTankKosten"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "5"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainerSelectArmy/VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="WarriorDecreaseButton" type="Button" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "-"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="WarriorCounter" type="Label" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/MarginContainer"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+theme = ExtResource("17_l1ghk")
+theme_override_font_sizes/font_size = 40
+text = "00"
+horizontal_alignment = 1
+
+[node name="WarriorIncreaseButton" type="Button" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "+"
+
+[node name="Spacer2" type="Control" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ArcherDecreaseButton" type="Button" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "-"
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ArcherCounter" type="Label" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/MarginContainer2"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+theme = ExtResource("17_l1ghk")
+theme_override_font_sizes/font_size = 40
+text = "00"
+horizontal_alignment = 1
+
+[node name="ArcherIncreaseButton" type="Button" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "+"
+
+[node name="Spacer3" type="Control" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TankDecreaseButton" type="Button" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "-"
+
+[node name="MarginContainer3" type="MarginContainer" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+theme = ExtResource("17_l1ghk")
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="TankCounter" type="Label" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/MarginContainer3"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+theme = ExtResource("17_l1ghk")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+
+[node name="TankIncreaseButton" type="Button" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "+"
+
+[node name="Spacer3" type="Control" parent="PanelContainerSelectArmy/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainerSelectArmy/VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer5" type="Control" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ConfirmButton" type="Button" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+text = "Truppen ausbilden"
+
+[node name="Spacer4" type="Control" parent="PanelContainerSelectArmy/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainerActions" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.021
+anchor_top = 0.5
+anchor_right = -0.021
+anchor_bottom = 0.5
+offset_left = 0.320004
+offset_top = -225.0
+offset_right = 437.32
+offset_bottom = 225.0
+grow_vertical = 2
+size_flags_horizontal = 0
+theme = ExtResource("18_qkovn")
+script = ExtResource("19_67hok")
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainerActions"]
+layout_mode = 2
+
+[node name="GridContainer2" type="GridContainer" parent="PanelContainerActions/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="MarginAktionspunkte" type="MarginContainer" parent="PanelContainerActions/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_right = 30
+
+[node name="Aktionspunkte" type="Label" parent="PanelContainerActions/VBoxContainer/GridContainer2/MarginAktionspunkte"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_26vs3")
+theme_override_font_sizes/font_size = 35
+text = "Aktionspunkte:"
+
+[node name="MarginAktionspunkteInput" type="MarginContainer" parent="PanelContainerActions/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_right = 30
+
+[node name="AktionspunkteInput" type="Label" parent="PanelContainerActions/VBoxContainer/GridContainer2/MarginAktionspunkteInput"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_26vs3")
+theme_override_font_sizes/font_size = 35
+text = "4"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainerActions/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+
+[node name="Aktionen" type="Label" parent="PanelContainerActions/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_26vs3")
+theme_override_font_sizes/font_size = 35
+text = "Aktionen:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainerActions/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 18
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainerActions/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="RessourcenSammeln" type="MenuButton" parent="PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+text = "Ressourcen sammeln"
+alignment = 0
+item_count = 4
+popup/item_0/text = "Stein"
+popup/item_0/id = 0
+popup/item_1/text = "Holz"
+popup/item_1/id = 1
+popup/item_2/text = "Metall"
+popup/item_2/id = 2
+popup/item_3/text = "Nahrung"
+popup/item_3/id = 3
+
+[node name="GebaeudeErrichten" type="MenuButton" parent="PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme = ExtResource("17_l1ghk")
+text = "Gebäude errichten"
+alignment = 0
+item_count = 5
+popup/item_0/text = "Forschungsgebäude"
+popup/item_0/id = 0
+popup/item_1/text = "Wachturm"
+popup/item_1/id = 1
+popup/item_2/text = "Marktplatz"
+popup/item_2/id = 2
+popup/item_3/text = "Heiligtum"
+popup/item_3/id = 3
+popup/item_4/text = "Ressourcengebäude"
+popup/item_4/id = 4
+
+[node name="BuildingRemoveButton" type="Button" parent="PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme = ExtResource("17_l1ghk")
+text = "Gebäude abreißen"
+alignment = 0
+
+[node name="Forschen" type="MenuButton" parent="PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme = ExtResource("17_l1ghk")
+text = "Forschen"
+alignment = 0
+item_count = 5
+popup/item_0/text = "Kriegerupgrade"
+popup/item_0/id = 0
+popup/item_1/text = "Bogenschützenupgrade"
+popup/item_1/id = 1
+popup/item_2/text = "Tankupgrade"
+popup/item_2/id = 2
+popup/item_3/text = "Wachturmupgrade"
+popup/item_3/id = 3
+popup/item_4/text = "Aktionspunkteupgrade"
+popup/item_4/id = 4
+
+[node name="RessourcenTauschen" type="Button" parent="PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme = ExtResource("17_l1ghk")
+text = "Ressourcen tauschen"
+alignment = 0
+
+[node name="TruppenBewegen" type="Button" parent="PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+theme = ExtResource("17_l1ghk")
+text = "Truppen bewegen"
+alignment = 0
+
+[node name="PanelContainerRegion" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.009
+anchor_top = 1.006
+anchor_right = 1.009
+anchor_bottom = 1.006
+offset_left = -754.28
+offset_top = -326.48
+offset_right = 0.720093
+offset_bottom = -0.480103
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 0
+theme = ExtResource("20_810kd")
+script = ExtResource("1_b6r40")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainerRegion"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="PanelContainerRegion/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_26vs3")
+theme_override_font_sizes/font_size = 36
+text = "Gebietsinfo"
+
+[node name="Spacer" type="Control" parent="PanelContainerRegion/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainerRegion/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="MarginRegionName" type="MarginContainer" parent="PanelContainerRegion/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_right = 30
+
+[node name="RegionName" type="Label" parent="PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionName"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Name:"
+
+[node name="MarginRegionNameInput" type="MarginContainer" parent="PanelContainerRegion/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 10
+
+[node name="RegionNameInputLabel" type="Label" parent="PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionNameInput"]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Schlachtfelder vor Kon Azor"
+
+[node name="MarginRegionResource" type="MarginContainer" parent="PanelContainerRegion/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="RegionResources" type="Label" parent="PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionResource"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Ressourcen:"
+horizontal_alignment = 1
+
+[node name="MarginRegionResourceInput" type="MarginContainer" parent="PanelContainerRegion/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 10
+
+[node name="RegionResourceInputLabel" type="Label" parent="PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionResourceInput"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "RessourcenInput"
+
+[node name="MarginRegionArmy" type="MarginContainer" parent="PanelContainerRegion/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="RegionArmyLabel" type="Label" parent="PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionArmy"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Truppen:"
+
+[node name="MarginRegionArmyInput" type="MarginContainer" parent="PanelContainerRegion/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 10
+
+[node name="RegionArmyInputLabel" type="Label" parent="PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionArmyInput"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "TruppenInput"
+
+[node name="MarginRegionBuilding" type="MarginContainer" parent="PanelContainerRegion/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="RegionBuildingLabel" type="Label" parent="PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionBuilding"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Gebäude:"
+
+[node name="MarginRegionBuildingInput" type="MarginContainer" parent="PanelContainerRegion/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="RegionBuildingInputLabel" type="Label" parent="PanelContainerRegion/VBoxContainer/GridContainer/MarginRegionBuildingInput"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "GebäudeInput"
+
+[node name="PanelContainerResources" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.009
+anchor_top = -0.007
+anchor_right = 1.009
+anchor_bottom = -0.007
+offset_left = -598.28
+offset_top = -0.44
+offset_right = -0.280151
+offset_bottom = 106.56
+grow_horizontal = 0
+theme = ExtResource("13_i520h")
+script = ExtResource("8_jpo65")
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainerResources"]
+layout_mode = 2
+columns = 8
+
+[node name="MarginStoneIcon" type="MarginContainer" parent="PanelContainerResources/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 0
+
+[node name="StoneIcon" type="TextureRect" parent="PanelContainerResources/GridContainer/MarginStoneIcon"]
+layout_mode = 2
+texture = ExtResource("9_0o4ln")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginStone" type="MarginContainer" parent="PanelContainerResources/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="StoneLabel" type="Label" parent="PanelContainerResources/GridContainer/MarginStone"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 32
+text = "1000"
+horizontal_alignment = 1
+
+[node name="WoodIcon" type="TextureRect" parent="PanelContainerResources/GridContainer"]
+layout_mode = 2
+texture = ExtResource("10_8oxkc")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginWood" type="MarginContainer" parent="PanelContainerResources/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="WoodLabel" type="Label" parent="PanelContainerResources/GridContainer/MarginWood"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+
+[node name="IronIcon" type="TextureRect" parent="PanelContainerResources/GridContainer"]
+layout_mode = 2
+texture = ExtResource("11_7nxfg")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginIron" type="MarginContainer" parent="PanelContainerResources/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="IronLabel" type="Label" parent="PanelContainerResources/GridContainer/MarginIron"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+
+[node name="FoodIcon" type="TextureRect" parent="PanelContainerResources/GridContainer"]
+layout_mode = 2
+texture = ExtResource("12_hqajt")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginFood" type="MarginContainer" parent="PanelContainerResources/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="FoodLabel" type="Label" parent="PanelContainerResources/GridContainer/MarginFood"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "1000 "
+horizontal_alignment = 1
+
+[node name="PanelContainerArmy" type="PanelContainer" parent="."]
+layout_mode = 1
+offset_right = 566.0
+offset_bottom = 107.0
+size_flags_horizontal = 0
+theme = ExtResource("13_i520h")
+script = ExtResource("19_64a6f")
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainerArmy"]
+layout_mode = 2
+size_flags_horizontal = 0
+columns = 6
+
+[node name="MarginSwordIcon" type="MarginContainer" parent="PanelContainerArmy/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 5
+
+[node name="SwordIcon" type="TextureRect" parent="PanelContainerArmy/GridContainer/MarginSwordIcon"]
+layout_mode = 2
+texture = ExtResource("5_y4p24")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginWarriors" type="MarginContainer" parent="PanelContainerArmy/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 30
+
+[node name="WarriorsLabel" type="Label" parent="PanelContainerArmy/GridContainer/MarginWarriors"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "10000"
+horizontal_alignment = 1
+
+[node name="BowIcon" type="TextureRect" parent="PanelContainerArmy/GridContainer"]
+layout_mode = 2
+texture = ExtResource("6_68jd5")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginBow" type="MarginContainer" parent="PanelContainerArmy/GridContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="BowCount" type="Label" parent="PanelContainerArmy/GridContainer/MarginBow"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "10"
+horizontal_alignment = 1
+
+[node name="ArmorIcon" type="TextureRect" parent="PanelContainerArmy/GridContainer"]
+layout_mode = 2
+texture = ExtResource("7_xgrs5")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginArmor" type="MarginContainer" parent="PanelContainerArmy/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="ArmorCount" type="Label" parent="PanelContainerArmy/GridContainer/MarginArmor"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="PanelContainerPoliticalView/GridContainerPoliticalView/MarginContainerPoliticalView/PoliticalViewButton" to="PanelContainerPoliticalView" method="_on_political_view_button_pressed"]
+[connection signal="pressed" from="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/WarriorDecreaseButton" to="PanelContainerSelectArmy" method="_on_warrior_decrease_button_pressed"]
+[connection signal="pressed" from="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/WarriorIncreaseButton" to="PanelContainerSelectArmy" method="_on_warrior_increase_button_pressed"]
+[connection signal="pressed" from="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/ArcherDecreaseButton" to="PanelContainerSelectArmy" method="_on_archer_decrease_button_pressed"]
+[connection signal="pressed" from="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/ArcherIncreaseButton" to="PanelContainerSelectArmy" method="_on_archer_increase_button_pressed"]
+[connection signal="pressed" from="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/TankDecreaseButton" to="PanelContainerSelectArmy" method="_on_tank_decrease_button_pressed"]
+[connection signal="pressed" from="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/TankIncreaseButton" to="PanelContainerSelectArmy" method="_on_tank_increase_button_pressed"]
+[connection signal="pressed" from="PanelContainerSelectArmy/VBoxContainer/HBoxContainer3/ConfirmButton" to="PanelContainerSelectArmy" method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer/BuildingRemoveButton" to="PanelContainerActions" method="_on_building_remove_button_pressed"]

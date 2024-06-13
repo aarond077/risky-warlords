@@ -1,7 +1,0 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://5jco2phc6pxl"]
-
-[ext_resource type="FontFile" uid="uid://cqtlnoqxokx35" path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf" id="1_i2nkn"]
-
-[resource]
-Label/font_sizes/font_size = 32
-Label/fonts/font = ExtResource("1_i2nkn")

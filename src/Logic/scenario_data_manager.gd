@@ -19,7 +19,11 @@ func _ready():
 	
 func update_player_resources():
 	for player in self.scenario_players:
-		player.update_player_resources()
+		player.update_resources()
+
+func update_player_army(warriors : int, archers : int, tanks : int):
+	for player in self.scenario_players:
+		player.update_army(warriors, archers, tanks)
 
 
 func find_region_in_array(region_name : String) -> RegionNode:

@@ -18,7 +18,6 @@ func state_process(delta):
 		call_deferred("emit_signal", "interrupt_state", "ActionPoints")
 
 func hide_action_point_state_ui():
-	state_machine.panel_container_timer.visible = false
 	#get_parent().panel_container_army.visible = false
 	state_machine.panel_container_region.visible = false
 	#get_parent().panel_container_info.visible = false
@@ -50,6 +49,11 @@ func enter():
 	SignalBus.call_deferred(
 		"emit_signal",
 		 "update_player_resources_label",
+		 ScenarioDataManager.active_player)
+	
+	SignalBus.call_deferred(
+		"emit_signal",
+		 "update_player_army_label",
 		 ScenarioDataManager.active_player)
 	
 	
