@@ -70,4 +70,4 @@ func _on_building_remove_button_pressed():
 
 func _on_move_army_button_pressed():
 	var army : Dictionary = ScenarioDataManager.active_region.region_army
-	print(army["Warrior"])
+	print(army["Warriors"])

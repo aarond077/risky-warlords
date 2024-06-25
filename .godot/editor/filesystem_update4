@@ -23,3 +23,6 @@ res://src/Region/region_node.gd
 res://src/UI/ScenarioOverlay/panel_container_army.gd
 res://src/UI/ScenarioOverlay/panel_container_select_army.gd
 res://src/Logic/scenario_data_manager.gd
+res://src/Scenario/load_map.gd
+res://data/Maps/Aleksud/AleksudRegionGraph.txt
+res://src/Region/region_graph.gd
