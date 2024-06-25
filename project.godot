@@ -22,6 +22,11 @@ ScenarioDataManager="*res://src/Logic/scenario_data_manager.gd"
 BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
 SignalBus="*res://src/Logic/signal_bus.gd"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/better-terrain/plugin.cfg")

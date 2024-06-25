@@ -5,11 +5,9 @@ res://src/UI/ScenarioOverlay/Sonstiges/top_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/gebiet_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/truppen_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/aktionen_theme.tres
+res://src/UI/ScenarioOverlay/Sonstiges/bottom_left_theme.tres
 res://src/UI/ScenarioOverlayOld/Sonstiges/new_theme.tres
 res://src/UI/ScenarioOverlayOld/Sonstiges/timer_theme.tres
-res://src/UI/ScenarioOverlay/panel_container_actions.gd
-res://src/Logic/signal_bus.gd
-res://src/Scenario/start_round.gd
 res://src/Logic/save_load_manager.tscn
 res://src/UI/ScenarioMenu/scenario_menu.tscn
 res://src/Logic/scenario_data_manager.tscn
@@ -18,11 +16,3 @@ res://src/Scenario/scenario.tscn
 res://src/UI/ScenarioOverlay/scenario_overlay.tscn
 res://src/UI/ScenarioOverlay/ui.tscn
 res://src/Scenario/ui.tscn
-res://src/Player/player.gd
-res://src/Region/region_node.gd
-res://src/UI/ScenarioOverlay/panel_container_army.gd
-res://src/UI/ScenarioOverlay/panel_container_select_army.gd
-res://src/Logic/scenario_data_manager.gd
-res://src/Scenario/load_map.gd
-res://data/Maps/Aleksud/AleksudRegionGraph.txt
-res://src/Region/region_graph.gd

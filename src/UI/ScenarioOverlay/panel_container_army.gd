@@ -11,17 +11,17 @@ func _ready():
 
 func on_update_player_army_label(player : Player):
 	update_player_army_label(
-		player.army["Warriors"],
-		player.army["Archers"],
-		player.army["Tanks"]
+		player.army["Warrior"],
+		player.army["Archer"],
+		player.army["Tank"]
 		)
 
 func on_next_active_player():
 	var active_player : Player = ScenarioDataManager.active_player
 	update_player_army_label(
-		active_player.army["Warriors"],
-		active_player.army["Archers"],
-		active_player.army["Tanks"]
+		active_player.army["Warrior"],
+		active_player.army["Archer"],
+		active_player.army["Tank"]
 		)
 
 func update_player_army_label(warriors : int, archers : int, tanks : int):
