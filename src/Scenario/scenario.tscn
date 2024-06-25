@@ -414,23 +414,23 @@ layout_mode = 2
 layout_mode = 2
 columns = 2
 
-[node name="MarginAktionspunkte" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/GridContainer2"]
+[node name="MarginActionPoints" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/GridContainer2"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/margin_right = 30
 
-[node name="Aktionspunkte" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/GridContainer2/MarginAktionspunkte"]
+[node name="ActionPointsLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/GridContainer2/MarginActionPoints"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("26_5ckp3")
 theme_override_font_sizes/font_size = 35
 text = "Aktionspunkte:"
 
-[node name="MarginAktionspunkteInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/GridContainer2"]
+[node name="MarginActionPointsInput" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/GridContainer2"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/margin_right = 30
 
-[node name="AktionspunkteInput" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/GridContainer2/MarginAktionspunkteInput"]
+[node name="ActionPointsInputLabel" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/GridContainer2/MarginActionPointsInput"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("26_5ckp3")
 theme_override_font_sizes/font_size = 35
@@ -514,7 +514,7 @@ theme = ExtResource("29_y21ux")
 text = "Ressourcen tauschen"
 alignment = 0
 
-[node name="TruppenBewegen" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
+[node name="MoveArmyButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
 theme = ExtResource("29_y21ux")
 text = "Truppen bewegen"
@@ -883,3 +883,4 @@ texture = ExtResource("12_7xjhs")
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/HBoxContainer3/ConfirmButton" to="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy" method="_on_confirm_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/HBoxContainer3/ConfirmButton" to="Scenario/FiniteStateMachine/StartRound" method="_on_confirm_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer/BuildingRemoveButton" to="CanvasLayer/ScenarioOverlay/PanelContainerActions" method="_on_building_remove_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer/MoveArmyButton" to="CanvasLayer/ScenarioOverlay/PanelContainerActions" method="_on_move_army_button_pressed"]

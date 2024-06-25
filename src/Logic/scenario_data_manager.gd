@@ -17,6 +17,10 @@ extends Node2D
 func _ready():
 	self.scenario_region_graph = RegionGraph.new()
 	
+func update_player_action_points():
+	for player in self.scenario_players:
+		player.update_action_points()
+	
 func update_player_resources():
 	for player in self.scenario_players:
 		player.update_resources()
@@ -25,6 +29,13 @@ func update_player_army(warriors : int, archers : int, tanks : int):
 	for player in self.scenario_players:
 		player.update_army(warriors, archers, tanks)
 
+func add_army_to_region(
+	region : RegionNode,
+	warriors : int,
+	archers : int,
+	tanks : int ) -> void:
+	region.update_army(warriors, archers, tanks)
+	
 
 func find_region_in_array(region_name : String) -> RegionNode:
 	for region in scenario_region_graph.region_array:

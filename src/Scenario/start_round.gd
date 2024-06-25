@@ -45,6 +45,7 @@ func enter():
 	call_deferred("show_start_round_state_ui")
 	
 	ScenarioDataManager.update_player_resources()
+	ScenarioDataManager.update_player_action_points()
 	
 	SignalBus.call_deferred(
 		"emit_signal",
@@ -55,6 +56,12 @@ func enter():
 		"emit_signal",
 		 "update_player_army_label",
 		 ScenarioDataManager.active_player)
+		
+	SignalBus.call_deferred(
+		"emit_signal",
+		"update_player_action_points_label",
+		ScenarioDataManager.active_player
+	)
 	
 	
 
