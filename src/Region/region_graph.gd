@@ -62,16 +62,15 @@ func load_regions_to_array():
 
 #diese methode erstellt eine adjazenzliste in einem dict
 #mit den namen der regionen
+
 func create_dict_with_map_names(map_name: String) -> Dictionary:
 		var areas = {}
 		# Öffne die Datei
 		if OK == OK:
-			var index_dict = DataFileManager.import_file(
-			"res://data/Maps/" + map_name + "/" + map_name + "Indexes.txt")
-		
 			var region_graph_dict = DataFileManager.import_file(
 			"res://data/Maps/" + map_name + "/" + map_name + "RegionGraph.txt")
-			
+			var index_dict = DataFileManager.import_file(
+			"res://data/Maps/" + map_name + "/" + map_name + "Indexes.txt")
 			for region in region_graph_dict:
 				var node = turn_index_to_map_name(region, index_dict)
 				var adjacent_nodes = turn_index_to_map_name(region_graph_dict[region], index_dict)
@@ -81,14 +80,18 @@ func create_dict_with_map_names(map_name: String) -> Dictionary:
 	
 	#Methode, die den index zum Mapnamen umwandelt
 func turn_index_to_map_name(index, index_dict: Dictionary):
-		if typeof(index) == TYPE_INT:
-			return index_dict[index]
+		if type_string(typeof(index)) != "Array":
+			var stringConverted = int(index)
+			var keys = index_dict.keys()
+			return keys[stringConverted]
 			
-		elif typeof(index) == TYPE_ARRAY:
+		elif type_string(typeof(index)) == "Array":
 			var new_array = Array()
-			for number in index:
-				new_array.append(index_dict[number])
+			for zaehler in range(len(index)):
+				var keys = index_dict.keys()
+				new_array.append(keys[index[zaehler]])
 			return new_array
+
 	
 	
 # Called when the node enters the scene tree for the first time.

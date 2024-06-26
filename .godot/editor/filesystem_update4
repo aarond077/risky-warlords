@@ -16,3 +16,8 @@ res://src/Scenario/scenario.tscn
 res://src/UI/ScenarioOverlay/scenario_overlay.tscn
 res://src/UI/ScenarioOverlay/ui.tscn
 res://src/Scenario/ui.tscn
+res://src/Region/region_graph.gd
+res://src/UI/ScenarioOverlay/panel_container_army.gd
+res://src/UI/ScenarioOverlay/panel_container_select_army.gd
+res://src/UI/ScenarioOverlay/FoodInput.gd
+res://src/Logic/signal_bus.gd
