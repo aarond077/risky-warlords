@@ -67,7 +67,7 @@ func create_dict_with_map_names(map_name: String) -> Dictionary:
 		# Öffne die Datei
 		if OK == OK:
 			var index_dict = DataFileManager.import_file(
-			"res://data/Maps/" + map_name + "/" + map_name + "Indexes.txt")
+			"res://data/Maps/" + map_name + "/" + map_name + "IndexesReversed.txt")
 		
 			var region_graph_dict = DataFileManager.import_file(
 			"res://data/Maps/" + map_name + "/" + map_name + "RegionGraph.txt")

@@ -8,9 +8,9 @@ func enter():
 	
 	ScenarioDataManager.scenario_region_graph.load_regions_to_array()
 	ScenarioDataManager.scenario_region_graph.load_resources_to_array()
-	ScenarioDataManager.scenario_region_graph.create_region_graph_from_file(
-		ScenarioDataManager.scenario_map_name
-	)
+	#ScenarioDataManager.scenario_region_graph.create_region_graph_from_file(
+	#	ScenarioDataManager.scenario_map_name
+	#)
 	
 	
 	ScenarioDataManager.set_scenario_players_capitals(
