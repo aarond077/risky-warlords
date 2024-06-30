@@ -71,6 +71,7 @@ func create_dict_with_map_names(map_name: String) -> Dictionary:
 			"res://data/Maps/" + map_name + "/" + map_name + "RegionGraph.txt")
 			var index_dict = DataFileManager.import_file(
 			"res://data/Maps/" + map_name + "/" + map_name + "Indexes.txt")
+			
 			for region in region_graph_dict:
 				var node = turn_index_to_map_name(region, index_dict)
 				var adjacent_nodes = turn_index_to_map_name(region_graph_dict[region], index_dict)
@@ -80,12 +81,12 @@ func create_dict_with_map_names(map_name: String) -> Dictionary:
 	
 	#Methode, die den index zum Mapnamen umwandelt
 func turn_index_to_map_name(index, index_dict: Dictionary):
-		if type_string(typeof(index)) != "Array":
+		if typeof(index) != TYPE_ARRAY:
 			var stringConverted = int(index)
 			var keys = index_dict.keys()
 			return keys[stringConverted]
 			
-		elif type_string(typeof(index)) == "Array":
+		elif typeof(index) == TYPE_ARRAY:
 			var new_array = Array()
 			for zaehler in range(len(index)):
 				var keys = index_dict.keys()
