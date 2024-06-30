@@ -93,7 +93,21 @@ func turn_index_to_map_name(index, index_dict: Dictionary):
 				new_array.append(keys[index[zaehler]])
 			return new_array
 
+func add_node(region_name: String, region_graph: RegionGraph, map_name: String):
 	
+	var complete_region_graph_dict = create_dict_with_map_names(map_name)
+	var all_neighbours = complete_region_graph_dict[region_name]
+	
+	var new_node = RegionNode.new()
+	var my_neighbours = []
+	for neighbour in all_neighbours:
+		for region_node in region_graph.region_array:
+			if region_node.region_name == neighbour:
+				my_neighbours.append(region_node)
+				region_node.neighbours.append(new_node)
+	new_node.region_name = region_name
+	new_node.neighbours = my_neighbours
+	region_graph.region_array.append(new_node)
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
