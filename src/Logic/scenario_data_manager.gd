@@ -89,9 +89,6 @@ func set_start_scenario_active_player():
 	SignalBus.call_deferred("emit_signal", "next_active_player")
 	
 	
-	
-	
-	
 
 func set_next_active_player():
 	if(active_player.player_index < scenario_players.size()):
@@ -115,8 +112,6 @@ func add_player(player_index : int):
 	new_player.set_player_index(player_index)
 	
 	scenario_players.append(new_player)
-	
-
 
 func remove_player(player_index : int):
 	scenario_players.remove_at(player_index)

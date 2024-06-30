@@ -66,7 +66,7 @@ static func create_research_center(nation: String, position : Vector2, region_na
 static func create_sanctuary(nation: String, position : Vector2, region_name : String)-> RemovableSprite:
 	var sanctuary : RemovableSprite = RemovableSprite.new()
 	sanctuary.position = position
-	sanctuary.sprite_name = "Sanctuary"
+	sanctuary.sprite_name = "Heiligtum"
 	sanctuary.region_name = region_name
 	sanctuary.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	sanctuary.texture = ResourceLoader.load(

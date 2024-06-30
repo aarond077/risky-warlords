@@ -4,9 +4,12 @@ var region_name : String = ""
 var region_index : int
 var claim_color = Color(0, 0, 0, 1)
 var color = claim_color
+var policalviewactive = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	SignalBus.call_deferred("connect", "set_political_view", draw_in_colour)
+	SignalBus.call_deferred("connect", "set_physical_view", physical_view)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,11 +24,18 @@ func draw_region_outlines() -> void:
 			child.add_child(outline)
 			set_outline_points(outline, child)
 
-	
+func draw_in_colour() -> void:
+	policalviewactive = true
+	for child in get_children():
+		if child is Polygon2D:
+			child.color = Color(1,0,0,0.8)
 			
-
-
-
+func physical_view():
+	policalviewactive = false
+	for child in get_children():
+		if child is Polygon2D:
+			_on_child_entered_tree(child)
+	
 
 #sets the outline coordinates according to the polygons 
 func set_outline_points(outline : RegionOutline, polygon : Polygon2D) -> void:
@@ -47,10 +57,11 @@ func _on_child_entered_tree(node):
 
 func _on_mouse_entered():
 	#print(region_name)
-	for node in get_children():
-		if node.is_class("Polygon2D"):
-			node.color = Color(1, 1, 1, 0.5)
-			#node.modulate = Color(1, 1, 1, 0.5)
+	if policalviewactive == false:
+		for node in get_children():
+			if node.is_class("Polygon2D"):
+				node.color = Color(1, 1, 1, 0.5)
+				#node.modulate = Color(1, 1, 1, 0.5)
 
 
 func _on_input_event(viewport, event, shape_idx):
@@ -64,6 +75,7 @@ func _on_input_event(viewport, event, shape_idx):
 
 func _on_mouse_exited():
 	#print(region_name)
-	for node in get_children():
-		if node.is_class("Polygon2D"):
-			node.color = Color(0, 0, 0, 0)
+	if policalviewactive == false:
+		for node in get_children():
+			if node.is_class("Polygon2D"):
+				node.color = Color(0, 0, 0, 0)

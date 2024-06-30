@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://d1xk2lv80lqnp"]
+[gd_scene load_steps=49 format=3 uid="uid://d1xk2lv80lqnp"]
 
 [ext_resource type="Script" path="res://src/Scenario/game_manager.gd" id="1_3288w"]
 [ext_resource type="Script" path="res://src/Scenario/scenario.gd" id="2_dxbxk"]
@@ -34,6 +34,27 @@
 [ext_resource type="Theme" uid="uid://cyf5kaih5j285" path="res://src/UI/ScenarioOverlay/Sonstiges/truppen_theme.tres" id="28_08v7j"]
 [ext_resource type="Theme" uid="uid://5jco2phc6pxl" path="res://src/UI/ScenarioOverlay/Sonstiges/font_theme.tres" id="29_y21ux"]
 [ext_resource type="Theme" uid="uid://b6r6mw4uxy32s" path="res://src/UI/ScenarioOverlay/Sonstiges/aktionen_theme.tres" id="30_d0aj2"]
+[ext_resource type="Texture2D" uid="uid://cijap8kjsggga" path="res://src/UI/ScenarioOverlay/Sonstiges/x.png" id="35_sncsx"]
+[ext_resource type="Texture2D" uid="uid://bjgm0bma3r0cv" path="res://src/UI/ScenarioOverlay/Sonstiges/Dice/diceOne.png" id="36_6q7fb"]
+[ext_resource type="Texture2D" uid="uid://brs5jds3gutma" path="res://src/UI/ScenarioOverlay/Sonstiges/Dice/diceTwo.png" id="37_laiqh"]
+[ext_resource type="Texture2D" uid="uid://6hhnu8m2fpjo" path="res://src/UI/ScenarioOverlay/Sonstiges/Dice/diceThree.png" id="38_jh572"]
+[ext_resource type="Texture2D" uid="uid://v7rmtxud0fon" path="res://src/UI/ScenarioOverlay/Sonstiges/Dice/diceFour.png" id="39_t006t"]
+[ext_resource type="Texture2D" uid="uid://rau02so7t241" path="res://src/UI/ScenarioOverlay/Sonstiges/Dice/diceFive.png" id="40_o6qov"]
+[ext_resource type="Theme" uid="uid://bccxabprhxk0e" path="res://src/UI/ScenarioOverlay/Sonstiges/bottom_left_theme.tres" id="41_pdrwy"]
+[ext_resource type="Texture2D" uid="uid://q4dysm5b47g1" path="res://src/UI/ScenarioOverlay/Sonstiges/homeicon.png" id="42_83dsg"]
+[ext_resource type="Texture2D" uid="uid://dnn5sj57bc0x4" path="res://src/UI/ScenarioOverlay/Sonstiges/eye open.png" id="43_k2k8a"]
+[ext_resource type="Texture2D" uid="uid://dveuhfkb0qh6g" path="res://src/UI/ScenarioOverlay/Sonstiges/area_troops.png" id="44_lv3qq"]
+[ext_resource type="Script" path="res://src/Scenario/TileMap.gd" id="44_tq45s"]
+
+[sub_resource type="Theme" id="Theme_7n6mx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_80pig"]
+texture = ExtResource("44_lv3qq")
+texture_margin_left = 4.0
+texture_margin_right = 9.0
+
+[sub_resource type="Theme" id="Theme_jfcmj"]
+Label/styles/normal = SubResource("StyleBoxTexture_80pig")
 
 [node name="GameManager" type="Control"]
 process_mode = 3
@@ -120,20 +141,29 @@ wait_time = 59.5
 one_shot = true
 
 [node name="PanelContainerPoliticalView" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
-visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1150.0
+offset_top = 20.0
+offset_right = 1210.0
+offset_bottom = 80.0
 script = ExtResource("27_3b8te")
 
 [node name="GridContainerPoliticalView" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView"]
 layout_mode = 2
 
 [node name="MarginContainerPoliticalView" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView/GridContainerPoliticalView"]
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 
 [node name="PoliticalViewButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView/GridContainerPoliticalView/MarginContainerPoliticalView"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("18_87xab")
+theme_type_variation = &"FlatButton"
+toggle_mode = true
+icon = ExtResource("43_k2k8a")
+icon_alignment = 1
+expand_icon = true
 
 [node name="PanelContainerSelectArmy" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
 visible = false
@@ -805,6 +835,837 @@ theme_override_font_sizes/font_size = 32
 text = "100"
 horizontal_alignment = 1
 
+[node name="PanelContainerFight" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -481.0
+offset_top = -382.0
+offset_right = 508.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme = ExtResource("28_08v7j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer"]
+layout_mode = 2
+
+[node name="Attacker" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("26_5ckp3")
+theme_override_font_sizes/font_size = 35
+text = "Angreifer:"
+
+[node name="Spacer4" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="XButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme = ExtResource("28_08v7j")
+theme_type_variation = &"FlatButton"
+icon = ExtResource("35_sncsx")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Spacer5" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer"]
+layout_mode = 2
+columns = 7
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PlayerOne" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer/MarginContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 65
+text = "Spieler 1:"
+horizontal_alignment = 1
+
+[node name="MarginPlayerOneDiceOne" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 0
+
+[node name="PlayerOneDiceOne" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer/MarginPlayerOneDiceOne"]
+layout_mode = 2
+texture = ExtResource("36_6q7fb")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="PlayerOneDiceTwo" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("37_laiqh")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="PlayerOneDiceThree" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("38_jh572")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="PlayerOneDiceFour" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("39_t006t")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="PlayerOneDiceFive" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("40_o6qov")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Margin" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="ResultPlayerOne" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 65
+text = "00"
+horizontal_alignment = 2
+
+[node name="Spacer2" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="StartAttackButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+text = "Angriff starten"
+
+[node name="Spacer4" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer"]
+layout_mode = 2
+
+[node name="Defender" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("26_5ckp3")
+theme_override_font_sizes/font_size = 35
+text = "Verteidiger:"
+
+[node name="Spacer4" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer6" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="GridContainer2" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer"]
+layout_mode = 2
+columns = 7
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PlayerTwo" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer2/MarginContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 65
+text = "Spieler 2:"
+horizontal_alignment = 1
+
+[node name="MarginPlayerTwoDiceOne" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 0
+
+[node name="PlayerTwoDiceOne" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer2/MarginPlayerTwoDiceOne"]
+layout_mode = 2
+texture = ExtResource("36_6q7fb")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="PlayerTwoDiceTwo" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("37_laiqh")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="PlayerTwoDiceThree" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("38_jh572")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="PlayerTwoDiceFour" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("39_t006t")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="PlayerTwoDiceFive" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("40_o6qov")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Margin" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="ResultPlayerTwo" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 65
+text = "00"
+horizontal_alignment = 2
+
+[node name="Spacer3" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerFight/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="PanelContainerFightResults" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -277.0
+offset_right = 457.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme = ExtResource("28_08v7j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerFightResults"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerFightResults/VBoxContainer"]
+layout_mode = 2
+
+[node name="Winner" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerFightResults/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("26_5ckp3")
+theme_override_font_sizes/font_size = 42
+text = "Spieler 1 hat gewonnen!"
+
+[node name="Spacer4" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerFightResults/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="XButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerFightResults/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme = ExtResource("28_08v7j")
+theme_type_variation = &"FlatButton"
+icon = ExtResource("35_sncsx")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Spacer4" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerFightResults/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerFightResults/VBoxContainer"]
+layout_mode = 2
+
+[node name="Loser" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerFightResults/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("26_5ckp3")
+theme_override_font_sizes/font_size = 42
+text = "Spieler 2"
+
+[node name="hat" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerFightResults/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("26_5ckp3")
+theme_override_font_sizes/font_size = 42
+text = " hat "
+
+[node name="TroopsLostInput" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerFightResults/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("26_5ckp3")
+theme_override_font_sizes/font_size = 42
+text = "XXX"
+
+[node name="Truppen verloren" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerFightResults/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("26_5ckp3")
+theme_override_font_sizes/font_size = 42
+text = " Truppen verloren."
+
+[node name="Spacer4" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerFightResults/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer6" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerFightResults/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainerBuffs" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.005
+anchor_top = 1.0
+anchor_right = -0.005
+anchor_bottom = 1.0
+offset_left = -2.4
+offset_top = -110.0
+offset_right = 525.6
+offset_bottom = -3.0
+grow_vertical = 0
+theme = ExtResource("18_87xab")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerBuffs"]
+layout_mode = 2
+columns = 2
+
+[node name="MarginClass" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerBuffs/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 19
+theme_override_constants/margin_right = 30
+
+[node name="ClassBuff" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerBuffs/GridContainer/MarginClass"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 32
+text = "Klassenbuff"
+horizontal_alignment = 1
+
+[node name="MarginSanctuary" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerBuffs/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 30
+
+[node name="SanctuaryBuff" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerBuffs/GridContainer/MarginSanctuary"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 32
+text = "Heiligtumbuff"
+horizontal_alignment = 1
+
+[node name="PanelContainerMoveTroops" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = -439.0
+offset_right = 789.0
+offset_bottom = 23.0
+grow_vertical = 0
+size_flags_horizontal = 0
+theme = ExtResource("41_pdrwy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer"]
+layout_mode = 2
+
+[node name="TroopsInfo" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("26_5ckp3")
+theme_override_font_sizes/font_size = 35
+text = "verfügbare Truppen Gesamt:"
+
+[node name="Spacer4" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TroopsInput" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme_override_fonts/font = ExtResource("26_5ckp3")
+theme_override_font_sizes/font_size = 40
+text = "10"
+
+[node name="Spacer2" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="MarginKrieger" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 30
+
+[node name="Krieger" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/GridContainer/MarginKrieger"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Krieger"
+horizontal_alignment = 1
+
+[node name="MarginBogenschuetze" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 10
+
+[node name="Bogenschuetze" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/GridContainer/MarginBogenschuetze"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Bogenschütze"
+horizontal_alignment = 1
+
+[node name="MarginTank" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Tank" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/GridContainer/MarginTank"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Tank"
+horizontal_alignment = 1
+
+[node name="MarginKriegerVerfügbar" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 30
+
+[node name="KriegerVerfügbar" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/GridContainer/MarginKriegerVerfügbar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "1"
+horizontal_alignment = 1
+
+[node name="MarginBogenschuetzeVerfügbar" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 10
+
+[node name="BogenschuetzeVerfügbar" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/GridContainer/MarginBogenschuetzeVerfügbar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "3"
+horizontal_alignment = 1
+
+[node name="MarginTankVerfügbar" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TankVerfügbar" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/GridContainer/MarginTankVerfügbar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "5"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="KriegerDecreaseButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "-"
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="KriegerAnzahl" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer2/MarginContainer"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+theme = ExtResource("29_y21ux")
+theme_override_font_sizes/font_size = 40
+text = "00"
+horizontal_alignment = 1
+
+[node name="KriegerIncreaseButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "+"
+
+[node name="Spacer2" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.5
+
+[node name="BogenschuetzeDecreaseButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "-"
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="BogenschuetzeAnzahl" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer2/MarginContainer2"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+theme = ExtResource("29_y21ux")
+theme_override_font_sizes/font_size = 40
+text = "00"
+horizontal_alignment = 1
+
+[node name="BogenschuetzeIncreaseButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "+"
+
+[node name="Spacer3" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="TankDecreaseButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "-"
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+theme = ExtResource("29_y21ux")
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="TankAnzahl" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer2/MarginContainer3"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+theme = ExtResource("29_y21ux")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+
+[node name="TankIncreaseButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "+"
+
+[node name="Spacer4" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Spacer3" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer"]
+layout_mode = 2
+
+[node name="CancelButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+text = "Abbruch"
+
+[node name="ConfirmButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerMoveTroops/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+text = "Truppen bewegen"
+
+[node name="PanelContainerTradeRessources" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = -497.0
+offset_right = 847.0
+offset_bottom = 23.0
+grow_vertical = 0
+size_flags_horizontal = 0
+theme = ExtResource("41_pdrwy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer"]
+layout_mode = 2
+
+[node name="TradeInfo" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("26_5ckp3")
+theme_override_font_sizes/font_size = 35
+text = "Wähle zwei Ressourcen zum Eintauschen."
+
+[node name="Spacer4" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer2" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="MarginStone" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 30
+
+[node name="Stone" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/GridContainer/MarginStone"]
+layout_mode = 2
+theme = SubResource("Theme_7n6mx")
+theme_override_font_sizes/font_size = 40
+text = "Stein"
+horizontal_alignment = 1
+
+[node name="MarginWood" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 10
+
+[node name="Wood" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/GridContainer/MarginWood"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Holz"
+horizontal_alignment = 1
+
+[node name="MarginMetal" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Metal" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/GridContainer/MarginMetal"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Metall "
+horizontal_alignment = 1
+
+[node name="MarginFood" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Food" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/GridContainer/MarginFood"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Nahrung"
+horizontal_alignment = 1
+
+[node name="MarginCheckStone" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 30
+
+[node name="CheckStone" type="CheckBox" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/GridContainer/MarginCheckStone"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 40
+
+[node name="MarginCheckWood" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 10
+
+[node name="CheckWood" type="CheckBox" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/GridContainer/MarginCheckWood"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+
+[node name="MarginCheckMetal" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CheckMetal" type="CheckBox" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/GridContainer/MarginCheckMetal"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+
+[node name="MarginCheckFood" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CheckFood" type="CheckBox" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/GridContainer/MarginCheckFood"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+
+[node name="Spacer6" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer"]
+layout_mode = 2
+
+[node name="ChooseTradeInfo" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("26_5ckp3")
+theme_override_font_sizes/font_size = 35
+text = "Wähle eine Ressource zum erhalten."
+
+[node name="Spacer5" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer"]
+layout_mode = 2
+
+[node name="ChooseRessource" type="OptionButton" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 0
+item_count = 4
+popup/item_0/text = "Stein"
+popup/item_0/id = 0
+popup/item_1/text = "Holz"
+popup/item_1/id = 1
+popup/item_2/text = "Metall"
+popup/item_2/id = 2
+popup/item_3/text = "Nahrung"
+popup/item_3/id = 3
+
+[node name="Spacer" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="Anzahl" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/HBoxContainer4/MarginContainer"]
+layout_mode = 2
+text = "Anzahl:"
+
+[node name="Spacer2" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RessourceDecreaseButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "-"
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="RessourceAmount" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/HBoxContainer4/MarginContainer2"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+theme = ExtResource("29_y21ux")
+theme_override_font_sizes/font_size = 40
+text = "00"
+horizontal_alignment = 1
+
+[node name="RessourceIncreaseButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "+"
+
+[node name="Spacer3" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Spacer3" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer"]
+layout_mode = 2
+
+[node name="CancelButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+text = "Abbruch"
+
+[node name="ConfirmButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerTradeRessources/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+text = "Bestätigen"
+
+[node name="PauseButton" type="Button" parent="CanvasLayer/ScenarioOverlay"]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 69.0
+offset_bottom = 69.0
+size_flags_horizontal = 3
+theme = ExtResource("28_08v7j")
+theme_type_variation = &"FlatButton"
+icon = ExtResource("42_83dsg")
+icon_alignment = 1
+expand_icon = true
+
+[node name="TroopCount" type="Label" parent="CanvasLayer/ScenarioOverlay"]
+visible = false
+custom_minimum_size = Vector2(70, 0)
+offset_left = 899.0
+offset_top = 385.0
+offset_right = 979.0
+offset_bottom = 446.0
+theme = SubResource("Theme_jfcmj")
+theme_override_font_sizes/font_size = 22
+text = "25 "
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Scenario" type="Node2D" parent="."]
 process_mode = 1
 script = ExtResource("2_dxbxk")
@@ -852,6 +1713,7 @@ script = ExtResource("4_j537l")
 texture_filter = 1
 tile_set = ExtResource("5_mdv1s")
 format = 2
+script = ExtResource("44_tq45s")
 
 [node name="Players" type="Node2D" parent="Scenario"]
 
@@ -873,7 +1735,7 @@ position = Vector2(449, 604)
 texture = ExtResource("12_7xjhs")
 
 [connection signal="timeout" from="CanvasLayer/ScenarioOverlay/PanelContainerInfo/PlayerTimer" to="Scenario" method="_on_player_timer_timeout"]
-[connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView/GridContainerPoliticalView/MarginContainerPoliticalView/PoliticalViewButton" to="CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView" method="_on_political_view_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView/GridContainerPoliticalView/MarginContainerPoliticalView/PoliticalViewButton" to="CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView" method="_on_political_view_button_toggled"]
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/WarriorDecreaseButton" to="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy" method="_on_warrior_decrease_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/WarriorIncreaseButton" to="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy" method="_on_warrior_increase_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/ArcherDecreaseButton" to="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy" method="_on_archer_decrease_button_pressed"]
