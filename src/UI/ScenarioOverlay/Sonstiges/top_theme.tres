@@ -1,7 +1,33 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://ck72kpur1q2po"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://ck72kpur1q2po"]
 
 [ext_resource type="FontFile" uid="uid://cqtlnoqxokx35" path="res://src/UI/ScenarioOverlay/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf" id="1_a7hfu"]
+[ext_resource type="Texture2D" uid="uid://drv2tl2lcf0x7" path="res://src/UI/ScenarioOverlay/Sonstiges/eye open border.png" id="1_yeufh"]
+[ext_resource type="Texture2D" uid="uid://g4trvlo8lq3w" path="res://src/UI/ScenarioOverlay/Sonstiges/eye open hover.png" id="1_yfhr1"]
+[ext_resource type="Texture2D" uid="uid://bmdf30i7kqi27" path="res://src/UI/ScenarioOverlay/Sonstiges/eye closed border.png" id="2_i5xp1"]
 [ext_resource type="Texture2D" uid="uid://hb22qqgrbmy7" path="res://src/UI/ScenarioOverlayOld/Sonstiges/big frame_new.png" id="2_n58nf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_otc8h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtr5f"]
+texture = ExtResource("1_yfhr1")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r1abp"]
+texture = ExtResource("1_yeufh")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vwjv2"]
+texture = ExtResource("2_i5xp1")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uxhyw"]
 texture = ExtResource("2_n58nf")
@@ -11,5 +37,9 @@ texture_margin_right = 30.0
 texture_margin_bottom = 35.0
 
 [resource]
+Button/styles/focus = SubResource("StyleBoxEmpty_otc8h")
+Button/styles/hover = SubResource("StyleBoxTexture_rtr5f")
+Button/styles/normal = SubResource("StyleBoxTexture_r1abp")
+Button/styles/pressed = SubResource("StyleBoxTexture_vwjv2")
 Label/fonts/font = ExtResource("1_a7hfu")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_uxhyw")
