@@ -108,6 +108,25 @@ func add_node(region_name: String, region_graph: RegionGraph, map_name: String):
 	new_node.region_name = region_name
 	new_node.neighbours = my_neighbours
 	region_graph.region_array.append(new_node)
+
+func remove_node(region_name: String, region_graph: RegionGraph, map_name: String):
+	var complete_region_graph_dict = create_dict_with_map_names(map_name)
+	var all_neighbours = complete_region_graph_dict[region_name]
+	var old_region_node : RegionNode
+	
+	for region_node in region_graph.region_array: #diese for schleife findet den region node der gelöscht werden soll
+		if region_name == region_node.region_name:
+			old_region_node = region_node #der zu entfernende region node wird hier zwischengespeichert
+	
+	var my_neighbours = [] #hier werden alle nachbarn sicherheitshalber zwischengespeichert, falls man die noch braucht, ist aber eig unnötig
+	
+	for neighbour in all_neighbours:
+		for region_node in region_graph.region_array:
+			if region_node.region_name == neighbour:
+				my_neighbours.append(region_node) #eig unnötig die zeile
+				region_node.neighbours.erase(old_region_node) #diese zeile löscht den region_node aus den neighbour arrays aller nachbarn
+	
+	region_graph.region_array.erase(old_region_node) #hier wird der region_node aus dem region_graph array gelöscht
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
