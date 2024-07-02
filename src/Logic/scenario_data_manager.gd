@@ -82,14 +82,16 @@ func set_scenario_players_capitals(capitals) -> void:
 		
 		add_region_owner(player.capital, player.player_index)
 		
+		#player.regions.add_node(
+		#	player.capital,  
+		#	player.regions, 
+		#	ScenarioDataManager.scenario_map_name)
+		
 		capitals.remove_at(rand_capital_index)
 	
 func set_start_scenario_active_player():
 	self.active_player = scenario_players[0]
 	SignalBus.call_deferred("emit_signal", "next_active_player")
-	
-	
-	
 	
 	
 
@@ -115,8 +117,6 @@ func add_player(player_index : int):
 	new_player.set_player_index(player_index)
 	
 	scenario_players.append(new_player)
-	
-
 
 func remove_player(player_index : int):
 	scenario_players.remove_at(player_index)

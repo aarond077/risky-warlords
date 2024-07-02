@@ -24,9 +24,17 @@ func update_region(region_name : String) -> void:
 	update_region_describtion(active_region)
 	update_region_resource(active_region)
 	update_region_building(active_region.building)
+	update_region_army(active_region.region_army)
 
-
-
+func update_region_army(region_army : Dictionary):
+	region_army_label.text = str(
+		region_army["Warriors"]) + \
+		"K | " + \
+		str(region_army["Archers"]) + \
+		"A | " + \
+		str(region_army["Tanks"]) + \
+		"T" 
+	
 func update_region_name(region_node : RegionNode):
 	region_label.text = region_node.region_name
 

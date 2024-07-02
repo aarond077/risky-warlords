@@ -18,6 +18,7 @@ func on_update_player_army_label(player : Player):
 
 func on_next_active_player():
 	var active_player : Player = ScenarioDataManager.active_player
+	print(active_player.army["Warriors"])
 	update_player_army_label(
 		active_player.army["Warriors"],
 		active_player.army["Archers"],

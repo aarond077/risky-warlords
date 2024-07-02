@@ -61,7 +61,25 @@ func _on_building_remove_button_pressed():
 			active_region.building,
 			active_region.region_name
 			)
+			
+		var building : String = active_region.building
+		if building == "Festung":
+			active_player.add_resource_stone(5)
+		if building == "Heiligtum":
+			active_player.add_resource_stone(4)
+			active_player.add_resource_iron(4)
+		if building == "Wachturm":
+			active_player.add_resource_wood(5)
+		if building == "Forschungsgebäude":
+			active_player.add_resource_iron(10)
+		if building == "Mine":
+			active_player.add_resource_iron(3)
+		if building == "Holzfällerhütte":
+			active_player.add_resource_wood(3)
+		if building == "Steinbruch":
+			active_player.add_resource_stone(3)
 		
+		SignalBus.call_deferred("emit_signal", "update_player_resources_label", active_player)
 		active_region.building = ""
 
 
@@ -71,3 +89,4 @@ func _on_building_remove_button_pressed():
 func _on_move_army_button_pressed():
 	var army : Dictionary = ScenarioDataManager.active_region.region_army
 	print(army["Warriors"])
+	ScenarioDataManager.active_player.army_movement = not ScenarioDataManager.active_player.army_movement

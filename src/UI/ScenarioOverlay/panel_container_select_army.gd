@@ -5,6 +5,7 @@ extends PanelContainer
 @onready var archer_counter_label : Label = $VBoxContainer/HBoxContainer2/MarginContainer2/ArcherCounter
 @onready var tank_counter_label : Label = $VBoxContainer/HBoxContainer2/MarginContainer3/TankCounter
 
+	
 func reset_select_army_input():
 	food_label.text = str(10)
 	warrior_counter_label.text = str(0)
@@ -43,6 +44,7 @@ func _on_tank_decrease_button_pressed() -> void:
 	var troop_name : String = "Tanks"
 	if(ScenarioDataManager.active_player.army[troop_name] > 0):
 		ScenarioDataManager.active_player.army[troop_name] -= 1
+
 	update_counter_label(tank_counter_label, troop_name)
 
 

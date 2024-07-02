@@ -34,4 +34,3 @@ func update_iron_label(player : Player) -> void:
 func update_food_label(player : Player) -> void:
 	self.food_label.text = str(player.resources["Food"])
 	
-

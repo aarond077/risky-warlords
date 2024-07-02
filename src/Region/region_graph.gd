@@ -62,15 +62,15 @@ func load_regions_to_array():
 
 #diese methode erstellt eine adjazenzliste in einem dict
 #mit den namen der regionen
+
 func create_dict_with_map_names(map_name: String) -> Dictionary:
 		var areas = {}
 		# Öffne die Datei
 		if OK == OK:
-			var index_dict = DataFileManager.import_file(
-			"res://data/Maps/" + map_name + "/" + map_name + "IndexesReversed.txt")
-		
 			var region_graph_dict = DataFileManager.import_file(
 			"res://data/Maps/" + map_name + "/" + map_name + "RegionGraph.txt")
+			var index_dict = DataFileManager.import_file(
+			"res://data/Maps/" + map_name + "/" + map_name + "Indexes.txt")
 			
 			for region in region_graph_dict:
 				var node = turn_index_to_map_name(region, index_dict)
@@ -81,24 +81,50 @@ func create_dict_with_map_names(map_name: String) -> Dictionary:
 	
 	#Methode, die den index zum Mapnamen umwandelt
 func turn_index_to_map_name(index, index_dict: Dictionary):
-		if typeof(index) == TYPE_INT:
-			return index_dict[index]
+		if typeof(index) != TYPE_ARRAY:
+			var stringConverted = int(index)
+			var keys = index_dict.keys()
+			return keys[stringConverted]
 			
 		elif typeof(index) == TYPE_ARRAY:
 			var new_array = Array()
-			for number in index:
-				new_array.append(index_dict[number])
+			for zaehler in range(len(index)):
+				var keys = index_dict.keys()
+				new_array.append(keys[index[zaehler]])
 			return new_array
+
+func add_node(region_name: String, region_graph: RegionGraph, map_name: String):
 	
+	var complete_region_graph_dict = create_dict_with_map_names(map_name)
+	var all_neighbours = complete_region_graph_dict[region_name]
 	
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+	var new_node = RegionNode.new()
+	var my_neighbours = []
+	for neighbour in all_neighbours:
+		for region_node in region_graph.region_array:
+			if region_node.region_name == neighbour:
+				my_neighbours.append(region_node)
+				region_node.neighbours.append(new_node)
+	new_node.region_name = region_name
+	new_node.neighbours = my_neighbours
+	region_graph.region_array.append(new_node)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-func get_region_node(region_name : String):
-	pass
+func remove_node(region_name: String, region_graph: RegionGraph, map_name: String):
+	var complete_region_graph_dict = create_dict_with_map_names(map_name)
+	var all_neighbours = complete_region_graph_dict[region_name]
+	var old_region_node : RegionNode
+	
+	for region_node in region_graph.region_array: #diese for schleife findet den region node der gelöscht werden soll
+		if region_name == region_node.region_name:
+			old_region_node = region_node #der zu entfernende region node wird hier zwischengespeichert
+	
+	var my_neighbours = [] #hier werden alle nachbarn sicherheitshalber zwischengespeichert, falls man die noch braucht, ist aber eig unnötig
+	
+	for neighbour in all_neighbours:
+		for region_node in region_graph.region_array:
+			if region_node.region_name == neighbour:
+				my_neighbours.append(region_node) #eig unnötig die zeile
+				region_node.neighbours.erase(old_region_node) #diese zeile löscht den region_node aus den neighbour arrays aller nachbarn
+	
+	region_graph.region_array.erase(old_region_node) #hier wird der region_node aus dem region_graph array gelöscht
+	
