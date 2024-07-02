@@ -6,9 +6,11 @@ func enter():
 	if(ScenarioDataManager.active_player == null):
 		ScenarioDataManager.set_start_scenario_active_player()
 	
-	ScenarioDataManager.scenario_region_graph.create_region_graph_from_file(
-		ScenarioDataManager.scenario_map_name
-	)
+	ScenarioDataManager.scenario_region_graph.load_regions_to_array()
+	
+	#ScenarioDataManager.scenario_region_graph.create_region_graph_from_file(
+	#	ScenarioDataManager.scenario_map_name
+	#)
 	
 	ScenarioDataManager.scenario_region_graph.load_resources_to_array()
 	
