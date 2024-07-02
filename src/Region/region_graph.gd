@@ -105,7 +105,7 @@ func add_node(region_name: String, region_graph: RegionGraph, map_name: String):
 		if node.region_name == region_name:
 			general_node = node
 	new_node.resource = general_node.resource
-	
+	new_node.resource_factor = general_node.resource_factor
 	var my_neighbours : Array[RegionNode] = []
 	for neighbour in all_neighbours:
 		for region_node in region_graph.region_array:
