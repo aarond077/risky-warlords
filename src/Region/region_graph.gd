@@ -99,6 +99,13 @@ func add_node(region_name: String, region_graph: RegionGraph, map_name: String):
 	var all_neighbours = complete_region_graph_dict[region_name]
 	
 	var new_node = RegionNode.new()
+	
+	var general_node : RegionNode
+	for node in ScenarioDataManager.scenario_region_graph.region_array:
+		if node.region_name == region_name:
+			general_node = node
+	new_node.resource = general_node.resource
+	
 	var my_neighbours : Array[RegionNode] = []
 	for neighbour in all_neighbours:
 		for region_node in region_graph.region_array:
@@ -108,7 +115,7 @@ func add_node(region_name: String, region_graph: RegionGraph, map_name: String):
 	new_node.region_name = region_name
 	new_node.neighbours = my_neighbours
 	region_graph.region_array.append(new_node)
-
+	
 func remove_node(region_name: String, region_graph: RegionGraph, map_name: String):
 	var complete_region_graph_dict = create_dict_with_map_names(map_name)
 	var all_neighbours = complete_region_graph_dict[region_name]
