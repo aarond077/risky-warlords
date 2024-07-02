@@ -99,7 +99,7 @@ func add_node(region_name: String, region_graph: RegionGraph, map_name: String):
 	var all_neighbours = complete_region_graph_dict[region_name]
 	
 	var new_node = RegionNode.new()
-	var my_neighbours = []
+	var my_neighbours : Array[RegionNode] = []
 	for neighbour in all_neighbours:
 		for region_node in region_graph.region_array:
 			if region_node.region_name == neighbour:

@@ -19,3 +19,4 @@ res://src/Scenario/panel_container_move_army.gd
 res://src/UI/ScenarioOverlay/panel_container_move_army.gd
 res://src/UI/ScenarioOverlay/panel_container_resources.gd
 res://src/UI/ScenarioOverlay/panel_container_region.gd
+res://src/Region/region_node.gd

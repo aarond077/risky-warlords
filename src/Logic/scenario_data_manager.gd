@@ -81,7 +81,7 @@ func set_scenario_players_capitals(capitals) -> void:
 		while(player.capital == capitals[rand_capital_index]):
 			rand_capital_index = randi_range(0, capitals.size()-1)
 		player.capital = capitals[rand_capital_index]
-		player.add_region_to_array(player.capital)
+		#player.add_region_to_array(player.capital)
 		
 		add_region_owner(player.capital, player.player_index)
 		
