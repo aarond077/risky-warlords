@@ -29,6 +29,9 @@ func update_player_army(warriors : int, archers : int, tanks : int):
 	for player in self.scenario_players:
 		player.update_army(warriors, archers, tanks)
 
+func decrease_action_points(costs : int) -> void:
+	active_player.action_points -= costs
+
 func add_army_to_region(
 	region : RegionNode,
 	warriors : int,
@@ -82,10 +85,10 @@ func set_scenario_players_capitals(capitals) -> void:
 		
 		add_region_owner(player.capital, player.player_index)
 		
-		#player.regions.add_node(
-		#	player.capital,  
-		#	player.regions, 
-		#	ScenarioDataManager.scenario_map_name)
+		player.regions.add_node(
+			player.capital,  
+			player.regions, 
+			ScenarioDataManager.scenario_map_name)
 		
 		capitals.remove_at(rand_capital_index)
 	

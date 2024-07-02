@@ -26,7 +26,7 @@ func _on_item_menu_pressed(id: int):
 	var building_name = create_building_menu_button.get_popup().get_item_text(id)
 	var active_region : RegionNode = ScenarioDataManager.active_region
 	var active_player : Player = ScenarioDataManager.active_player
-	if check_building_action(active_region, active_player):
+	if building_creatable(active_region, active_player):
 		SignalBus.call_deferred("emit_signal", "create_building", building_name)
 		active_player.action_points -= 2
 		SignalBus.call_deferred(
@@ -35,7 +35,7 @@ func _on_item_menu_pressed(id: int):
 		active_player
 		)
 		
-func check_building_action(region : RegionNode, player : Player) -> bool:
+func building_creatable(region : RegionNode, player : Player) -> bool:
 	'''Checks if region allows buildings in general. Also checks if the player
 	that wants to create the building has enough action points available. 
 	It is not allowed to create multiple buildings in one region.
@@ -49,12 +49,40 @@ func check_building_action(region : RegionNode, player : Player) -> bool:
 		and ScenarioDataManager.building_coordinates[region.region_name][1] != 0 \
 		and region.building == "" \
 		and player.action_points >= 2
+		
+	
+func building_removable(region : RegionNode, player : Player) -> bool:
+	if(player.action_points > 0):
+		return true
+	return false
+	
+func apply_building_costs():
+	pass
+		
+func add_removed_building_resources(building : String, player : Player) -> void:
+	if building == "Festung":
+			player.add_resource_stone(5)
+	if building == "Heiligtum":
+			player.add_resource_stone(4)
+			player.add_resource_iron(4)
+	if building == "Wachturm":
+			player.add_resource_wood(5)
+	if building == "Forschungsgebäude":
+			player.add_resource_iron(10)
+	if building == "Mine":
+			player.add_resource_iron(3)
+	if building == "Holzfällerhütte":
+			player.add_resource_wood(3)
+	if building == "Steinbruch":
+			player.add_resource_stone(3)
+		
 
-func _on_building_remove_button_pressed():
+func _on_building_remove_button_pressed() -> void:
 	var active_player : Player = ScenarioDataManager.active_player
 	var active_region : RegionNode = ScenarioDataManager.active_region
 	
-	if ( true):#active_player.player_index == active_region.region_owner_index):
+	if (building_removable(active_region, active_player)):#active_player.player_index == active_region.region_owner_index):
+		
 		SignalBus.call_deferred(
 			"emit_signal", 
 			"remove_sprite", 
@@ -62,31 +90,26 @@ func _on_building_remove_button_pressed():
 			active_region.region_name
 			)
 			
-		var building : String = active_region.building
-		if building == "Festung":
-			active_player.add_resource_stone(5)
-		if building == "Heiligtum":
-			active_player.add_resource_stone(4)
-			active_player.add_resource_iron(4)
-		if building == "Wachturm":
-			active_player.add_resource_wood(5)
-		if building == "Forschungsgebäude":
-			active_player.add_resource_iron(10)
-		if building == "Mine":
-			active_player.add_resource_iron(3)
-		if building == "Holzfällerhütte":
-			active_player.add_resource_wood(3)
-		if building == "Steinbruch":
-			active_player.add_resource_stone(3)
 		
-		SignalBus.call_deferred("emit_signal", "update_player_resources_label", active_player)
+		self.add_removed_building_resources(
+			active_region.building,
+			active_player
+			)
+		
+		SignalBus.call_deferred(
+			"emit_signal",
+			"update_player_resources_label",
+			active_player
+			)
+			
 		active_region.building = ""
 
 
 
 
 
-func _on_move_army_button_pressed():
-	var army : Dictionary = ScenarioDataManager.active_region.region_army
-	print(army["Warriors"])
-	ScenarioDataManager.active_player.army_movement = not ScenarioDataManager.active_player.army_movement
+func _on_move_army_button_pressed() -> void:
+	if(ScenarioDataManager.active_player.action_points > 0): #cost of traveling is 1 by now
+		var army : Dictionary = ScenarioDataManager.active_region.region_army
+		print(army["Warriors"])
+		ScenarioDataManager.active_player.army_movement = not ScenarioDataManager.active_player.army_movement

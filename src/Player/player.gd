@@ -81,5 +81,12 @@ func add_resource_stone(stone : int):
 	self.resources["Stone"] = self.resources["Stone"] + stone
 func add_resource_iron(iron : int):
 	self.resources["Iron"] = self.resources["Iron"] + iron
-
 	
+func reduce_resource_iron(iron : int):
+	self.resources["Iron"] -= iron
+func reduce_resource_food(food : int):
+	self.resource["Food"] -= food 
+func reduce_resource_stone(stone : int):
+	self.resource["Stone"] -= stone
+func reduce_resource_wood(wood : int):
+	self.resource["Wood"] -= wood

@@ -105,3 +105,5 @@ func _on_confirm_button_pressed():
 	moving_army = {"Warriors" : 0, "Archers" : 0, "Tanks" : 0}
 	reset_moving_army_label()
 	self.visible = false
+	ScenarioDataManager.decrease_action_points(1)
+	SignalBus.call_deferred("emit_signal", "update_player_action_points_label", ScenarioDataManager.active_player)
