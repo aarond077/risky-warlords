@@ -7,14 +7,14 @@ class_name RegionNode
 @onready var building : String
 
 
-@onready var holder : String
+
 @onready var resource_factor : int
 @onready var defense_factor : int
 @onready var travel_cost : int
 @onready var curse : int 
 @onready var building_coordinates : Vector2
-@onready var region_owner_index : int
 
+var holder : String
 var resource : String
 var neighbours : Array[RegionNode]
 var region_army : Dictionary = {"Warriors" : 0, "Archers" : 0, "Tanks" : 0}

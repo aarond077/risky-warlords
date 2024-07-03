@@ -61,7 +61,10 @@ func _on_mouse_entered():
 		for node in get_children():
 			if node.is_class("Polygon2D"):
 				if ScenarioDataManager.active_player.army_movement == true:
-					node.color = Color(1,0,0,0.8)
+					if ScenarioDataManager.region_is_accessable_for_movement(region_name):
+						node.color = Color(0,1,0,0.5)
+					else:
+						node.color = Color(1,0,0,0.5)
 				else:
 					node.color = Color(1, 1, 1, 0.5)
 				#node.modulate = Color(1, 1, 1, 0.5)
@@ -76,7 +79,7 @@ func _on_input_event(viewport, event, shape_idx):
 			SignalBus.call_deferred("emit_signal", "region_clicked", self.region_name)
 			SignalBus.call_deferred("emit_signal", "remove_region_outlines", self.region_name)
 			call_deferred("draw_region_outlines")
-		else:
+		elif ScenarioDataManager.active_player.army_movement and ScenarioDataManager.region_is_accessable_for_movement(region_name):
 			SignalBus.call_deferred("emit_signal", "show_move_army_container", self.region_name, ScenarioDataManager.active_player)
 			ScenarioDataManager.active_player.army_movement = false
 	

@@ -12,6 +12,7 @@ class_name Player
 @onready var army_movement : bool = false
 
 
+var sanctuary_bonus : int = 0
 var resources : Dictionary = {"Wood" : 0, "Stone" : 0, "Iron" : 0, "Food" : 0}
 var army : Dictionary = {"Warriors" : 0, "Archers" : 0, "Tanks" : 0}
 
@@ -33,19 +34,18 @@ func add_region_to_array(region_name : String):
 	
 func update_action_points():
 	var action_points_offset : int = 10
-	self.action_points += action_points_offset
+	self.action_points = action_points_offset + self.sanctuary_bonus
 
 func update_army(warriors : int, archers : int, tanks : int):
 	self.army["Warriors"] += warriors
 	self.army["Archers"] += archers
 	self.army["Tanks"] += tanks
 
-
 func update_resources():
 	for region in self.regions.region_array: #check every reagion in the players region graph
 		self.resources["Food"] += 5 #add 5 food per region
 		var region_resource : String = region.resource # get resource of the region
-		if region_resource != "Null": # check if resource is not null
+		if region_resource != "Null" and region_resource != "": # check if resource is not null
 			self.resources[region_resource] += region.resource_factor #add amount to resource of the player
 
 	
@@ -85,8 +85,8 @@ func add_resource_iron(iron : int):
 func reduce_resource_iron(iron : int):
 	self.resources["Iron"] -= iron
 func reduce_resource_food(food : int):
-	self.resource["Food"] -= food 
+	self.resources["Food"] -= food 
 func reduce_resource_stone(stone : int):
-	self.resource["Stone"] -= stone
+	self.resources["Stone"] -= stone
 func reduce_resource_wood(wood : int):
-	self.resource["Wood"] -= wood
+	self.resources["Wood"] -= wood

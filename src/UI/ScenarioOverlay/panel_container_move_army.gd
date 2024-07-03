@@ -102,6 +102,12 @@ func _on_cancel_button_pressed():
 func _on_confirm_button_pressed():
 	ScenarioDataManager.active_region.region_army = available_army
 	target_region.region_army = moving_army
+	if(not target_region.owner == ScenarioDataManager.active_player):
+		ScenarioDataManager.active_player.regions.add_node(
+			target_region.region_name,
+			ScenarioDataManager.active_player.regions,
+			ScenarioDataManager.scenario_map_name)
+		target_region.holder = "Player " + str(ScenarioDataManager.active_player.player_index)
 	moving_army = {"Warriors" : 0, "Archers" : 0, "Tanks" : 0}
 	reset_moving_army_label()
 	self.visible = false
