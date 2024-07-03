@@ -24,3 +24,4 @@ res://src/Scenario/action_points.gd
 res://src/Scenario/battle_phase.gd
 res://src/UI/ScenarioOverlay/panel_container_info.gd
 res://src/Scenario/start_round.gd
+res://data/Maps/Aleksud/AleksudRegionGraph.txt
