@@ -79,8 +79,17 @@ layout_mode = 2
 text = "Farbe:
 "
 
-[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection1"]
+[node name="OptionButtonColor1" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection1"]
 layout_mode = 2
+item_count = 4
+popup/item_0/text = "Blue"
+popup/item_0/id = 0
+popup/item_1/text = "Red"
+popup/item_1/id = 1
+popup/item_2/text = "Green"
+popup/item_2/id = 2
+popup/item_3/text = "Yellow"
+popup/item_3/id = 3
 
 [node name="PlayerSelection2" type="HBoxContainer" parent="CanvasLayer/UI/VBoxContainer2"]
 layout_mode = 2
@@ -113,8 +122,17 @@ layout_mode = 2
 text = "Farbe:
 "
 
-[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection2"]
+[node name="OptionButtonColor2" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection2"]
 layout_mode = 2
+item_count = 4
+popup/item_0/text = "Blue"
+popup/item_0/id = 0
+popup/item_1/text = "Red"
+popup/item_1/id = 1
+popup/item_2/text = "Green"
+popup/item_2/id = 2
+popup/item_3/text = "Yellow"
+popup/item_3/id = 3
 
 [node name="PlayerSelection3" type="HBoxContainer" parent="CanvasLayer/UI/VBoxContainer2"]
 layout_mode = 2
@@ -148,8 +166,17 @@ layout_mode = 2
 text = "Farbe:
 "
 
-[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection3"]
+[node name="OptionButtonColor3" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection3"]
 layout_mode = 2
+item_count = 4
+popup/item_0/text = "Blue"
+popup/item_0/id = 0
+popup/item_1/text = "Red"
+popup/item_1/id = 1
+popup/item_2/text = "Green"
+popup/item_2/id = 2
+popup/item_3/text = "Yellow"
+popup/item_3/id = 3
 
 [node name="PlayerSelection4" type="HBoxContainer" parent="CanvasLayer/UI/VBoxContainer2"]
 visible = false
@@ -184,8 +211,17 @@ layout_mode = 2
 text = "Farbe:
 "
 
-[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection4"]
+[node name="OptionButtonColor4" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection4"]
 layout_mode = 2
+item_count = 4
+popup/item_0/text = "Blue"
+popup/item_0/id = 0
+popup/item_1/text = "Red"
+popup/item_1/id = 1
+popup/item_2/text = "Green"
+popup/item_2/id = 2
+popup/item_3/text = "Yellow"
+popup/item_3/id = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI"]
 layout_mode = 1
@@ -236,8 +272,12 @@ texture = ExtResource("4_4hqtj")
 [connection signal="item_selected" from="CanvasLayer/UI/VBoxContainer2/HBoxContainer/OptionButton" to="CanvasLayer/UI/VBoxContainer2/PlayerSelection3" method="_on_option_button_item_selected"]
 [connection signal="item_selected" from="CanvasLayer/UI/VBoxContainer2/HBoxContainer/OptionButton" to="CanvasLayer/UI/VBoxContainer2/PlayerSelection4" method="_on_option_button_item_selected"]
 [connection signal="item_selected" from="CanvasLayer/UI/VBoxContainer2/PlayerSelection1/NationOptions" to="CanvasLayer/UI/VBoxContainer2/PlayerSelection1/NationOptions" method="_on_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/UI/VBoxContainer2/PlayerSelection1/OptionButtonColor1" to="CanvasLayer/UI/VBoxContainer2/PlayerSelection1" method="_on_option_button_color_1_item_selected"]
 [connection signal="item_selected" from="CanvasLayer/UI/VBoxContainer2/PlayerSelection2/NationOptions" to="CanvasLayer/UI/VBoxContainer2/PlayerSelection2/NationOptions" method="_on_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/UI/VBoxContainer2/PlayerSelection2/OptionButtonColor2" to="CanvasLayer/UI/VBoxContainer2/PlayerSelection2" method="_on_option_button_color_2_item_selected"]
 [connection signal="item_selected" from="CanvasLayer/UI/VBoxContainer2/PlayerSelection3/NationOptions" to="CanvasLayer/UI/VBoxContainer2/PlayerSelection3/NationOptions" method="_on_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/UI/VBoxContainer2/PlayerSelection3/OptionButtonColor3" to="CanvasLayer/UI/VBoxContainer2/PlayerSelection3" method="_on_option_button_color_3_item_selected"]
 [connection signal="item_selected" from="CanvasLayer/UI/VBoxContainer2/PlayerSelection4/NationOptions" to="CanvasLayer/UI/VBoxContainer2/PlayerSelection4/NationOptions" method="_on_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/UI/VBoxContainer2/PlayerSelection4/OptionButtonColor4" to="CanvasLayer/UI/VBoxContainer2/PlayerSelection4" method="_on_option_button_color_4_item_selected"]
 [connection signal="item_selected" from="CanvasLayer/UI/VBoxContainer/MapOptions" to="CanvasLayer/UI/VBoxContainer/MapOptions" method="_on_item_selected"]
 [connection signal="pressed" from="CanvasLayer/UI/VBoxContainer/StartGameButton" to="CanvasLayer/UI/VBoxContainer/StartGameButton" method="_on_pressed"]

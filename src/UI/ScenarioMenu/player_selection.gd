@@ -27,4 +27,30 @@ func _on_option_button_item_selected(index):
 		visible = false
 		ScenarioDataManager.remove_player(player_index)
 
+func check_color(color_index : int, player_index2 : int):
+	var players : Array = ScenarioDataManager.scenario_players
+	if color_index == 0:
+		players[player_index2].set_player_color("Blue")
+	elif color_index == 1:
+		players[player_index2].set_player_color("Red")
+	elif color_index == 2:
+		players[player_index2].set_player_color("Green")
+	elif color_index == 3:
+		players[player_index2].set_player_color("Yellow")
+	else :
+		players[player_index2].set_player_color("Black")
 
+func _on_option_button_color_1_item_selected(index):
+	check_color(index,0)# Replace with function body.
+
+
+func _on_option_button_color_2_item_selected(index):
+	check_color(index,1) # Replace with function body.
+
+
+func _on_option_button_color_3_item_selected(index):
+	check_color(index,2) # Replace with function body.
+
+
+func _on_option_button_color_4_item_selected(index):
+	check_color(index,3) # Replace with function body.

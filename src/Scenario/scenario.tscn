@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://d1xk2lv80lqnp"]
+[gd_scene load_steps=52 format=3 uid="uid://d1xk2lv80lqnp"]
 
 [ext_resource type="Script" path="res://src/Scenario/game_manager.gd" id="1_3288w"]
 [ext_resource type="Script" path="res://src/Scenario/scenario.gd" id="2_dxbxk"]
@@ -46,6 +46,8 @@
 [ext_resource type="Texture2D" uid="uid://dnn5sj57bc0x4" path="res://src/UI/ScenarioOverlay/Sonstiges/eye open.png" id="43_k2k8a"]
 [ext_resource type="Texture2D" uid="uid://dveuhfkb0qh6g" path="res://src/UI/ScenarioOverlay/Sonstiges/area_troops.png" id="44_lv3qq"]
 [ext_resource type="Script" path="res://src/Scenario/TileMap.gd" id="44_tq45s"]
+[ext_resource type="Texture2D" uid="uid://w61f0fow66rp" path="res://assets/Background/blue_image.png" id="47_muxym"]
+[ext_resource type="Script" path="res://src/Scenario/BlueBackground.gd" id="48_tohtn"]
 
 [sub_resource type="Theme" id="Theme_7n6mx"]
 
@@ -1725,6 +1727,13 @@ layer = -1
 [node name="BackgroundSprite" type="Sprite2D" parent="Scenario/CanvasLayer/ParallaxBackground/ParallaxLayer"]
 position = Vector2(449, 604)
 texture = ExtResource("12_7xjhs")
+
+[node name="BlueBackground" type="Sprite2D" parent="Scenario/CanvasLayer/ParallaxBackground/ParallaxLayer"]
+visible = false
+position = Vector2(450, 611)
+scale = Vector2(1.11978, 1.63889)
+texture = ExtResource("47_muxym")
+script = ExtResource("48_tohtn")
 
 [connection signal="timeout" from="CanvasLayer/ScenarioOverlay/PanelContainerInfo/PlayerTimer" to="Scenario" method="_on_player_timer_timeout"]
 [connection signal="toggled" from="CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView/GridContainerPoliticalView/MarginContainerPoliticalView/PoliticalViewButton" to="CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView" method="_on_political_view_button_toggled"]

@@ -23,15 +23,50 @@ func draw_region_outlines() -> void:
 			var outline = RegionOutline.new()
 			child.add_child(outline)
 			set_outline_points(outline, child)
+			
+
+
+func color_to_code(index):
+	var color_code : Color
+	var rdm : float = randf_range(0.7,1)
+	var color : String = ScenarioDataManager.scenario_players[index].player_color
+	if color == "Blue":
+		color_code = Color(0,0,rdm,0.7)
+	elif color == "Red":
+		color_code = Color(rdm,0,0,0.7)
+	elif color == "Green":
+		color_code = Color(0,rdm,0,0.7)
+	elif color == "Yellow":
+		color_code = Color(rdm,rdm,0,0.7)
+	else:
+		color_code = Color(1,1,1,0.4)
+	return color_code
 
 func draw_in_colour() -> void:
 	policalviewactive = true
+	var regions_with_owner : Dictionary = ScenarioDataManager.region_with_owner()
+	draw_region_outlines()
 	for child in get_children():
 		if child is Polygon2D:
-			child.color = Color(1,0,0,0.8)
+			for region in regions_with_owner:
+				var key = regions_with_owner[region]
+				if key == 1 && region_name == region:
+					child.color = color_to_code(0)
+				elif key == 2 && region_name == region:
+					child.color = color_to_code(1)
+				elif key == 3 && region_name == region:
+					child.color = color_to_code(2)
+				elif key == 4 && region_name == region:
+					child.color = color_to_code(3)
+				elif key == 0 && region_name == region:
+					child.color = Color(1,1,1,0.7)
+				else:
+					pass
+			
 			
 func physical_view():
 	policalviewactive = false
+	SignalBus.call_deferred("emit_signal", "remove_region_outlines", self.region_name)
 	for child in get_children():
 		if child is Polygon2D:
 			_on_child_entered_tree(child)
@@ -74,7 +109,10 @@ func _on_input_event(viewport, event, shape_idx):
 		if not ScenarioDataManager.active_player.army_movement:
 			print(str(region_name) + " Clicked. Index: " + str(self.region_index) )
 			SignalBus.call_deferred("emit_signal", "region_clicked", self.region_name)
-			SignalBus.call_deferred("emit_signal", "remove_region_outlines", self.region_name)
+			if policalviewactive == true:
+				pass
+			else:
+				SignalBus.call_deferred("emit_signal", "remove_region_outlines", self.region_name)
 			call_deferred("draw_region_outlines")
 		else:
 			SignalBus.call_deferred("emit_signal", "show_move_army_container", self.region_name, ScenarioDataManager.active_player)

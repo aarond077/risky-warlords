@@ -13,7 +13,7 @@ class_name RegionNode
 @onready var travel_cost : int
 @onready var curse : int 
 @onready var building_coordinates : Vector2
-@onready var region_owner_index : int
+@onready var region_owner_index : int = 0
 
 var resource : String
 var neighbours : Array[RegionNode]

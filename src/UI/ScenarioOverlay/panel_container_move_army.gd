@@ -37,7 +37,6 @@ func increase_troop_label(
 	troops_name : String,
 	troops_label : Label,
 	troops_available_label : Label):
-		
 	if(available_army[troops_name] != 0\
 	and available_army_is_not_empty(troops_name)):
 		moving_army[troops_name] += 1
@@ -106,4 +105,6 @@ func _on_confirm_button_pressed():
 	reset_moving_army_label()
 	self.visible = false
 	ScenarioDataManager.decrease_action_points(1)
+	var player_index : int = ScenarioDataManager.player_indexfunc()
+	ScenarioDataManager.add_region_owner(target_region.region_name, player_index)
 	SignalBus.call_deferred("emit_signal", "update_player_action_points_label", ScenarioDataManager.active_player)

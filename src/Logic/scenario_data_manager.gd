@@ -16,6 +16,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.scenario_region_graph = RegionGraph.new()
+	SignalBus.call_deferred("connect", "set_political_view", player_indexfunc)
 	
 func update_player_action_points():
 	for player in self.scenario_players:
@@ -124,4 +125,13 @@ func add_player(player_index : int):
 
 func remove_player(player_index : int):
 	scenario_players.remove_at(player_index)
-
+	
+func player_indexfunc():
+	return active_player.player_index
+	
+func region_with_owner():
+	var regions_with_owner : Dictionary
+	var all_regions : Array = scenario_region_graph.region_array
+	for region in all_regions:
+		regions_with_owner[region.region_name] = region.region_owner_index
+	return regions_with_owner

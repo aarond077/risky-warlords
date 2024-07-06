@@ -105,11 +105,9 @@ func _on_building_remove_button_pressed() -> void:
 		active_region.building = ""
 
 
-
-
-
 func _on_move_army_button_pressed() -> void:
 	if(ScenarioDataManager.active_player.action_points > 0): #cost of traveling is 1 by now
 		var army : Dictionary = ScenarioDataManager.active_region.region_army
 		print(army["Warriors"])
+		
 		ScenarioDataManager.active_player.army_movement = not ScenarioDataManager.active_player.army_movement
