@@ -10,6 +10,7 @@ class_name Player
 @onready var army_points : int 
 @onready var action_points : int = 0
 @onready var army_movement : bool = false
+@onready var player_color : String
 
 
 var sanctuary_bonus : int = 0
@@ -89,4 +90,7 @@ func reduce_resource_food(food : int):
 func reduce_resource_stone(stone : int):
 	self.resources["Stone"] -= stone
 func reduce_resource_wood(wood : int):
-	self.resources["Wood"] -= wood
+	self.resource["Wood"] -= wood
+	
+func set_player_color(color : String):
+	self.player_color = color

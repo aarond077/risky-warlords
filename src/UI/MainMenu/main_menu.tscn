@@ -1,30 +1,82 @@
-[gd_scene load_steps=3 format=3 uid="uid://cv6rt151tlltq"]
+[gd_scene load_steps=5 format=3 uid="uid://cv6rt151tlltq"]
 
 [ext_resource type="Script" path="res://src/UI/MainMenu/local_game_button.gd" id="1_4j5sf"]
+[ext_resource type="Theme" uid="uid://cyf5kaih5j285" path="res://src/UI/ScenarioOverlay/Sonstiges/truppen_theme.tres" id="1_00213"]
+[ext_resource type="Texture2D" path="res://src/UI/ScenarioOverlay/Sonstiges/menubackground.png" id="1_xfemn"]
 [ext_resource type="Script" path="res://src/UI/MainMenu/exit_game_button.gd" id="2_lp8j1"]
 
 [node name="MainMenu" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(925, 537)
+scale = Vector2(0.845968, 0.467742)
+texture = ExtResource("1_xfemn")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.023
+anchor_right = 0.5
+anchor_bottom = 0.023
+offset_left = -960.0
+offset_top = 0.159998
+offset_right = 960.0
+offset_bottom = 149.16
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource("1_00213")
+theme_override_font_sizes/font_size = 130
+text = "Risky Warlords
+"
+horizontal_alignment = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.522
+anchor_right = 0.5
+anchor_bottom = 0.522
+offset_left = -566.0
+offset_top = -275.76
+offset_right = 566.0
+offset_bottom = 276.24
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="LocalGameButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-text = "Lokales Spiel"
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme = ExtResource("1_00213")
+theme_override_font_sizes/font_size = 50
+text = "                Lokales Spiel                "
 script = ExtResource("1_4j5sf")
+
+[node name="Spacer2" type="Control" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="LoadGameButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme = ExtResource("1_00213")
+theme_override_font_sizes/font_size = 50
 text = "Spiel laden"
+
+[node name="Spacer" type="Control" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="ExitGameButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme = ExtResource("1_00213")
+theme_override_font_sizes/font_size = 50
 text = "Spiel beenden"
 script = ExtResource("2_lp8j1")
 
