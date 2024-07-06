@@ -79,6 +79,7 @@ func _on_input_event(viewport, event, shape_idx):
 			SignalBus.call_deferred("emit_signal", "region_clicked", self.region_name)
 			SignalBus.call_deferred("emit_signal", "remove_region_outlines", self.region_name)
 			call_deferred("draw_region_outlines")
+			print(str(event.position))
 		elif ScenarioDataManager.active_player.army_movement and ScenarioDataManager.region_is_accessable_for_movement(region_name):
 			SignalBus.call_deferred("emit_signal", "show_move_army_container", self.region_name, ScenarioDataManager.active_player)
 			ScenarioDataManager.active_player.army_movement = false
