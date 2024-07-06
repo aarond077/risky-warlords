@@ -28,16 +28,16 @@ func draw_region_outlines() -> void:
 
 func color_to_code(index):
 	var color_code : Color
-	var rdm : float = randf_range(0.7,1)
+	var rdm : float = randf_range(0.6,0.8)
 	var color : String = ScenarioDataManager.scenario_players[index].player_color
 	if color == "Blue":
-		color_code = Color(0,0,rdm,0.7)
-	elif color == "Red":
-		color_code = Color(rdm,0,0,0.7)
-	elif color == "Green":
-		color_code = Color(0,rdm,0,0.7)
+		color_code = Color(0.2,0,rdm,0.8)
+	elif color == "Orange":
+		color_code = Color(1,rdm,0,0.7)
+	elif color == "Purple":
+		color_code = Color(rdm,0.2,0.7,0.7)
 	elif color == "Yellow":
-		color_code = Color(rdm,rdm,0,0.7)
+		color_code = Color(rdm,0.85,0,0.7)
 	else:
 		color_code = Color(1,1,1,0.4)
 	return color_code
@@ -59,7 +59,7 @@ func draw_in_colour() -> void:
 				elif key == 4 && region_name == region:
 					child.color = color_to_code(3)
 				elif key == 0 && region_name == region:
-					child.color = Color(1,1,1,0.7)
+					child.color = Color(0.70,0.70,0.70,0.9)
 				else:
 					pass
 			
@@ -92,16 +92,23 @@ func _on_child_entered_tree(node):
 
 func _on_mouse_entered():
 	#print(region_name)
-	if policalviewactive == false:
 		for node in get_children():
 			if node.is_class("Polygon2D"):
 				if ScenarioDataManager.active_player.army_movement == true:
-					if ScenarioDataManager.region_is_accessable_for_movement(region_name):
+					if ScenarioDataManager.region_is_accessable_for_movement(region_name) and policalviewactive == false:
 						node.color = Color(0,1,0,0.5)
+					elif (ScenarioDataManager.region_is_accessable_for_movement(region_name)) and (policalviewactive == true) and (node.color == Color(0.70,0.70,0.70,0.9)):
+						node.color = Color(0,1,0,0.5)
+					elif (policalviewactive == true) and (node.color != Color(0.70,0.70,0.70,0.9)):
+						pass
 					else:
 						node.color = Color(1,0,0,0.5)
-				else:
+				elif (policalviewactive == true) and node.color == Color(0.70,0.70,0.70,0.9):
+						node.color = Color(1, 1, 1, 0.5)
+				elif policalviewactive == false:
 					node.color = Color(1, 1, 1, 0.5)
+				else:
+					pass
 				#node.modulate = Color(1, 1, 1, 0.5)
 
 
@@ -126,7 +133,11 @@ func _on_input_event(viewport, event, shape_idx):
 
 func _on_mouse_exited():
 	#print(region_name)
-	if policalviewactive == false:
 		for node in get_children():
 			if node.is_class("Polygon2D"):
-				node.color = Color(0, 0, 0, 0)
+				if (policalviewactive == true) and (node.color == Color(1, 1, 1, 0.5) or node.color == Color(0,1,0,0.5) or node.color == Color(1,0,0,0.5)):
+					node.color = Color(0.70,0.70,0.70,0.9)
+				elif policalviewactive == false:
+					node.color = Color(0, 0, 0, 0)
+				else:
+					pass

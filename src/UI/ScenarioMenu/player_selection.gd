@@ -32,13 +32,13 @@ func check_color(color_index : int, player_index2 : int):
 	if color_index == 0:
 		players[player_index2].set_player_color("Blue")
 	elif color_index == 1:
-		players[player_index2].set_player_color("Red")
+		players[player_index2].set_player_color("Orange")
 	elif color_index == 2:
-		players[player_index2].set_player_color("Green")
+		players[player_index2].set_player_color("Purple")
 	elif color_index == 3:
 		players[player_index2].set_player_color("Yellow")
 	else :
-		players[player_index2].set_player_color("Black")
+		players[player_index2].set_player_color("Filler")
 
 func _on_option_button_color_1_item_selected(index):
 	check_color(index,0)# Replace with function body.

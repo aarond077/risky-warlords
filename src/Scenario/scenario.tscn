@@ -1770,9 +1770,8 @@ position = Vector2(449, 604)
 texture = ExtResource("12_7xjhs")
 
 [node name="BlueBackground" type="Sprite2D" parent="Scenario/CanvasLayer/ParallaxBackground/ParallaxLayer"]
-visible = false
-position = Vector2(450, 611)
-scale = Vector2(1.11978, 1.63889)
+position = Vector2(512, 512)
+scale = Vector2(0.562637, 0.948148)
 texture = ExtResource("47_muxym")
 script = ExtResource("48_tohtn")
 
