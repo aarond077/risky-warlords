@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://d1xk2lv80lqnp"]
+[gd_scene load_steps=52 format=3 uid="uid://d1xk2lv80lqnp"]
 
 [ext_resource type="Script" path="res://src/Scenario/game_manager.gd" id="1_3288w"]
 [ext_resource type="Script" path="res://src/Scenario/scenario.gd" id="2_dxbxk"]
@@ -34,7 +34,6 @@
 [ext_resource type="Theme" uid="uid://5jco2phc6pxl" path="res://src/UI/ScenarioOverlay/Sonstiges/font_theme.tres" id="29_y21ux"]
 [ext_resource type="Theme" uid="uid://b6r6mw4uxy32s" path="res://src/UI/ScenarioOverlay/Sonstiges/aktionen_theme.tres" id="30_d0aj2"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_move_army.gd" id="32_3nebv"]
-[ext_resource type="Texture2D" uid="uid://4hgnvou76rej" path="res://src/UI/ScenarioOverlay/Sonstiges/skip.png" id="35_8nml0"]
 [ext_resource type="Texture2D" uid="uid://cijap8kjsggga" path="res://src/UI/ScenarioOverlay/Sonstiges/x.png" id="35_sncsx"]
 [ext_resource type="Texture2D" uid="uid://bjgm0bma3r0cv" path="res://src/UI/ScenarioOverlay/Sonstiges/Dice/diceOne.png" id="36_6q7fb"]
 [ext_resource type="Texture2D" uid="uid://brs5jds3gutma" path="res://src/UI/ScenarioOverlay/Sonstiges/Dice/diceTwo.png" id="37_laiqh"]
@@ -1660,46 +1659,6 @@ theme_override_font_sizes/font_size = 22
 text = "25 "
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="PanelContainerPhase" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -147.0
-offset_top = -102.88
-offset_right = 147.0
-offset_bottom = 0.119995
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("3_rcj7a")
-
-[node name="CurrentPhase" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerPhase"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "Angriffsphase"
-horizontal_alignment = 1
-
-[node name="NextPlayerButton" type="Button" parent="CanvasLayer/ScenarioOverlay"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.405
-anchor_top = 0.015
-anchor_right = 0.405
-anchor_bottom = 0.015
-offset_left = -36.0
-offset_right = 36.08
-offset_bottom = 77.16
-grow_horizontal = 2
-size_flags_horizontal = 3
-theme = ExtResource("28_08v7j")
-theme_type_variation = &"FlatButton"
-theme_override_font_sizes/font_size = 27
-icon = ExtResource("35_8nml0")
-icon_alignment = 1
-expand_icon = true
 
 [node name="Scenario" type="Node2D" parent="."]
 process_mode = 1

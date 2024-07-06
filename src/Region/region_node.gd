@@ -13,10 +13,7 @@ class_name RegionNode
 @onready var travel_cost : int
 @onready var curse : int 
 @onready var building_coordinates : Vector2
-<<<<<<< HEAD
 @onready var region_owner_index : int = 0
-=======
->>>>>>> bfa46e6bc0d45998cb7a896c0c0fc6eaad477011
 
 var holder : String
 var resource : String

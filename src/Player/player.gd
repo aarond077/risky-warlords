@@ -90,11 +90,7 @@ func reduce_resource_food(food : int):
 func reduce_resource_stone(stone : int):
 	self.resources["Stone"] -= stone
 func reduce_resource_wood(wood : int):
-<<<<<<< HEAD
 	self.resource["Wood"] -= wood
 	
 func set_player_color(color : String):
 	self.player_color = color
-=======
-	self.resources["Wood"] -= wood
->>>>>>> bfa46e6bc0d45998cb7a896c0c0fc6eaad477011

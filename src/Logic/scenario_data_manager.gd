@@ -80,6 +80,7 @@ func store_start_scenario__properties(scenario_map_name : String,
 func add_region_holder(region_name : String, player_index : int):
 	for region in self.scenario_region_graph.region_array:
 		if region.region_name == region_name:
+			region.region_owner_index = player_index
 			region.holder = "Player " + str(player_index)
 	
 
@@ -141,7 +142,6 @@ func add_player(player_index : int):
 
 func remove_player(player_index : int):
 	scenario_players.remove_at(player_index)
-<<<<<<< HEAD
 	
 func player_indexfunc():
 	return active_player.player_index
@@ -152,7 +152,6 @@ func region_with_owner():
 	for region in all_regions:
 		regions_with_owner[region.region_name] = region.region_owner_index
 	return regions_with_owner
-=======
 
 func exist_possible_battle():
 	for region in scenario_region_graph.region_array:
@@ -162,4 +161,3 @@ func exist_possible_battle():
 				and neighbour.holder != "":
 				return true
 	return false
->>>>>>> bfa46e6bc0d45998cb7a896c0c0fc6eaad477011

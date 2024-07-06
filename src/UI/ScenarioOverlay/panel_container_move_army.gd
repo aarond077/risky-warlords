@@ -112,5 +112,5 @@ func _on_confirm_button_pressed():
 	self.visible = false
 	ScenarioDataManager.decrease_action_points(1)
 	var player_index : int = ScenarioDataManager.player_indexfunc()
-	ScenarioDataManager.add_region_owner(target_region.region_name, player_index)
+	ScenarioDataManager.add_region_holder(target_region.region_name, player_index)
 	SignalBus.call_deferred("emit_signal", "update_player_action_points_label", ScenarioDataManager.active_player)
