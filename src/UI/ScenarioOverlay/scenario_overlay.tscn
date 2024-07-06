@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cos6atngucb2f"]
+[gd_scene load_steps=24 format=3 uid="uid://cos6atngucb2f"]
 
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_region.gd" id="1_b6r40"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/scenario_overlay.gd" id="1_obp3o"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_army.gd" id="19_64a6f"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_actions.gd" id="19_67hok"]
 [ext_resource type="Theme" uid="uid://cik0xnfjxuhw0" path="res://src/UI/ScenarioOverlay/Sonstiges/gebiet_theme.tres" id="20_810kd"]
+[ext_resource type="Texture2D" uid="uid://4hgnvou76rej" path="res://src/UI/ScenarioOverlay/Sonstiges/skip.png" id="23_ivwtm"]
 
 [node name="ScenarioOverlay" type="Control"]
 layout_mode = 3
@@ -783,6 +784,47 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "100"
 horizontal_alignment = 1
+
+[node name="PanelContainerPhase" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.011
+anchor_right = 0.5
+anchor_bottom = 1.011
+offset_left = -147.0
+offset_top = -102.88
+offset_right = 147.0
+offset_bottom = 0.119995
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_hdnmy")
+
+[node name="CurrentPhase" type="Label" parent="PanelContainerPhase"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Angriffsphase"
+horizontal_alignment = 1
+
+[node name="NextPlayerButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.401
+anchor_top = -0.002
+anchor_right = 0.401
+anchor_bottom = -0.002
+offset_left = -35.92
+offset_top = 0.16
+offset_right = 36.08
+offset_bottom = 77.16
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme = ExtResource("14_nwvwj")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 27
+icon = ExtResource("23_ivwtm")
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="PanelContainerPoliticalView/GridContainerPoliticalView/MarginContainerPoliticalView/PoliticalViewButton" to="PanelContainerPoliticalView" method="_on_political_view_button_pressed"]
 [connection signal="pressed" from="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/WarriorDecreaseButton" to="PanelContainerSelectArmy" method="_on_warrior_decrease_button_pressed"]

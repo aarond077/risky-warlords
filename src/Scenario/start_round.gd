@@ -6,7 +6,7 @@ extends State
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	SignalBus.call_deferred("connect", "check_player_index", on_check_player_index)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -34,7 +34,7 @@ func hide_action_point_state_ui():
 
 func show_start_round_state_ui():
 	state_machine.panel_container_select_army.visible = true
-	
+	state_machine.panel_container_select_army.reset_select_army_input()
 	
 func enter():
 	super.enter()
@@ -46,6 +46,11 @@ func enter():
 	
 	ScenarioDataManager.update_player_resources()
 	ScenarioDataManager.update_player_action_points()
+	
+	SignalBus.call_deferred(
+		"emit_signal",
+		"stop_active_player_timer"
+	)
 	
 	SignalBus.call_deferred(
 		"emit_signal",
@@ -72,10 +77,9 @@ func exit():
 func is_active_player_last_player()-> bool:
 	return ScenarioDataManager.active_player.player_index == ScenarioDataManager.scenario_players.size()
 	
-
-func _on_confirm_button_pressed():
+		
+func on_check_player_index():
 	if (is_active_player_last_player()):
-		ScenarioDataManager.set_next_active_player()
 		self.can_transition = true
-	else:
-		ScenarioDataManager.set_next_active_player()
+
+

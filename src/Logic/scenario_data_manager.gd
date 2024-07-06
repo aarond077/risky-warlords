@@ -5,11 +5,12 @@ extends Node2D
 @export var scenario_region_graph : RegionGraph
 @export var maps : Array[String]
 
+
 @onready var active_region : RegionNode
 @onready var active_region_color : String
 @onready var active_player : Player
 @onready var building_coordinates : Dictionary
-
+@onready var battle_phase_active : bool = false
 @onready var capitals : Array
 
 
@@ -53,10 +54,21 @@ func find_active_region_in_array(region_name : String):
 			self.active_region = region
 	return self.active_region
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func region_is_accessable_for_movement(region_name : String):
+	var target_region : RegionNode = self.find_region_in_array(region_name)
+	
+	for player_region in active_player.regions.region_array:
+		if player_region.region_name == target_region.region_name:
+			return true
+		else:
+			var scenario_graph_region : RegionNode = self.find_region_in_array(player_region.region_name)
+			for neighbour in scenario_graph_region.neighbours:
+				var active_player_name : String = "Player " + str(active_player.player_index) 
+				if neighbour.region_name == target_region.region_name \
+					and (active_player_name == target_region.holder \
+					or target_region.holder == ""):
+					return true
+	return false
 	
 func store_start_scenario__properties(scenario_map_name : String,
 							scenario_players : Array[Player], 
@@ -65,10 +77,10 @@ func store_start_scenario__properties(scenario_map_name : String,
 	self.scenario_players = scenario_players
 	self.scenario_region_graph = scenario_region_graph
 	
-func add_region_owner(region_name : String, player_index : int):
+func add_region_holder(region_name : String, player_index : int):
 	for region in self.scenario_region_graph.region_array:
 		if region.region_name == region_name:
-			region.region_owner_index = player_index
+			region.holder = "Player " + str(player_index)
 	
 
 	
@@ -83,14 +95,14 @@ func set_scenario_players_capitals(capitals) -> void:
 			rand_capital_index = randi_range(0, capitals.size()-1)
 		player.capital = capitals[rand_capital_index]
 		
-		player.add_region_to_array(player.capital)
+		#player.add_region_to_array(player.capital)
 		
-		add_region_owner(player.capital, player.player_index)
+		add_region_holder(player.capital, player.player_index)
 		
-		#player.regions.add_node(
-		#	player.capital,  
-		#	player.regions, 
-		#	ScenarioDataManager.scenario_map_name)
+		player.regions.add_node(
+			player.capital,  
+			player.regions, 
+			ScenarioDataManager.scenario_map_name)
 		
 		capitals.remove_at(rand_capital_index)
 	
@@ -104,7 +116,11 @@ func set_next_active_player():
 	if(active_player.player_index < scenario_players.size()):
 		active_player = scenario_players[active_player.player_index]
 	else:
-		active_player = scenario_players[0]
+		if not ScenarioDataManager.battle_phase_active:
+			SignalBus.call_deferred("emit_signal", "init_battle_phase")
+			active_player = scenario_players[0]
+		else:
+			SignalBus.call_deferred("emit_signal", "init_start_round")
 	SignalBus.call_deferred("emit_signal", "next_active_player")
 
 func set_player_nation(player_index : int, nation_name : String):
@@ -125,6 +141,7 @@ func add_player(player_index : int):
 
 func remove_player(player_index : int):
 	scenario_players.remove_at(player_index)
+<<<<<<< HEAD
 	
 func player_indexfunc():
 	return active_player.player_index
@@ -135,3 +152,14 @@ func region_with_owner():
 	for region in all_regions:
 		regions_with_owner[region.region_name] = region.region_owner_index
 	return regions_with_owner
+=======
+
+func exist_possible_battle():
+	for region in scenario_region_graph.region_array:
+		for neighbour in region.neighbours:
+			if region.holder != neighbour.holder \
+				and region.holder != "" \
+				and neighbour.holder != "":
+				return true
+	return false
+>>>>>>> bfa46e6bc0d45998cb7a896c0c0fc6eaad477011

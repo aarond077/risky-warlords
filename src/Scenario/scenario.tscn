@@ -11,7 +11,6 @@
 [ext_resource type="Script" path="res://src/Scenario/action_points.gd" id="6_cwhbh"]
 [ext_resource type="Script" path="res://src/Scenario/load_map.gd" id="6_e01md"]
 [ext_resource type="Script" path="res://src/Scenario/start_round.gd" id="7_npxgh"]
-[ext_resource type="Script" path="res://src/Logic/state.gd" id="7_x2l3a"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_resources.gd" id="10_ncx5o"]
 [ext_resource type="Texture2D" uid="uid://6iqsya71utgr" path="res://assets/Background/background_wood.png" id="12_7xjhs"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/scenario_overlay.gd" id="12_tdvrh"]
@@ -41,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://6hhnu8m2fpjo" path="res://src/UI/ScenarioOverlay/Sonstiges/Dice/diceThree.png" id="38_jh572"]
 [ext_resource type="Texture2D" uid="uid://v7rmtxud0fon" path="res://src/UI/ScenarioOverlay/Sonstiges/Dice/diceFour.png" id="39_t006t"]
 [ext_resource type="Texture2D" uid="uid://rau02so7t241" path="res://src/UI/ScenarioOverlay/Sonstiges/Dice/diceFive.png" id="40_o6qov"]
+[ext_resource type="Script" path="res://src/Scenario/battle_phase.gd" id="40_ugpb7"]
 [ext_resource type="Theme" uid="uid://d085y46w50iyl" path="res://src/UI/ScenarioOverlay/Sonstiges/bottom_left_theme.tres" id="41_pdrwy"]
 [ext_resource type="Texture2D" uid="uid://q4dysm5b47g1" path="res://src/UI/ScenarioOverlay/Sonstiges/homeicon.png" id="42_83dsg"]
 [ext_resource type="Texture2D" uid="uid://dnn5sj57bc0x4" path="res://src/UI/ScenarioOverlay/Sonstiges/eye open.png" id="43_k2k8a"]
@@ -1676,8 +1676,8 @@ script = ExtResource("7_npxgh")
 [node name="ActionPoints" type="Node" parent="Scenario/FiniteStateMachine"]
 script = ExtResource("6_cwhbh")
 
-[node name="Battle" type="Node" parent="Scenario/FiniteStateMachine"]
-script = ExtResource("7_x2l3a")
+[node name="BattlePhase" type="Node" parent="Scenario/FiniteStateMachine"]
+script = ExtResource("40_ugpb7")
 
 [node name="Label" type="Label" parent="Scenario/FiniteStateMachine"]
 offset_right = 40.0
@@ -1744,7 +1744,6 @@ script = ExtResource("48_tohtn")
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/TankDecreaseButton" to="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy" method="_on_tank_decrease_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/TankIncreaseButton" to="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy" method="_on_tank_increase_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/HBoxContainer3/ConfirmButton" to="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy" method="_on_confirm_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/HBoxContainer3/ConfirmButton" to="Scenario/FiniteStateMachine/StartRound" method="_on_confirm_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer/BuildingRemoveButton" to="CanvasLayer/ScenarioOverlay/PanelContainerActions" method="_on_building_remove_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer/MoveArmyButton" to="CanvasLayer/ScenarioOverlay/PanelContainerActions" method="_on_move_army_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerMoveArmy/VBoxContainer/HBoxContainer2/WarriorsDecreaseButton" to="CanvasLayer/ScenarioOverlay/PanelContainerMoveArmy" method="_on_warriors_decrease_button_pressed"]

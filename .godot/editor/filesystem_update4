@@ -7,5 +7,27 @@ res://src/UI/ScenarioOverlay/Sonstiges/gebiet_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/truppen_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/aktionen_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/bottom_left_theme.tres
+<<<<<<< HEAD
 res://src/Scenario/scenario.tscn
 res://src/UI/ScenarioMenu/scenario_menu.tscn
+=======
+res://src/UI/MainMenu/main_menu.tscn
+res://src/Region/region_graph.gd
+res://src/UI/ScenarioOverlay/panel_container_select_army.gd
+res://src/Scenario/load_map.gd
+res://src/Logic/scenario_data_manager.gd
+res://src/UI/ScenarioOverlay/panel_container_actions.gd
+res://src/Player/player.gd
+res://src/Region/region_area.gd
+res://src/Logic/signal_bus.gd
+res://src/Scenario/panel_container_move_army.gd
+res://src/UI/ScenarioOverlay/panel_container_move_army.gd
+res://src/UI/ScenarioOverlay/panel_container_resources.gd
+res://src/UI/ScenarioOverlay/panel_container_region.gd
+res://src/Region/region_node.gd
+res://src/Scenario/action_points.gd
+res://src/Scenario/battle_phase.gd
+res://src/UI/ScenarioOverlay/panel_container_info.gd
+res://src/Scenario/start_round.gd
+res://data/Maps/Aleksud/AleksudRegionGraph.txt
+>>>>>>> bfa46e6bc0d45998cb7a896c0c0fc6eaad477011

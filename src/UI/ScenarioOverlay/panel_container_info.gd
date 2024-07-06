@@ -8,6 +8,7 @@ extends PanelContainer
 func _ready():
 	SignalBus.call_deferred("connect", "next_active_player", on_next_active_player)
 	SignalBus.call_deferred("connect", "start_active_player_timer", on_start_active_player_timer)
+	SignalBus.call_deferred("connect", "stop_active_player_timer", on_stop_active_player_timer)
 
 
 
@@ -26,6 +27,9 @@ func update_time_label():
 	
 func on_start_active_player_timer():
 	player_timer.start()
+
+func on_stop_active_player_timer():
+	player_timer.stop()
 
 
 func on_next_active_player():
