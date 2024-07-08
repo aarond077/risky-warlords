@@ -1,0 +1,90 @@
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://c055ws6dmt24f"]
+
+[ext_resource type="FontFile" uid="uid://cqtlnoqxokx35" path="res://src/UI/ScenarioOverlay/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf" id="1_f5dgr"]
+[ext_resource type="Texture2D" uid="uid://bxr5a4h45c0dv" path="res://src/UI/ScenarioOverlayOld/Sonstiges/small frame.png" id="2_2l2bx"]
+[ext_resource type="FontFile" uid="uid://cqtlnoqxokx35" path="res://src/UI/ScenarioOverlay/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf" id="2_qpd7t"]
+[ext_resource type="Texture2D" uid="uid://ciduv5fe8o0my" path="res://src/UI/ScenarioOverlay/Sonstiges/button1_normal.png" id="2_u4qq0"]
+[ext_resource type="Texture2D" uid="uid://bufc2wlpds47t" path="res://src/UI/ScenarioOverlay/Sonstiges/button1_disabled.png" id="3_58j4l"]
+[ext_resource type="Texture2D" uid="uid://dmia2od520d7l" path="res://src/UI/ScenarioOverlay/Sonstiges/button1_hover.png" id="4_gfo6k"]
+[ext_resource type="Texture2D" uid="uid://y2vwevv75q7u" path="res://src/UI/ScenarioOverlay/Sonstiges/button1_clicked.png" id="6_svvh1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8we4u"]
+texture = ExtResource("3_58j4l")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ubt5j"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3imci"]
+texture = ExtResource("4_gfo6k")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ifyut"]
+texture = ExtResource("2_u4qq0")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rxivx"]
+texture = ExtResource("3_58j4l")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_right = 16.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gc4aj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m7s8w"]
+texture = ExtResource("4_gfo6k")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_right = 13.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_occ6d"]
+texture = ExtResource("2_u4qq0")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_right = 13.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y3x8p"]
+texture = ExtResource("6_svvh1")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_right = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uxhyw"]
+texture = ExtResource("2_2l2bx")
+texture_margin_left = 50.0
+texture_margin_top = 30.0
+texture_margin_right = 35.0
+texture_margin_bottom = 30.0
+
+[resource]
+Button/fonts/font = ExtResource("2_qpd7t")
+Button/styles/disabled = SubResource("StyleBoxTexture_8we4u")
+Button/styles/focus = SubResource("StyleBoxEmpty_ubt5j")
+Button/styles/hover = SubResource("StyleBoxTexture_3imci")
+Button/styles/normal = SubResource("StyleBoxTexture_ifyut")
+Label/font_sizes/font_size = 47
+Label/fonts/font = ExtResource("1_f5dgr")
+OptionButton/font_sizes/font_size = 25
+OptionButton/fonts/font = ExtResource("2_qpd7t")
+OptionButton/styles/disabled = SubResource("StyleBoxTexture_rxivx")
+OptionButton/styles/focus = SubResource("StyleBoxEmpty_gc4aj")
+OptionButton/styles/hover = SubResource("StyleBoxTexture_m7s8w")
+OptionButton/styles/normal = SubResource("StyleBoxTexture_occ6d")
+OptionButton/styles/pressed = SubResource("StyleBoxTexture_y3x8p")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_uxhyw")

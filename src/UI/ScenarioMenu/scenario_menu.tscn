@@ -1,13 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://bb6dutfabx04c"]
+[gd_scene load_steps=10 format=3 uid="uid://bb6dutfabx04c"]
 
 [ext_resource type="Script" path="res://src/UI/ScenarioMenu/map_options.gd" id="1_6h64y"]
 [ext_resource type="Script" path="res://src/UI/ScenarioMenu/scenario_menu_ui.gd" id="1_fc2si"]
 [ext_resource type="Script" path="res://src/UI/ScenarioMenu/start_game_button.gd" id="2_15tci"]
 [ext_resource type="Script" path="res://src/UI/ScenarioMenu/nation_options.gd" id="2_kxa63"]
+[ext_resource type="Texture2D" uid="uid://vtiyh484efb4" path="res://src/UI/ScenarioOverlay/Sonstiges/scenario_menu_frame.png" id="2_lbhix"]
+[ext_resource type="Theme" uid="uid://c055ws6dmt24f" path="res://src/UI/ScenarioOverlay/Sonstiges/scenario_meu_theme.tres" id="3_4mdam"]
 [ext_resource type="Texture2D" uid="uid://6uaupn38hmrn" path="res://assets/Background/CastleBackground.png" id="4_4hqtj"]
 [ext_resource type="Script" path="res://src/UI/ScenarioMenu/player_selection.gd" id="4_d7abw"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7st2a"]
+
 [node name="ScenarioMenu" type="Node2D"]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="Sprite2D" parent="CanvasLayer2"]
+visible = false
+texture_filter = 1
+position = Vector2(963, 528)
+scale = Vector2(3.90869, 2.39795)
+texture = ExtResource("4_4hqtj")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(957, 543)
+scale = Vector2(2.56493, 2.73858)
+texture = ExtResource("2_lbhix")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -16,18 +35,24 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -5.0
+offset_right = -5.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_4mdam")
 script = ExtResource("1_fc2si")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/UI"]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -323.0
-offset_right = 856.0
-offset_bottom = 323.0
+anchors_preset = -1
+anchor_left = 0.097
+anchor_top = 0.439
+anchor_right = 0.097
+anchor_bottom = 0.439
+offset_left = -0.240005
+offset_top = -141.12
+offset_right = 740.76
+offset_bottom = 162.88
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/VBoxContainer2"]
@@ -35,11 +60,17 @@ layout_mode = 2
 
 [node name="AnzahlSpieler" type="Label" parent="CanvasLayer/UI/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Anzahl Spieler:"
+
+[node name="Spacer" type="Control" parent="CanvasLayer/UI/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
 
 [node name="OptionButton" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
-button_pressed = true
+theme_override_styles/normal = SubResource("StyleBoxTexture_7st2a")
 item_count = 3
 popup/item_0/text = "2 Spieler"
 popup/item_0/id = 0
@@ -47,6 +78,11 @@ popup/item_1/text = "3 Spieler"
 popup/item_1/id = 1
 popup/item_2/text = "4 Spieler"
 popup/item_2/id = 2
+
+[node name="Spacer2" type="Control" parent="CanvasLayer/UI/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
 
 [node name="PlayerSelection1" type="HBoxContainer" parent="CanvasLayer/UI/VBoxContainer2"]
 layout_mode = 2
@@ -57,9 +93,17 @@ player_index = 1
 layout_mode = 2
 text = "Spieler 1"
 
+[node name="Spacer3" type="Control" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="NationLabel" type="Label" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection1"]
 layout_mode = 2
 text = "Volk:"
+
+[node name="Spacer4" type="Control" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection1"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="NationOptions" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection1"]
 layout_mode = 2
@@ -74,10 +118,18 @@ popup/item_3/text = "Orks"
 popup/item_3/id = 3
 script = ExtResource("2_kxa63")
 
+[node name="Spacer5" type="Control" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="ColorLabel" type="Label" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection1"]
 layout_mode = 2
 text = "Farbe:
 "
+
+[node name="Spacer6" type="Control" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection1"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButtonColor1" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection1"]
 layout_mode = 2
@@ -100,9 +152,17 @@ player_index = 2
 layout_mode = 2
 text = "Spieler 2"
 
+[node name="Spacer7" type="Control" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="NationLabel" type="Label" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection2"]
 layout_mode = 2
 text = "Volk:"
+
+[node name="Spacer8" type="Control" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection2"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="NationOptions" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection2"]
 layout_mode = 2
@@ -117,10 +177,18 @@ popup/item_3/text = "Orks"
 popup/item_3/id = 3
 script = ExtResource("2_kxa63")
 
+[node name="Spacer9" type="Control" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="ColorLabel" type="Label" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection2"]
 layout_mode = 2
 text = "Farbe:
 "
+
+[node name="Spacer10" type="Control" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection2"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButtonColor2" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection2"]
 layout_mode = 2
@@ -144,9 +212,17 @@ player_index = 3
 layout_mode = 2
 text = "Spieler 3"
 
+[node name="Spacer11" type="Control" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="NationLabel" type="Label" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection3"]
 layout_mode = 2
 text = "Volk:"
+
+[node name="Spacer12" type="Control" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection3"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="NationOptions" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection3"]
 layout_mode = 2
@@ -161,10 +237,18 @@ popup/item_3/text = "Orks"
 popup/item_3/id = 3
 script = ExtResource("2_kxa63")
 
+[node name="Spacer13" type="Control" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="ColorLabel" type="Label" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection3"]
 layout_mode = 2
 text = "Farbe:
 "
+
+[node name="Spacer14" type="Control" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection3"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButtonColor3" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection3"]
 layout_mode = 2
@@ -189,9 +273,17 @@ player_index = 4
 layout_mode = 2
 text = "Spieler 4"
 
+[node name="Spacer15" type="Control" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="NationLabel" type="Label" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection4"]
 layout_mode = 2
 text = "Volk:"
+
+[node name="Spacer16" type="Control" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection4"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="NationOptions" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection4"]
 layout_mode = 2
@@ -206,10 +298,18 @@ popup/item_3/text = "Orks"
 popup/item_3/id = 3
 script = ExtResource("2_kxa63")
 
+[node name="Spacer17" type="Control" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="ColorLabel" type="Label" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection4"]
 layout_mode = 2
 text = "Farbe:
 "
+
+[node name="Spacer18" type="Control" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection4"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButtonColor4" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer2/PlayerSelection4"]
 layout_mode = 2
@@ -225,19 +325,20 @@ popup/item_3/id = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI"]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -291.0
-offset_top = -321.0
-offset_bottom = 321.0
+anchors_preset = -1
+anchor_left = 0.862
+anchor_top = 1.0
+anchor_right = 0.862
+anchor_bottom = 1.0
+offset_left = -290.04
+offset_top = -744.0
+offset_right = 0.959961
 grow_horizontal = 0
-grow_vertical = 2
+grow_vertical = 0
 
 [node name="Label" type="Label" parent="CanvasLayer/UI/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Karte"
 
 [node name="MapOptions" type="OptionButton" parent="CanvasLayer/UI/VBoxContainer"]
@@ -250,22 +351,26 @@ popup/item_1/id = 4
 script = ExtResource("1_6h64y")
 
 [node name="Label2" type="Label" parent="CanvasLayer/UI/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Map text"
 
+[node name="Spacer20" type="Control" parent="CanvasLayer/UI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
 [node name="StartGameButton" type="Button" parent="CanvasLayer/UI/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 35
 text = "Spiel starten"
 script = ExtResource("2_15tci")
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="Background" type="Sprite2D" parent="CanvasLayer2"]
-texture_filter = 1
-position = Vector2(963, 528)
-scale = Vector2(3.90869, 2.39795)
-texture = ExtResource("4_4hqtj")
+[node name="Spacer19" type="Control" parent="CanvasLayer/UI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [connection signal="item_selected" from="CanvasLayer/UI/VBoxContainer2/HBoxContainer/OptionButton" to="CanvasLayer/UI/VBoxContainer2/PlayerSelection1" method="_on_option_button_item_selected"]
 [connection signal="item_selected" from="CanvasLayer/UI/VBoxContainer2/HBoxContainer/OptionButton" to="CanvasLayer/UI/VBoxContainer2/PlayerSelection2" method="_on_option_button_item_selected"]
