@@ -11,13 +11,31 @@ extends Node2D
 @onready var active_player : Player
 @onready var building_coordinates : Dictionary
 @onready var battle_phase_active : bool = false
+@onready var start_round_active : bool = false
+@onready var battle_container_shown : bool = false
 @onready var capitals : Array
+@onready var political_view_active : bool = false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.scenario_region_graph = RegionGraph.new()
 	SignalBus.call_deferred("connect", "set_political_view", player_indexfunc)
+	
+func reset_player_army_movement():
+	for player in scenario_players:
+		player.reset_army_movement()
+
+func reset_battle_phase():
+	battle_phase_active = false
+	battle_container_shown = false
+	
+func find_player_with_holder(region_holder : String) -> Player:
+	for player in scenario_players:
+		var player_name : String = "Player " + str(player.player_index)
+		if player_name == region_holder:
+			return player
+	return null
 	
 func update_player_action_points():
 	for player in self.scenario_players:
@@ -39,7 +57,7 @@ func add_army_to_region(
 	warriors : int,
 	archers : int,
 	tanks : int ) -> void:
-	region.update_army(warriors, archers, tanks)
+	region.increase_army(warriors, archers, tanks)
 	
 
 func find_region_in_array(region_name : String) -> RegionNode:
@@ -53,9 +71,28 @@ func find_active_region_in_array(region_name : String):
 		if region_name == region.region_name:
 			self.active_region = region
 	return self.active_region
+	
+func region_is_accessable_for_attack(region_name : String):
+	var target_region : RegionNode = self.find_region_in_array(region_name)
+	
+	if not active_region.army_ready_to_attack():
+		return false
+		
+	if not active_region.region_owner_index == active_player.player_index:
+		return false
+	for neighbour in active_region.neighbours:
+		if neighbour == target_region:
+			if target_region.holder != active_region.holder \
+				and target_region.holder != "":
+				return true
+	return false
+		
 
 func region_is_accessable_for_movement(region_name : String):
 	var target_region : RegionNode = self.find_region_in_array(region_name)
+	
+	if not active_region.army_ready_to_attack():
+		return false
 	
 	for player_region in active_player.regions.region_array:
 		if player_region.region_name == target_region.region_name:
@@ -69,13 +106,6 @@ func region_is_accessable_for_movement(region_name : String):
 					or target_region.holder == ""):
 					return true
 	return false
-	
-func store_start_scenario__properties(scenario_map_name : String,
-							scenario_players : Array[Player], 
-							scenario_region_graph : RegionGraph):
-	self.scenario_map_name = scenario_map_name
-	self.scenario_players = scenario_players
-	self.scenario_region_graph = scenario_region_graph
 	
 func add_region_holder(region_name : String, player_index : int):
 	for region in self.scenario_region_graph.region_array:
@@ -106,6 +136,12 @@ func set_scenario_players_capitals(capitals) -> void:
 			ScenarioDataManager.scenario_map_name)
 		
 		capitals.remove_at(rand_capital_index)
+	add_building_to_capitals()
+
+func add_building_to_capitals():
+	for player in scenario_players:
+		var capital_region : RegionNode = self.find_region_in_array(player.capital)
+		capital_region.building = "Festung"
 	
 func set_start_scenario_active_player():
 	self.active_player = scenario_players[0]
@@ -122,6 +158,7 @@ func set_next_active_player():
 			active_player = scenario_players[0]
 		else:
 			SignalBus.call_deferred("emit_signal", "init_start_round")
+			active_player = scenario_players[0]
 	SignalBus.call_deferred("emit_signal", "next_active_player")
 
 func set_player_nation(player_index : int, nation_name : String):

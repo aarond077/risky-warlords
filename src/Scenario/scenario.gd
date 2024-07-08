@@ -7,7 +7,14 @@ extends Node2D
 func _ready():
 	SignalBus.call_deferred("connect", "create_building", on_create_building)
 	SignalBus.call_deferred("connect", "draw_capitals_fortress", on_draw_capitals_fortress)
-		
+	SignalBus.call_deferred("connect", "set_political_view", on_set_political_view)
+	SignalBus.call_deferred("connect", "set_physical_view", on_set_physical_view)
+	
+func on_set_physical_view():
+	buildings.visible = true
+
+func on_set_political_view():
+	buildings.visible = false
 
 func on_draw_capitals_fortress():
 	for player in ScenarioDataManager.scenario_players:

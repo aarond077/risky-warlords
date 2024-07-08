@@ -14,16 +14,17 @@
 [ext_resource type="Theme" uid="uid://cyf5kaih5j285" path="res://src/UI/ScenarioOverlay/Sonstiges/truppen_theme.tres" id="12_bfna7"]
 [ext_resource type="Theme" uid="uid://5jco2phc6pxl" path="res://src/UI/ScenarioOverlay/Sonstiges/font_theme.tres" id="13_e0ohu"]
 [ext_resource type="Theme" uid="uid://b6r6mw4uxy32s" path="res://src/UI/ScenarioOverlay/Sonstiges/aktionen_theme.tres" id="14_ihyid"]
-[ext_resource type="Texture2D" uid="uid://bjgm0bma3r0cv" path="res://src/UI/ScenarioOverlay/Sonstiges/Dice/diceOne.png" id="14_mr3ri"]
+[ext_resource type="Texture2D" uid="uid://bjgm0bma3r0cv" path="res://assets/Dice/diceOne.png" id="14_mr3ri"]
 [ext_resource type="Texture2D" uid="uid://cijap8kjsggga" path="res://src/UI/ScenarioOverlay/Sonstiges/x.png" id="14_ry6m5"]
 [ext_resource type="Theme" uid="uid://d085y46w50iyl" path="res://src/UI/ScenarioOverlay/Sonstiges/bottom_left_theme.tres" id="15_5ktfe"]
 [ext_resource type="Texture2D" uid="uid://q4dysm5b47g1" path="res://src/UI/ScenarioOverlay/Sonstiges/homeicon.png" id="15_bfhvk"]
-[ext_resource type="Texture2D" uid="uid://brs5jds3gutma" path="res://src/UI/ScenarioOverlay/Sonstiges/Dice/diceTwo.png" id="15_tjfsr"]
-[ext_resource type="Texture2D" uid="uid://6hhnu8m2fpjo" path="res://src/UI/ScenarioOverlay/Sonstiges/Dice/diceThree.png" id="16_c7w3u"]
-[ext_resource type="Texture2D" uid="uid://v7rmtxud0fon" path="res://src/UI/ScenarioOverlay/Sonstiges/Dice/diceFour.png" id="17_fiiqn"]
-[ext_resource type="Texture2D" uid="uid://rau02so7t241" path="res://src/UI/ScenarioOverlay/Sonstiges/Dice/diceFive.png" id="18_5uqb4"]
+[ext_resource type="Texture2D" uid="uid://brs5jds3gutma" path="res://assets/Dice/diceTwo.png" id="15_tjfsr"]
+[ext_resource type="Texture2D" uid="uid://6hhnu8m2fpjo" path="res://assets/Dice/diceThree.png" id="16_c7w3u"]
+[ext_resource type="Texture2D" uid="uid://v7rmtxud0fon" path="res://assets/Dice/diceFour.png" id="17_fiiqn"]
+[ext_resource type="Texture2D" uid="uid://rau02so7t241" path="res://assets/Dice/diceFive.png" id="18_5uqb4"]
 [ext_resource type="Texture2D" uid="uid://dnn5sj57bc0x4" path="res://src/UI/ScenarioOverlay/Sonstiges/eye open.png" id="23_hgwim"]
 [ext_resource type="Texture2D" uid="uid://dveuhfkb0qh6g" path="res://src/UI/ScenarioOverlay/Sonstiges/area_troops.png" id="24_3755s"]
+
 
 [sub_resource type="Theme" id="Theme_qvm1b"]
 

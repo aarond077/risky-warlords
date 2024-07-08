@@ -21,7 +21,9 @@ var army : Dictionary = {"Warriors" : 0, "Archers" : 0, "Tanks" : 0}
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass#self.army = {"Warrior" : 0, "Archer" : 0, "Tank" : 0}
-	
+
+func reset_army_movement():
+	self.army_movement = false
 
 func add_region_to_array(region_name : String):
 	var new_region : RegionNode = RegionNode.new()
@@ -43,8 +45,12 @@ func update_army(warriors : int, archers : int, tanks : int):
 	self.army["Tanks"] += tanks
 
 func update_resources():
-	for region in self.regions.region_array: #check every reagion in the players region graph
-		self.resources["Food"] += 5 #add 5 food per region
+	var resource_offset : int = 0
+	for region in self.regions.region_array: 
+		resource_offset = 0
+		if(region.building == "Ressourcengebäude"):
+			resource_offset += 1#check every reagion in the players region graph
+		self.resources["Food"] += 5 + resource_offset#add 5 food per region
 		var region_resource : String = region.resource # get resource of the region
 		if region_resource != "Null" and region_resource != "": # check if resource is not null
 			self.resources[region_resource] += region.resource_factor #add amount to resource of the player
@@ -90,7 +96,7 @@ func reduce_resource_food(food : int):
 func reduce_resource_stone(stone : int):
 	self.resources["Stone"] -= stone
 func reduce_resource_wood(wood : int):
-	self.resource["Wood"] -= wood
+	self.resources["Wood"] -= wood
 	
 func set_player_color(color : String):
 	self.player_color = color

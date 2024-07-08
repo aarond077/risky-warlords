@@ -5,13 +5,13 @@ class_name BuildingFactory
 static func create_building(building_name : String, nation: String, position : Vector2, region_name : String) -> RemovableSprite:
 	if building_name == "Festung":
 		return create_fortress(nation, position, region_name)
-	elif building_name == "Heiligtum":
+	elif building_name == "Heiligtum - 4S 4E | 2AP":
 		return create_sanctuary(nation, position, region_name)
-	elif building_name == "Wachturm":
+	elif building_name == "Wachturm - 5H | 2AP":
 		return create_tower(nation, position, region_name)
-	elif building_name == "Forschungsgebäude":
+	elif building_name == "Forschungsgebäude - 10E | 2AP":
 		return create_research_center(nation, position, region_name)
-	elif building_name == "Ressourcengebäude":
+	elif building_name == "Ressourcengebäude - 3 H/S/E | 2AP":
 		return create_resource_building(position, region_name)
 	else:
 		print("ERROR: BUILDING NAME NOT FOUND")

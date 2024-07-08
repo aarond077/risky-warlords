@@ -18,6 +18,7 @@ var tanks_name : String = "Tanks"
 func _ready():
 	SignalBus.call_deferred("connect", "show_move_army_container", on_show_move_army_container)
 	SignalBus.call_deferred("connect", "next_active_player", on_next_active_player)
+	SignalBus.call_deferred("connect", "region_defeated", on_region_defeated)
 func decrease_troop_label(
 	troops_name : String,
 	troops_label : Label,
@@ -27,10 +28,6 @@ func decrease_troop_label(
 		available_army[troops_name] += 1
 		troops_label.text = str(moving_army[troops_name])
 		troops_available_label.text = str(available_army[troops_name])
-
-
-func on_next_active_player():
-	reset_moving_army_label()
 	
 	
 func increase_troop_label(
@@ -64,12 +61,65 @@ func reset_moving_army_label():
 	archers_label.text = str(0)
 	tanks_label.text = str(0)
 	
+func conquer_region():
+	
+	target_region.increase_army(
+		moving_army["Warriors"],
+		moving_army["Archers"],
+		moving_army["Tanks"]
+	)
+	
+	if(target_region.building != "Festung"):
+		target_region.building = ""
+	
+	var losing_player : Player = ScenarioDataManager.find_player_with_holder(target_region.holder)
+	
+	losing_player.regions.remove_node(
+		target_region.region_name,
+		losing_player.regions,
+		ScenarioDataManager.scenario_map_name
+	)
+	
+	
+	ScenarioDataManager.active_player.regions.add_node(
+		target_region.region_name,
+		ScenarioDataManager.active_player.regions,
+		ScenarioDataManager.scenario_map_name)
+		
+	target_region.holder = "Player " + str(ScenarioDataManager.active_player.player_index)
+	moving_army = {"Warriors" : 0, "Archers" : 0, "Tanks" : 0}
+	reset_moving_army_label()
+	self.visible = false
+	
+	var player_index : int = ScenarioDataManager.player_indexfunc()
+	
+	ScenarioDataManager.add_region_holder(target_region.region_name, player_index)
+	
+	SignalBus.call_deferred("emit_signal", "update_political_view")
+	
+func on_next_active_player():
+	reset_moving_army_label()
+	
 func on_show_move_army_container(region_name : String, player : Player):
+	SignalBus.call_deferred(
+		"emit_signal",
+		"pause_active_player_timer"
+	)
 	target_region = ScenarioDataManager.find_region_in_array(region_name)
 	available_army = ScenarioDataManager.active_region.region_army
 	update_available_army_label()
 	self.visible = true
-
+	
+func on_region_defeated(attacking_region : RegionNode, defending_region : RegionNode):
+	SignalBus.call_deferred(
+		"emit_signal",
+		"pause_active_player_timer"
+	)
+	print("i have no idea")
+	target_region = defending_region
+	available_army = attacking_region.region_army
+	update_available_army_label()
+	self.visible = true
 
 func _on_warriors_increase_button_pressed():
 	increase_troop_label(warriors_name, warriors_label, warriors_available_label)
@@ -94,23 +144,44 @@ func _on_tanks_increase_button_pressed():
 
 
 func _on_cancel_button_pressed():
-	moving_army = {"Warriors" : 0, "Archers" : 0, "Tanks" : 0}
-	self.visible = false
+	if(ScenarioDataManager.battle_phase_active):
+		moving_army = {"Warriors" : 0, "Archers" : 0, "Tanks" : 0}
+	
+		SignalBus.call_deferred(
+			"emit_signal",
+			"continue_active_player_timer"
+		)
+	
+		self.visible = false
 
 
 func _on_confirm_button_pressed():
 	ScenarioDataManager.active_region.region_army = available_army
-	target_region.region_army = moving_army
-	if(not target_region.owner == ScenarioDataManager.active_player):
-		ScenarioDataManager.active_player.regions.add_node(
-			target_region.region_name,
-			ScenarioDataManager.active_player.regions,
-			ScenarioDataManager.scenario_map_name)
-		target_region.holder = "Player " + str(ScenarioDataManager.active_player.player_index)
-	moving_army = {"Warriors" : 0, "Archers" : 0, "Tanks" : 0}
-	reset_moving_army_label()
-	self.visible = false
-	ScenarioDataManager.decrease_action_points(1)
-	var player_index : int = ScenarioDataManager.player_indexfunc()
-	ScenarioDataManager.add_region_holder(target_region.region_name, player_index)
-	SignalBus.call_deferred("emit_signal", "update_player_action_points_label", ScenarioDataManager.active_player)
+	
+	SignalBus.call_deferred(
+		"emit_signal",
+		"continue_active_player_timer"
+	)
+	
+	if ScenarioDataManager.battle_phase_active:
+		self.conquer_region()
+	else:
+		target_region.increase_army(
+		moving_army["Warriors"],
+		moving_army["Archers"],
+		moving_army["Tanks"]
+		)
+		if(not target_region.owner == ScenarioDataManager.active_player):
+			ScenarioDataManager.active_player.regions.add_node(
+				target_region.region_name,
+				ScenarioDataManager.active_player.regions,
+				ScenarioDataManager.scenario_map_name)
+			target_region.holder = "Player " + str(ScenarioDataManager.active_player.player_index)
+		moving_army = {"Warriors" : 0, "Archers" : 0, "Tanks" : 0}
+		reset_moving_army_label()
+		self.visible = false
+		ScenarioDataManager.decrease_action_points(1)
+		var player_index : int = ScenarioDataManager.player_indexfunc()
+		ScenarioDataManager.add_region_holder(target_region.region_name, player_index)
+		SignalBus.call_deferred("emit_signal", "update_player_action_points_label", ScenarioDataManager.active_player)
+		SignalBus.call_deferred("emit_signal", "update_political_view")

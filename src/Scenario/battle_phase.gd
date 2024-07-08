@@ -30,3 +30,4 @@ func set_battle_phase_ui():
 
 func on_init_start_round():
 	can_transition = true
+

@@ -9,15 +9,16 @@ class_name FiniteStateMachine
 @onready var current_state : State
 @onready var previous_state : State
 
-@onready var panel_container_timer = $"../../CanvasLayer/ScenarioOverlay/PanelContainerTimer"
-@onready var panel_container_army = $"../../CanvasLayer/ScenarioOverlay/PanelContainerArmy"
-@onready var panel_container_region = $"../../CanvasLayer/ScenarioOverlay/PanelContainerRegion"
-@onready var panel_container_info = $"../../CanvasLayer/ScenarioOverlay/PanelContainerInfo"
-@onready var panel_container_resources = $"../../CanvasLayer/ScenarioOverlay/PanelContainerResources"
-@onready var panel_container_political_view = $"../../CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView"
-@onready var panel_container_actions = $"../../CanvasLayer/ScenarioOverlay/PanelContainerActions"
-
-@onready var panel_container_select_army = $"../../CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy"
+@onready var panel_container_timer : PanelContainer = $"../../CanvasLayer/ScenarioOverlay/PanelContainerTimer"
+@onready var panel_container_army : PanelContainer = $"../../CanvasLayer/ScenarioOverlay/PanelContainerArmy"
+@onready var panel_container_region : PanelContainer = $"../../CanvasLayer/ScenarioOverlay/PanelContainerRegion"
+@onready var panel_container_info : PanelContainer = $"../../CanvasLayer/ScenarioOverlay/PanelContainerInfo"
+@onready var panel_container_resources : PanelContainer = $"../../CanvasLayer/ScenarioOverlay/PanelContainerResources"
+@onready var panel_container_political_view : PanelContainer = $"../../CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView"
+@onready var panel_container_actions : PanelContainer = $"../../CanvasLayer/ScenarioOverlay/PanelContainerActions"
+@onready var panel_container_battle : PanelContainer = $"../../CanvasLayer/ScenarioOverlay/PanelContainerBattle"
+@onready var panel_container_battle_results : PanelContainer = $"../../CanvasLayer/ScenarioOverlay/PanelContainerBattleResults"
+@onready var panel_container_select_army : PanelContainer = $"../../CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy"
 
 
 
@@ -53,7 +54,7 @@ func change_state(state):
 	
 	previous_state = current_state #sets the previous state as the state that is exited
 	current_state = new_state #sets the current state as the state that is entered
-	print(state)
+	SignalBus.emit_signal("update_phase_label", current_state.name)
 
 #returns back to previous state
 func transition_previous_state():

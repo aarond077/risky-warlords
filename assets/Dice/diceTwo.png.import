@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6hhnu8m2fpjo"
-path="res://.godot/imported/diceThree.png-f9d77aefcf0f95294530ec38ff212200.ctex"
+uid="uid://brs5jds3gutma"
+path="res://.godot/imported/diceTwo.png-eafa82c10127b023bad813b56a127aa8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/UI/ScenarioOverlay/Sonstiges/Dice/diceThree.png"
-dest_files=["res://.godot/imported/diceThree.png-f9d77aefcf0f95294530ec38ff212200.ctex"]
+source_file="res://assets/Dice/diceTwo.png"
+dest_files=["res://.godot/imported/diceTwo.png-eafa82c10127b023bad813b56a127aa8.ctex"]
 
 [params]
 

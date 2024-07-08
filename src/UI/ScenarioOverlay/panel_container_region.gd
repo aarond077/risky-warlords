@@ -55,7 +55,7 @@ func on_region_clicked(region_name : String) -> void:
 	update_region(region_name)
 
 func on_create_building(building_name):
-	update_region_building(building_name)
+	update_region_building(ScenarioDataManager.active_region.building)
 
 func on_remove_sprite(sprite_name : String, region_name : String):
 	update_region(region_name)

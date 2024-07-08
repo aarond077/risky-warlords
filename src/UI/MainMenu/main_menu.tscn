@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/UI/MainMenu/local_game_button.gd" id="1_4j5sf"]
 [ext_resource type="Theme" uid="uid://cyf5kaih5j285" path="res://src/UI/ScenarioOverlay/Sonstiges/truppen_theme.tres" id="1_00213"]
-[ext_resource type="Texture2D" path="res://src/UI/ScenarioOverlay/Sonstiges/menubackground.png" id="1_xfemn"]
+[ext_resource type="Texture2D" uid="uid://d24kecfnyhiog" path="res://src/UI/ScenarioOverlay/Sonstiges/menubackground.png" id="1_xfemn"]
 [ext_resource type="Script" path="res://src/UI/MainMenu/exit_game_button.gd" id="2_lp8j1"]
 
 [node name="MainMenu" type="Node2D"]

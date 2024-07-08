@@ -9,17 +9,17 @@ func _ready():
 	SignalBus.call_deferred("connect", "next_active_player", on_next_active_player)
 	SignalBus.call_deferred("connect", "start_active_player_timer", on_start_active_player_timer)
 	SignalBus.call_deferred("connect", "stop_active_player_timer", on_stop_active_player_timer)
-
-
+	SignalBus.call_deferred("connect", "pause_active_player_timer",on_pause_active_player_timer)
+	SignalBus.call_deferred("connect", "continue_active_player_timer",on_continue_active_player_timer)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	counter += 1
 	if counter % 6 == 0:
-		update_time_label()
+		update_timer_label()
 		counter = 0
 
-func update_time_label():
+func update_timer_label():
 	if player_timer.time_left >= 10:
 		timer_label.text = "0:"+str(int(player_timer.time_left)) #cast because of rounding
 		return
@@ -31,6 +31,11 @@ func on_start_active_player_timer():
 func on_stop_active_player_timer():
 	player_timer.stop()
 
+func on_pause_active_player_timer():
+	player_timer.paused = true
+
+func on_continue_active_player_timer():
+	player_timer.paused = false
 
 func on_next_active_player():
 	player_info_label.text = "Spieler " \
