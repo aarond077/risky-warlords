@@ -27,11 +27,11 @@ func _on_resource_menu_pressed(id : int):
 		if(id == 0):
 			active_player.resources["Stone"] += 3
 		elif(id == 1):
-			active_player.resource["Wood"] += 3
+			active_player.resources["Wood"] += 3
 		elif(id == 1):
-			active_player.resource["Iron"] += 3
+			active_player.resources["Iron"] += 3
 		elif(id == 3):
-			active_player.resource["Food"] += 3
+			active_player.resources["Food"] += 3
 		active_player.action_points -= 2
 		SignalBus.emit_signal("update_player_action_points_label", active_player)
 		SignalBus.emit_signal("update_player_resources_label", active_player)
