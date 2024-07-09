@@ -295,7 +295,7 @@ theme_override_constants/margin_right = 30
 [node name="KriegerKosten" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/GridContainer/MarginKriegerKosten"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "1"
+text = "2"
 horizontal_alignment = 1
 
 [node name="MarginBogenschuetzeKosten" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/GridContainer"]
@@ -307,7 +307,7 @@ theme_override_constants/margin_right = 10
 [node name="BogenschuetzeKosten" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/GridContainer/MarginBogenschuetzeKosten"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "3"
+text = "4"
 horizontal_alignment = 1
 
 [node name="MarginTankKosten" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/GridContainer"]
@@ -317,7 +317,7 @@ size_flags_horizontal = 3
 [node name="TankKosten" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/GridContainer/MarginTankKosten"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "5"
+text = "6"
 horizontal_alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer"]
@@ -344,7 +344,7 @@ custom_minimum_size = Vector2(45, 0)
 layout_mode = 2
 theme = ExtResource("29_y21ux")
 theme_override_font_sizes/font_size = 40
-text = "00"
+text = "0"
 horizontal_alignment = 1
 
 [node name="WarriorIncreaseButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/HBoxContainer2"]
@@ -370,7 +370,7 @@ custom_minimum_size = Vector2(45, 0)
 layout_mode = 2
 theme = ExtResource("29_y21ux")
 theme_override_font_sizes/font_size = 40
-text = "00"
+text = "0"
 horizontal_alignment = 1
 
 [node name="ArcherIncreaseButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy/VBoxContainer/HBoxContainer2"]
@@ -843,6 +843,7 @@ text = "100"
 horizontal_alignment = 1
 
 [node name="PanelContainerBattle" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -1059,6 +1060,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
 [node name="PanelContainerBattleResults" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -1706,9 +1708,9 @@ vertical_alignment = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.918
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.93
 offset_left = -147.0
 offset_top = -102.88
 offset_right = 147.0

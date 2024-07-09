@@ -8,7 +8,7 @@ extends PanelContainer
 @onready var def_losses_count_label : Label = $VBoxContainer/HBoxContainer3/TroopsLostInput
 
 
-@onready var region_defeated
+@onready var region_defeated : bool = false
 @onready var defending_region : RegionNode
 @onready var attacking_region : RegionNode
 @onready var winning_region : RegionNode
@@ -38,6 +38,7 @@ func on_battle_round_finished(attacking_region : RegionNode,
 	self.defending_region = defending_region
 	self.winning_region = winning_region
 	self.losing_region = losing_region
+	region_defeated = false
 
 	if(self.defending_region.army_is_empty()):
 		region_defeated = true

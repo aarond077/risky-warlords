@@ -31,16 +31,16 @@ func _on_warrior_decrease_button_pressed() -> void:
 	var active_player : Player = ScenarioDataManager.active_player
 	if(new_army[troop_name] > 0):
 		new_army[troop_name] -= 1
-		active_player.add_resource_food(1)
+		active_player.add_resource_food(2)
 	update_counter_label(warrior_counter_label, troop_name)
 	update_food_label(active_player)
 
 func _on_warrior_increase_button_pressed() -> void:
 	var active_player : Player = ScenarioDataManager.active_player
 	var troop_name : String = "Warriors"
-	if(active_player.resources["Food"] > 0):
+	if(active_player.resources["Food"] > 1):
 		new_army[troop_name] += 1
-		active_player.reduce_resource_food(1)
+		active_player.reduce_resource_food(2)
 	update_counter_label(warrior_counter_label, troop_name)
 	update_food_label(active_player)
 
@@ -49,7 +49,7 @@ func _on_archer_decrease_button_pressed() -> void:
 	var active_player : Player = ScenarioDataManager.active_player
 	if(new_army[troop_name] > 0):
 		new_army[troop_name] -= 1
-		active_player.add_resource_food(3)
+		active_player.add_resource_food(4)
 	update_counter_label(archer_counter_label, troop_name)
 	update_food_label(active_player)
 
@@ -57,9 +57,9 @@ func _on_archer_decrease_button_pressed() -> void:
 func _on_archer_increase_button_pressed() -> void:
 	var troop_name : String = "Archers"
 	var active_player : Player = ScenarioDataManager.active_player
-	if(active_player.resources["Food"] > 2):
+	if(active_player.resources["Food"] > 3):
 		new_army[troop_name] += 1
-		active_player.reduce_resource_food(3)
+		active_player.reduce_resource_food(4)
 	update_counter_label(archer_counter_label, troop_name)
 	update_food_label(active_player)
 
@@ -77,9 +77,9 @@ func _on_tank_decrease_button_pressed() -> void:
 func _on_tank_increase_button_pressed() -> void:
 	var troop_name : String = "Tanks"
 	var active_player : Player = ScenarioDataManager.active_player
-	if(active_player.resources["Food"] > 4):
+	if(active_player.resources["Food"] > 5):
 		new_army[troop_name] += 1
-		active_player.reduce_resource_food(5)
+		active_player.reduce_resource_food(6)
 	update_counter_label(tank_counter_label, troop_name)
 	update_food_label(active_player)
 	
