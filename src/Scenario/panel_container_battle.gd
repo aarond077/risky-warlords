@@ -48,8 +48,11 @@ func show_attacking_player_dices() -> void:
 	elif(get_attacking_dices(attacking_region) >= 2):
 			attacking_dice_one.visible = true
 			attacking_dice_two.visible = true
+			attacking_dice_three.visible = false
 	else:
 		attacking_dice_one.visible = true
+		attacking_dice_two.visible = false
+		attacking_dice_three.visible = false
 
 func show_defending_player_dices() -> void:
 	if(get_defending_dices(defending_region) >= 2):
@@ -57,6 +60,7 @@ func show_defending_player_dices() -> void:
 			defending_dice_two.visible = true
 	else:
 		defending_dice_one.visible = true
+		defending_dice_two.visible = false
 
 func get_attacking_dices(attacking_region : RegionNode):
 		if(attacking_region.count_army() >= 4):
@@ -127,12 +131,12 @@ func get_troop_bonus(region_a : RegionNode, region_b : RegionNode, troop_name : 
 		return false
 		
 func find_min_dice(def_dice : int, att_player_results : Array[int]) -> int:
-	var max_diff : int = 1
+	var max_diff : int = 256
 	var min_dice : int = -1
 	for att_dice in att_player_results:
 		var diff : int = att_dice - def_dice
 		if diff > 0:
-			if diff >= max_diff:
+			if diff <= max_diff:
 				max_diff = diff
 				min_dice = att_dice
 	return min_dice
@@ -144,13 +148,14 @@ func get_battle_results(attacking_player_results : Array[int], defending_player_
 	for def_dice in defending_player_results:
 		var min_dice : int = find_min_dice(def_dice, attacking_player_results)
 		if(min_dice != -1):
-			defending_player_results.erase(def_dice)
 			if(attacking_player_results.size() != 1):
 				attacking_player_results.erase(min_dice)
 			attacking_player_wins += 1
-	
-	for def_dice in defending_player_results:
-		defending_player_wins += 1
+		else:
+			defending_player_wins += 1
+		
+		if(attacking_archers_bonus):
+			pass
 	#for def_dice in attacking_player_results:
 		#for att_dice in defending_player_results:
 			#if att_dice > def_dice:

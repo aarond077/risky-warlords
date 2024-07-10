@@ -144,7 +144,7 @@ func _on_tanks_increase_button_pressed():
 
 
 func _on_cancel_button_pressed():
-	if(ScenarioDataManager.battle_phase_active):
+	if(not ScenarioDataManager.battle_phase_active):
 		moving_army = {"Warriors" : 0, "Archers" : 0, "Tanks" : 0}
 	
 		SignalBus.call_deferred(
