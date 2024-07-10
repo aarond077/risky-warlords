@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bb6dutfabx04c"]
+[gd_scene load_steps=11 format=3 uid="uid://bb6dutfabx04c"]
 
 [ext_resource type="Script" path="res://src/UI/ScenarioMenu/map_options.gd" id="1_6h64y"]
 [ext_resource type="Script" path="res://src/UI/ScenarioMenu/scenario_menu_ui.gd" id="1_fc2si"]
+[ext_resource type="Script" path="res://src/UI/ScenarioMenu/scenario_menu.gd" id="1_qo7li"]
 [ext_resource type="Script" path="res://src/UI/ScenarioMenu/start_game_button.gd" id="2_15tci"]
 [ext_resource type="Script" path="res://src/UI/ScenarioMenu/nation_options.gd" id="2_kxa63"]
 [ext_resource type="Texture2D" uid="uid://vtiyh484efb4" path="res://src/UI/ScenarioOverlay/Sonstiges/scenario_menu_frame.png" id="2_lbhix"]
@@ -12,6 +13,7 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7st2a"]
 
 [node name="ScenarioMenu" type="Node2D"]
+script = ExtResource("1_qo7li")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = -1

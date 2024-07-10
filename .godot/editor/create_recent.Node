@@ -1,3 +1,6 @@
+AnimationPlayer
+AudioStreamPlayer
+Node
 ParallaxLayer
 Sprite2D
 CanvasLayer
@@ -9,7 +12,3 @@ GridContainer
 MarginContainer
 PanelContainer
 ParallaxBackground
-Control
-Container
-Label
-BoxContainer

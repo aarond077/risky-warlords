@@ -26,10 +26,13 @@ func _on_resource_menu_pressed(id : int):
 	if active_player.action_points > 1:
 		if(id == 0):
 			active_player.resources["Stone"] += 3
+			AudioManager.play_stone()
 		elif(id == 1):
 			active_player.resources["Wood"] += 3
-		elif(id == 1):
+			AudioManager.play_wood()
+		elif(id == 2):
 			active_player.resources["Iron"] += 3
+			AudioManager.play_iron()
 		elif(id == 3):
 			active_player.resources["Food"] += 3
 		active_player.action_points -= 2

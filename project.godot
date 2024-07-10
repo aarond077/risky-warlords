@@ -21,6 +21,7 @@ SceneManager="*res://src/Logic/scene_manager.tscn"
 ScenarioDataManager="*res://src/Logic/scenario_data_manager.gd"
 BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
 SignalBus="*res://src/Logic/signal_bus.gd"
+AudioManager="*res://src/AudioManager.gd"
 
 [display]
 
