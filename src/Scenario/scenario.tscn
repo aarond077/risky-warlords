@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://d1xk2lv80lqnp"]
+[gd_scene load_steps=61 format=3 uid="uid://d1xk2lv80lqnp"]
 
 [ext_resource type="Script" path="res://src/Scenario/game_manager.gd" id="1_3288w"]
 [ext_resource type="Script" path="res://src/Scenario/scenario.gd" id="2_dxbxk"]
@@ -55,6 +55,8 @@
 [ext_resource type="Script" path="res://src/Scenario/regions.gd" id="47_1j3nt"]
 [ext_resource type="Texture2D" uid="uid://w61f0fow66rp" path="res://assets/Background/blue_image.png" id="47_muxym"]
 [ext_resource type="Script" path="res://src/Scenario/BlueBackground.gd" id="48_tohtn"]
+[ext_resource type="Script" path="res://src/Scenario/army_count.gd" id="55_vw44s"]
+[ext_resource type="Script" path="res://src/Scenario/army_count_label.gd" id="56_pyxfu"]
 
 [sub_resource type="Theme" id="Theme_7n6mx"]
 
@@ -1690,20 +1692,6 @@ icon = ExtResource("42_83dsg")
 icon_alignment = 1
 expand_icon = true
 
-[node name="TroopCount" type="Label" parent="CanvasLayer/ScenarioOverlay"]
-visible = false
-custom_minimum_size = Vector2(70, 0)
-layout_mode = 0
-offset_left = 899.0
-offset_top = 385.0
-offset_right = 979.0
-offset_bottom = 446.0
-theme = SubResource("Theme_jfcmj")
-theme_override_font_sizes/font_size = 22
-text = "25 "
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="PanelContainerPhase" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
 layout_mode = 1
 anchors_preset = -1
@@ -1820,6 +1808,23 @@ position = Vector2(512, 512)
 scale = Vector2(0.562637, 0.948148)
 texture = ExtResource("47_muxym")
 script = ExtResource("48_tohtn")
+
+[node name="ArmyCount" type="Node2D" parent="Scenario"]
+script = ExtResource("55_vw44s")
+
+[node name="ArmyCount" type="Label" parent="Scenario/ArmyCount"]
+visible = false
+custom_minimum_size = Vector2(70, 0)
+offset_left = 899.0
+offset_top = 385.0
+offset_right = 979.0
+offset_bottom = 446.0
+theme = SubResource("Theme_jfcmj")
+theme_override_font_sizes/font_size = 22
+text = "25 "
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("56_pyxfu")
 
 [connection signal="timeout" from="CanvasLayer/ScenarioOverlay/PanelContainerInfo/PlayerTimer" to="Scenario" method="_on_player_timer_timeout"]
 [connection signal="toggled" from="CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView/GridContainerPoliticalView/MarginContainerPoliticalView/PoliticalViewButton" to="CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView" method="_on_political_view_button_toggled"]
