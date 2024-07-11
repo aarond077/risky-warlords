@@ -105,6 +105,8 @@ func _on_confirm_button_pressed():
 		new_archers,
 		new_tanks)
 		
+	SignalBus.emit_signal("update_army_count_labels")
+		
 	SignalBus.emit_signal("check_player_index")
 		
 	ScenarioDataManager.set_next_active_player()

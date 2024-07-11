@@ -345,16 +345,19 @@ func _on_start_attack_button_pressed():
 			
 		battle_round_finished = true
 		
+		SignalBus.emit_signal("update_army_count_labels")
+		
 		SignalBus.call_deferred("emit_signal", "battle_round_finished", attacking_region, defending_region, winning_region, losing_region, troop_losses_attacker, troop_losses_defender)
 	 
 
 
 func _on_exit_button_pressed():
-	reset_battle_container()
-	battle_round_finished = false
-	ScenarioDataManager.battle_container_shown = false
-	SignalBus.call_deferred(
-		"emit_signal",
-		"continue_active_player_timer"
-	)
-	self.visible = false
+	if not battle_round_finished:
+		reset_battle_container()
+		battle_round_finished = false
+		ScenarioDataManager.battle_container_shown = false
+		SignalBus.call_deferred(
+			"emit_signal",
+			"continue_active_player_timer"
+		)
+		self.visible = false

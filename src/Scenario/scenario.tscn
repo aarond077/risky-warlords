@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://d1xk2lv80lqnp"]
+[gd_scene load_steps=58 format=3 uid="uid://d1xk2lv80lqnp"]
 
 [ext_resource type="Script" path="res://src/Scenario/game_manager.gd" id="1_3288w"]
 [ext_resource type="Script" path="res://src/Scenario/scenario.gd" id="2_dxbxk"]
@@ -50,21 +50,14 @@
 [ext_resource type="Theme" uid="uid://d085y46w50iyl" path="res://src/UI/ScenarioOverlay/Sonstiges/bottom_left_theme.tres" id="41_pdrwy"]
 [ext_resource type="Texture2D" uid="uid://q4dysm5b47g1" path="res://src/UI/ScenarioOverlay/Sonstiges/homeicon.png" id="42_83dsg"]
 [ext_resource type="Texture2D" uid="uid://dnn5sj57bc0x4" path="res://src/UI/ScenarioOverlay/Sonstiges/eye open.png" id="43_k2k8a"]
-[ext_resource type="Texture2D" uid="uid://dveuhfkb0qh6g" path="res://src/UI/ScenarioOverlay/Sonstiges/area_troops.png" id="44_lv3qq"]
 [ext_resource type="Script" path="res://src/Scenario/TileMap.gd" id="44_tq45s"]
 [ext_resource type="Script" path="res://src/Scenario/regions.gd" id="47_1j3nt"]
 [ext_resource type="Texture2D" uid="uid://w61f0fow66rp" path="res://assets/Background/blue_image.png" id="47_muxym"]
 [ext_resource type="Script" path="res://src/Scenario/BlueBackground.gd" id="48_tohtn"]
+[ext_resource type="Script" path="res://src/Scenario/army_count.gd" id="55_vw44s"]
+[ext_resource type="Theme" uid="uid://c4qotghpkmknm" path="res://assets/UI/Themes/army_count.tres" id="56_1k6b3"]
 
 [sub_resource type="Theme" id="Theme_7n6mx"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_80pig"]
-texture = ExtResource("44_lv3qq")
-texture_margin_left = 4.0
-texture_margin_right = 9.0
-
-[sub_resource type="Theme" id="Theme_jfcmj"]
-Label/styles/normal = SubResource("StyleBoxTexture_80pig")
 
 [node name="GameManager" type="Control"]
 process_mode = 3
@@ -1690,20 +1683,6 @@ icon = ExtResource("42_83dsg")
 icon_alignment = 1
 expand_icon = true
 
-[node name="TroopCount" type="Label" parent="CanvasLayer/ScenarioOverlay"]
-visible = false
-custom_minimum_size = Vector2(70, 0)
-layout_mode = 0
-offset_left = 899.0
-offset_top = 385.0
-offset_right = 979.0
-offset_bottom = 446.0
-theme = SubResource("Theme_jfcmj")
-theme_override_font_sizes/font_size = 22
-text = "25 "
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="PanelContainerPhase" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
 layout_mode = 1
 anchors_preset = -1
@@ -1820,6 +1799,23 @@ position = Vector2(512, 512)
 scale = Vector2(0.562637, 0.948148)
 texture = ExtResource("47_muxym")
 script = ExtResource("48_tohtn")
+
+[node name="ArmyCount" type="Node2D" parent="Scenario"]
+z_index = 3
+script = ExtResource("55_vw44s")
+
+[node name="TroopCount" type="Label" parent="Scenario/ArmyCount"]
+visible = false
+custom_minimum_size = Vector2(70, 0)
+offset_left = 902.0
+offset_top = 388.0
+offset_right = 982.0
+offset_bottom = 449.0
+theme = ExtResource("56_1k6b3")
+theme_override_font_sizes/font_size = 22
+text = "25 "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="CanvasLayer/ScenarioOverlay/PanelContainerInfo/PlayerTimer" to="Scenario" method="_on_player_timer_timeout"]
 [connection signal="toggled" from="CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView/GridContainerPoliticalView/MarginContainerPoliticalView/PoliticalViewButton" to="CanvasLayer/ScenarioOverlay/PanelContainerPoliticalView" method="_on_political_view_button_toggled"]
