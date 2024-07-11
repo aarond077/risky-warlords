@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d4f5mm3jwg21v"]
+[gd_scene load_steps=29 format=3 uid="uid://d4f5mm3jwg21v"]
 
 [ext_resource type="Theme" uid="uid://ck72kpur1q2po" path="res://src/UI/ScenarioOverlay/Sonstiges/top_theme.tres" id="1_ei2l1"]
 [ext_resource type="Texture2D" uid="uid://38ccf3vgryl6" path="res://src/UI/ScenarioOverlayOld/Sonstiges/stone.jpg" id="2_m7shk"]
@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://rau02so7t241" path="res://assets/Dice/diceFive.png" id="18_5uqb4"]
 [ext_resource type="Texture2D" uid="uid://dnn5sj57bc0x4" path="res://src/UI/ScenarioOverlay/Sonstiges/eye open.png" id="23_hgwim"]
 [ext_resource type="Texture2D" uid="uid://dveuhfkb0qh6g" path="res://src/UI/ScenarioOverlay/Sonstiges/area_troops.png" id="24_3755s"]
-
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/volume_slider.gd" id="25_pa632"]
 
 [sub_resource type="Theme" id="Theme_qvm1b"]
 
@@ -1604,3 +1604,165 @@ theme_override_font_sizes/font_size = 22
 text = "25 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PanelContainerOptions" type="PanelContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -428.5
+offset_top = -379.5
+offset_right = 428.5
+offset_bottom = 379.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("12_bfna7")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainerOptions"]
+layout_mode = 2
+
+[node name="Spacer6" type="Control" parent="CanvasLayer/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 10
+
+[node name="ContinueButton" type="Button" parent="CanvasLayer/PanelContainerOptions/HBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Spiel Fortsetzen"
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 20
+
+[node name="EndButton2" type="Button" parent="CanvasLayer/PanelContainerOptions/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "Spiel Beenden"
+
+[node name="Spacer5" type="Control" parent="CanvasLayer/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="Volume" type="Label" parent="CanvasLayer/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "     Lautstärke"
+
+[node name="Master" type="Label" parent="CanvasLayer/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+text = "Master"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 25
+
+[node name="MusicVolumeSlider" type="HSlider" parent="CanvasLayer/PanelContainerOptions/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("25_pa632")
+bus_name = "Master"
+
+[node name="Music" type="Label" parent="CanvasLayer/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+text = "Musik"
+horizontal_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 25
+
+[node name="MusicVolumeSlider" type="HSlider" parent="CanvasLayer/PanelContainerOptions/HBoxContainer/MarginContainer4"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("25_pa632")
+bus_name = "Musik"
+
+[node name="SFX" type="Label" parent="CanvasLayer/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="MarginContainer5" type="MarginContainer" parent="CanvasLayer/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 25
+
+[node name="SoundVolumeSlider2" type="HSlider" parent="CanvasLayer/PanelContainerOptions/HBoxContainer/MarginContainer5"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("25_pa632")
+bus_name = "SFX"
+
+[node name="Spacer4" type="Control" parent="CanvasLayer/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainerGameEnd" type="PanelContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.5
+offset_top = -204.0
+offset_right = 304.5
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("12_bfna7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainerGameEnd"]
+layout_mode = 2
+
+[node name="WinningPlayer" type="Label" parent="CanvasLayer/PanelContainerGameEnd/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Spieler X"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="CanvasLayer/PanelContainerGameEnd/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainerGameEnd/VBoxContainer"]
+layout_mode = 2
+text = "hat das Spiel gewonnen!"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="CanvasLayer/PanelContainerGameEnd/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="BackToMenuButton" type="Button" parent="CanvasLayer/PanelContainerGameEnd/VBoxContainer"]
+layout_mode = 2
+text = "Zurück zum Hauptmenü"
+
+[node name="Spacer3" type="Control" parent="CanvasLayer/PanelContainerGameEnd/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
