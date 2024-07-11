@@ -23,10 +23,14 @@ func _ready():
 	self.add_child(menu)
 	menu.stream = load("res://assets/Music/Soundtracks/The_Great_Battle.mp3")
 	menu.volume_db = -10
+	menu.bus = "Menu"
+	
+	
 	scene = AudioStreamPlayer.new() # Replace with function body.
 	self.add_child(scene)
 	scene.stream = load("res://assets/Music/Soundtracks/Rise_of_Kingdoms.mp3")
 	scene.volume_db = -10
+	scene.bus = "Scene"
 	
 	fight = AudioStreamPlayer.new() # Replace with function body.
 	self.add_child(fight)
@@ -35,13 +39,15 @@ func _ready():
 	
 	wood = AudioStreamPlayer.new() # Replace with function body.
 	self.add_child(wood)
+	wood.bus = "SFX"
 	
 	stone = AudioStreamPlayer.new() # Replace with function body.
 	self.add_child(stone)
+	stone.bus = "SFX"
 	
 	iron = AudioStreamPlayer.new() # Replace with function body.
 	self.add_child(iron)
-	
+	iron.bus = "SFX"
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if transition:

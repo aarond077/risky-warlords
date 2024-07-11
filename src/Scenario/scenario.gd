@@ -54,10 +54,10 @@ func on_create_army_count_labels():
 			army_count_label.text = str(region.count_army())
 			army_count_label.theme = load("res://assets/UI/Themes/army_count.tres")
 			army_count_label.name = region.region_name
+			army_count_label.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 			
 			#if region.count_army() == 0:
 			army_count_label.visible = false
-			
 			
 			
 			army_count.add_child(army_count_label)
