@@ -81,12 +81,17 @@ func on_set_political_view() -> void:
 			
 			
 func on_set_physical_view():
+	var active_region_name = ""
+	if ScenarioDataManager.active_region:
+		active_region_name = ScenarioDataManager.active_region.region_name
 	ScenarioDataManager.political_view_active = false
 	SignalBus.call_deferred("emit_signal", "remove_region_outlines", self.region_name)
 	for child in get_children():
 		if child is Polygon2D:
 			_on_child_entered_tree(child)
-	
+			if active_region_name == region_name:
+				call_deferred("draw_region_outlines")
+				
 
 #sets the outline coordinates according to the polygons 
 func set_outline_points(outline : RegionOutline, polygon : Polygon2D) -> void:
