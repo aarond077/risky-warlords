@@ -5,7 +5,6 @@ extends Control
 func _ready():
 	SignalBus.call_deferred("connect", "nation_selected", on_nation_selected)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
