@@ -13,8 +13,4 @@ res://src/UI/ScenarioMenu/scenario_menu.tscn
 res://src/UI/ScenarioOverlay/scenario_overlay.tscn
 res://src/UI/ScenarioOverlay/ui.tscn
 res://src/Scenario/PanelContainerOptions.gd
-res://src/Logic/scene_manager.gd
-res://src/UI/ScenarioMenu/scenario_menu_ui.gd
-res://default_bus_layout.tres
-res://src/UI/MainMenu/exit_game_button.gd
-res://src/AudioManager.gd
+res://src/Scenario/game_manager.gd

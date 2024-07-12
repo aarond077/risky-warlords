@@ -22,9 +22,8 @@ func _on_pause_button_toggled(toggled_on):
 func _on_continue_button_pressed():
 	visible = false # Replace with function body.
 	SignalBus.call_deferred("emit_signal", "continue_active_player_timer")
-	#var pauseButton = $"../PauseButton"
-	#pauseButton.toggled
-
+	var pauseButton : Button = $"../PauseButton"
+	pauseButton.button_pressed = false
 
 func _on_end_button_2_pressed():
-	pass
+	get_tree().quit()
