@@ -56,6 +56,7 @@ func _on_building_menu_pressed(id: int):
 			active_player
 			)
 			SignalBus.call_deferred("emit_signal", "update_player_resources_label", active_player)
+			AudioManager.play_construction()
 		
 func building_is_creatable(region : RegionNode, player : Player) -> bool:
 	'''Checks if region allows buildings in general. Also checks if the player
@@ -125,6 +126,7 @@ func add_removed_building_resources(building : String, player : Player) -> void:
 		
 
 func _on_building_remove_button_pressed() -> void:
+	AudioManager.play_select()
 	var active_player : Player = ScenarioDataManager.active_player
 	var active_region : RegionNode = ScenarioDataManager.active_region
 	
@@ -155,6 +157,7 @@ func _on_building_remove_button_pressed() -> void:
 
 
 func _on_move_army_button_pressed() -> void:
+	AudioManager.play_select()
 	if(ScenarioDataManager.active_region != null):
 		if(ScenarioDataManager.active_player.action_points > 0): #cost of traveling is 1 by now
 			var army : Dictionary = ScenarioDataManager.active_region.region_army
@@ -174,3 +177,15 @@ func region_is_accessable(region : RegionNode, player : Player) -> bool:
 		return true
 	print("not your region")
 	return false
+
+
+func _on_gebaeude_errichten_pressed():
+	AudioManager.play_select()
+
+
+func _on_ressourcen_sammeln_pressed():
+	AudioManager.play_select()
+
+
+func _on_forschen_pressed():
+	AudioManager.play_select()

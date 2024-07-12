@@ -10,6 +10,7 @@ func _process(delta):
 	pass
 
 func _on_political_view_button_toggled(toggled_on):
+	AudioManager.play_select()
 	if toggled_on:
 		SignalBus.call_deferred("emit_signal", "set_political_view")
 		SignalBus.call_deferred("emit_signal", "show_army_count_labels")
