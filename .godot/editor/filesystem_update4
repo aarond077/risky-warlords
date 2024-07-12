@@ -1,4 +1,4 @@
-res://src/Scenario/scenario.tscn
+res://src/UI/MainMenu/main_menu.tscn
 res://src/Scenario/TileMap.gd
 res://src/UI/ScenarioOverlay/Sonstiges/truppen_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/new_theme.tres
@@ -7,3 +7,16 @@ res://src/UI/ScenarioOverlay/Sonstiges/top_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/gebiet_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/aktionen_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/bottom_left_theme.tres
+<<<<<<< HEAD
+=======
+res://src/Scenario/scenario.tscn
+res://src/Scenario/load_map.gd
+res://src/UI/ScenarioOverlay/panel_container_political_view.gd
+res://src/Scenario/scenario.gd
+res://src/Logic/signal_bus.gd
+res://src/UI/ScenarioOverlay/ui.tscn
+res://src/Scenario/army_count.gd
+res://src/Scenario/panel_container_battle.gd
+res://src/UI/ScenarioOverlay/panel_container_move_army.gd
+res://src/UI/ScenarioOverlay/panel_container_select_army.gd
+>>>>>>> 4e1d7fe0e6e73a5f232995805c52ca34e8259644
