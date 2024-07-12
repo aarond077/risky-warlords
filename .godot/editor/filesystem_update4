@@ -1,4 +1,4 @@
-res://src/UI/MainMenu/main_menu.tscn
+res://src/Scenario/scenario.tscn
 res://src/Scenario/TileMap.gd
 res://src/UI/ScenarioOverlay/Sonstiges/truppen_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/new_theme.tres
@@ -7,4 +7,6 @@ res://src/UI/ScenarioOverlay/Sonstiges/top_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/gebiet_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/aktionen_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/bottom_left_theme.tres
-res://src/Scenario/scenario.tscn
+res://src/Scenario/PanelContainerOptions.gd
+res://src/UI/MainMenu/main_menu.tscn
+res://src/UI/ScenarioOverlay/ui.tscn

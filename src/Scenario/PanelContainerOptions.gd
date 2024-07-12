@@ -11,19 +11,22 @@ func _process(delta):
 
 func _on_pause_button_toggled(toggled_on):
 	if toggled_on:
+		print("yes")
 		visible = true
 		SignalBus.call_deferred("emit_signal", "pause_active_player_timer")
 		
 	else:
 		visible = false # Replace with function body.
-		SignalBus.call_deferred("emit_signal", "continue_active_player_timer")
-
+		SignalBus.call_deferred("emit_signal", "continue_active_player_timer") # Replace with function body.
 
 func _on_continue_button_pressed():
 	visible = false # Replace with function body.
 	SignalBus.call_deferred("emit_signal", "continue_active_player_timer")
 	var pauseButton : Button = $"../PauseButton"
-	pauseButton.button_pressed = false
+	pauseButton.button_pressed = false # Replace with function body.
+
 
 func _on_end_button_2_pressed():
-	get_tree().quit()
+	get_tree().quit() # Replace with function body.
+
+
