@@ -185,3 +185,4 @@ func _on_confirm_button_pressed():
 		ScenarioDataManager.add_region_holder(target_region.region_name, player_index)
 		SignalBus.call_deferred("emit_signal", "update_player_action_points_label", ScenarioDataManager.active_player)
 		SignalBus.call_deferred("emit_signal", "update_political_view")
+	SignalBus.emit_signal("update_army_count_labels")

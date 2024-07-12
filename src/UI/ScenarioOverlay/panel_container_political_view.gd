@@ -12,6 +12,8 @@ func _process(delta):
 func _on_political_view_button_toggled(toggled_on):
 	if toggled_on:
 		SignalBus.call_deferred("emit_signal", "set_political_view")
+		SignalBus.call_deferred("emit_signal", "show_army_count_labels")
 	else:
 		SignalBus.call_deferred("emit_signal", "set_physical_view")
+		SignalBus.call_deferred("emit_signal", "hide_army_count_labels")
 			

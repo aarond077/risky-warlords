@@ -18,6 +18,8 @@ func enter():
 		ScenarioDataManager.capitals
 	)
 	
+	SignalBus.call_deferred("emit_signal", "create_army_count_labels")
+	
 	SignalBus.call_deferred("emit_signal", "draw_capitals_fortress")
 	
 	can_transition = true
