@@ -8,4 +8,12 @@ res://src/UI/ScenarioOverlay/Sonstiges/gebiet_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/aktionen_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/bottom_left_theme.tres
 res://src/Scenario/scenario.tscn
+res://src/Scenario/load_map.gd
+res://src/UI/ScenarioOverlay/panel_container_political_view.gd
+res://src/Scenario/scenario.gd
+res://src/Logic/signal_bus.gd
 res://src/UI/ScenarioOverlay/ui.tscn
+res://src/Scenario/army_count.gd
+res://src/Scenario/panel_container_battle.gd
+res://src/UI/ScenarioOverlay/panel_container_move_army.gd
+res://src/UI/ScenarioOverlay/panel_container_select_army.gd
