@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://d1xk2lv80lqnp"]
+[gd_scene load_steps=59 format=3 uid="uid://d1xk2lv80lqnp"]
 
 [ext_resource type="Script" path="res://src/Scenario/game_manager.gd" id="1_3288w"]
 [ext_resource type="Script" path="res://src/Scenario/scenario.gd" id="2_dxbxk"]
@@ -46,8 +46,10 @@
 [ext_resource type="Script" path="res://src/Scenario/next_player_button.gd" id="39_eio02"]
 [ext_resource type="Texture2D" uid="uid://v7rmtxud0fon" path="res://assets/Dice/diceFour.png" id="39_t006t"]
 [ext_resource type="Texture2D" uid="uid://rau02so7t241" path="res://assets/Dice/diceFive.png" id="40_o6qov"]
+[ext_resource type="Script" path="res://src/Scenario/PanelContainerOptions.gd" id="40_ubjsr"]
 [ext_resource type="Script" path="res://src/Scenario/battle_phase.gd" id="40_ugpb7"]
 [ext_resource type="Theme" uid="uid://d085y46w50iyl" path="res://src/UI/ScenarioOverlay/Sonstiges/bottom_left_theme.tres" id="41_pdrwy"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/volume_slider.gd" id="41_soks3"]
 [ext_resource type="Texture2D" uid="uid://q4dysm5b47g1" path="res://src/UI/ScenarioOverlay/Sonstiges/homeicon.png" id="42_83dsg"]
 [ext_resource type="Texture2D" uid="uid://dnn5sj57bc0x4" path="res://src/UI/ScenarioOverlay/Sonstiges/eye open.png" id="43_k2k8a"]
 [ext_resource type="Script" path="res://src/Scenario/TileMap.gd" id="44_tq45s"]
@@ -1678,6 +1680,7 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 theme = ExtResource("28_08v7j")
 theme_type_variation = &"FlatButton"
+toggle_mode = true
 icon = ExtResource("42_83dsg")
 icon_alignment = 1
 expand_icon = true
@@ -1723,6 +1726,171 @@ icon = ExtResource("35_8nml0")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("39_eio02")
+
+[node name="PanelContainerOptions" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -428.5
+offset_top = -379.5
+offset_right = 428.5
+offset_bottom = 379.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("28_08v7j")
+script = ExtResource("40_ubjsr")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions"]
+layout_mode = 2
+
+[node name="Spacer6" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 10
+
+[node name="ContinueButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Spiel Fortsetzen"
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 20
+
+[node name="EndButton2" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "Spiel Beenden"
+
+[node name="Spacer5" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="Volume" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "     Lautstärke"
+
+[node name="Master" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+text = "Master"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 25
+
+[node name="MusicVolumeSlider" type="HSlider" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("41_soks3")
+bus_name = "Master"
+
+[node name="Music" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+text = "Musik"
+horizontal_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 25
+
+[node name="MusicVolumeSlider" type="HSlider" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer/MarginContainer4"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("41_soks3")
+bus_name = "Scene"
+
+[node name="SFX" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="MarginContainer5" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 25
+
+[node name="SoundVolumeSlider2" type="HSlider" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer/MarginContainer5"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("41_soks3")
+bus_name = "SFX"
+
+[node name="Spacer4" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainerGameEnd" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.5
+offset_top = -204.0
+offset_right = 304.5
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("28_08v7j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerGameEnd"]
+layout_mode = 2
+
+[node name="WinningPlayer" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerGameEnd/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Spieler X"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerGameEnd/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/ScenarioOverlay/PanelContainerGameEnd/VBoxContainer"]
+layout_mode = 2
+text = "hat das Spiel gewonnen!"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerGameEnd/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="BackToMenuButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerGameEnd/VBoxContainer"]
+layout_mode = 2
+text = "Zurück zum Hauptmenü"
+
+[node name="Spacer3" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerGameEnd/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Scenario" type="Node2D" parent="."]
 process_mode = 1
@@ -1825,4 +1993,8 @@ script = ExtResource("55_vw44s")
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerMoveArmy/VBoxContainer/HBoxContainer2/TanksIncreaseButton" to="CanvasLayer/ScenarioOverlay/PanelContainerMoveArmy" method="_on_tanks_increase_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerMoveArmy/VBoxContainer/HBoxContainer3/CancelButton" to="CanvasLayer/ScenarioOverlay/PanelContainerMoveArmy" method="_on_cancel_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerMoveArmy/VBoxContainer/HBoxContainer3/ConfirmButton" to="CanvasLayer/ScenarioOverlay/PanelContainerMoveArmy" method="_on_confirm_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/ScenarioOverlay/PauseButton" to="CanvasLayer/ScenarioOverlay/PanelContainerOptions" method="_on_pause_button_toggled"]
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/NextPlayerButton" to="CanvasLayer/ScenarioOverlay/NextPlayerButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer/MarginContainer/ContinueButton" to="CanvasLayer/ScenarioOverlay/PanelContainerOptions" method="_on_continue_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer/MarginContainer/ContinueButton" to="CanvasLayer/ScenarioOverlay/PanelContainerOptions" method="_on_continue_button_toggled"]
+[connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer/MarginContainer2/EndButton2" to="CanvasLayer/ScenarioOverlay/PanelContainerOptions" method="_on_end_button_2_pressed"]
