@@ -1,6 +1,6 @@
 { 
-"Unheilsklippen": [0, 0],
-"Hafen von Aleksud": [0, 0],
+"Unheilsklippen": [990, 42],
+"Hafen von Aleksud": [669, 18],
 "Oedland von Sosla": [268, 148],
 "Bucht von Sosla": [646, 151],
 "Huegelgraeber von Sosla": [362, 211],
@@ -31,7 +31,7 @@
 "Noerdlicher Tiefwald": [130, 966],
 "Bucht von Sephesia": [211, 923],
 "Brachland des Filtris": [350, 996],
-"Sandbank des Filtris": [0, 0],
+"Sandbank des Filtris": [464, 944],
 "Tal des Filtris": [559, 989],
 "Berge des Filtris": [717, 996],
 "Grazfurt": [651, 914],
@@ -39,7 +39,7 @@
 "Kueste von Grazfurt": [802, 742],
 "Oedland von Grazfurt": [850, 887],
 "Sumpf des Filtris": [880, 968],
-"Verfluchte Huegelgraeber": [0, 0],
+"Verfluchte Huegelgraeber": [980, 820],
 "Oedland von Banon": [984, 692],
 "Schlachtfeld von Banon": [999, 971]
 }
