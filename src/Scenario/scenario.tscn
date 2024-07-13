@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://d1xk2lv80lqnp"]
+[gd_scene load_steps=61 format=3 uid="uid://d1xk2lv80lqnp"]
 
 [ext_resource type="Script" path="res://src/Scenario/game_manager.gd" id="1_3288w"]
 [ext_resource type="Script" path="res://src/Scenario/scenario.gd" id="2_dxbxk"]
@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://b1iqbbo6q0qp4" path="res://src/UI/ScenarioOverlayOld/Sonstiges/weapon06bow.png" id="22_0f5iu"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_info.gd" id="22_657ph"]
 [ext_resource type="Texture2D" uid="uid://cn6rd5q8grbu0" path="res://src/UI/ScenarioOverlayOld/Sonstiges/armour05platemail.png" id="23_tledy"]
-[ext_resource type="Script" path="res://src/Scenario/panel_container_battle.gd" id="25_hykb7"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_battle.gd" id="25_hykb7"]
 [ext_resource type="FontFile" uid="uid://cqtlnoqxokx35" path="res://src/UI/ScenarioOverlay/UIFont/fonts/linux-libertine/LinLibertine_5.3.0_2012_07_02/LinLibertineOTF_5.3.0_2012_07_02/LinLibertine_RB.otf" id="26_5ckp3"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_political_view.gd" id="27_3b8te"]
 [ext_resource type="Theme" uid="uid://cyf5kaih5j285" path="res://src/UI/ScenarioOverlay/Sonstiges/truppen_theme.tres" id="28_08v7j"]
@@ -36,25 +36,27 @@
 [ext_resource type="Theme" uid="uid://b6r6mw4uxy32s" path="res://src/UI/ScenarioOverlay/Sonstiges/aktionen_theme.tres" id="30_d0aj2"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_move_army.gd" id="32_3nebv"]
 [ext_resource type="Texture2D" uid="uid://8720nsib1rlw" path="res://assets/Dice/diceSix.png" id="32_bs3o3"]
-[ext_resource type="Script" path="res://src/Scenario/panel_container_battle_results.gd" id="33_hk05n"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_battle_results.gd" id="33_hk05n"]
 [ext_resource type="Texture2D" uid="uid://4hgnvou76rej" path="res://src/UI/ScenarioOverlay/Sonstiges/skip.png" id="35_8nml0"]
 [ext_resource type="Texture2D" uid="uid://cijap8kjsggga" path="res://src/UI/ScenarioOverlay/Sonstiges/x.png" id="35_sncsx"]
 [ext_resource type="Texture2D" uid="uid://bjgm0bma3r0cv" path="res://assets/Dice/diceOne.png" id="36_6q7fb"]
 [ext_resource type="Texture2D" uid="uid://brs5jds3gutma" path="res://assets/Dice/diceTwo.png" id="37_laiqh"]
 [ext_resource type="Texture2D" uid="uid://6hhnu8m2fpjo" path="res://assets/Dice/diceThree.png" id="38_jh572"]
-[ext_resource type="Script" path="res://src/Scenario/panel_container_phase.gd" id="38_txm7q"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_phase.gd" id="38_txm7q"]
 [ext_resource type="Script" path="res://src/Scenario/next_player_button.gd" id="39_eio02"]
 [ext_resource type="Texture2D" uid="uid://v7rmtxud0fon" path="res://assets/Dice/diceFour.png" id="39_t006t"]
 [ext_resource type="Texture2D" uid="uid://rau02so7t241" path="res://assets/Dice/diceFive.png" id="40_o6qov"]
-[ext_resource type="Script" path="res://src/Scenario/PanelContainerOptions.gd" id="40_ubjsr"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_options.gd" id="40_ubjsr"]
 [ext_resource type="Script" path="res://src/Scenario/battle_phase.gd" id="40_ugpb7"]
 [ext_resource type="Theme" uid="uid://d085y46w50iyl" path="res://src/UI/ScenarioOverlay/Sonstiges/bottom_left_theme.tres" id="41_pdrwy"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/volume_slider.gd" id="41_soks3"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_game_end.gd" id="42_6uod2"]
 [ext_resource type="Texture2D" uid="uid://q4dysm5b47g1" path="res://src/UI/ScenarioOverlay/Sonstiges/homeicon.png" id="42_83dsg"]
 [ext_resource type="Texture2D" uid="uid://dnn5sj57bc0x4" path="res://src/UI/ScenarioOverlay/Sonstiges/eye open.png" id="43_k2k8a"]
-[ext_resource type="Script" path="res://src/Scenario/TileMap.gd" id="44_tq45s"]
+[ext_resource type="Script" path="res://src/Scenario/tile_map.gd" id="44_tq45s"]
 [ext_resource type="Script" path="res://src/Scenario/regions.gd" id="47_1j3nt"]
 [ext_resource type="Texture2D" uid="uid://w61f0fow66rp" path="res://assets/Background/blue_image.png" id="47_muxym"]
+[ext_resource type="Script" path="res://src/Scenario/game_end.gd" id="48_dtbgo"]
 [ext_resource type="Script" path="res://src/Scenario/BlueBackground.gd" id="48_tohtn"]
 [ext_resource type="Script" path="res://src/Scenario/army_count.gd" id="55_vw44s"]
 
@@ -525,22 +527,20 @@ theme = ExtResource("29_y21ux")
 text = "Gebäude abreißen"
 alignment = 0
 
-[node name="Forschen" type="MenuButton" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
+[node name="Research" type="MenuButton" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
 theme = ExtResource("29_y21ux")
 text = "Forschen"
 alignment = 0
-item_count = 5
+item_count = 4
 popup/item_0/text = "Kriegerupgrade"
 popup/item_0/id = 0
 popup/item_1/text = "Bogenschützenupgrade"
 popup/item_1/id = 1
 popup/item_2/text = "Tankupgrade"
 popup/item_2/id = 2
-popup/item_3/text = "Wachturmupgrade"
-popup/item_3/id = 3
-popup/item_4/text = "Aktionspunkteupgrade"
-popup/item_4/id = 4
+popup/item_3/text = "Aktionspunkteupgrade"
+popup/item_3/id = 4
 
 [node name="RessourcenTauschen" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
@@ -1858,6 +1858,7 @@ offset_bottom = 204.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("28_08v7j")
+script = ExtResource("42_6uod2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerGameEnd"]
 layout_mode = 2
@@ -1909,9 +1910,8 @@ script = ExtResource("6_cwhbh")
 [node name="BattlePhase" type="Node" parent="Scenario/FiniteStateMachine"]
 script = ExtResource("40_ugpb7")
 
-[node name="Label" type="Label" parent="Scenario/FiniteStateMachine"]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="GameEnd" type="Node" parent="Scenario/FiniteStateMachine"]
+script = ExtResource("48_dtbgo")
 
 [node name="MapRegions" type="Sprite2D" parent="Scenario"]
 z_index = -1
@@ -1996,3 +1996,4 @@ script = ExtResource("55_vw44s")
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer/MarginContainer/ContinueButton" to="CanvasLayer/ScenarioOverlay/PanelContainerOptions" method="_on_continue_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer/MarginContainer/ContinueButton" to="CanvasLayer/ScenarioOverlay/PanelContainerOptions" method="_on_continue_button_toggled"]
 [connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerOptions/HBoxContainer/MarginContainer2/EndButton2" to="CanvasLayer/ScenarioOverlay/PanelContainerOptions" method="_on_end_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/ScenarioOverlay/PanelContainerGameEnd/VBoxContainer/BackToMenuButton" to="CanvasLayer/ScenarioOverlay/PanelContainerGameEnd" method="_on_back_to_menu_button_pressed"]

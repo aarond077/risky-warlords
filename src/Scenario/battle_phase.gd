@@ -5,6 +5,7 @@ extends State
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SignalBus.call_deferred("connect", "init_start_round", on_init_start_round)
+	SignalBus.call_deferred("connect", "game_end", on_game_end)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,4 +31,8 @@ func set_battle_phase_ui():
 
 func on_init_start_round():
 	can_transition = true
+	
+func on_game_end():
+	print("game ended?")
+	call_deferred("emit_signal", "interrupt_state", "GameEnd")
 

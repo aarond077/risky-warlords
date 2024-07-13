@@ -4,59 +4,19 @@ extends PanelContainer
 @onready var action_points_label : Label = $VBoxContainer/GridContainer2/MarginActionPointsInput/ActionPointsInputLabel
 @onready var create_building_menu_button = $VBoxContainer/MarginContainer2/GridContainer/GebaeudeErrichten
 @onready var add_resource_menu_button =  $VBoxContainer/MarginContainer2/GridContainer/RessourcenSammeln
+@onready var research_menu_button = $VBoxContainer/MarginContainer2/GridContainer/Research
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_resource_menu_button.get_popup().id_pressed.connect(_on_resource_menu_pressed)
+	research_menu_button.get_popup().id_pressed.connect(_on_research_menu_pressed)
 	create_building_menu_button.get_popup().id_pressed.connect(_on_building_menu_pressed)
 	SignalBus.call_deferred("connect", "update_player_action_points_label", on_update_player_action_points_label)
 	SignalBus.call_deferred("connect", "next_active_player", on_next_active_player)
-	
 
 func set_action_points_label(action_points : int) -> void:
 	action_points_label.text = str(action_points)
 	
-func on_update_player_action_points_label(player : Player) -> void:
-	set_action_points_label(player.action_points)
-	
-func on_next_active_player(player : Player) -> void:
-	set_action_points_label(player.action_points)
-	
-func _on_resource_menu_pressed(id : int):
-	var active_player : Player = ScenarioDataManager.active_player
-	if active_player.action_points > 1:
-		if(id == 0):
-			active_player.resources["Stone"] += 3
-			AudioManager.play_stone()
-		elif(id == 1):
-			active_player.resources["Wood"] += 3
-			AudioManager.play_wood()
-		elif(id == 2):
-			active_player.resources["Iron"] += 3
-			AudioManager.play_iron()
-		elif(id == 3):
-			active_player.resources["Food"] += 3
-		active_player.action_points -= 2
-		SignalBus.emit_signal("update_player_action_points_label", active_player)
-		SignalBus.emit_signal("update_player_resources_label", active_player)
-
-func _on_building_menu_pressed(id: int):
-	var building_name = create_building_menu_button.get_popup().get_item_text(id)
-	var active_region : RegionNode = ScenarioDataManager.active_region
-	var active_player : Player = ScenarioDataManager.active_player
-	if active_region != null:
-		if building_is_creatable(active_region, active_player) \
-		and region_is_accessable(active_region, active_player) \
-		and apply_building_costs(building_name, active_player):
-		
-			SignalBus.call_deferred("emit_signal", "create_building", building_name)
-			active_player.action_points -= 2
-			SignalBus.call_deferred(
-			"emit_signal",
-			"update_player_action_points_label",
-			active_player
-			)
-			SignalBus.call_deferred("emit_signal", "update_player_resources_label", active_player)
-		
 func building_is_creatable(region : RegionNode, player : Player) -> bool:
 	'''Checks if region allows buildings in general. Also checks if the player
 	that wants to create the building has enough action points available. 
@@ -122,6 +82,57 @@ func add_removed_building_resources(building : String, player : Player) -> void:
 			player.add_resource_wood(3)
 	if building == "Steinbruch":
 			player.add_resource_stone(3)
+	
+func on_update_player_action_points_label(player : Player) -> void:
+	set_action_points_label(player.action_points)
+	
+func on_next_active_player(player : Player) -> void:
+	set_action_points_label(player.action_points)
+	
+func _on_resource_menu_pressed(id : int):
+	var active_player : Player = ScenarioDataManager.active_player
+	if active_player.action_points > 1:
+		if(id == 0):
+			active_player.resources["Stone"] += 3
+			AudioManager.play_stone()
+		elif(id == 1):
+			active_player.resources["Wood"] += 3
+			AudioManager.play_wood()
+		elif(id == 2):
+			active_player.resources["Iron"] += 3
+			AudioManager.play_iron()
+		elif(id == 3):
+			active_player.resources["Food"] += 3
+		active_player.action_points -= 2
+		SignalBus.emit_signal("update_player_action_points_label", active_player)
+		SignalBus.emit_signal("update_player_resources_label", active_player)
+
+func _on_building_menu_pressed(id: int):
+	var building_name = create_building_menu_button.get_popup().get_item_text(id)
+	var active_region : RegionNode = ScenarioDataManager.active_region
+	var active_player : Player = ScenarioDataManager.active_player
+	if active_region != null:
+		if building_is_creatable(active_region, active_player) \
+		and region_is_accessable(active_region, active_player) \
+		and apply_building_costs(building_name, active_player) \
+		and (not active_player.has_research_center \
+			or building_name != "Forschungsgebäude - 10E | 2AP" )\
+		and (active_player.sanctuary_bonus < 2 \
+			or  building_name != "Heiligtum - 4S 4E | 2AP"):
+			
+			SignalBus.call_deferred("emit_signal", "create_building", building_name)
+			active_player.action_points -= 2
+			SignalBus.call_deferred(
+			"emit_signal",
+			"update_player_action_points_label",
+			active_player
+			)
+			SignalBus.call_deferred("emit_signal", "update_player_resources_label", active_player)
+			
+			if(building_name == "Heiligtum - 4S 4E | 2AP"):
+				active_player.sanctuary_bonus += 2
+			elif(building_name == "Forschungsgebäude - 10E | 2AP"):
+				active_player.has_research_center = true
 		
 
 func _on_building_remove_button_pressed() -> void:
@@ -131,7 +142,13 @@ func _on_building_remove_button_pressed() -> void:
 	if active_region != null:
 	
 		if (building_is_removable(active_region, active_player) and region_is_accessable(active_region, active_player)):#active_player.player_index == active_region.region_owner_index):
-		
+			if(active_region.building == "Heiligtum"):
+				active_player.sanctuary_bonus = 0
+			elif(active_region.building == "Forschungscenter"):
+				active_player.has_research_center = false
+				active_player.archer_upgrade = false
+				active_player.tank_upgrade = false
+			
 			SignalBus.call_deferred(
 				"emit_signal", 
 				"remove_sprite", 
@@ -153,6 +170,25 @@ func _on_building_remove_button_pressed() -> void:
 			
 			active_region.building = ""
 
+func _on_research_menu_pressed(id: int):
+
+	var research_name : String = research_menu_button.get_popup().get_text(id)
+	var active_player : Player = ScenarioDataManager.active_player
+	
+	if(active_player.action_points > 0 and active_player.has_research_center):
+		if(id == 0):
+			pass
+		elif(id == 1 and not active_player.archer_upgrade):
+			active_player.archer_upgrade = true
+			active_player.action_points -= 1
+		elif(id == 2 and not active_player.tank_upgrade):
+			active_player.tank_upgrade = true
+			active_player.action_points -= 1
+		elif(id == 3) and active_player.sanctuary_bonus == 2: 
+			active_player.sanctuary_bonus += 1
+			active_player.action_points -= 1
+	
+	
 
 func _on_move_army_button_pressed() -> void:
 	if(ScenarioDataManager.active_region != null):

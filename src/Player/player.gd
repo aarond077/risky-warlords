@@ -14,6 +14,9 @@ class_name Player
 
 
 var sanctuary_bonus : int = 0
+var archer_upgrade : bool = false
+var tank_upgrade : bool = false
+var has_research_center : bool = false
 var resources : Dictionary = {"Wood" : 0, "Stone" : 0, "Iron" : 0, "Food" : 0}
 var army : Dictionary = {"Warriors" : 0, "Archers" : 0, "Tanks" : 0}
 
@@ -24,6 +27,7 @@ func _ready():
 
 func reset_army_movement():
 	self.army_movement = false
+	
 
 func add_region_to_array(region_name : String):
 	var new_region : RegionNode = RegionNode.new()
@@ -36,7 +40,7 @@ func add_region_to_array(region_name : String):
 	self.regions.region_array.append(new_region)
 	
 func update_action_points():
-	var action_points_offset : int = 10
+	var action_points_offset : int = 6
 	self.action_points = action_points_offset + self.sanctuary_bonus
 
 func update_army(warriors : int, archers : int, tanks : int):

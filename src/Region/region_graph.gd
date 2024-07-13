@@ -5,7 +5,13 @@ class_name RegionGraph
 var root : RegionNode
 var region_array : Array[RegionNode] #will get deleted after region graph is finished
 
-
+func remove_regions_player_data(player : Player):
+	var player_name : String = "Player " + str(player.player_index)
+	for region in region_array:
+		if region.holder == player_name:
+			region.holder = ""
+			region.region_owner_index = 0
+			region.region_army = {"Warriors" : 0, "Archers" : 0, "Tanks" : 0}
 
 func load_resources_to_array():
 	var map_resources = DataFileManager.import_file("res://data/Maps/" + 

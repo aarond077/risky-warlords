@@ -70,9 +70,16 @@ func conquer_region():
 	)
 	
 	if(target_region.building != "Festung"):
+		SignalBus.call_deferred(
+				"emit_signal", 
+				"remove_sprite", 
+				target_region.building,
+				target_region.region_name
+				)
 		target_region.building = ""
+
 	
-	var losing_player : Player = ScenarioDataManager.find_player_with_holder(target_region.holder)
+	var losing_player : Player = ScenarioDataManager.find_player_by_holder(target_region.holder)
 	
 	losing_player.regions.remove_node(
 		target_region.region_name,
@@ -91,9 +98,22 @@ func conquer_region():
 	reset_moving_army_label()
 	self.visible = false
 	
+	if(target_region.building == "Heiligtum"):
+		losing_player.sanctuary_bonus = 0
+	elif(target_region.building == "Forschungscenter"):
+		losing_player.has_research_center = false
+		losing_player.archer_upgrade = false
+		losing_player.tank_upgrade = false
+	
 	var player_index : int = ScenarioDataManager.player_indexfunc()
 	
 	ScenarioDataManager.add_region_holder(target_region.region_name, player_index)
+	
+
+	ScenarioDataManager.remove_defeated_player(losing_player)
+	
+	if(ScenarioDataManager.game_end()):
+		SignalBus.call_deferred("emit_signal", "game_end")
 	
 	SignalBus.call_deferred("emit_signal", "update_political_view")
 	
@@ -186,3 +206,27 @@ func _on_confirm_button_pressed():
 		SignalBus.call_deferred("emit_signal", "update_player_action_points_label", ScenarioDataManager.active_player)
 		SignalBus.call_deferred("emit_signal", "update_political_view")
 	SignalBus.emit_signal("update_army_count_labels")
+
+
+#func _on_warriors_increase_button_button_down():
+	#increase_troop_label(warriors_name, warriors_label, warriors_available_label)
+#
+#
+#func _on_warriors_decrease_button_button_down():
+	#decrease_troop_label(warriors_name, warriors_label, warriors_available_label)
+#
+#
+#func _on_archers_decrease_button_button_down():
+	#decrease_troop_label(archers_name, archers_label, archers_available_label)
+#
+#
+#func _on_archers_increase_button_button_down():
+	#increase_troop_label(archers_name, archers_label, archers_available_label)
+#
+#
+#func _on_tanks_decrease_button_button_down():
+	#decrease_troop_label(tanks_name, tanks_label, tanks_available_label)
+#
+#
+#func _on_tanks_increase_button_button_down():
+	#increase_troop_label(tanks_name, tanks_label, tanks_available_label)

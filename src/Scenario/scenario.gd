@@ -3,6 +3,7 @@ extends Node2D
 @onready var player_timer : Timer = $"../CanvasLayer/ScenarioOverlay/PanelContainerInfo/PlayerTimer"
 @onready var buildings : Node = $Buildings
 @onready var army_count : Node = $ArmyCount
+@onready var region_areas : Node = $Regions
 
 func _ready():
 	SignalBus.call_deferred("connect", "create_building", on_create_building)
@@ -13,6 +14,30 @@ func _ready():
 	SignalBus.call_deferred("connect", "hide_army_count_labels", on_hide_army_count_labels)
 	SignalBus.call_deferred("connect", "update_army_count_labels", on_update_army_count_labels)
 	SignalBus.call_deferred("connect", "create_army_count_labels", on_create_army_count_labels)
+
+func draw_political_view():
+	for region_area in region_areas.get_children():
+		region_area.draw_region_outlines()
+		var region_node : RegionNode = ScenarioDataManager.find_region_in_array(
+				region_area.region_name)
+		for child in region_area.get_children():
+			if child is Polygon2D:
+				if region_node.holder == "":
+						child.color = Color(0.70,0.70,0.70,0.9)
+				else:
+					child.color = ScenarioDataManager.map_index_to_color(region_node.region_owner_index - 1)
+
+func on_update_political_view() -> void:
+	if ScenarioDataManager.political_view_active:
+		draw_political_view()
+
+func on_set_political_view() -> void:
+	ScenarioDataManager.political_view_active = true
+	draw_political_view()
+	buildings.visible = false
+			
+func on_set_physical_view():
+	buildings.visible = true
 
 func on_show_army_count_labels():
 	for region in ScenarioDataManager.scenario_region_graph.region_array:
@@ -34,7 +59,7 @@ func on_update_army_count_labels():
 			var region_army_count : ArmyCountLabel = army_count.find_army_count_label_by_name(region.region_name)
 			var army_count : int = region.count_army()
 			region_army_count.text = str(army_count)
-			if army_count > 0:
+			if army_count > 0 and ScenarioDataManager.political_view_active:
 				region_army_count.visible = true
 			else:
 				region_army_count.visible = false
@@ -55,6 +80,8 @@ func on_create_army_count_labels():
 			army_count_label.theme = load("res://assets/UI/Themes/army_count.tres")
 			army_count_label.name = region.region_name
 			army_count_label.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+			army_count_label.custom_minimum_size.x = 3
+			army_count_label.custom_minimum_size.y = 3
 			
 			#if region.count_army() == 0:
 			army_count_label.visible = false
@@ -62,12 +89,6 @@ func on_create_army_count_labels():
 			
 			army_count.add_child(army_count_label)
 			
-			
-func on_set_physical_view():
-	buildings.visible = true
-
-func on_set_political_view():
-	buildings.visible = false
 
 func on_draw_capitals_fortress():
 	for player in ScenarioDataManager.scenario_players:

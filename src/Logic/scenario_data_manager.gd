@@ -17,10 +17,41 @@ extends Node2D
 @onready var political_view_active : bool = false
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.scenario_region_graph = RegionGraph.new()
 	SignalBus.call_deferred("connect", "set_political_view", player_indexfunc)
+	
+func game_end():
+	return scenario_players.size() == 1
+	
+func map_index_to_color(index) -> Color:
+	var color_code : Color
+	var rdm : float = randf_range(0.6,0.8)
+	var color : String = ScenarioDataManager.scenario_players[index].player_color
+	if color == "Blue":
+		color_code = Color(0.2,0,rdm,0.8)
+	elif color == "Orange":
+		color_code = Color(1,rdm,0,0.7)
+	elif color == "Purple":
+		color_code = Color(rdm,0.2,0.7,0.7)
+	elif color == "Yellow":
+		color_code = Color(rdm,0.85,0,0.7)
+	else:
+		color_code = Color(1,1,1,0.4)
+	return color_code
+
+func player_defeated(player : Player):
+	for region in player.regions.region_array:
+		if region.region_name == player.capital:
+			return false
+	return true
+
+func remove_defeated_player(player : Player):
+	if player_defeated(player):
+		scenario_region_graph.remove_regions_player_data(player)
+		scenario_players.erase(player)
 	
 func reset_player_army_movement():
 	for player in scenario_players:
@@ -30,7 +61,7 @@ func reset_battle_phase():
 	battle_phase_active = false
 	battle_container_shown = false
 	
-func find_player_with_holder(region_holder : String) -> Player:
+func find_player_by_holder(region_holder : String) -> Player:
 	for player in scenario_players:
 		var player_name : String = "Player " + str(player.player_index)
 		if player_name == region_holder:

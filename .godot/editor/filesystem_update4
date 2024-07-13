@@ -17,3 +17,13 @@ res://src/Scenario/army_count.gd
 res://src/Scenario/panel_container_battle.gd
 res://src/UI/ScenarioOverlay/panel_container_move_army.gd
 res://src/UI/ScenarioOverlay/panel_container_select_army.gd
+res://src/UI/ScenarioOverlay/panel_container_actions.gd
+res://src/Player/player.gd
+res://src/Logic/finite_state_machine.gd
+res://src/Scenario/game_end.gd
+res://src/Logic/scenario_data_manager.gd
+res://src/Region/region_graph.gd
+res://src/Scenario/panel_container_game_end.gd
+res://src/Scenario/battle_phase.gd
+res://src/UI/ScenarioOverlay/panel_container_battle.gd
+res://src/Region/region_area.gd

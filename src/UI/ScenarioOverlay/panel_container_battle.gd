@@ -130,6 +130,19 @@ func get_troop_bonus(region_a : RegionNode, region_b : RegionNode, troop_name : 
 	else:
 		return false
 		
+func apply_troop_bonusses(att_player_results : Array[int], def_player_results):
+	if(attacking_archers_bonus):
+		for dice in att_player_results:
+			if( dice <= 5):
+				dice += 1
+				break
+	if(defending_tanks_bonus):
+		for dice in def_player_results:
+			if( dice <= 5):
+				dice += 1
+				break
+			
+		
 func find_min_dice(def_dice : int, att_player_results : Array[int]) -> int:
 	var max_diff : int = 256
 	var min_dice : int = -1
@@ -140,11 +153,24 @@ func find_min_dice(def_dice : int, att_player_results : Array[int]) -> int:
 				max_diff = diff
 				min_dice = att_dice
 	return min_dice
+	
+func get_max_def_dice(def_player_results : Array[int]) -> Array[int]:
+	var max_dice : int = 0
+	for dice in def_player_results:
+		if dice >= max_dice:
+			max_dice = dice
+	return [max_dice]
 
 func get_battle_results(attacking_player_results : Array[int], defending_player_results : Array[int]):
 	var attacking_player_wins : int
 	var defending_player_wins : int
 	var battle_results : Array = []
+	
+	apply_troop_bonusses(attacking_player_results, defending_player_results)
+	
+	if(attacking_player_results.size() == 1):
+		defending_player_results = get_max_def_dice(defending_player_results)
+	
 	for def_dice in defending_player_results:
 		var min_dice : int = find_min_dice(def_dice, attacking_player_results)
 		if(min_dice != -1):
@@ -181,18 +207,6 @@ func get_battle_results(attacking_player_results : Array[int], defending_player_
 func apply_army_losses(troop_losses_attacker : int,
 						 troop_losses_defender : int) -> void:
 							
-	if(self.attacking_archers_bonus):
-		if(troop_losses_defender > 0):
-			troop_losses_defender += 1
-	if(self.defending_archers_bonus):
-		if(troop_losses_attacker > 0):
-			troop_losses_attacker += 1
-	if(self.attacking_tanks_bonus):
-		if(troop_losses_attacker > 0):
-			troop_losses_attacker -= 1
-	if(self.defending_tanks_bonus):
-		if(troop_losses_defender > 0):
-			troop_losses_defender -= 1
 	var defending_army_max : int = defending_region.count_army() 
 	var attacking_army_max : int = attacking_region.count_army()
 	

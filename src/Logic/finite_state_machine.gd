@@ -19,7 +19,7 @@ class_name FiniteStateMachine
 @onready var panel_container_battle : PanelContainer = $"../../CanvasLayer/ScenarioOverlay/PanelContainerBattle"
 @onready var panel_container_battle_results : PanelContainer = $"../../CanvasLayer/ScenarioOverlay/PanelContainerBattleResults"
 @onready var panel_container_select_army : PanelContainer = $"../../CanvasLayer/ScenarioOverlay/PanelContainerSelectArmy"
-
+@onready var panel_container_game_end : PanelContainer = $"../../CanvasLayer/ScenarioOverlay/PanelContainerGameEnd"
 
 
 @export var debug : Label

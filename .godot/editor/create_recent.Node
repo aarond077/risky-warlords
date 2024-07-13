@@ -1,3 +1,4 @@
+Node
 Button
 Control
 VBoxContainer
@@ -8,7 +9,6 @@ PanelContainer
 HSlider
 AnimationPlayer
 AudioStreamPlayer
-Node
 ParallaxLayer
 Sprite2D
 CanvasLayer
