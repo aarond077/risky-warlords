@@ -1941,6 +1941,8 @@ script = ExtResource("44_tq45s")
 
 [node name="SeaConnections" type="Sprite2D" parent="Scenario"]
 z_index = 3
+texture_filter = 1
+offset = Vector2(512, 512)
 
 [node name="Banners" type="Node2D" parent="Scenario"]
 
