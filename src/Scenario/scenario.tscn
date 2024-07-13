@@ -531,17 +531,15 @@ layout_mode = 2
 theme = ExtResource("29_y21ux")
 text = "Forschen"
 alignment = 0
-item_count = 5
+item_count = 4
 popup/item_0/text = "Kriegerupgrade"
 popup/item_0/id = 0
 popup/item_1/text = "Bogenschützenupgrade"
 popup/item_1/id = 1
 popup/item_2/text = "Tankupgrade"
 popup/item_2/id = 2
-popup/item_3/text = "Wachturmupgrade"
-popup/item_3/id = 3
-popup/item_4/text = "Aktionspunkteupgrade"
-popup/item_4/id = 4
+popup/item_3/text = "Aktionspunkteupgrade"
+popup/item_3/id = 4
 
 [node name="RessourcenTauschen" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
