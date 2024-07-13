@@ -13,12 +13,23 @@ static func create_building(building_name : String, nation: String, position : V
 		return create_research_center(nation, position, region_name)
 	elif building_name == "Ressourcengebäude - 3 H/S/E | 2AP":
 		return create_resource_building(position, region_name)
+	elif building_name == "Marktplatz - 3H | 3S | 3E | 2AP":
+		return create_marketplace(position, region_name)
 	else:
 		print("ERROR: BUILDING NAME NOT FOUND")
 		return null
 	
+static func create_marketplace(position : Vector2, region_name : String) -> RemovableSprite:
+	var marketplace : RemovableSprite = RemovableSprite.new()
+	marketplace.position = position
+	marketplace.sprite_name = "Marktplatz"
+	marketplace.region_name = region_name
+	marketplace.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	marketplace.texture = ResourceLoader.load(
+		"res://assets/Buildings/Marktplatz.png")
+	return marketplace
 		
-static func create_resource_building(position, region_name):
+static func create_resource_building(position : Vector2, region_name : String) -> RemovableSprite:
 	var active_region : RegionNode = ScenarioDataManager.active_region
 	if active_region.resource == "Wood":
 		return create_lumberjack_hut(position, region_name)

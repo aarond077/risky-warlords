@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dopmg723shmx7"
-path="res://.godot/imported/BannerHumans.png-b910ba4843f21f529a6f1b15024b4c18.ctex"
+uid="uid://2a8in2ow2rbd"
+path="res://.godot/imported/Marktplatz.png-3b6d82568b0dfb2c4dc059f0a4126ab5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Banner/BannerHumans.png"
-dest_files=["res://.godot/imported/BannerHumans.png-b910ba4843f21f529a6f1b15024b4c18.ctex"]
+source_file="res://assets/Buildings/Marktplatz.png"
+dest_files=["res://.godot/imported/Marktplatz.png-3b6d82568b0dfb2c4dc059f0a4126ab5.ctex"]
 
 [params]
 

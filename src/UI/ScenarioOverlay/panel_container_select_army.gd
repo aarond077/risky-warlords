@@ -89,29 +89,39 @@ func _on_confirm_button_pressed():
 	var new_warriors : int = new_army["Warriors"]
 	var new_archers : int = new_army["Archers"]
 	var new_tanks : int = new_army["Tanks"]
-	if new_archers > 0:
-		AudioManager.play_arrow()
-	else:
-		AudioManager.play_drawSword()
-	var active_player_capital_name : String = ScenarioDataManager.active_player.capital
-	var active_player_capital : RegionNode = ScenarioDataManager.find_region_in_array(active_player_capital_name)
 	
-	ScenarioDataManager.active_player.update_army(
-		new_warriors,
-		new_archers,
-		new_tanks
-		)
+	if(new_warriors > 0 or new_archers > 0 or new_tanks > 0):
+		
+		
+		
+		if new_archers > 0:
+			AudioManager.play_arrow()
+		else:
+			AudioManager.play_drawSword()
+		var active_player_capital_name : String = ScenarioDataManager.active_player.capital
+		var active_player_capital : RegionNode = ScenarioDataManager.find_region_in_array(active_player_capital_name)
+		
+		SignalBus.emit_signal("update_banners", active_player_capital, ScenarioDataManager.active_player)
+		
+		
+		ScenarioDataManager.active_player.update_army(
+			new_warriors,
+			new_archers,
+			new_tanks
+			)
 	
-	ScenarioDataManager.add_army_to_region(
-		active_player_capital,
-		new_warriors,
-		new_archers,
-		new_tanks)
+		ScenarioDataManager.add_army_to_region(
+			active_player_capital,
+			new_warriors,
+			new_archers,
+			new_tanks)
 		
-	SignalBus.emit_signal("update_army_count_labels")
+		SignalBus.emit_signal("update_army_count_labels")
 		
-	SignalBus.emit_signal("check_player_index")
+		#SignalBus.emit_signal("move_army", active_player_capital, ScenarioDataManager.active_player)
 		
-	ScenarioDataManager.set_next_active_player()
+		SignalBus.emit_signal("check_player_index")
 		
-	reset_select_army_input()
+		ScenarioDataManager.set_next_active_player()
+		
+		reset_select_army_input()

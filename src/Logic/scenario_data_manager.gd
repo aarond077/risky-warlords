@@ -10,6 +10,7 @@ extends Node2D
 @onready var active_region_color : String
 @onready var active_player : Player
 @onready var building_coordinates : Dictionary
+@onready var banner_coordinates : Dictionary
 @onready var battle_phase_active : bool = false
 @onready var start_round_active : bool = false
 @onready var battle_container_shown : bool = false
@@ -41,6 +42,11 @@ func map_index_to_color(index) -> Color:
 	else:
 		color_code = Color(1,1,1,0.4)
 	return color_code
+	
+func load_banner_coordinates(map_name : String):
+	self.banner_coordinates = DataFileManager.import_file("res://data/Maps/" \
+	+ map_name + "/" + map_name + "FlagPositions.txt")
+	#"res://data/Maps/Bucht von Dessus/Bucht von DessusFlagPositions.txt"
 
 func player_defeated(player : Player):
 	for region in player.regions.region_array:
@@ -177,20 +183,46 @@ func add_building_to_capitals():
 func set_start_scenario_active_player():
 	self.active_player = scenario_players[0]
 	SignalBus.call_deferred("emit_signal", "next_active_player")
-	
-	
+
+func player_has_possible_battles(next_player : Player):
+	for region in scenario_region_graph.region_array:
+		if region.holder == "Player " + str(next_player.player_index) and region.count_army() > 0:
+			for neighbour in region.neighbours:
+				if neighbour.holder != "" and neighbour.holder != region.holder:
+					return true
+	return false
+		
 
 func set_next_active_player():
-	if(active_player.player_index < scenario_players.size()):
-		active_player = scenario_players[active_player.player_index]
-	else:
-		if not ScenarioDataManager.battle_phase_active:
-			SignalBus.call_deferred("emit_signal", "init_battle_phase")
-			active_player = scenario_players[0]
+	#if(ScenarioDataManager.battle_phase_active):
+		#var next_player =  scenario_players[active_player.player_index]
+		#var player_not_found : bool = false
+		#while(not player_has_possible_battles(next_player) and not player_not_found):
+			#if next_player.player_index == 1:
+				#player_not_found = true
+				#active_player = scenario_players[0]
+				#SignalBus.call_deferred("emit_signal", "init_start_round")
+			#else:
+				#if(next_player.player_index < scenario_players.size()):
+					#next_player = scenario_players[next_player.player_index]
+				#else:
+					#next_player = scenario_players[0]
+		#if(not player_not_found):
+			#active_player = next_player
+			
+				
+	#else:		
+		if(active_player.player_index < scenario_players.size()):
+			active_player = scenario_players[active_player.player_index]
 		else:
-			SignalBus.call_deferred("emit_signal", "init_start_round")
 			active_player = scenario_players[0]
-	SignalBus.call_deferred("emit_signal", "next_active_player")
+			if(not start_round_active and not battle_phase_active):
+				SignalBus.call_deferred("emit_signal", "init_battle_phase")
+			elif( battle_phase_active):
+				SignalBus.call_deferred("emit_signal", "init_start_round")
+				
+		SignalBus.call_deferred("emit_signal", "next_active_player")
+		SignalBus.call_deferred("emit_signal", "update_player_action_points_label", active_player)
 
 func set_player_nation(player_index : int, nation_name : String):
 	scenario_players[player_index].set_nation(nation_name)
@@ -226,6 +258,7 @@ func exist_possible_battle():
 		for neighbour in region.neighbours:
 			if region.holder != neighbour.holder \
 				and region.holder != "" \
-				and neighbour.holder != "":
+				and neighbour.holder != "" \
+				and region.count_army() > 1:
 				return true
 	return false

@@ -18,7 +18,17 @@ func enter():
 	ScenarioDataManager.battle_phase_active = true
 	if(not ScenarioDataManager.exist_possible_battle()):
 		can_transition = true
+	
+	#var start_player : Player
+	#var player_found : bool = false
+	#for player in ScenarioDataManager.scenario_players:
+		#if(ScenarioDataManager.player_has_possible_battles(player)):
+			#start_player = player
+			#player_found = true
+	#if not(player_found):
+		#can_transition = true
 	else:
+		#ScenarioDataManager.active_player = start_player
 		set_battle_phase_ui()
 
 func exit():

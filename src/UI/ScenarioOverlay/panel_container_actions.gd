@@ -35,7 +35,7 @@ func building_is_creatable(region : RegionNode, player : Player) -> bool:
 		
 	
 func building_is_removable(region : RegionNode, player : Player) -> bool:
-	if(player.action_points > 0):
+	if(player.action_points > 0 and region.building != "Festung"):
 		return true
 	return false
 	
@@ -45,15 +45,23 @@ func apply_building_costs(building : String, player : Player) -> bool:
 			player.reduce_resource_stone(4)
 			player.reduce_resource_iron(4)
 			return true
-	if building == "Wachturm - 5H | 2AP":
+	elif building == "Wachturm - 5H | 2AP":
 		if player.resources["Wood"] >= 5:
 			player.reduce_resource_wood(5)
 			return true
-	if building == "Forschungsgebäude - 10E | 2AP":
+	elif building == "Forschungsgebäude - 10E | 2AP":
 		if player.resources["Iron"] >= 10:
 			player.reduce_resource_iron(10)
 			return true
-	if building == "Ressourcengebäude - 3 H/S/E | 2AP":
+	elif building == "Marktplatz - 2H | 2S | 2E | 2AP":
+		if player.resources["Wood"] >= 2 \
+			and player.resources["Iron"] >= 2 \
+			and player.resources["Stone"] >= 2:
+				player.reduce_resource_iron(2)
+				player.reduce_resource_stone(2)
+				player.reduce_resource_wood(2)
+				return true
+	elif building == "Ressourcengebäude - 3 H/S/E | 2AP":
 		if ScenarioDataManager.active_region.resource == "Wood":
 			if player.resources["Wood"] >= 3:
 				player.reduce_resource_wood(3)
@@ -73,15 +81,19 @@ func add_removed_building_resources(building : String, player : Player) -> void:
 	if building == "Heiligtum":
 			player.add_resource_stone(4)
 			player.add_resource_iron(4)
-	if building == "Wachturm":
+	elif building == "Wachturm":
 			player.add_resource_wood(5)
-	if building == "Forschungsgebäude":
+	elif building == "Forschungsgebäude":
 			player.add_resource_iron(10)
-	if building == "Mine":
+	elif building == "Mine":
 			player.add_resource_iron(3)
-	if building == "Holzfällerhütte":
+	elif building == "Marktplatz":
+		player.add_resource_iron(2)
+		player.add_resource_stone(2)
+		player.add_resource_wood(2)
+	elif building == "Holzfällerhütte":
 			player.add_resource_wood(3)
-	if building == "Steinbruch":
+	elif building == "Steinbruch":
 			player.add_resource_stone(3)
 	
 func on_update_player_action_points_label(player : Player) -> void:
@@ -119,7 +131,9 @@ func _on_building_menu_pressed(id: int):
 		and (not active_player.has_research_center \
 			or building_name != "Forschungsgebäude - 10E | 2AP" )\
 		and (active_player.sanctuary_bonus < 2 \
-			or  building_name != "Heiligtum - 4S 4E | 2AP"):
+			or  building_name != "Heiligtum - 4S 4E | 2AP") \
+		and (not active_player.has_marketplace \
+			or building_name != "Marktplatz - 2H | 2S | 2E | 2AP"):
 			
 			SignalBus.call_deferred("emit_signal", "create_building", building_name)
 			active_player.action_points -= 2
@@ -134,6 +148,8 @@ func _on_building_menu_pressed(id: int):
 				active_player.sanctuary_bonus += 2
 			elif(building_name == "Forschungsgebäude - 10E | 2AP"):
 				active_player.has_research_center = true
+			elif(building_name == "Marktplatz - 3H | 3S | 3E | 2AP"):
+				active_player.has_marketplace = true
 			AudioManager.play_construction()
 		
 
@@ -151,6 +167,8 @@ func _on_building_remove_button_pressed() -> void:
 				active_player.has_research_center = false
 				active_player.archer_upgrade = false
 				active_player.tank_upgrade = false
+			elif(active_region.building == "Marktplatz"):
+				active_player.has_marketplace = false
 			
 			SignalBus.call_deferred(
 				"emit_signal", 
@@ -172,6 +190,7 @@ func _on_building_remove_button_pressed() -> void:
 				)
 			
 			active_region.building = ""
+			active_player.action_points -= 1
 
 func _on_research_menu_pressed(id: int):
 

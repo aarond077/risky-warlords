@@ -31,7 +31,7 @@ func update_region_army(region_army : Dictionary):
 		region_army["Warriors"]) + \
 		"K | " + \
 		str(region_army["Archers"]) + \
-		"A | " + \
+		"B | " + \
 		str(region_army["Tanks"]) + \
 		"T" 
 	

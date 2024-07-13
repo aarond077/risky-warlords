@@ -14,9 +14,10 @@ class_name Player
 
 
 var sanctuary_bonus : int = 0
-var archer_upgrade : bool = false
-var tank_upgrade : bool = false
+var archers_upgrade : bool = false
+var tanks_upgrade : bool = false
 var has_research_center : bool = false
+var has_marketplace : bool = false
 var resources : Dictionary = {"Wood" : 0, "Stone" : 0, "Iron" : 0, "Food" : 0}
 var army : Dictionary = {"Warriors" : 0, "Archers" : 0, "Tanks" : 0}
 

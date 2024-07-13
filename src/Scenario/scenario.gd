@@ -3,6 +3,8 @@ extends Node2D
 @onready var player_timer : Timer = $"../CanvasLayer/ScenarioOverlay/PanelContainerInfo/PlayerTimer"
 @onready var buildings : Node = $Buildings
 @onready var army_count : Node = $ArmyCount
+@onready var banners : Node = $Banners
+@onready var sea_connections : Sprite2D = $SeaConnections
 @onready var region_areas : Node = $Regions
 
 func _ready():
@@ -14,7 +16,9 @@ func _ready():
 	SignalBus.call_deferred("connect", "hide_army_count_labels", on_hide_army_count_labels)
 	SignalBus.call_deferred("connect", "update_army_count_labels", on_update_army_count_labels)
 	SignalBus.call_deferred("connect", "create_army_count_labels", on_create_army_count_labels)
-
+	SignalBus.call_deferred("connect", "update_banners", on_update_banners)
+	SignalBus.connect("load_sea_connections", on_load_sea_connections)
+	
 func draw_political_view():
 	for region_area in region_areas.get_children():
 		region_area.draw_region_outlines()
@@ -27,6 +31,20 @@ func draw_political_view():
 				else:
 					child.color = ScenarioDataManager.map_index_to_color(region_node.region_owner_index - 1)
 
+func on_load_sea_connections(map_name : String):
+	sea_connections.texture = load("res://assets/Maps/" + map_name + "/" + map_name + "Seeverbindungen.png")
+
+func on_update_banners(target_region : RegionNode, player : Player):
+	var banner_position = Vector2(
+				ScenarioDataManager.banner_coordinates[target_region.region_name][0],
+				ScenarioDataManager.banner_coordinates[target_region.region_name][1]
+			)
+	if target_region.holder != "" and target_region.holder != "Player " + str(player.player_index):
+		var old_banner_name : String = "Banner" + ScenarioDataManager.find_player_by_holder(target_region.holder).nation
+		SignalBus.emit_signal("remove_sprite", old_banner_name, target_region.region_name)
+	var new_banner : RemovableSprite = BannerFactory.create_banner(banner_position, target_region.region_name, player.nation)
+	banners.add_child(new_banner)
+
 func on_update_political_view() -> void:
 	if ScenarioDataManager.political_view_active:
 		draw_political_view()
@@ -35,9 +53,11 @@ func on_set_political_view() -> void:
 	ScenarioDataManager.political_view_active = true
 	draw_political_view()
 	buildings.visible = false
+	banners.visible = false
 			
 func on_set_physical_view():
 	buildings.visible = true
+	banners.visible = true
 
 func on_show_army_count_labels():
 	for region in ScenarioDataManager.scenario_region_graph.region_array:
@@ -70,8 +90,8 @@ func on_update_army_count_labels():
 func on_create_army_count_labels():
 	for region in ScenarioDataManager.scenario_region_graph.region_array:
 			var army_count_label : ArmyCountLabel = ArmyCountLabel.new()
-			var position_x = ScenarioDataManager.building_coordinates[region.region_name][0]
-			var position_y = ScenarioDataManager.building_coordinates[region.region_name][1]
+			var position_x = ScenarioDataManager.banner_coordinates[region.region_name][0]
+			var position_y = ScenarioDataManager.banner_coordinates[region.region_name][1]
 			#army_count_label.region_name = region.region_name
 			army_count_label.position.x = position_x
 			army_count_label.position.y = position_y
@@ -98,6 +118,7 @@ func on_draw_capitals_fortress():
 			)
 		var fortress : RemovableSprite = BuildingFactory.create_fortress(player.nation, position, player.capital)
 		buildings.add_child(fortress)
+		
 		
 	
 
