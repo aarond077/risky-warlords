@@ -8,6 +8,14 @@ var wood
 var stone
 var iron
 
+var goldCoin
+var select
+var movement
+var drawSword
+var arrow
+
+var construction
+
 var muted = false
 
 var transition = false
@@ -48,6 +56,30 @@ func _ready():
 	iron = AudioStreamPlayer.new() # Replace with function body.
 	self.add_child(iron)
 	iron.bus = "SFX"
+	
+	goldCoin = AudioStreamPlayer.new() # Replace with function body.
+	self.add_child(goldCoin)
+	goldCoin.bus = "SFX"
+	
+	select = AudioStreamPlayer.new() # Replace with function body.
+	self.add_child(select)
+	select.bus = "SFX"
+	
+	movement = AudioStreamPlayer.new() # Replace with function body.
+	self.add_child(movement)
+	movement.bus = "SFX"
+	
+	construction = AudioStreamPlayer.new() # Replace with function body.
+	self.add_child(construction)
+	construction.bus = "SFX"
+	
+	drawSword = AudioStreamPlayer.new() # Replace with function body.
+	self.add_child(drawSword)
+	drawSword.bus = "SFX"
+	
+	arrow = AudioStreamPlayer.new() # Replace with function body.
+	self.add_child(arrow)
+	arrow.bus = "SFX"
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if transition:
@@ -116,4 +148,46 @@ func play_stone():
 			stone.stream = load("res://assets/Music/Stone/zapsplat_industrial_hammer_small_3x_hits_on_rock_60399.mp3")
 		stone.volume_db = -10
 		stone.play()
+		
+func play_goldCoin():
+	if not muted:
+		var randomInt : int = randi_range(1,2)
+		if randomInt == 1:
+			goldCoin.stream = load("res://assets/Music/GoldCoin/jochi-gold-coins_Qs9MGbDT.mp3")
+		if randomInt == 2:
+			goldCoin.stream = load("res://assets/Music/GoldCoin/jochi-gold-coins-r8kruwuf_zpQHb7qz.mp3")
+		goldCoin.volume_db = -10
+		goldCoin.play()
+		
+func play_select():
+	if not muted:
+		select.stream = load("res://assets/Music/Select/zapsplat_household_air_fryer_oven_door_close_001_71464.mp3")
+		select.volume_db = -15
+		select.play()
+		
+func play_movement():
+	if not muted:
+		movement.stream = load("res://assets/Music/Movement/soldiers-marching-sound-effect_kqIqQTIW.mp3")
+		movement.volume_db = -20
+		#movement.play()
+		
+func play_construction():
+	if not muted:
+		construction.stream = load("res://assets/Music/Construction/zapsplat_industrial_woodsaw_sawing_into_rotten_wood_scoring_short_001_93945.mp3")
+		construction.volume_db = -10
+		construction.play()
+		
+func play_drawSword():
+	if not muted:
+		drawSword.stream = load("res://assets/Music/Weapons/SwordShingA1.ogg")
+		drawSword.volume_db = -10
+		drawSword.play()
+			
+func play_arrow():
+	if not muted:
+		arrow.stream = load("res://assets/Music/Weapons/satisfying-arrow-impact-sound-effect-high-quality_dmwjnn4Z.mp3")
+		arrow.volume_db = -10
+		arrow.play()
+		
+
 		

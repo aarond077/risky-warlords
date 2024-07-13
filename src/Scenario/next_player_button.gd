@@ -12,6 +12,7 @@ func _process(delta):
 
 
 func _on_pressed():
+	AudioManager.play_select()
 	if((ScenarioDataManager.battle_phase_active \
 		or not ScenarioDataManager.start_round_active) \
 		and not ScenarioDataManager.battle_container_shown):

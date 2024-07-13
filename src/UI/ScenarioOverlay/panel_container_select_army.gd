@@ -84,12 +84,15 @@ func _on_tank_increase_button_pressed() -> void:
 	update_food_label(active_player)
 	
 
-
-
 func _on_confirm_button_pressed():
+	
 	var new_warriors : int = new_army["Warriors"]
 	var new_archers : int = new_army["Archers"]
 	var new_tanks : int = new_army["Tanks"]
+	if new_archers > 0:
+		AudioManager.play_arrow()
+	else:
+		AudioManager.play_drawSword()
 	var active_player_capital_name : String = ScenarioDataManager.active_player.capital
 	var active_player_capital : RegionNode = ScenarioDataManager.find_region_in_array(active_player_capital_name)
 	

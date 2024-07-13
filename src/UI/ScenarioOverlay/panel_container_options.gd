@@ -11,6 +11,7 @@ func _process(delta):
 
 func _on_pause_button_toggled(toggled_on):
 	if toggled_on:
+		AudioManager.play_select()
 		print("yes")
 		visible = true
 		SignalBus.call_deferred("emit_signal", "pause_active_player_timer")

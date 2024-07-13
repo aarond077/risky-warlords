@@ -131,16 +131,23 @@ func get_troop_bonus(region_a : RegionNode, region_b : RegionNode, troop_name : 
 		return false
 		
 func apply_troop_bonusses(att_player_results : Array[int], def_player_results):
+	var att_player : Player = ScenarioDataManager.find_player_by_holder(attacking_region.holder) 
+	var def_player : Player = ScenarioDataManager.find_player_by_holder(defending_region.holder)
 	if(attacking_archers_bonus):
 		for dice in att_player_results:
 			if( dice <= 5):
 				dice += 1
-				break
+				if not att_player.archers_upgrade:
+					break
 	if(defending_tanks_bonus):
 		for dice in def_player_results:
 			if( dice <= 5):
 				dice += 1
-				break
+				if not def_player.tank_upgrade:
+					break
+
+				
+	
 			
 		
 func find_min_dice(def_dice : int, att_player_results : Array[int]) -> int:
@@ -360,6 +367,8 @@ func _on_start_attack_button_pressed():
 		battle_round_finished = true
 		
 		SignalBus.emit_signal("update_army_count_labels")
+		
+		SignalBus.emit_signal("update_player_army_label")
 		
 		SignalBus.call_deferred("emit_signal", "battle_round_finished", attacking_region, defending_region, winning_region, losing_region, troop_losses_attacker, troop_losses_defender)
 	 
