@@ -4,7 +4,7 @@ extends PanelContainer
 @onready var action_points_label : Label = $VBoxContainer/GridContainer2/MarginActionPointsInput/ActionPointsInputLabel
 @onready var create_building_menu_button = $VBoxContainer/MarginContainer2/GridContainer/GebaeudeErrichten
 @onready var add_resource_menu_button =  $VBoxContainer/MarginContainer2/GridContainer/RessourcenSammeln
-@onready var research_menu_button = $VBoxContainer/MarginContainer2/GridContainer/Research
+@onready var research_menu_button = $VBoxContainer/MarginContainer2/GridContainer/Forschen
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

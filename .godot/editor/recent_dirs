@@ -1,5 +1,6 @@
-res://assets/UI/Themes
 res://src/Scenario
+res://src/UI/ScenarioOverlay
+res://assets/UI/Themes
 res://assets/Background
 res://src/UI
 res://assets/Terrain
