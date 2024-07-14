@@ -63,11 +63,7 @@ func reset_moving_army_label():
 	
 func conquer_region():
 	
-	target_region.increase_army(
-		moving_army["Warriors"],
-		moving_army["Archers"],
-		moving_army["Tanks"]
-	)
+	target_region.region_army = moving_army
 	
 	if(target_region.building != "Festung"):
 		SignalBus.call_deferred(
