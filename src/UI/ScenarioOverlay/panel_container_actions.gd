@@ -150,6 +150,9 @@ func _on_building_menu_pressed(id: int):
 				active_player.has_research_center = true
 			elif(building_name == "Marktplatz - 3H | 3S | 3E | 2AP"):
 				active_player.has_marketplace = true
+			
+			SignalBus.call_deferred("emit_signal", "update_buffs_label", active_player)
+			
 			AudioManager.play_construction()
 		
 
@@ -188,6 +191,8 @@ func _on_building_remove_button_pressed() -> void:
 				"update_player_resources_label",
 				active_player
 				)
+				
+			SignalBus.call_deferred("emit_signal", "update_buffs_label", active_player)
 			
 			active_region.building = ""
 			active_player.action_points -= 1

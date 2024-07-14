@@ -223,7 +223,7 @@ func set_next_active_player():
 				
 		SignalBus.call_deferred("emit_signal", "next_active_player")
 		SignalBus.call_deferred("emit_signal", "update_player_action_points_label", active_player)
-
+		SignalBus.call_deferred("emit_signal", "update_buffs_label", active_player)
 func set_player_nation(player_index : int, nation_name : String):
 	scenario_players[player_index].set_nation(nation_name)
 	

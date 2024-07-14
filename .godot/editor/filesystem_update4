@@ -6,9 +6,16 @@ res://src/UI/ScenarioOverlay/Sonstiges/truppen_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/aktionen_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/bottom_left_theme.tres
 res://src/Scenario/scenario.tres
+<<<<<<< HEAD
 res://src/UI/MainMenu/main_menu.tscn
 res://src/Region/region_area.tscn
 res://src/UI/ScenarioOverlay/scenario_overlay.tscn
 res://src/Logic/scenario_data_manager.tscn
 res://src/Scenario/scenario.tscn
 res://src/UI/ScenarioOverlay/panel_container_move_army.gd
+res://src/UI/ScenarioOverlay/panel_container_actions.gd
+res://src/Scenario/panel_container_buffs.gd
+res://src/Logic/scenario_data_manager.gd
+res://src/Logic/signal_bus.gd
+=======
+>>>>>>> 11f35603766ffc48ac1c9305d7ebd0a38166b704
