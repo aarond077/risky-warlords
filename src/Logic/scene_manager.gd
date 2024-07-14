@@ -9,7 +9,7 @@ var current_scene_name : String = ""
 # Description: Find the initial scene as defined in the project settings
 func _ready() -> void:
 	var main_scene : StringName = ProjectSettings.get_setting("application/run/main_scene")
-	current_scene_name = scenes.find_key(main_scene)
+	#current_scene_name = scenes.find_key(main_scene)
 	print(current_scene_name)
  
 

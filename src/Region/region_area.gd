@@ -29,7 +29,7 @@ func find_region_color(node) -> Color:
 		var target_region = ScenarioDataManager.find_region_in_array(self.region_name)	
 		for player in ScenarioDataManager.scenario_players:
 			if player.player_index == target_region.region_owner_index:
-				color = ScenarioDataManager.map_index_to_color(player.player_index - 1)
+				color = ScenarioDataManager.map_index_to_color(player.player_index)
 				return color
 		color = Color(0.70,0.70,0.70,0.9)
 	elif ScenarioDataManager.political_view_active == false:

@@ -17,6 +17,7 @@ func _ready():
 	SignalBus.call_deferred("connect", "update_army_count_labels", on_update_army_count_labels)
 	SignalBus.call_deferred("connect", "create_army_count_labels", on_create_army_count_labels)
 	SignalBus.call_deferred("connect", "update_banners", on_update_banners)
+	SignalBus.call_deferred("connect", "player_defeated", on_player_defeated)
 	SignalBus.connect("load_sea_connections", on_load_sea_connections)
 	
 func draw_political_view():
@@ -29,7 +30,19 @@ func draw_political_view():
 				if region_node.holder == "":
 						child.color = Color(0.70,0.70,0.70,0.9)
 				else:
-					child.color = ScenarioDataManager.map_index_to_color(region_node.region_owner_index - 1)
+					child.color = ScenarioDataManager.map_index_to_color(region_node.region_owner_index)
+
+
+func on_player_defeated(player : Player):
+	for region in player.regions.region_array:
+		var region_scenario_graph : RegionNode = ScenarioDataManager.find_region_in_array(region.region_name)
+		region_scenario_graph.reset_army()
+		region_scenario_graph.holder = ""
+		region_scenario_graph.region_owner_index = 0
+		SignalBus.emit_signal("remove_sprite", "Banner" + player.nation, region.region_name)
+		SignalBus.emit_signal("remove_sprite", region_scenario_graph.building, region_scenario_graph.region_name)
+		
+	
 
 func on_load_sea_connections(map_name : String):
 	sea_connections.texture = load("res://assets/Maps/" + map_name + "/" + map_name + "Seeverbindungen.png")
@@ -101,7 +114,7 @@ func on_create_army_count_labels():
 			army_count_label.name = region.region_name
 			army_count_label.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 			army_count_label.custom_minimum_size.x = 3
-			army_count_label.custom_minimum_size.y = 3
+			army_count_label.custom_minimum_size.y = 1
 			
 			#if region.count_army() == 0:
 			army_count_label.visible = false

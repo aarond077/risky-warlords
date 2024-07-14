@@ -27,10 +27,16 @@ func _ready():
 func game_end():
 	return scenario_players.size() == 1
 	
+func get_color_by_index(index):
+	for player in scenario_players:
+		if player.player_index == index:
+			return player.player_color
+	return ""
+	
 func map_index_to_color(index) -> Color:
 	var color_code : Color
 	var rdm : float = randf_range(0.6,0.8)
-	var color : String = ScenarioDataManager.scenario_players[index].player_color
+	var color : String = ScenarioDataManager.get_color_by_index(index)#ScenarioDataManager.scenario_players[index].player_color
 	if color == "Blue":
 		color_code = Color(0.2,0,rdm,0.8)
 	elif color == "Orange":
@@ -57,6 +63,7 @@ func player_defeated(player : Player):
 func remove_defeated_player(player : Player):
 	if player_defeated(player):
 		scenario_region_graph.remove_regions_player_data(player)
+		SignalBus.emit_signal("player_defeated", player)
 		scenario_players.erase(player)
 	
 func reset_player_army_movement():

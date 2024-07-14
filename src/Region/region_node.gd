@@ -31,6 +31,9 @@ func army_ready_to_attack() -> bool:
 			return true
 	else: 
 		return false
+		
+func reset_army():
+	region_army = {"Warriors" : 0, "Archers" : 0, "Tanks" : 0}
 
 func army_is_empty() -> bool:
 	if(count_army() > 0):
