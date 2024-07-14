@@ -1,0 +1,28 @@
+{
+"Mehrabad" : ["Iron","1"],
+"Farashan" : ["Wood","2"],
+"Zarmeshk" : ["Wood","1"],
+"Lavand" : ["Wood","2"],
+
+"Shahravar" : ["Iron","2"],
+"Parsadan" : ["Null","0"],
+"Nivarstan" : ["Iron","1"],
+"Rozhgar" : ["Wood","1"],
+"Tamsheer" : ["Stone","1"],
+"Sorkhan" : ["Stone","1"],
+"Darzand" : ["Stone","2"],
+"Navashar" : ["Wood","1"],
+"Harizan" : ["Wood","1"],
+
+"Khoshvard" : ["Wood","1"],
+"Parnaveh" : ["Null","0"],
+"Yazarin" : ["Stone","1"],
+"Tavrisan" : ["Null","0"],
+"Khaviran" : ["Null","0"],
+"Marhazan" : ["Stone","1"],
+"Saminvar" : ["Iron","2"],
+"Borazan" : ["Null","0"],
+"Faravad" : ["Iron","1"],
+"Khorshidar" : ["Iron","1"],
+"Zardestan" : ["Null","0"]
+}

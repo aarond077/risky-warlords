@@ -1,4 +1,5 @@
 {
 "Bucht von Dessus" : ["Anfurten von Dessus", "Sephesia", "Grazfurt", "Runhirn",  "Fuerstentum Sosla"],
-"Aleksud" : ["Brann - steinerne Stadt", "Kone Drogoth",  "Koenigreich Nebee", "Kon Azor - Stadt der Qual",  "Kon Odnoth", "Fuerstentum Sosla"]
+"Aleksud" : ["Brann - steinerne Stadt", "Kone Drogoth",  "Koenigreich Nebee", "Kon Azor - Stadt der Qual",  "Kon Odnoth", "Fuerstentum Sosla"],
+"Sandoria" : ["Zarmeshk", "Shahravar", "Harizan", "Borazan"]
 }

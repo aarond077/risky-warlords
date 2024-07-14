@@ -1,0 +1,29 @@
+{
+"Mehrabad" : [138, 115],
+"Farashan" : [133, 217],
+"Zarmeshk" : [218, 153],
+"Lavand" : [328, 224],
+
+"Shahravar" : [644, 128],
+"Parsadan" : [736, 188],
+"Nivarstan" : [948, 139],
+"Rozhgar" : [943, 253],
+"Tamsheer" : [835, 351],
+"Sorkhan" : [965, 414],
+"Darzand" : [938, 571],
+"Navashar" : [889, 789],
+"Harizan" : [818, 716],
+
+"Khoshvard" : [616, 411],
+"Parnaveh" : [432, 373],
+"Yazarin" : [429, 496],
+"Tavrisan" : [270, 423],
+"Khaviran" : [130, 378],
+"Marhazan" : [202, 615],
+"Saminvar" : [401, 656],
+"Borazan" : [133, 820],
+"Faravad" : [260, 813],
+"Khorshidar" : [478, 726],
+"Zardestan" : [620, 863]
+
+}
