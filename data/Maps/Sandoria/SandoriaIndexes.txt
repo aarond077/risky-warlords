@@ -1,0 +1,29 @@
+{
+"Mehrabad" : "0",
+"Farashan" : "1",
+"Zarmeshk" : "2",
+"Lavand" : "3",
+
+"Shahravar" : "4",
+"Parsadan" : "5",
+"Nivarstan" : "6",
+"Rozhgar" : "7",
+"Tamsheer" : "8",
+"Sorkhan" : "9",
+"Darzand" : "10",
+"Navashar" : "11",
+"Harizan" : "12",
+
+"Khoshvard" : "13",
+"Parnaveh" : "14",
+"Yazarin" : "15",
+"Tavrisan" : "16",
+"Khaviran" : "17",
+"Marhazan" : "18",
+"Saminvar" : "19",
+"Borazan" : "20",
+"Faravad" : "21",
+"Khorshidar" : "22",
+"Zardestan" : "23"
+
+}

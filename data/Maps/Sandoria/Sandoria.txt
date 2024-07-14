@@ -1,0 +1,28 @@
+{
+"#462807" : "Mehrabad",
+"#583a18" : "Farashan",
+"#663931" : "Zarmeshk",
+"#1f4a1f" : "Lavand",
+
+"#586115" : "Shahravar",
+"#6f6c2d" : "Parsadan",
+"#300343" : "Nivarstan",
+"#6b1a59" : "Rozhgar",
+"#45384a" : "Tamsheer",
+"#462553" : "Sorkhan",
+"#497440" : "Darzand",
+"#61437d" : "Navashar",
+"#ac3232" : "Harizan",
+
+"#8a6f30" : "Khoshvard",
+"#df7126" : "Parnaveh",
+"#902a79" : "Yazarin",
+"#b92063" : "Tavrisan",
+"#be326f" : "Khaviran",
+"#995d52" : "Marhazan",
+"#8b6945" : "Saminvar",
+"#82714b" : "Borazan",
+"#339971" : "Faravad",
+"#3e9a76" : "Khorshidar",
+"#50ac50" : "Zardestan"
+}
