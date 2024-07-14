@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://d1xk2lv80lqnp"]
+[gd_scene load_steps=62 format=3 uid="uid://d1xk2lv80lqnp"]
 
 [ext_resource type="Script" path="res://src/Scenario/game_manager.gd" id="1_3288w"]
 [ext_resource type="Script" path="res://src/Scenario/scenario.gd" id="2_dxbxk"]
@@ -37,6 +37,7 @@
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_move_army.gd" id="32_3nebv"]
 [ext_resource type="Texture2D" uid="uid://8720nsib1rlw" path="res://assets/Dice/diceSix.png" id="32_bs3o3"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_battle_results.gd" id="33_hk05n"]
+[ext_resource type="Script" path="res://src/Scenario/panel_container_buffs.gd" id="34_bmgbf"]
 [ext_resource type="Texture2D" uid="uid://4hgnvou76rej" path="res://src/UI/ScenarioOverlay/Sonstiges/skip.png" id="35_8nml0"]
 [ext_resource type="Texture2D" uid="uid://cijap8kjsggga" path="res://src/UI/ScenarioOverlay/Sonstiges/x.png" id="35_sncsx"]
 [ext_resource type="Texture2D" uid="uid://bjgm0bma3r0cv" path="res://assets/Dice/diceOne.png" id="36_6q7fb"]
@@ -1190,6 +1191,7 @@ offset_right = 525.6
 offset_bottom = -3.0
 grow_vertical = 0
 theme = ExtResource("18_87xab")
+script = ExtResource("34_bmgbf")
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerBuffs"]
 layout_mode = 2
@@ -1208,7 +1210,7 @@ layout_mode = 2
 size_flags_vertical = 1
 size_flags_stretch_ratio = 2.0
 theme_override_font_sizes/font_size = 32
-text = "Klassenbuff"
+text = "Kein Truppenupgrade"
 horizontal_alignment = 1
 
 [node name="MarginSanctuary" type="MarginContainer" parent="CanvasLayer/ScenarioOverlay/PanelContainerBuffs/GridContainer"]
@@ -1224,7 +1226,7 @@ layout_mode = 2
 size_flags_vertical = 1
 size_flags_stretch_ratio = 2.0
 theme_override_font_sizes/font_size = 32
-text = "Heiligtumbuff"
+text = "Kein Heiligtum"
 horizontal_alignment = 1
 
 [node name="PanelContainerMoveArmy" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]

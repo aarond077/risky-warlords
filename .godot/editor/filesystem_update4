@@ -12,3 +12,7 @@ res://src/UI/ScenarioOverlay/scenario_overlay.tscn
 res://src/Logic/scenario_data_manager.tscn
 res://src/Scenario/scenario.tscn
 res://src/UI/ScenarioOverlay/panel_container_move_army.gd
+res://src/UI/ScenarioOverlay/panel_container_actions.gd
+res://src/Scenario/panel_container_buffs.gd
+res://src/Logic/scenario_data_manager.gd
+res://src/Logic/signal_bus.gd
