@@ -17,3 +17,4 @@ res://src/Player/player.gd
 res://src/Logic/banner_factory.gd
 res://src/Scenario/scenario.gd
 res://src/Scenario/start_round.gd
+res://src/Logic/building_factory.gd

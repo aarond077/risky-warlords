@@ -13,7 +13,7 @@ static func create_building(building_name : String, nation: String, position : V
 		return create_research_center(nation, position, region_name)
 	elif building_name == "Ressourcengebäude - 3 H/S/E | 2AP":
 		return create_resource_building(position, region_name)
-	elif building_name == "Marktplatz - 3H | 3S | 3E | 2AP":
+	elif building_name == "Marktplatz - 2H | 2S | 2E | 2AP":
 		return create_marketplace(position, region_name)
 	else:
 		print("ERROR: BUILDING NAME NOT FOUND")
