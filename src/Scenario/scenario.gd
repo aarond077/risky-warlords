@@ -39,7 +39,7 @@ func on_player_defeated(player : Player):
 		region_scenario_graph.reset_army()
 		region_scenario_graph.holder = ""
 		region_scenario_graph.region_owner_index = 0
-		SignalBus.emit_signal("remove_sprite", "Banner" + player.nation, region.region_name)
+		SignalBus.emit_signal("remove_sprite", "Banner" + player.nation, region_scenario_graph.region_name)
 		SignalBus.emit_signal("remove_sprite", region_scenario_graph.building, region_scenario_graph.region_name)
 		
 	

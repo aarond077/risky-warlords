@@ -7,6 +7,7 @@ static func create_banner(position : Vector2, region_name : String, nation : Str
 	var banner : RemovableSprite = RemovableSprite.new()
 	banner.position = position
 	banner.sprite_name = "Banner" + nation
+	banner.region_name = region_name
 	banner.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	banner.texture = load("res://assets/Banner/Banner" + nation + ".png")
 	return banner

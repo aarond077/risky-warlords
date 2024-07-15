@@ -13,3 +13,7 @@ res://src/Logic/scenario_data_manager.tscn
 res://src/Scenario/scenario.tscn
 res://src/UI/ScenarioOverlay/panel_container_actions.gd
 res://src/Scenario/panel_container_buffs.gd
+res://src/Player/player.gd
+res://src/Logic/banner_factory.gd
+res://src/Scenario/scenario.gd
+res://src/Scenario/start_round.gd

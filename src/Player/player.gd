@@ -55,7 +55,7 @@ func update_resources():
 		resource_offset = 0
 		if(region.building == "Ressourcengebäude"):
 			resource_offset += 1#check every reagion in the players region graph
-		self.resources["Food"] += 5 #add 5 food per region
+		self.resources["Food"] += 4 #add 4 food per region
 		var region_resource : String = region.resource # get resource of the region
 		if region_resource != "Null" and region_resource != "": # check if resource is not null
 			self.resources[region_resource] += region.resource_factor + resource_offset #add amount to resource of the player
