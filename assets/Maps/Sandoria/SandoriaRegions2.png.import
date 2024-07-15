@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccblwvrxruukn"
-path="res://.godot/imported/Sandoria2.png-5c09dfe710524f780ceaab7cef906ff2.ctex"
+path="res://.godot/imported/SandoriaRegions2.png-a6a5440f150b4061f1eaf45ae1076a0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Maps/Sandoria/Sandoria2.png"
-dest_files=["res://.godot/imported/Sandoria2.png-5c09dfe710524f780ceaab7cef906ff2.ctex"]
+source_file="res://assets/Maps/Sandoria/SandoriaRegions2.png"
+dest_files=["res://.godot/imported/SandoriaRegions2.png-a6a5440f150b4061f1eaf45ae1076a0f.ctex"]
 
 [params]
 

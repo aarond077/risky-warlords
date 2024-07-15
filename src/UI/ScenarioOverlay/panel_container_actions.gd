@@ -199,7 +199,7 @@ func _on_building_remove_button_pressed() -> void:
 
 func _on_research_menu_pressed(id: int):
 
-	var research_name : String = research_menu_button.get_popup().get_text(id)
+	var research_name : String = research_menu_button.get_popup().get_item_text(id)
 	var active_player : Player = ScenarioDataManager.active_player
 	
 	if(active_player.action_points > 0 and active_player.has_research_center):

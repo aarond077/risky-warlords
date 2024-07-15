@@ -5,7 +5,7 @@ extends PanelContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SignalBus.call_deferred("connect", "update_buff_label", on_update_buffs_label)
+	SignalBus.call_deferred("connect", "update_buffs_label", on_update_buffs_label)
 
 func update_buffs_label(player : Player):
 	if(player.sanctuary_bonus == 3):
