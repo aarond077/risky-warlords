@@ -27,6 +27,10 @@ func _ready():
 func game_end():
 	return scenario_players.size() == 1
 	
+func is_active_player_last_player():
+	var comp_index : int = scenario_players[scenario_players.size() - 1].player_index
+	return active_player.player_index == comp_index
+	
 func get_color_by_index(index):
 	for player in scenario_players:
 		if player.player_index == index:
@@ -198,7 +202,15 @@ func player_has_possible_battles(next_player : Player):
 				if neighbour.holder != "" and neighbour.holder != region.holder:
 					return true
 	return false
-		
+
+func get_next_player_index(player : Player) -> int:
+	var next_player_index : int = 1
+	for scenario_player in scenario_players:
+		if scenario_player.player_index == player.player_index:
+			return next_player_index
+		else:
+			next_player_index += 1
+	return -1 
 
 func set_next_active_player():
 	#if(ScenarioDataManager.battle_phase_active):
@@ -219,8 +231,8 @@ func set_next_active_player():
 			
 				
 	#else:		
-		if(active_player.player_index < scenario_players.size()):
-			active_player = scenario_players[active_player.player_index]
+		if(not is_active_player_last_player()):
+			active_player = scenario_players[get_next_player_index(active_player)]
 		else:
 			active_player = scenario_players[0]
 			if(not start_round_active and not battle_phase_active):
