@@ -16,3 +16,4 @@ res://src/Scenario/start_round.gd
 res://src/UI/ScenarioOverlay/panel_container_player_icon.gd
 res://src/Scenario/load_map.gd
 res://src/Logic/signal_bus.gd
+res://src/UI/ScenarioOverlay/panel_container_move_army.gd

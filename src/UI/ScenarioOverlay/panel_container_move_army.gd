@@ -208,8 +208,9 @@ func _on_confirm_button_pressed():
 			var player_index : int = ScenarioDataManager.player_indexfunc()
 			ScenarioDataManager.add_region_holder(target_region.region_name, player_index)
 			SignalBus.call_deferred("emit_signal", "update_player_action_points_label", ScenarioDataManager.active_player)
-			SignalBus.call_deferred("emit_signal", "update_political_view")
+
 		SignalBus.emit_signal("update_army_count_labels")
+		SignalBus.call_deferred("emit_signal", "update_political_view")
 
 
 #func _on_warriors_increase_button_button_down():
