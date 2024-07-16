@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6u5e54tha304"
-path="res://.godot/imported/Portrait_Mensch.png-b352a1833b30681b54de2e691d4e0a28.ctex"
+uid="uid://kq7kb5m44bhv"
+path="res://.godot/imported/PortraitOrks.png-2beb585c7de8211a5a805b51bed26cf6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/UI/ScenarioOverlay/Sonstiges/Portrait_Mensch.png"
-dest_files=["res://.godot/imported/Portrait_Mensch.png-b352a1833b30681b54de2e691d4e0a28.ctex"]
+source_file="res://src/UI/ScenarioOverlay/Sonstiges/PortraitOrks.png"
+dest_files=["res://.godot/imported/PortraitOrks.png-2beb585c7de8211a5a805b51bed26cf6.ctex"]
 
 [params]
 

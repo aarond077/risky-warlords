@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://d1xk2lv80lqnp"]
+[gd_scene load_steps=66 format=3 uid="uid://d1xk2lv80lqnp"]
 
 [ext_resource type="Script" path="res://src/Scenario/game_manager.gd" id="1_3288w"]
 [ext_resource type="Script" path="res://src/Scenario/scenario.gd" id="2_dxbxk"]
@@ -55,6 +55,9 @@
 [ext_resource type="Texture2D" uid="uid://q4dysm5b47g1" path="res://src/UI/ScenarioOverlay/Sonstiges/homeicon.png" id="42_83dsg"]
 [ext_resource type="Texture2D" uid="uid://dnn5sj57bc0x4" path="res://src/UI/ScenarioOverlay/Sonstiges/eye open.png" id="43_k2k8a"]
 [ext_resource type="Script" path="res://src/Scenario/tile_map.gd" id="44_tq45s"]
+[ext_resource type="Texture2D" uid="uid://ciduv5fe8o0my" path="res://src/UI/ScenarioOverlay/Sonstiges/button1_normal.png" id="44_vvaju"]
+[ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_player_icon.gd" id="45_q80hy"]
+[ext_resource type="Texture2D" uid="uid://mevesksygleo" path="res://src/UI/ScenarioOverlay/Sonstiges/PortraitElfen.png" id="46_3p1qc"]
 [ext_resource type="Script" path="res://src/Scenario/regions.gd" id="47_1j3nt"]
 [ext_resource type="Texture2D" uid="uid://w61f0fow66rp" path="res://assets/Background/blue_image.png" id="47_muxym"]
 [ext_resource type="Script" path="res://src/Scenario/BlueBackground.gd" id="48_tohtn"]
@@ -62,6 +65,13 @@
 [ext_resource type="Script" path="res://src/Scenario/army_count.gd" id="55_vw44s"]
 
 [sub_resource type="Theme" id="Theme_7n6mx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ajbch"]
+texture = ExtResource("44_vvaju")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
 
 [node name="GameManager" type="Control"]
 process_mode = 3
@@ -172,13 +182,12 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="PanelContainerSelectArmy" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
-visible = false
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.42
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.443
 offset_left = -486.5
 offset_top = -308.0
 offset_right = 486.5
@@ -1892,6 +1901,25 @@ text = "Zurück zum Hauptmenü"
 [node name="Spacer3" type="Control" parent="CanvasLayer/ScenarioOverlay/PanelContainerGameEnd/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="PanelContainerPlayerIcon" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.733
+anchor_right = 0.5
+anchor_bottom = 0.733
+offset_left = -82.5
+offset_right = 82.5
+offset_bottom = 155.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ajbch")
+script = ExtResource("45_q80hy")
+
+[node name="PlayerIcon" type="TextureRect" parent="CanvasLayer/ScenarioOverlay/PanelContainerPlayerIcon"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("46_3p1qc")
 
 [node name="Scenario" type="Node2D" parent="."]
 process_mode = 1

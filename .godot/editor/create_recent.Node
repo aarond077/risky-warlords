@@ -1,3 +1,5 @@
+TextureRect
+PanelContainer
 Sprite2D
 State
 Node
@@ -7,8 +9,6 @@ VBoxContainer
 Label
 MarginContainer
 HBoxContainer
-PanelContainer
 HSlider
 AnimationPlayer
 AudioStreamPlayer
-ParallaxLayer

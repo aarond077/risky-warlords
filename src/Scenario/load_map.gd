@@ -26,6 +26,8 @@ func enter():
 	
 	SignalBus.call_deferred("emit_signal", "draw_capitals_fortress")
 	
+	SignalBus.call_deferred("emit_signal", "update_player_icon", ScenarioDataManager.active_player)
+	
 	
 	can_transition = true
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kq7kb5m44bhv"
-path="res://.godot/imported/Portrait_Ork.png-88eb23c658c7749470459f09bd03d8ac.ctex"
+uid="uid://mevesksygleo"
+path="res://.godot/imported/PortraitElfen.png-a10ee4fdfb1619197cdd6a1993b9f57c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/UI/ScenarioOverlay/Sonstiges/Portrait_Ork.png"
-dest_files=["res://.godot/imported/Portrait_Ork.png-88eb23c658c7749470459f09bd03d8ac.ctex"]
+source_file="res://src/UI/ScenarioOverlay/Sonstiges/PortraitElfen.png"
+dest_files=["res://.godot/imported/PortraitElfen.png-a10ee4fdfb1619197cdd6a1993b9f57c.ctex"]
 
 [params]
 
