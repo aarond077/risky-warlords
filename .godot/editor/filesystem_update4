@@ -11,8 +11,5 @@ res://src/Region/region_area.tscn
 res://src/UI/ScenarioOverlay/scenario_overlay.tscn
 res://src/Logic/scenario_data_manager.tscn
 res://src/Scenario/scenario.tscn
-<<<<<<< HEAD
 res://src/Logic/scenario_data_manager.gd
 res://src/Scenario/start_round.gd
-=======
->>>>>>> 1cdbd8abc99b0d8b8fa066ab3f1ab334deab2395
