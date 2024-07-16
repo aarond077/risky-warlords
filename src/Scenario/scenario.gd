@@ -113,8 +113,11 @@ func on_create_army_count_labels():
 			army_count_label.theme = load("res://assets/UI/Themes/army_count.tres")
 			army_count_label.name = region.region_name
 			army_count_label.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-			army_count_label.custom_minimum_size.x = 3
-			army_count_label.custom_minimum_size.y = 1
+			army_count_label.custom_minimum_size.x = 35
+			army_count_label.custom_minimum_size.y = 23
+			army_count_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			army_count_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+			
 			
 			#if region.count_army() == 0:
 			army_count_label.visible = false

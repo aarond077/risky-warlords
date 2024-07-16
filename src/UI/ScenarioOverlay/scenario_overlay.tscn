@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cos6atngucb2f"]
+[gd_scene load_steps=27 format=3 uid="uid://cos6atngucb2f"]
 
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_region.gd" id="1_b6r40"]
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/scenario_overlay.gd" id="1_obp3o"]
@@ -23,6 +23,15 @@
 [ext_resource type="Script" path="res://src/UI/ScenarioOverlay/panel_container_actions.gd" id="19_67hok"]
 [ext_resource type="Theme" uid="uid://cik0xnfjxuhw0" path="res://src/UI/ScenarioOverlay/Sonstiges/gebiet_theme.tres" id="20_810kd"]
 [ext_resource type="Texture2D" uid="uid://4hgnvou76rej" path="res://src/UI/ScenarioOverlay/Sonstiges/skip.png" id="23_ivwtm"]
+[ext_resource type="Texture2D" uid="uid://ciduv5fe8o0my" path="res://src/UI/ScenarioOverlay/Sonstiges/button1_normal.png" id="24_ee56k"]
+[ext_resource type="Texture2D" uid="uid://mevesksygleo" path="res://src/UI/ScenarioOverlay/Sonstiges/Portrait_Elf.png" id="25_gfjxh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ormrq"]
+texture = ExtResource("24_ee56k")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
 
 [node name="ScenarioOverlay" type="Control"]
 layout_mode = 3
@@ -45,14 +54,14 @@ metadata/_edit_group_ = true
 [node name="PanelContainerInfo" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = -0.011
-anchor_right = 0.5
-anchor_bottom = -0.011
-offset_left = -137.0
-offset_top = -0.119999
-offset_right = 137.0
-offset_bottom = 178.88
+anchor_left = 0.432
+anchor_top = -0.013
+anchor_right = 0.432
+anchor_bottom = -0.013
+offset_left = -137.44
+offset_top = 0.04
+offset_right = 136.56
+offset_bottom = 179.04
 grow_horizontal = 2
 theme = ExtResource("2_hdnmy")
 script = ExtResource("3_hrbq5")
@@ -813,10 +822,10 @@ anchor_left = 0.401
 anchor_top = -0.002
 anchor_right = 0.401
 anchor_bottom = -0.002
-offset_left = -35.92
-offset_top = 0.16
-offset_right = 36.08
-offset_bottom = 77.16
+offset_left = 1072.08
+offset_top = 169.16
+offset_right = 1144.08
+offset_bottom = 246.16
 grow_horizontal = 2
 size_flags_horizontal = 3
 theme = ExtResource("14_nwvwj")
@@ -825,6 +834,24 @@ theme_override_font_sizes/font_size = 27
 icon = ExtResource("23_ivwtm")
 icon_alignment = 1
 expand_icon = true
+
+[node name="PanelContainerPlayerIcon" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.544
+anchor_top = -0.002
+anchor_right = 0.544
+anchor_bottom = -0.002
+offset_left = -82.4801
+offset_top = 0.16
+offset_right = 82.5199
+offset_bottom = 155.16
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ormrq")
+
+[node name="PlayerIcon" type="TextureRect" parent="PanelContainerPlayerIcon"]
+layout_mode = 2
+texture = ExtResource("25_gfjxh")
 
 [connection signal="pressed" from="PanelContainerPoliticalView/GridContainerPoliticalView/MarginContainerPoliticalView/PoliticalViewButton" to="PanelContainerPoliticalView" method="_on_political_view_button_pressed"]
 [connection signal="pressed" from="PanelContainerSelectArmy/VBoxContainer/HBoxContainer2/WarriorDecreaseButton" to="PanelContainerSelectArmy" method="_on_warrior_decrease_button_pressed"]
