@@ -35,6 +35,9 @@ func load_terrain():
 	elif map_name == "Aleksud":
 		draw_aleksud_terrain()
 		
+	elif map_name == "Sandoria":
+		draw_sandoria_terrain()
+		
 	queue_free()
 	
 func get_pixel_color_dict(image):
