@@ -24,3 +24,5 @@ res://src/UI/ScenarioOverlay/panel_container_battle_results.gd
 res://src/Scenario/panel_container_trade_resources.gd
 res://src/Scenario/panel_container_game_end.gd
 res://src/UI/ScenarioOverlay/panel_container_actions.gd
+res://src/UI/ScenarioOverlay/panel_container_region.gd
+res://src/Scenario/game_manager.gd

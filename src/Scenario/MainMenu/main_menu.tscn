@@ -61,18 +61,6 @@ script = ExtResource("1_4j5sf")
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="LoadGameButton" type="Button" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 2.0
-theme = ExtResource("1_00213")
-theme_override_font_sizes/font_size = 50
-text = "Spiel laden"
-
-[node name="Spacer" type="Control" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
 [node name="ExitGameButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -81,6 +69,19 @@ theme = ExtResource("1_00213")
 theme_override_font_sizes/font_size = 50
 text = "Spiel beenden"
 script = ExtResource("2_lp8j1")
+
+[node name="Spacer" type="Control" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LoadGameButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme = ExtResource("1_00213")
+theme_override_font_sizes/font_size = 50
+text = "Spiel laden"
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/LocalGameButton" to="CanvasLayer/VBoxContainer/LocalGameButton" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/ExitGameButton" to="CanvasLayer/VBoxContainer/ExitGameButton" method="_on_pressed"]

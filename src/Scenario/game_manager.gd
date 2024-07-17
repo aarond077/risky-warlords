@@ -14,3 +14,7 @@ func _input(event : InputEvent):
 	if(event.is_action_pressed("ui_cancel")): #if user presses esc game stops
 		var current_value : bool = get_tree().paused #get the current state of the game tree process
 		get_tree().paused = not current_value #toggle game tree state to pause and unpause
+	elif event is InputEventMouseButton \
+		and event.button_index == MOUSE_BUTTON_RIGHT \
+		and event.is_pressed():
+			ScenarioDataManager.active_player.army_movement = false

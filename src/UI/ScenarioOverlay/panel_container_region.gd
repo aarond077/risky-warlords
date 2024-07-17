@@ -43,11 +43,22 @@ func update_region_describtion(region_node : RegionNode):
 
 func update_region_building(building_name):
 	region_building_label.text = building_name
+
+func get_resource_text(region_node : RegionNode):
+	var resource_name_german : String = ""
+	if(region_node.resource == "Wood"):
+		resource_name_german = "Holz"
+	elif(region_node.resource == "Iron"):
+		resource_name_german = "Eisen"
+	elif(region_node.resource == "Stone"):
+		resource_name_german = "Stein"
+	return str(region_node.resource_factor) + "x" + " " \
+	 		+ resource_name_german
+	
 	
 func update_region_resource(region_node : RegionNode):
 	if region_node.resource_factor > 0:
-		region_resource_label.text = region_node.resource + " " \
-	 		+ str(region_node.resource_factor) + "x"
+		region_resource_label.text =  get_resource_text(region_node)
 	else:
 		region_resource_label.text = ""
 
