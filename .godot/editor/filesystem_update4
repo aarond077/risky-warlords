@@ -21,3 +21,6 @@ res://src/Scenario/map_terrain.gd
 res://data/Maps/Sandoria/SandoriaBuildingSlots.txt
 res://src/UI/ScenarioOverlay/panel_container_battle.gd
 res://src/UI/ScenarioOverlay/panel_container_battle_results.gd
+res://src/Scenario/panel_container_trade_resources.gd
+res://src/Scenario/panel_container_game_end.gd
+res://src/UI/ScenarioOverlay/panel_container_actions.gd

@@ -148,7 +148,7 @@ func _on_building_menu_pressed(id: int):
 				active_player.sanctuary_bonus += 2
 			elif(building_name == "Forschungsgebäude - 10E | 2AP"):
 				active_player.has_research_center = true
-			elif(building_name == "Marktplatz - 3H | 3S | 3E | 2AP"):
+			elif(building_name == "Marktplatz - 2H | 2S | 2E | 2AP"):
 				active_player.has_marketplace = true
 			
 			SignalBus.call_deferred("emit_signal", "update_buffs_label", active_player)
@@ -205,11 +205,11 @@ func _on_research_menu_pressed(id: int):
 	if(active_player.action_points > 0 and active_player.has_research_center):
 		if(id == 0):
 			pass
-		elif(id == 1 and not active_player.archer_upgrade):
-			active_player.archer_upgrade = true
+		elif(id == 1 and not active_player.archers_upgrade):
+			active_player.archers_upgrade = true
 			active_player.action_points -= 1
-		elif(id == 2 and not active_player.tank_upgrade):
-			active_player.tank_upgrade = true
+		elif(id == 2 and not active_player.tanks_upgrade):
+			active_player.tanks_upgrade = true
 			active_player.action_points -= 1
 		elif(id == 3) and active_player.sanctuary_bonus == 2: 
 			active_player.sanctuary_bonus += 1

@@ -65,6 +65,18 @@ func conquer_region():
 	
 	target_region.region_army = moving_army
 	
+	var losing_player : Player = ScenarioDataManager.find_player_by_holder(target_region.holder)
+	
+	
+	if(target_region.building == "Heiligtum"):
+		losing_player.sanctuary_bonus = 0
+	elif(target_region.building == "Forschungscenter"):
+		losing_player.has_research_center = false
+		losing_player.archer_upgrade = false
+		losing_player.tank_upgrade = false
+	elif(target_region.building == "Marktplatz"):
+		losing_player.has_marketplace = false
+	
 	if(target_region.building != "Festung"):
 		SignalBus.call_deferred(
 				"emit_signal", 
@@ -74,8 +86,6 @@ func conquer_region():
 				)
 		target_region.building = ""
 
-	
-	var losing_player : Player = ScenarioDataManager.find_player_by_holder(target_region.holder)
 	
 	losing_player.regions.remove_node(
 		target_region.region_name,
@@ -95,14 +105,6 @@ func conquer_region():
 	reset_moving_army_label()
 	self.visible = false
 	
-	if(target_region.building == "Heiligtum"):
-		losing_player.sanctuary_bonus = 0
-	elif(target_region.building == "Forschungscenter"):
-		losing_player.has_research_center = false
-		losing_player.archer_upgrade = false
-		losing_player.tank_upgrade = false
-	elif(target_region.building == "Marktplatz"):
-		losing_player.has_marketplace = false
 	
 	var player_index : int = ScenarioDataManager.player_indexfunc()
 	
@@ -124,8 +126,9 @@ func on_show_move_army_container(region_name : String, player : Player):
 		"emit_signal",
 		"pause_active_player_timer"
 	)
+	var active_region : RegionNode = ScenarioDataManager.active_region
 	target_region = ScenarioDataManager.find_region_in_array(region_name)
-	available_army = ScenarioDataManager.active_region.region_army
+	available_army = {"Warriors" : active_region.region_army["Warriors"],"Archers" : active_region.region_army["Archers"], "Tanks" : active_region.region_army["Tanks"]}
 	update_available_army_label()
 	self.visible = true
 	

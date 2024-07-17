@@ -26,10 +26,11 @@ func _process(delta):
 
 
 func _on_ressourcen_tauschen_pressed():
-	visible = true
-	resources = ScenarioDataManager.active_player.resources
-	SignalBus.call_deferred("emit_signal", "pause_active_player_timer")
-	AudioManager.play_select()
+	if ScenarioDataManager.active_player.has_marketplace:
+		visible = true
+		resources = ScenarioDataManager.active_player.resources
+		SignalBus.call_deferred("emit_signal", "pause_active_player_timer")
+		AudioManager.play_select()
 
 func _on_check_stone_toggled(toggled_on):
 	if toggled_on:

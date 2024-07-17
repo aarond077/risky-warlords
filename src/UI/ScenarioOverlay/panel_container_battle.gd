@@ -137,18 +137,29 @@ func apply_troop_bonusses(att_player_results : Array[int], def_player_results):
 		var att_offset : int = 1
 		if att_player.archers_upgrade:
 			att_offset = 2
+		var att_index = 0
 		for dice in att_player_results:
-			if( dice <= 5):
-				dice += att_offset
-				
+
+			if( dice <= 5 and not att_player.archers_upgrade):
+				att_player_results[att_index] += att_offset
+			elif(dice <= 4 and att_player.archers_upgrade):
+				att_player_results[att_index] += att_offset
+			elif(dice <= 5 and att_player.archers_upgrade):
+				att_player_results[att_index] += att_offset - 1	
+			att_index += 1			
 	if(defending_tanks_bonus):
+		var def_index = 0
 		var def_offset : int = 1
 		if def_player.tanks_upgrade:
 			def_offset = 2
 		for dice in def_player_results:
-			if( dice <= 5):
-				dice += def_offset
-		
+			if( dice <= 5 and not def_player.tanks_upgrade):
+				def_player_results[def_index] += def_offset
+			elif(dice <= 4 and def_player.tanks_upgrade):
+				def_player_results[def_index] += def_offset
+			elif(dice <= 5 and def_player.tanks_upgrade):
+				def_player_results[def_index] += def_offset - 1
+			def_index += 1
 
 				
 	
