@@ -18,12 +18,15 @@ func _ready():
 	SignalBus.call_deferred("connect", "battle_round_finished", on_battle_round_finished)
 
 func update_battle_result_labels(att_loss : int, def_loss : int):
+	var att_player_name : String ="Spieler " + str(ScenarioDataManager.find_player_by_holder(attacking_region.holder).player_index)
+	var def_player_name : String ="Spieler " + str(ScenarioDataManager.find_player_by_holder(defending_region.holder).player_index)
+	var win_player_name : String ="Spieler " + str(ScenarioDataManager.find_player_by_holder(winning_region.holder).player_index)
 	if(winning_region.holder == losing_region.holder):
 		winner_label.text = "Unentschieden!"
 	else:
-		winner_label.text = winning_region.holder + " hat gewonnen!"
-	att_losses_label.text = attacking_region.holder
-	def_losses_label.text = defending_region.holder
+		winner_label.text = win_player_name + " hat gewonnen!"
+	att_losses_label.text = att_player_name
+	def_losses_label.text = def_player_name
 	att_losses_count_label.text = str(att_loss)
 	def_losses_count_label.text = str(def_loss)
 	

@@ -502,7 +502,7 @@ layout_mode = 2
 
 [node name="RessourcenSammeln" type="MenuButton" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
-text = "Ressourcen sammeln"
+text = "Ressourcen sammeln  (2 AP)"
 alignment = 0
 item_count = 4
 popup/item_0/text = "Stein"
@@ -517,7 +517,7 @@ popup/item_3/id = 3
 [node name="GebaeudeErrichten" type="MenuButton" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
 theme = ExtResource("29_y21ux")
-text = "Gebäude errichten"
+text = "Gebäude errichten (2 AP)"
 alignment = 0
 item_count = 5
 popup/item_0/text = "Forschungsgebäude - 10E | 2AP"
@@ -534,13 +534,13 @@ popup/item_4/id = 4
 [node name="BuildingRemoveButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
 theme = ExtResource("29_y21ux")
-text = "Gebäude abreißen"
+text = "Gebäude abreißen (1 AP)"
 alignment = 0
 
 [node name="Forschen" type="MenuButton" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
 theme = ExtResource("29_y21ux")
-text = "Forschen"
+text = "Forschen  (1 AP)"
 alignment = 0
 item_count = 4
 popup/item_0/text = "Kriegerupgrade"
@@ -555,13 +555,13 @@ popup/item_3/id = 4
 [node name="RessourcenTauschen" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
 theme = ExtResource("29_y21ux")
-text = "Ressourcen tauschen"
+text = "Ressourcen tauschen  (1AP)"
 alignment = 0
 
 [node name="MoveArmyButton" type="Button" parent="CanvasLayer/ScenarioOverlay/PanelContainerActions/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
 theme = ExtResource("29_y21ux")
-text = "Truppen bewegen"
+text = "Truppen bewegen  (1 AP)"
 alignment = 0
 
 [node name="PanelContainerRegion" type="PanelContainer" parent="CanvasLayer/ScenarioOverlay"]

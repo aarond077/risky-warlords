@@ -134,17 +134,21 @@ func apply_troop_bonusses(att_player_results : Array[int], def_player_results):
 	var att_player : Player = ScenarioDataManager.find_player_by_holder(attacking_region.holder) 
 	var def_player : Player = ScenarioDataManager.find_player_by_holder(defending_region.holder)
 	if(attacking_archers_bonus):
+		var att_offset : int = 1
+		if att_player.archers_upgrade:
+			att_offset = 2
 		for dice in att_player_results:
 			if( dice <= 5):
-				dice += 1
-				if not att_player.archers_upgrade:
-					break
+				dice += att_offset
+				
 	if(defending_tanks_bonus):
+		var def_offset : int = 1
+		if def_player.tanks_upgrade:
+			def_offset = 2
 		for dice in def_player_results:
 			if( dice <= 5):
-				dice += 1
-				if not def_player.tank_upgrade:
-					break
+				dice += def_offset
+		
 
 				
 	
@@ -281,8 +285,10 @@ func update_army_counter_labels():
 	defending_player_counter_label.text = str(defending_army_sum)
 
 func update_player_labels():
-	att_player_label.text = attacking_region.holder
-	def_player_label.text = defending_region.holder
+	var att_player_name : String ="Spieler " + str(ScenarioDataManager.find_player_by_holder(attacking_region.holder).player_index)
+	var def_player_name : String ="Spieler " + str(ScenarioDataManager.find_player_by_holder(defending_region.holder).player_index)
+	att_player_label.text = att_player_name
+	def_player_label.text = def_player_name
 	
 
 	
@@ -338,6 +344,7 @@ func on_show_battle_container(region_name : String, player : Player):
 	self.visible = true
 	
 func _on_start_attack_button_pressed():
+	AudioManager.play_dice()
 	if not battle_round_finished and attacking_region.army_ready_to_attack():
 		self.attacking_dices = get_attacking_dices(attacking_region)
 		self.defending_dices = get_defending_dices(defending_region)

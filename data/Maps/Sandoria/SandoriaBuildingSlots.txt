@@ -1,7 +1,7 @@
 {
 "Mehrabad" : [138, 115],
 "Farashan" : [133, 217],
-"Zarmeshk" : [218, 153],
+"Zarmeshk" : [342, 144],
 "Lavand" : [328, 224],
 
 "Shahravar" : [644, 128],

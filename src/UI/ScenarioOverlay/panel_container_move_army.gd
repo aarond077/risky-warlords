@@ -114,7 +114,7 @@ func conquer_region():
 	if(ScenarioDataManager.game_end()):
 		SignalBus.call_deferred("emit_signal", "game_end")
 	
-	SignalBus.call_deferred("emit_signal", "update_political_view")
+	#SignalBus.call_deferred("emit_signal", "update_political_view")
 	
 func on_next_active_player():
 	reset_moving_army_label()
@@ -175,7 +175,7 @@ func _on_cancel_button_pressed():
 
 
 func _on_confirm_button_pressed():
-	
+	AudioManager.play_movement(target_region.region_name)
 	if(moving_army["Warriors"] > 0 \
 		or moving_army["Archers"] > 0 \
 		or moving_army["Tanks"] > 0):
@@ -210,7 +210,7 @@ func _on_confirm_button_pressed():
 			SignalBus.call_deferred("emit_signal", "update_player_action_points_label", ScenarioDataManager.active_player)
 
 		SignalBus.emit_signal("update_army_count_labels")
-		SignalBus.call_deferred("emit_signal", "update_political_view")
+		SignalBus.emit_signal("update_political_view")
 
 
 #func _on_warriors_increase_button_button_down():

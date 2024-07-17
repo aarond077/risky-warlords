@@ -18,3 +18,6 @@ res://src/Scenario/load_map.gd
 res://src/Logic/signal_bus.gd
 res://src/UI/ScenarioOverlay/panel_container_move_army.gd
 res://src/Scenario/map_terrain.gd
+res://data/Maps/Sandoria/SandoriaBuildingSlots.txt
+res://src/UI/ScenarioOverlay/panel_container_battle.gd
+res://src/UI/ScenarioOverlay/panel_container_battle_results.gd

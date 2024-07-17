@@ -1,0 +1,44 @@
+Unheilsklippen : MountainCursed
+Hafen von Aleksud : StoneCursed
+Oedland von Sosla : Grass
+Bucht von Sosla : Solid
+Huegelgraeber von Sosla : StoneCursed
+Nebelkueste : Grass
+Dornenwald : Forest
+Tal von Sosla : Grass
+Plateau der Schnittberge : Solid
+Westliche Schnittberge : Mountain
+Oestliche Schnittberge : Mountain
+Fuerstentum Sosla : Grass
+Vergessenes Brachland : SolidCursed
+Bucht von Runhirn : Grass
+Runhirn : Forest
+Wald der Schnittberge : Forest
+Sumpf von Runhirn : Matsch
+Fjord von Dessus : Stone
+Anfurten von Dessus : Grass
+Tal von Dessus : Grass
+Graue Klippen : Mountain
+Kueste von Dessus : Grass
+Klippen der Hoffnung : Mountain
+Noerdlicher Gruenwald : Forest
+Suedlicher Gruenwald : Forest
+Brachland von Sephesia : Matsch
+Sephesia : Grass
+Huegel von Sephesia : Grass
+Steppe von Sephesia : Wüste
+Noerdlicher Tiefwald : Forest
+Bucht von Sephesia : Grass
+Brachland des Filtris : Matsch
+Sandbank des Filtris : Wüste
+Tal des Filtris : Grass
+Berge des Filtris : Mountain
+Grazfurt : Grass
+Fuerstentum Wendor : Grass
+Kueste von Grazfurt : Grass
+Oedland von Grazfurt : Stone
+Sumpf des Filtris : Matsch
+Verfluchte Huegelgraeber : SolidCursed
+Oedland von Banon : Stone
+Schlachtfeld von Banon : SolidCursed
+
