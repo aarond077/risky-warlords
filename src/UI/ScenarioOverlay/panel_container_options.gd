@@ -21,6 +21,7 @@ func _on_pause_button_toggled(toggled_on):
 		SignalBus.call_deferred("emit_signal", "continue_active_player_timer") # Replace with function body.
 
 func _on_continue_button_pressed():
+	AudioManager.play_select()
 	visible = false # Replace with function body.
 	SignalBus.call_deferred("emit_signal", "continue_active_player_timer")
 	var pauseButton : Button = $"../PauseButton"

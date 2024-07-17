@@ -338,6 +338,7 @@ func on_show_battle_container(region_name : String, player : Player):
 	self.visible = true
 	
 func _on_start_attack_button_pressed():
+	AudioManager.play_dice()
 	if not battle_round_finished and attacking_region.army_ready_to_attack():
 		self.attacking_dices = get_attacking_dices(attacking_region)
 		self.defending_dices = get_defending_dices(defending_region)

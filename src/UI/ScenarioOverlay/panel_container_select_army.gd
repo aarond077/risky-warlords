@@ -92,12 +92,16 @@ func _on_confirm_button_pressed():
 	
 	if(new_warriors > 0 or new_archers > 0 or new_tanks > 0):
 		
-		
-		
-		if new_archers > 0:
+		if new_archers > 0 and new_tanks > 0:
+			AudioManager.play_tank()
 			AudioManager.play_arrow()
+		elif new_archers > 0:
+			AudioManager.play_arrow()
+		elif new_tanks > 0:
+			AudioManager.play_tank()
 		else:
 			AudioManager.play_drawSword()
+			
 		var active_player_capital_name : String = ScenarioDataManager.active_player.capital
 		var active_player_capital : RegionNode = ScenarioDataManager.find_region_in_array(active_player_capital_name)
 		

@@ -12,4 +12,5 @@ func _process(delta):
 
 
 func _on_pressed():
+	AudioManager.play_select()
 	SceneManager.switch_scene("ScenarioMenu")

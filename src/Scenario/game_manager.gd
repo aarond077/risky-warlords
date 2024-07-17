@@ -5,6 +5,7 @@ class_name GameManager
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	AudioManager.play_scene()
+	AudioManager.transitionAudio(AudioManager.menu, AudioManager.scene)
 
 	
 

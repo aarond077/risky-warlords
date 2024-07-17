@@ -1,0 +1,45 @@
+Dern - Stadt des Frostes : Snow
+Brann - steinernde Stadt : SnowMountain
+Brandung von Brann : Stone
+Suedliche Erzgipfel : Mountain
+Klippen von Brann : Snow
+Tundra von Dern : Snow
+Kuste von Brann - Snow
+Brachland der Erzgipfel : Matsch
+Tundra der Erzgipfel : Snow
+Huegellande von Karthor : Grass
+Koenigreich Nebee : Grass
+Waelder von Nebee : Grass
+Odnis Zipfel : Grass
+Dor Mogorath : Mountain
+Klippen von Drogoth : Mountain
+Schwarze Klippen : StoneCursed
+Kone Drogoth : Matsch
+Knochenklippen : Stone
+Edelwaelder : Forest
+Berge bei Drogoth : Mountain
+Brachland von Aleksud : Solid
+Waelder beim Nebelberg : Forest
+Kon Odnoth : Wüste
+Oedland von Odnoth : Wüste
+Magmafelder von Aleksud : SolidCursed
+Blutgipfel : MountainCursed
+Klippen von Aleksud : Mountain
+Schlachtfeld der Brueder : Matsch
+Hafen von Aleksud : Solid
+Bucht von Sosla : Solid
+Huegelgraeber von Sosla : Matsch
+Fürstentum Sosla : Grass
+Kueste der Strafe : Solid
+Plateau von Margoth : Solid
+Schlucht von Aleksud : Solid
+Noerdliche Unheilsklippen : MountainCursed
+Suedliche Unheilsklippen : MountainCursed
+Verfluchter Wald : Forest
+Kueste der Qual : SolidCursed
+Anfurten von Kon Azor : Solid
+Kon Azor - Stadt der Qual : SolidCursed
+Schlachtfelder vor Kon Azor : SolidCursed
+Huegel des Hasses : GrassCursed
+Oedland von Kon Azor : Matsch
+Kueste von Brann: Solid

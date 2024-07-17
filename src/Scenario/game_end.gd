@@ -1,8 +1,10 @@
 extends State
 
 @onready var state_machine : FiniteStateMachine = get_parent()
+@onready var winningPlayer : Label = $"../../../CanvasLayer/ScenarioOverlay/PanelContainerGameEnd/VBoxContainer/WinningPlayer"
 # Called when the node enters the scene tree for the first time.
 func enter():
+	AudioManager.play_gameEnd()
 	hide_battle_phase_ui()
 	show_end_game_ui()
 	print("GAME OVER")

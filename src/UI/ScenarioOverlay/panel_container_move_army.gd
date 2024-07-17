@@ -175,7 +175,7 @@ func _on_cancel_button_pressed():
 
 
 func _on_confirm_button_pressed():
-	
+	AudioManager.play_movement(target_region.region_name)
 	if(moving_army["Warriors"] > 0 \
 		or moving_army["Archers"] > 0 \
 		or moving_army["Tanks"] > 0):

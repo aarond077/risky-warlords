@@ -1,4 +1,4 @@
-res://src/UI/ScenarioOverlay/ui.tscn
+res://src/Scenario/scenario.tscn
 res://src/UI/ScenarioOverlay/Sonstiges/top_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/new_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/gebiet_theme.tres
@@ -6,14 +6,9 @@ res://src/UI/ScenarioOverlay/Sonstiges/truppen_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/aktionen_theme.tres
 res://src/UI/ScenarioOverlay/Sonstiges/bottom_left_theme.tres
 res://src/Scenario/scenario.tres
+res://src/UI/ScenarioOverlay/Sonstiges/scenario_meu_theme.tres
+res://src/UI/ScenarioOverlay/ui.tscn
 res://src/Scenario/MainMenu/main_menu.tscn
-res://src/Region/region_area.tscn
 res://src/UI/ScenarioOverlay/scenario_overlay.tscn
 res://src/Logic/scenario_data_manager.tscn
-res://src/Scenario/scenario.tscn
-res://src/Logic/scenario_data_manager.gd
-res://src/Scenario/start_round.gd
-res://src/UI/ScenarioOverlay/panel_container_player_icon.gd
-res://src/Scenario/load_map.gd
-res://src/Logic/signal_bus.gd
-res://src/UI/ScenarioOverlay/panel_container_move_army.gd
+res://src/UI/ScenarioMenu/scenario_menu.tscn

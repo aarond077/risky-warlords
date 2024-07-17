@@ -29,6 +29,9 @@ func enter():
 		#can_transition = true
 	else:
 		#ScenarioDataManager.active_player = start_player
+		AudioManager.play_fightStart()
+		AudioManager.play_fight()
+		AudioManager.transitionAudio(AudioManager.scene, AudioManager.fight)
 		set_battle_phase_ui()
 
 func exit():
@@ -41,6 +44,8 @@ func set_battle_phase_ui():
 
 func on_init_start_round():
 	can_transition = true
+	AudioManager.play_scene()
+	AudioManager.transitionAudio(AudioManager.fight, AudioManager.scene)	
 	
 func on_game_end():
 	print("game ended?")

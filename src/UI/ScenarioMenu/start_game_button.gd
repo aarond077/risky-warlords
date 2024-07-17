@@ -12,4 +12,5 @@ func _process(delta):
 
 #executes on click of the button
 func _on_pressed():
+	AudioManager.play_select()
 	SceneManager.switch_scene("Scenario")
