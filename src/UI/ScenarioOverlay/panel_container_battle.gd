@@ -130,6 +130,43 @@ func get_troop_bonus(region_a : RegionNode, region_b : RegionNode, troop_name : 
 	else:
 		return false
 		
+func apply_att_troop_bonus(att_player_results : Array[int]) -> Array[int]:
+	var att_player : Player = ScenarioDataManager.find_player_by_holder(attacking_region.holder) 
+	#var def_player : Player = ScenarioDataManager.find_player_by_holder(defending_region.holder)
+	if(attacking_archers_bonus):
+		var att_offset : int = 1
+		if att_player.archers_upgrade:
+			att_offset = 2
+		var att_index = 0
+		for dice in att_player_results:
+
+			if( dice <= 5 and not att_player.archers_upgrade):
+				att_player_results[att_index] += att_offset
+			elif(dice <= 4 and att_player.archers_upgrade):
+				att_player_results[att_index] += att_offset
+			elif(dice <= 5 and att_player.archers_upgrade):
+				att_player_results[att_index] += att_offset - 1	
+			att_index += 1		
+	return att_player_results
+
+func apply_def_troop_bonus(def_player_results : Array[int]) -> Array[int]:
+	var def_player : Player = ScenarioDataManager.find_player_by_holder(defending_region.holder)
+	if(defending_tanks_bonus):
+		var def_index = 0
+		var def_offset : int = 1
+		if def_player.tanks_upgrade:
+			def_offset = 2
+		for dice in def_player_results:
+			if( dice <= 5 and not def_player.tanks_upgrade):
+				def_player_results[def_index] += def_offset
+			elif(dice <= 4 and def_player.tanks_upgrade):
+				def_player_results[def_index] += def_offset
+			elif(dice <= 5 and def_player.tanks_upgrade):
+				def_player_results[def_index] += def_offset - 1
+			def_index += 1
+	return def_player_results
+
+
 func apply_troop_bonusses(att_player_results : Array[int], def_player_results):
 	var att_player : Player = ScenarioDataManager.find_player_by_holder(attacking_region.holder) 
 	var def_player : Player = ScenarioDataManager.find_player_by_holder(defending_region.holder)
@@ -160,6 +197,8 @@ func apply_troop_bonusses(att_player_results : Array[int], def_player_results):
 			elif(dice <= 5 and def_player.tanks_upgrade):
 				def_player_results[def_index] += def_offset - 1
 			def_index += 1
+			
+	return att_player_results
 
 				
 	
@@ -188,7 +227,9 @@ func get_battle_results(attacking_player_results : Array[int], defending_player_
 	var defending_player_wins : int
 	var battle_results : Array = []
 	
-	apply_troop_bonusses(attacking_player_results, defending_player_results)
+	attacking_player_results = apply_att_troop_bonus(attacking_player_results)
+	defending_player_results = apply_def_troop_bonus(defending_player_results)
+	#apply_troop_bonusses(attacking_player_results, defending_player_results)
 	
 	if(attacking_player_results.size() == 1):
 		defending_player_results = get_max_def_dice(defending_player_results)
@@ -201,9 +242,7 @@ func get_battle_results(attacking_player_results : Array[int], defending_player_
 			attacking_player_wins += 1
 		else:
 			defending_player_wins += 1
-		
-		if(attacking_archers_bonus):
-			pass
+
 	#for def_dice in attacking_player_results:
 		#for att_dice in defending_player_results:
 			#if att_dice > def_dice:
@@ -362,8 +401,6 @@ func _on_start_attack_button_pressed():
 		var attacking_player_results : Array[int] = throw_dices(attacking_dices)
 		var defending_player_results : Array[int] = throw_dices(defending_dices)
 	
-		show_attacking_player_results(attacking_player_results)
-		show_defending_player_results(defending_player_results)
 	
 		self.attacking_archers_bonus = get_troop_bonus(attacking_region, defending_region, "Archers")
 		self.defending_archers_bonus = get_troop_bonus(defending_region, attacking_region, "Archers")
@@ -377,7 +414,10 @@ func _on_start_attack_button_pressed():
 		var losing_region : RegionNode = battle_results[1]
 		var troop_losses_attacker : int = battle_results[2]
 		var troop_losses_defender : int = battle_results[3]
-	
+		
+		show_attacking_player_results(attacking_player_results)
+		show_defending_player_results(defending_player_results)
+		
 		apply_army_losses(troop_losses_attacker, troop_losses_defender)
 		update_army_counter_labels()
 	
